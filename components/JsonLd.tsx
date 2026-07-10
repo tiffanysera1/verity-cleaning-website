@@ -4,14 +4,14 @@ export default function JsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "HouseCleaningService",
-    "@id": "https://veritycleaning.com/#business",
+    "@id": "https://veritycleaning.co/#business",
     name: "Verity Cleaning, LLC",
     description:
       "Premium, veteran-owned residential and commercial cleaning service in Shelby County, AL. Offering house cleaning, deep cleaning, move-in/out cleanings, and office sanitization.",
     slogan: "Pure Spaces &bull; Pure Peace of Mind",
     telephone: "+12058880199",
-    url: "https://veritycleaning.com",
-    image: "https://veritycleaning.com/clean-home.png",
+    url: "https://veritycleaning.co",
+    image: "https://veritycleaning.co/clean-home.png",
     priceRange: "$$",
     aggregateRating: {
       "@type": "AggregateRating",

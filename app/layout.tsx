@@ -23,7 +23,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://veritycleaning.com"),
+  metadataBase: new URL("https://veritycleaning.co"),
   title: "Premium Cleaning Services in Shelby County, AL | Verity Cleaning",
   description:
     "Veteran-owned home & office cleaning service serving Pelham, Alabaster, Helena, & Hoover. Meticulous checksheets, green products, background-checked staff. Call or text (205) 888-0199.",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     description:
       "Veteran-owned cleaning service with a 100% satisfaction guarantee. Serving Pelham, Alabaster, Hoover, and Helena. Call or text (205) 888-0199.",
     type: "website",
-    url: "https://veritycleaning.com",
+    url: "https://veritycleaning.co",
     siteName: "Verity Cleaning, LLC",
     locale: "en_US",
     images: [{ url: "/clean-home.png", width: 800, height: 600, alt: "Verity Cleaning Pristine Home" }],
