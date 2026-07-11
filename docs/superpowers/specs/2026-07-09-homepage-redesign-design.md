@@ -1,6 +1,7 @@
 # Verity Cleaning Homepage Redesign — Design Spec
 
-Date: 2026-07-09 (amended same day after factual corrections)
+Date: 2026-07-09 (amended 2026-07-09 after factual corrections; amended
+2026-07-11 with brand positioning/voice rewrite)
 Status: Approved for planning
 
 ## Context
@@ -14,12 +15,12 @@ business site (teal/navy palette, sparkle mascot, heavy card shadows,
 uppercase headlines, dark footer, dashed step lines).
 
 This spec redesigns the homepage into a premium, technology-forward
-experience in the spirit of Apple / Linear / Stripe / Notion / Arc, centered
-on the brand idea **"Giving you your time back"** — supported by a secondary
-theme, **"We take care of the house, you take care of the memories that
-matter."** All real business facts (phone, service area, credentials,
-pricing philosophy) must be preserved — only visual language and copy tone
-change.
+experience in the spirit of Apple / Airbnb / Stripe / Linear / Notion / Arc,
+centered on the brand idea **"Giving you your time back"** — supported by a
+secondary theme, **"We take care of the house, you take care of the
+memories that matter."** All real business facts (phone, service area,
+credentials, pricing philosophy) must be preserved — only visual language
+and copy tone change.
 
 This spec covers the **homepage redesign only**. A separate, later spec will
 cover the "Ask Verity" AI chat widget (backend-powered assistant with lead
@@ -59,6 +60,39 @@ and must **not** be reintroduced by the redesign:
 
 The current live site (post these three fixes) is the accurate baseline
 this redesign builds from.
+
+## Brand Positioning & Voice (added 2026-07-11)
+
+**Positioning:** Verity is a modern hospitality brand that happens to clean
+homes — not a cleaning company. The product being sold is relief and peace
+of mind, not clean countertops. Every section of copy must be written to
+pass this test: **"How does this make this person's life easier?"**
+
+**Customer persona:** a busy professional or family juggling work, kids,
+pets, errands, and appointments. They are not price-shopping — they want
+someone trustworthy who makes life easier. Copy should never lead with
+price or "deals."
+
+**Voice:** calm, premium, modern, trustworthy, friendly, organized,
+reassuring, human. Never pushy, salesy, corporate, loud, flashy, generic,
+or cheap-sounding. Write like a thoughtful person talking across a kitchen
+table, not like marketing copy. If a sentence sounds like an ad, rewrite
+it.
+
+**Banned words (global constraint — audit all existing copy, not just new
+copy, and remove every instance):** "industry-leading," "exceptional,"
+"premier," "top-rated," "professional solutions." Example rewrite: instead
+of "We provide exceptional residential cleaning," write "We take care of
+the cleaning so you can spend more time doing what matters."
+
+**Photography:** show the *result*, not the act of cleaning — no photos of
+people holding spray bottles or wearing cleaning gloves. The hero photo
+should suggest what the customer will do with their time back (a bright,
+lived-in home; a candid family moment), not depict cleaning itself. Per
+the photography-scope decision below, this redesign uses **one** strong
+hero photo rather than lifestyle photos scattered across every section —
+enough to set the emotional tone without tipping into generic stock-photo
+clutter.
 
 ## Brand & Visual System
 
@@ -106,8 +140,8 @@ hover-lift only). No heavy drop shadows.
 - Replace feature-card emoji (🏠📱⭐❤️) with custom thin-stroke (1.5px) line
   icons in navy, inside soft sky-tint circular badges — added to the
   existing hand-rolled `components/Icons.tsx` pattern (new icons needed:
-  `Heart`, plus simple generic `Yelp` and `Nextdoor` marks for the footer
-  socials).
+  `Heart` and `Laptop`, plus simple generic `Yelp` and `Nextdoor` marks for
+  the footer socials).
 
 ## Brand narrative
 
@@ -147,21 +181,28 @@ Replaces `app/page.tsx` section order top to bottom:
    — small icons, no heavy card boxes. (Already updated on the live site;
    redesign only restyles visually.)
 
-4. **Feature Cards** (`--sky-tint` background) — new `FeatureCards.tsx`
-   component, 4 large rounded cards:
-   - Personalized Quotes — "Every home is different. Receive a customized
-     quote tailored to your space."
-   - Stay Updated — "Get a fast, no-hassle quote, then simple notifications
-     when your cleaner is on the way, when the job starts, and when it's
-     complete." (Confirms the process: quote → on-the-way → job started →
-     job completed notifications.)
-   - Trusted Professionals — "Reliable, background-checked cleaners who
-     treat your home with care and respect."
-   - More Time for What Matters — "We take care of the house, you take
-     care of the memories that matter."
-   One quiet copy line inside the "Stay Updated" card references
-   AI-powered support ("Ask Verity") as a value prop, with no functional
-   chat UI.
+4. **Our Difference** (`--sky-tint` background, renamed from "Feature
+   Cards" — supersedes the earlier 4-card version) — new
+   `OurDifference.tsx` component, 6 rounded cards. Framed around
+   competing on experience, not price:
+   - Personalized Quotes — "Every home is different, so your quote is
+     too. Tell us about your space and we'll put together pricing that
+     actually fits it."
+   - Great Communication — "No guessing games. We keep you in the loop
+     from your first message to the moment we're done." (One quiet
+     mention of AI-powered support — "Ask Verity" — belongs here as a
+     value prop, no functional chat UI.)
+   - Trusted Cleaners — "Every cleaner is background-checked, and we
+     treat your home like it's ours."
+   - Modern Customer Experience — "Quote, schedule, and pay online in
+     minutes — or just call. Either way, it's easy."
+   - Reliability — "We show up when we say we will. Your schedule
+     matters, and so does ours."
+   - Convenience — "You don't have to be home. Just tell us where the
+     key is, and come back to a clean house."
+   The granular text-update detail (cleaner on the way / cleaning started
+   / cleaning complete) is not repeated here — it lives in the "What to
+   Expect" timeline (item 7) so it isn't stated twice.
 
 5. **Why Verity** (white) — restyled `WhyUs`. Keeps real facts (transparent
    upfront pricing, background-checked staff, licensed & insured) reframed
@@ -253,18 +294,23 @@ Replaces `app/page.tsx` section order top to bottom:
   (5-step), `QuoteForm.tsx` (+ bed/bath fields), `Services.tsx`,
   `ServiceArea.tsx`, `FAQ.tsx`, `FinalCTA.tsx`, `Footer.tsx`,
   `MobileBar.tsx`.
-- **New**: `components/FeatureCards.tsx` (4-card section);
+- **New**: `components/OurDifference.tsx` (6-card section, replaces the
+  earlier-planned `FeatureCards.tsx`);
   `components/BeforeAfterSlider.tsx` (new "See the Difference" section,
   client component using a range input or pointer-drag to move a clip-path
   divider between two stacked `<Image>`s — no new dependency needed);
   `components/FollowUs.tsx` (replaces the old Reviews section with an
   honest follow-us/leave-a-review prompt linking to the 4 platforms); new
-  icons added to `components/Icons.tsx`: `Heart`, `Yelp`, `Nextdoor`
-  (simple generic line/fill marks, not literal trademarked logos).
+  icons added to `components/Icons.tsx`: `Heart`, `Laptop`, `Yelp`,
+  `Nextdoor` (simple generic line/fill marks, not literal trademarked
+  logos).
 - **`app/page.tsx`**: updated import list and section order per Page
-  Structure above (Hero, StatBand, FeatureCards, WhyUs, BeforeAfterSlider,
+  Structure above (Hero, StatBand, OurDifference, WhyUs, BeforeAfterSlider,
   ProcessSection, QuoteSection, Services, FollowUs, ServiceArea, FAQ,
   FinalCTA).
+- **Copy audit**: pass every string in every rewritten component through
+  the banned-words list (see Brand Positioning & Voice above) before
+  considering a task done.
 - **Hero image**: source a free-license (Unsplash) photo of a bright
   modern home interior with a candid, non-staged family moment; download
   into `public/`; keep attribution/license terms satisfied (Unsplash
@@ -289,7 +335,13 @@ Replaces `app/page.tsx` section order top to bottom:
 
 - The "Ask Verity" AI chat widget (backend, knowledge base, lead
   persistence, escalation, future ScheduleDrop/SMS/email/voice
-  integrations) — separate spec, separate implementation.
+  integrations) — separate spec, separate implementation. Requirements
+  captured 2026-07-11 for that future spec: should feel like texting a
+  helpful concierge, not a generic chatbot; should be able to answer
+  questions about services, pets, deep-clean-vs-standard, recurring
+  cleanings, the quote process, scheduling, and payments; when it can't
+  answer confidently, it should collect contact info and hand off to
+  Tiffany for personal follow-up rather than guessing.
 - Any customer portal, online payment flow, or digital scheduling system —
   referenced only as copy, not built.
 - Any page other than the homepage (`app/page.tsx`).
@@ -316,3 +368,5 @@ specifically confirm:
   keyboard (arrow keys), and degrades sensibly with
   `prefers-reduced-motion`.
 - Footer shows all 4 social links (Facebook, Instagram, Nextdoor, Yelp).
+- None of the banned words (see Brand Positioning & Voice) appear anywhere
+  in the final copy.
