@@ -100,18 +100,22 @@ clutter.
 
 | Token | Value | Use |
 |---|---|---|
-| `--bg` | `#FFFFFF` | Page background |
+| `--bg` | `#FFFFFF` | Base page white |
 | `--sky` | `#8ECFFB` | Primary accent — icon badges, highlights, secondary buttons |
 | `--sky-deep` | `#5FB4F0` | Hover/active state of sky accent |
+| `--sky-pale` | `#F4FAFF` | Very pale sky blue — ambient atmosphere layer, mid-page |
+| `--sky-tint` | `#EDF7FF` | Soft blue tint — ambient atmosphere layer (deeper reads) and card backgrounds (timeline, quote section) |
+| `--warm-white` | `#FFFDF9` | Barely-warm off-white — tiny warm cast near the hero only |
 | `--navy` | `#0B2A4A` | Headline text, primary CTA background, footer text |
 | `--ink` | `#14181F` | Body text |
 | `--muted` | `#6B7280` | Secondary text |
-| `--surface` | `#F6F8FA` | Very light gray — alternating section background |
-| `--sky-tint` | `#EFF8FF` | Soft sky-blue section/card background (What to Expect timeline, quote section) |
 | `--border` | `#E7EAEE` | Hairline borders (1px), used instead of most shadows |
 
 Shadows capped at `0 4px 20px rgba(11,42,74,0.05)`, used sparingly (card
 hover-lift only). No heavy drop shadows.
+
+`--surface` (`#F6F8FA`, flat gray) is **retired** — see Atmosphere below.
+Flat gray section blocks read as template/SaaS, not sunlit room.
 
 ### Typography
 
@@ -126,12 +130,48 @@ hover-lift only). No heavy drop shadows.
 - Corner radius: 20–28px on cards, 12px on buttons/inputs.
 - Glassmorphism restricted to: the sticky header, and the floating quote
   card. Not used elsewhere.
-- Gradients restricted to faint radial glows behind the hero image only —
-  never a full-bleed gradient section background (current `.hero` and
-  `.cta` full gradients are removed/replaced).
+- No full-bleed, visibly-edged gradients anywhere (current `.hero` and
+  `.cta` full gradients are removed). The one exception is the ambient
+  atmosphere layer described below, which must not read as "a gradient"
+  at all — see that section for the distinction.
 - Motion: keep existing scroll-reveal fade-up (`ScrollReveal.tsx`/`.reveal`
   class), add a subtle hover-lift (translateY + soft shadow) on cards. No
   parallax or scale gimmicks.
+
+### Atmosphere (added 2026-07-11)
+
+The page must not feel like a flat white background — it should feel like
+standing in a bright room with soft natural light coming through large
+windows near the top (the hero). This is **one continuous ambient layer
+behind the entire page**, not per-section flat-color blocks, and it must
+be subtle enough that a visitor notices a *feeling*, not a visible
+gradient shape.
+
+- **Mechanism:** a single large, soft-edged background layer sitting
+  behind all page content (e.g. a fixed or absolutely-positioned layer
+  spanning the full document, `z-index` below content, `pointer-events:
+  none` — not `background-attachment: fixed`, which is unreliable on
+  mobile Safari). Implemented as one oversized, very-low-contrast gradient
+  composition, not multiple hard section backgrounds.
+- **Composition, top to bottom:** a barely-perceptible warm cast
+  (`--warm-white`, `#FFFDF9`) concentrated near the hero, easing into
+  `--sky-pale` (`#F4FAFF`) through the middle of the page, settling into
+  `--sky-tint` (`#EDF7FF`) further down — like light spreading from a
+  window and cooling as it fills the room. Color deltas between stops
+  stay tiny (a handful of RGB points) spread over a huge area — no
+  visible band, edge, or shape.
+- **Hard constraints:** no clouds, no illustrations, no obvious/visible
+  gradient shapes (no discernible radial "blob" or linear band), no
+  per-section flat-color blocking. If someone isn't looking for it, it
+  should almost disappear.
+- **What sits on top of it:** most sections render with a transparent
+  background so the ambient layer shows through continuously. Cards
+  (timeline steps, quote form, feature/service cards) keep their own
+  white or `--sky-tint` backgrounds for contrast against the ambient
+  layer — those are foreground surfaces, not the page atmosphere itself.
+  The Final CTA section remains the one deliberately opaque deep-navy
+  block (item 12) and sits visually "on top of" the atmosphere rather
+  than being part of it.
 
 ### Iconography
 
@@ -159,7 +199,12 @@ claims), restyled and reframed under the time-back narrative.
 
 ## Page Structure
 
-Replaces `app/page.tsx` section order top to bottom:
+Replaces `app/page.tsx` section order top to bottom. **Background note:**
+per the Atmosphere section above, sections no longer each carry a discrete
+flat background color — they sit transparently on the one continuous
+ambient layer. Where an item below is parenthetically labeled with a
+color, that describes a **foreground card/element** background (e.g. the
+quote form card, timeline step cards), not a section-wide block.
 
 1. **Header** (no separate TopBar — removed entirely; a dark utility strip
    reads as a local-service convention, not premium). Restyled glass-on-
@@ -223,43 +268,43 @@ Replaces `app/page.tsx` section order top to bottom:
    sell features; showing the effortless process sells convenience,
    communication, and trust implicitly.
 
-5. **Why Verity** (white) — restyled `WhyUs`. Keeps real facts (transparent
+5. **Why Verity** — restyled `WhyUs`. Keeps real facts (transparent
    upfront pricing, background-checked staff, licensed & insured) reframed
    under the time-back narrative; transparency/honesty appears as one
    supporting trust line, not the section headline. Keeps existing home
    photo (`/clean-home.png`). No veteran-owned or eco-friendly language.
 
-6. **See the Difference** (`--surface`, new section) — new
+6. **See the Difference** (new section) — new
    `BeforeAfterSlider.tsx`: an interactive drag/touch slider comparing a
    "before" and "after" cleaning photo, built with placeholder imagery for
    now (clearly swappable — see Technical Plan). Keyboard accessible (arrow
    keys adjust the split), degrades to a static side-by-side on
    `prefers-reduced-motion` / no-JS.
 
-7. **Get Your Quote** (`--sky-tint`, `id="quote"`) — restyled `QuoteForm`
+7. **Get Your Quote** (`id="quote"`, form card uses `--sky-tint`) — restyled `QuoteForm`
    as its own dedicated section (not hero-embedded), headlined around
    "every home is different." Adds bedroom-count and bathroom-count
    `<select>` fields to the existing name/phone/service/message fields so
    "personalized pricing" is tangible. Submission mechanism unchanged (no
    backend): drafts an SMS via `sms:` link, as today.
 
-8. **Services** (white) — keeps all 5 real service types (Residential,
+8. **Services** — keeps all 5 real service types (Residential,
    Deep Cleaning, Move-In/Move-Out, Commercial & Office, Post-Construction),
    restyled cards — numbered badges de-emphasized/removed.
 
-9. **Follow Us** (`--surface`, replaces the old fake Reviews section) —
+9. **Follow Us** (replaces the old fake Reviews section) —
    new honest section (no fabricated quotes, no star-rating claim). Short
    copy inviting people to follow/find Verity as an early customer, with
    real platform links: Facebook, Instagram, Nextdoor, Yelp (placeholder
    URLs for now — see Technical Plan). No `aggregateRating` or review-count
    claim anywhere on the page or in JsonLd.
 
-10. **Service Area** (white) — keeps real towns (Pelham, Helena, Alabaster,
+10. **Service Area** — keeps real towns (Pelham, Helena, Alabaster,
     Hoover, Columbiana, Chelsea, Calera). The dark navy radial-glow
     "areacard" becomes a softer sky-tint card consistent with the new
     palette.
 
-11. **FAQ** (`--surface`) — same real Q&A content (already corrected to
+11. **FAQ** — same real Q&A content (already corrected to
     remove the eco-friendly-supplies mention), restyled accordion (remove
     heavy card shadow, keep JSON-LD FAQ schema unchanged).
 
@@ -269,8 +314,9 @@ Replaces `app/page.tsx` section order top to bottom:
     corrected to remove the veteran-owned claim.
 
 13. **Footer** — switched from near-black (`#090d16`) to a light,
-    Apple-style footer (light gray `--surface` background, navy text)
-    instead of a dark theme. Same real content (services list, service
+    Apple-style footer (sits on the naturally-cooled `--sky-tint` end of
+    the ambient layer by this point in the page, navy text) instead of a
+    dark theme. Same real content (services list, service
     area, contact, license facts, copyright — veteran-owned claim already
     removed). Social icons expanded from 2 to 4: Facebook, Instagram,
     Nextdoor, Yelp, all with placeholder URLs the user will swap in once
@@ -290,7 +336,11 @@ Replaces `app/page.tsx` section order top to bottom:
 - **`app/globals.css`**: near-complete rewrite of design tokens and
   section styles per the Visual System above. Existing utility classes
   (`.wrap`, `.section`, `.reveal`, `.btn`) are kept as the structural base
-  but restyled.
+  but restyled. Adds the ambient atmosphere layer per the Atmosphere
+  subsection: one absolutely-positioned full-document layer behind all
+  content (not `background-attachment: fixed`), removes per-section
+  background-color rules in favor of this shared layer, retires
+  `--surface`.
 - **Deleted** (already done): `components/TopBar.tsx` — no, TopBar is
   removed from render in `layout.tsx` per item 1 above but the file
   deletion happens in this redesign's implementation, not yet;
