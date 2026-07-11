@@ -7,17 +7,12 @@ export default function JsonLd() {
     "@id": "https://veritycleaning.co/#business",
     name: "Verity Cleaning, LLC",
     description:
-      "Premium, veteran-owned residential and commercial cleaning service in Shelby County, AL. Offering house cleaning, deep cleaning, move-in/out cleanings, and office sanitization.",
+      "Premium, licensed and insured residential and commercial cleaning service in Shelby County, AL. Offering house cleaning, deep cleaning, move-in/out cleanings, and office sanitization.",
     slogan: "Pure Spaces &bull; Pure Peace of Mind",
     telephone: "+12058880199",
     url: "https://veritycleaning.co",
     image: "https://veritycleaning.co/clean-home.png",
     priceRange: "$$",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "120",
-    },
     address: {
       "@type": "PostalAddress",
       addressLocality: "Pelham",
@@ -34,7 +29,6 @@ export default function JsonLd() {
         "Move-In / Move-Out Cleaning",
         "Commercial & Office Cleaning",
         "Post-Construction Cleaning",
-        "Eco-Friendly Green Cleaning",
       ].map((name) => ({
         "@type": "Offer",
         itemOffered: { "@type": "Service", name, areaServed: "Shelby County, AL" },
@@ -66,7 +60,6 @@ export default function JsonLd() {
       "Move-in cleaning",
       "Move-out cleaning",
       "Office cleaning",
-      "Eco-friendly cleaning supplies",
     ],
   };
 

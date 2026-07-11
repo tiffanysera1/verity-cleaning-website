@@ -1,5 +1,4 @@
 import { Clock, SprayBottle, Sparkles, Phone } from "./Icons";
-import Watermark from "./Watermark";
 
 const STEPS = [
   {
@@ -28,7 +27,6 @@ const STEPS = [
 export default function ProcessSection() {
   return (
     <section className="section process" id="process">
-      <Watermark />
       <div className="wrap">
         <div className="center reveal">
           <span className="eyebrow">Our Method</span>

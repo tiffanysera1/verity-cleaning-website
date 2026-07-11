@@ -1,9 +1,9 @@
-import { Shield, Users, Medal, Clock } from "./Icons";
+import { Shield, Users, CheckCircle, Clock } from "./Icons";
 
 const STATS = [
   { icon: Shield, title: "Licensed & Bonded", sub: "Full peace of mind" },
   { icon: Users, title: "Trained Cleaners", sub: "Background-checked staff" },
-  { icon: Medal, title: "Veteran-Owned", sub: "Integrity & service first" },
+  { icon: CheckCircle, title: "100% Guaranteed", sub: "We make it right, always" },
   { icon: Clock, title: "On-Time Guarantee", sub: "We respect your schedule" },
 ];
 

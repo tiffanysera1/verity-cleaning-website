@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://veritycleaning.co"),
   title: "Premium Cleaning Services in Shelby County, AL | Verity Cleaning",
   description:
-    "Veteran-owned home & office cleaning service serving Pelham, Alabaster, Helena, & Hoover. Meticulous checksheets, green products, background-checked staff. Call or text (205) 888-0199.",
+    "Licensed, bonded, and insured home & office cleaning service serving Pelham, Alabaster, Helena, & Hoover. Meticulous checksheets, background-checked staff. Call or text (205) 888-0199.",
   alternates: { canonical: "/" },
   keywords: [
     "cleaning service Shelby County",
@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     "maid service Hoover AL",
     "deep cleaning Helena AL",
     "office cleaning Chelsea AL",
-    "veteran owned cleaning company",
+    "licensed insured cleaning company",
   ],
   icons: { icon: "/clean-home.png" },
   openGraph: {
     title: "Premium Cleaning Services in Shelby County, AL | Verity Cleaning",
     description:
-      "Veteran-owned cleaning service with a 100% satisfaction guarantee. Serving Pelham, Alabaster, Hoover, and Helena. Call or text (205) 888-0199.",
+      "Licensed, bonded, and insured cleaning service with a 100% satisfaction guarantee. Serving Pelham, Alabaster, Hoover, and Helena. Call or text (205) 888-0199.",
     type: "website",
     url: "https://veritycleaning.co",
     siteName: "Verity Cleaning, LLC",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Premium Cleaning Services in Shelby County, AL | Verity Cleaning",
     description:
-      "Veteran-owned cleaning service with a 100% satisfaction guarantee. Call or text (205) 888-0199.",
+      "Licensed, bonded, and insured cleaning service with a 100% satisfaction guarantee. Call or text (205) 888-0199.",
     images: ["/clean-home.png"],
   },
 };

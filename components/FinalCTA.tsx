@@ -6,7 +6,7 @@ export default function FinalCTA() {
       <div className="wrap">
         <h2 className="reveal" style={{ textTransform: "uppercase" }}>Ready for a Pristine Space?</h2>
         <p className="reveal">
-          Experience the Verity standard of cleanliness. Honest, detailed, and veteran-owned cleaning for Shelby County.
+          Experience the Verity standard of cleanliness. Honest, detailed cleaning for Shelby County families.
         </p>
         <div className="acts reveal">
           <a href="tel:+12058880199" className="btn btn--teal btn--lg">

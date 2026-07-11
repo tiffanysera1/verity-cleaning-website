@@ -13,7 +13,7 @@ const FAQS = [
   },
   {
     q: "Do you bring your own cleaning supplies?",
-    a: "Yes. We bring all professional-grade cleaning supplies and high-quality equipment. If you have specific specialty cleaning products you prefer us to use, or if you'd like us to use our eco-friendly non-toxic line, just let us know in advance.",
+    a: "Yes. We bring all professional-grade cleaning supplies and high-quality equipment. If you have specific products you'd like us to use in your home, just let us know in advance.",
   },
   {
     q: "What is your satisfaction guarantee?",

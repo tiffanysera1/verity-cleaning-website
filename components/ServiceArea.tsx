@@ -1,5 +1,4 @@
 import { Pin, Map, Phone } from "./Icons";
-import Watermark from "./Watermark";
 
 const TOWNS = ["Pelham", "Helena", "Alabaster", "Hoover", "Columbiana", "Chelsea", "Calera"];
 
@@ -33,7 +32,6 @@ export default function ServiceArea() {
         </div>
 
         <div className="areacard reveal">
-          <Watermark />
           <div className="ic">
             <Map />
           </div>

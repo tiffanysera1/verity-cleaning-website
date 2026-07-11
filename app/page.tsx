@@ -2,7 +2,6 @@ import Hero from "@/components/Hero";
 import StatBand from "@/components/StatBand";
 import WhyUs from "@/components/WhyUs";
 import Services from "@/components/Services";
-import Reviews from "@/components/Reviews";
 import ProcessSection from "@/components/ProcessSection";
 import ServiceArea from "@/components/ServiceArea";
 import FAQ from "@/components/FAQ";
@@ -17,7 +16,6 @@ export default function Home() {
       <StatBand />
       <WhyUs />
       <Services />
-      <Reviews />
       <ProcessSection />
       <ServiceArea />
       <FAQ />

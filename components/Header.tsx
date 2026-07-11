@@ -8,7 +8,6 @@ const LINKS: [string, string][] = [
   ["/#why", "Why Us"],
   ["/#process", "Our Process"],
   ["/#area", "Service Area"],
-  ["/#reviews", "Reviews"],
   ["/#quote", "Get an Estimate"],
 ];
 

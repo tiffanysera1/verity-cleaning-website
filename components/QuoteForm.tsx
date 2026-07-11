@@ -81,7 +81,7 @@ export default function QuoteForm() {
             id="qm"
             name="message"
             rows={3}
-            placeholder="E.g., 3 bedrooms, 2 baths, eco-friendly products, weekly service."
+            placeholder="E.g., 3 bedrooms, 2 baths, weekly service."
           />
         </div>
         <button className="btn btn--teal" type="submit">

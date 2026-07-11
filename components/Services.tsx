@@ -1,5 +1,5 @@
 import {
-  Home, Sparkles, Clock, Building, SprayBottle, Bucket, ArrowRight, Phone
+  Home, Sparkles, Clock, Building, SprayBottle, ArrowRight, Phone
 } from "./Icons";
 
 const SERVICES = [
@@ -31,19 +31,12 @@ const SERVICES = [
     slug: "commercial-cleaning", 
     body: "Clean, sanitized, and healthy workspaces for retail shops, corporate offices, and local businesses." 
   },
-  { 
-    n: "05", 
-    Icon: SprayBottle, 
-    title: "Post-Construction Clean", 
-    slug: "post-construction", 
-    body: "Remove heavy dust, paint splatters, and builder debris from your new home or renovation project." 
-  },
-  { 
-    n: "06", 
-    Icon: Bucket, 
-    title: "Eco-Friendly Cleaning", 
-    slug: "eco-friendly-cleaning", 
-    body: "Safe, green, and non-toxic cleaning products that protect your family, pets, and the environment." 
+  {
+    n: "05",
+    Icon: SprayBottle,
+    title: "Post-Construction Clean",
+    slug: "post-construction",
+    body: "Remove heavy dust, paint splatters, and builder debris from your new home or renovation project."
   },
 ];
 

@@ -15,7 +15,7 @@ export default function Footer() {
             </span>
           </a>
           <p>
-            Premium, trustworthy cleaning services for your home and office in Shelby County, Alabama. Veteran-owned, fully licensed, and committed to absolute integrity in every clean.
+            Premium, trustworthy cleaning services for your home and office in Shelby County, Alabama. Fully licensed, bonded, insured, and committed to absolute integrity in every clean.
           </p>
           <div className="fsocials">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Facebook">
@@ -35,7 +35,6 @@ export default function Footer() {
             <li><a href="#services">Move-In / Move-Out</a></li>
             <li><a href="#services">Commercial &amp; Office</a></li>
             <li><a href="#services">Post-Construction</a></li>
-            <li><a href="#services">Eco-Friendly Cleaning</a></li>
           </ul>
         </div>
 
