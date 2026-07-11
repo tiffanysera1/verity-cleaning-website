@@ -107,7 +107,7 @@ clutter.
 | `--ink` | `#14181F` | Body text |
 | `--muted` | `#6B7280` | Secondary text |
 | `--surface` | `#F6F8FA` | Very light gray — alternating section background |
-| `--sky-tint` | `#EFF8FF` | Soft sky-blue section background (feature cards, quote section) |
+| `--sky-tint` | `#EFF8FF` | Soft sky-blue section/card background (What to Expect timeline, quote section) |
 | `--border` | `#E7EAEE` | Hairline borders (1px), used instead of most shadows |
 
 Shadows capped at `0 4px 20px rgba(11,42,74,0.05)`, used sparingly (card
@@ -137,19 +137,20 @@ hover-lift only). No heavy drop shadows.
 
 - Remove the sparkle mascot and `Watermark.tsx` decoration entirely (already
   done — see prior fix; component deleted, all usages removed).
-- Replace feature-card emoji (🏠📱⭐❤️) with custom thin-stroke (1.5px) line
-  icons in navy, inside soft sky-tint circular badges — added to the
-  existing hand-rolled `components/Icons.tsx` pattern (new icons needed:
-  `Heart` and `Laptop`, plus simple generic `Yelp` and `Nextdoor` marks for
-  the footer socials).
+- Timeline step icons reuse existing `components/Icons.tsx` icons (`Home`,
+  `CheckCircle`, `Clock`, `Sms`) plus one new icon (`Heart`, for "Enjoy
+  Your Time Back"), thin-stroke (1.5px) in navy inside soft sky-tint
+  circular badges. Also needed: simple generic `Yelp` and `Nextdoor` marks
+  for the footer socials.
 
 ## Brand narrative
 
 Lead brand idea everywhere: **"Giving you your time back."** Supporting
 theme, used as secondary copy (not the H1): **"We take care of the house,
 you take care of the memories that matter"** — this appears specifically in
-the "More Time for What Matters" feature card copy and may echo in the Why
-Verity section. The prior "Verity means truth" narrative (transparency,
+the "Enjoy Your Time Back" step of the What to Expect timeline (Page
+Structure item 4) and may echo in the Why Verity section. The prior
+"Verity means truth" narrative (transparency,
 honesty, no hidden fees) is folded in as a **supporting** trust point inside
 the Why Verity section — not retired, not given equal top billing.
 Licensing, bonding, insurance, and background-checked staff are the
@@ -181,28 +182,46 @@ Replaces `app/page.tsx` section order top to bottom:
    — small icons, no heavy card boxes. (Already updated on the live site;
    redesign only restyles visually.)
 
-4. **Our Difference** (`--sky-tint` background, renamed from "Feature
-   Cards" — supersedes the earlier 4-card version) — new
-   `OurDifference.tsx` component, 6 rounded cards. Framed around
-   competing on experience, not price:
-   - Personalized Quotes — "Every home is different, so your quote is
-     too. Tell us about your space and we'll put together pricing that
-     actually fits it."
-   - Great Communication — "No guessing games. We keep you in the loop
-     from your first message to the moment we're done." (One quiet
-     mention of AI-powered support — "Ask Verity" — belongs here as a
-     value prop, no functional chat UI.)
-   - Trusted Cleaners — "Every cleaner is background-checked, and we
-     treat your home like it's ours."
-   - Modern Customer Experience — "Quote, schedule, and pay online in
-     minutes — or just call. Either way, it's easy."
-   - Reliability — "We show up when we say we will. Your schedule
-     matters, and so does ours."
-   - Convenience — "You don't have to be home. Just tell us where the
-     key is, and come back to a clean house."
-   The granular text-update detail (cleaner on the way / cleaning started
-   / cleaning complete) is not repeated here — it lives in the "What to
-   Expect" timeline (item 7) so it isn't stated twice.
+4. **What to Expect** (added 2026-07-11: elevated to flagship status,
+   replaces "Our Difference"/"Feature Cards" entirely — see rationale
+   below) — `ProcessSection.tsx` rewritten as a vertical alternating
+   timeline, not a generic feature grid. This is now one of the most
+   important sections on the homepage: the goal is to remove uncertainty
+   and make the process feel effortless, so a visitor thinks "oh, that's
+   actually really simple" rather than being told about features. A thin
+   center spine connects 5 numbered icon nodes; each step's card
+   alternates left/right of the spine on desktop (stacks full-width on
+   mobile), and alternates white/`--sky-tint` background going down the
+   spine, so the "alternating light sky-blue cards" rhythm comes from both
+   the alternating side and the alternating tint:
+   1. **Tell Us About Your Home** (Home icon) — "Complete a simple
+      questionnaire and optionally upload a few photos so we can
+      understand your home's needs."
+   2. **Receive Your Personalized Quote** (CheckCircle icon) — "Every
+      home is different. We carefully review your information and send
+      a customized quote — no one-size-fits-all pricing."
+   3. **Schedule Your Cleaning** (Clock icon) — "Choose a date and time
+      that works best for you."
+   4. **Stay Informed** (Sms icon) — "If you opt in, we'll keep you
+      updated throughout the appointment," followed by a small in-card
+      checklist (not just prose) of the three notification states:
+      Cleaner is on the way / Cleaning has started / Cleaning is
+      complete. (One quiet mention of AI-powered support — "Ask Verity"
+      — belongs here as a value prop, no functional chat UI.)
+   5. **Enjoy Your Time Back** (Heart icon) — "Come home to a
+      beautifully cleaned home and spend your time doing what matters
+      most."
+
+   **Rationale (why Our Difference was removed, not just reworded):**
+   generic trust badges (licensed, insured, background-checked, on-time,
+   satisfaction-guaranteed) are what every cleaning company says and are
+   not differentiators — they stay in the trust strip (item 3) at
+   appropriately modest visual weight, but do not get a second, larger
+   showcase section. The real differentiator is how easy and
+   transparent the *process* feels, so that gets the flagship treatment
+   instead. Nothing replaces the removed 6-card grid — nothing should
+   sell features; showing the effortless process sells convenience,
+   communication, and trust implicitly.
 
 5. **Why Verity** (white) — restyled `WhyUs`. Keeps real facts (transparent
    upfront pricing, background-checked staff, licensed & insured) reframed
@@ -217,50 +236,39 @@ Replaces `app/page.tsx` section order top to bottom:
    keys adjust the split), degrades to a static side-by-side on
    `prefers-reduced-motion` / no-JS.
 
-7. **What to Expect** (`--surface` light gray, or alternated to white if
-   section 6 uses `--surface` — alternation is preserved by picking
-   whichever of white/`--surface` wasn't used immediately prior) — replaces
-   the current 3-step `ProcessSection` with the specified 5-step horizontal
-   timeline:
-   1. Tell us about your home.
-   2. Receive your personalized quote.
-   3. Schedule your cleaning.
-   4. Stay informed with optional text updates.
-   5. Enjoy your time back.
-
-8. **Get Your Quote** (`--sky-tint`, `id="quote"`) — restyled `QuoteForm`
+7. **Get Your Quote** (`--sky-tint`, `id="quote"`) — restyled `QuoteForm`
    as its own dedicated section (not hero-embedded), headlined around
    "every home is different." Adds bedroom-count and bathroom-count
    `<select>` fields to the existing name/phone/service/message fields so
    "personalized pricing" is tangible. Submission mechanism unchanged (no
    backend): drafts an SMS via `sms:` link, as today.
 
-9. **Services** (white) — keeps all 5 real service types (Residential,
+8. **Services** (white) — keeps all 5 real service types (Residential,
    Deep Cleaning, Move-In/Move-Out, Commercial & Office, Post-Construction),
    restyled cards — numbered badges de-emphasized/removed.
 
-10. **Follow Us** (`--surface`, replaces the old fake Reviews section) —
-    new honest section (no fabricated quotes, no star-rating claim). Short
-    copy inviting people to follow/find Verity as an early customer, with
-    real platform links: Facebook, Instagram, Nextdoor, Yelp (placeholder
-    URLs for now — see Technical Plan). No `aggregateRating` or review-count
-    claim anywhere on the page or in JsonLd.
+9. **Follow Us** (`--surface`, replaces the old fake Reviews section) —
+   new honest section (no fabricated quotes, no star-rating claim). Short
+   copy inviting people to follow/find Verity as an early customer, with
+   real platform links: Facebook, Instagram, Nextdoor, Yelp (placeholder
+   URLs for now — see Technical Plan). No `aggregateRating` or review-count
+   claim anywhere on the page or in JsonLd.
 
-11. **Service Area** (white) — keeps real towns (Pelham, Helena, Alabaster,
+10. **Service Area** (white) — keeps real towns (Pelham, Helena, Alabaster,
     Hoover, Columbiana, Chelsea, Calera). The dark navy radial-glow
     "areacard" becomes a softer sky-tint card consistent with the new
     palette.
 
-12. **FAQ** (`--surface`) — same real Q&A content (already corrected to
+11. **FAQ** (`--surface`) — same real Q&A content (already corrected to
     remove the eco-friendly-supplies mention), restyled accordion (remove
     heavy card shadow, keep JSON-LD FAQ schema unchanged).
 
-13. **Final CTA** — kept as the one deliberately deep-navy section for
+12. **Final CTA** — kept as the one deliberately deep-navy section for
     contrast/bookend (a common premium pattern), softened to the new
     `--navy` token rather than the current teal gradient. Copy already
     corrected to remove the veteran-owned claim.
 
-14. **Footer** — switched from near-black (`#090d16`) to a light,
+13. **Footer** — switched from near-black (`#090d16`) to a light,
     Apple-style footer (light gray `--surface` background, navy text)
     instead of a dark theme. Same real content (services list, service
     area, contact, license facts, copyright — veteran-owned claim already
@@ -268,7 +276,7 @@ Replaces `app/page.tsx` section order top to bottom:
     Nextdoor, Yelp, all with placeholder URLs the user will swap in once
     profiles exist.
 
-15. **MobileBar** — kept functionally identical, restyled to match new
+14. **MobileBar** — kept functionally identical, restyled to match new
     button/color system.
 
 ## Technical Plan
@@ -291,22 +299,24 @@ Replaces `app/page.tsx` section order top to bottom:
   removed.
 - **Rewritten** (markup + copy + styles, same component boundaries):
   `Header.tsx`, `Hero.tsx`, `StatBand.tsx`, `WhyUs.tsx`, `ProcessSection.tsx`
-  (5-step), `QuoteForm.tsx` (+ bed/bath fields), `Services.tsx`,
+  (rewritten as the 5-step vertical alternating timeline — see Page
+  Structure item 4; this component is not deleted, it absorbs the
+  flagship treatment), `QuoteForm.tsx` (+ bed/bath fields), `Services.tsx`,
   `ServiceArea.tsx`, `FAQ.tsx`, `FinalCTA.tsx`, `Footer.tsx`,
   `MobileBar.tsx`.
-- **New**: `components/OurDifference.tsx` (6-card section, replaces the
-  earlier-planned `FeatureCards.tsx`);
-  `components/BeforeAfterSlider.tsx` (new "See the Difference" section,
-  client component using a range input or pointer-drag to move a clip-path
-  divider between two stacked `<Image>`s — no new dependency needed);
-  `components/FollowUs.tsx` (replaces the old Reviews section with an
-  honest follow-us/leave-a-review prompt linking to the 4 platforms); new
-  icons added to `components/Icons.tsx`: `Heart`, `Laptop`, `Yelp`,
+- **New**: `components/BeforeAfterSlider.tsx` (new "See the Difference"
+  section, client component using a range input or pointer-drag to move a
+  clip-path divider between two stacked `<Image>`s — no new dependency
+  needed); `components/FollowUs.tsx` (replaces the old Reviews section
+  with an honest follow-us/leave-a-review prompt linking to the 4
+  platforms); new icons added to `components/Icons.tsx`: `Heart`, `Yelp`,
   `Nextdoor` (simple generic line/fill marks, not literal trademarked
-  logos).
+  logos). **Not built**: no `FeatureCards.tsx`/`OurDifference.tsx` —
+  that section was removed from the design (see Page Structure item 4
+  rationale), not merely renamed.
 - **`app/page.tsx`**: updated import list and section order per Page
-  Structure above (Hero, StatBand, OurDifference, WhyUs, BeforeAfterSlider,
-  ProcessSection, QuoteSection, Services, FollowUs, ServiceArea, FAQ,
+  Structure above (Hero, StatBand, ProcessSection, WhyUs,
+  BeforeAfterSlider, QuoteSection, Services, FollowUs, ServiceArea, FAQ,
   FinalCTA).
 - **Copy audit**: pass every string in every rewritten component through
   the banned-words list (see Brand Positioning & Voice above) before
