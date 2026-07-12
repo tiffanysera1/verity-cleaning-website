@@ -1,11 +1,11 @@
-import { Phone, Check, Sparkles } from "./Icons";
-import QuoteForm from "./QuoteForm";
+import Image from "next/image";
+import { Check } from "./Icons";
 
 const TRUST = [
-  "Fully Licensed, Bonded & Insured",
-  "100% Satisfaction Guarantee",
-  "Background-Checked Cleaners",
-  "Upfront Pricing — No Surprises",
+  "Fully licensed, bonded & insured",
+  "100% satisfaction guarantee",
+  "Background-checked cleaners",
+  "Upfront pricing — no surprises",
 ];
 
 export default function Hero() {
@@ -13,23 +13,22 @@ export default function Hero() {
     <section className="hero">
       <div className="wrap hero-grid">
         <div>
-          <div className="tagstrip">
-            <Sparkles />
-            Sparkling Clean &bull; Meticulous Care
-          </div>
           <h1>
-            SPARKLING CLEAN.<br />
-            ABSOLUTELY<br />
-            <span className="g">HONEST.</span>
+            A Clean Home.
+            <br />
+            More Time Back.
           </h1>
+          <p className="sub">
+            Life is busy enough. We&rsquo;ll take care of the cleaning so you can spend more
+            time with your family, your hobbies, your pets &mdash; or simply relax.
+          </p>
 
           <div className="hero-cta">
-            <a href="tel:+12058880199" className="btn btn--teal btn--lg">
-              <Phone />
-              (205) 888-0199
+            <a href="#quote" className="btn btn--primary btn--lg">
+              Get my personalized quote
             </a>
-            <a href="#quote" className="btn btn--ghost btn--lg">
-              Get an Estimate
+            <a href="#process" className="btn btn--secondary btn--lg">
+              What to expect
             </a>
           </div>
 
@@ -42,7 +41,17 @@ export default function Hero() {
             ))}
           </ul>
         </div>
-        <QuoteForm />
+
+        <div className="hero-photo reveal">
+          <Image
+            src="/hero-home.jpg"
+            alt="A bright, sunlit modern living room"
+            fill
+            priority
+            sizes="(max-width: 960px) 100vw, 50vw"
+            style={{ objectFit: "cover" }}
+          />
+        </div>
       </div>
     </section>
   );

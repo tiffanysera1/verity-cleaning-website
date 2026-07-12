@@ -285,109 +285,65 @@ button { font-family: inherit; }
 /* Hero Section */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 55%, #BAE6FD 100%);
-  overflow: hidden;
-  padding-block: 80px 100px;
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  right: -5%;
-  top: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.15), transparent 60%);
-  pointer-events: none;
+  padding-block: 64px 96px;
 }
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 60px;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
   align-items: center;
-  position: relative;
-  z-index: 1;
 }
-.tagstrip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-display);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  font-size: .78rem;
-  color: var(--teal);
-  background: rgba(13, 148, 136, 0.06);
-  border: 1.5px solid rgba(13, 148, 136, 0.15);
-  padding: 6px 14px;
-  border-radius: 20px;
-}
-.tagstrip svg { width: 14px; height: 14px; }
 .hero h1 {
-  font-size: clamp(2.5rem, 5.5vw, 4.2rem);
-  font-weight: 800;
+  font-size: clamp(2.6rem, 5.2vw, 4.4rem);
+  font-weight: 700;
   color: var(--navy);
-  margin: 16px 0 0;
   letter-spacing: -.03em;
 }
-.hero h1 span.g {
-  color: var(--teal);
-}
 .hero .sub {
-  margin-top: 20px;
+  margin-top: 22px;
   font-size: 1.18rem;
   color: var(--navy-muted);
-  max-width: 48ch;
-  line-height: 1.6;
+  max-width: 46ch;
+  line-height: 1.65;
 }
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-top: 32px;
-}
-.hero-rating {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 24px;
-}
-.hero-stars {
-  color: #F5A623;
-  font-size: 1.1rem;
-  letter-spacing: 2px;
-}
-.hero-rating-text {
-  font-size: .9rem;
-  color: var(--muted);
-  font-weight: 500;
+  margin-top: 34px;
 }
 .trust-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px 24px;
-  margin-top: 32px;
+  margin-top: 36px;
 }
 .trust-list li {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: .95rem;
+  font-size: .93rem;
   color: var(--navy-muted);
   font-weight: 500;
 }
 .trust-ck {
   width: 20px;
   height: 20px;
-  background: var(--teal-light);
-  color: var(--teal);
+  background: var(--sky-tint);
+  color: var(--sky-deep);
   border-radius: 50%;
   display: grid;
   place-items: center;
   flex: none;
-  border: 1px solid rgba(13, 148, 136, 0.15);
 }
 .trust-ck svg { width: 11px; height: 11px; stroke-width: 3; }
+.hero-photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
 
 /* Quote Form Card */
 .quote {
@@ -1208,6 +1164,7 @@ html:not(.js) .reveal {
 /* Responsive grid breaks */
 @media(max-width:960px) {
   .hero-grid, .why-grid, .area-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-photo { aspect-ratio: 16/10; }
   .why-art { max-width: 480px; margin: 0 auto; }
   .svc { grid-template-columns: 1fr; }
   .statband .row { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; }
