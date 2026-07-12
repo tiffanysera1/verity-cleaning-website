@@ -8,13 +8,15 @@ const PHONE = "2058880199";
 function buildSmsHref(
   name: string,
   phone: string,
+  email: string,
   service: string,
   bedrooms: string,
   bathrooms: string,
   message: string
 ) {
   const details = message.trim() ? ` Details: ${message.trim()}.` : "";
-  const body = `Hi Verity Cleaning — I'd like a quote. My name is ${name || "(name)"}. Service needed: ${service}. Home size: ${bedrooms} bed / ${bathrooms} bath.${details} Best phone: ${phone || "(phone)"}.`;
+  const emailPart = email.trim() ? ` Email: ${email.trim()}.` : "";
+  const body = `Hi Verity Cleaning — I'd like a quote. My name is ${name || "(name)"}. Service needed: ${service}. Home size: ${bedrooms} bed / ${bathrooms} bath.${details} Best phone: ${phone || "(phone)"}.${emailPart}`;
   return `sms:+1${PHONE}?&body=${encodeURIComponent(body)}`;
 }
 
@@ -27,6 +29,7 @@ export default function QuoteForm() {
     const href = buildSmsHref(
       ((f.get("name") as string) || "").trim(),
       ((f.get("phone") as string) || "").trim(),
+      ((f.get("email") as string) || "").trim(),
       (f.get("service") as string) || "",
       (f.get("bedrooms") as string) || "",
       (f.get("bathrooms") as string) || "",
@@ -71,6 +74,12 @@ export default function QuoteForm() {
           <label htmlFor="qp">Phone</label>
           <input id="qp" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="(205) 555-0123" required />
         </div>
+        <div>
+          <label htmlFor="qe">
+            Email <span className="label-opt">(optional)</span>
+          </label>
+          <input id="qe" name="email" type="email" autoComplete="email" placeholder="you@example.com" />
+        </div>
         <div className="quote-row">
           <div>
             <label htmlFor="qbed">Bedrooms</label>
@@ -95,8 +104,8 @@ export default function QuoteForm() {
         </div>
         <div>
           <label htmlFor="qs">Service needed</label>
-          <select id="qs" name="service" defaultValue="Residential Cleaning">
-            <option>Residential Cleaning</option>
+          <select id="qs" name="service" defaultValue="Recurring Cleaning">
+            <option>Recurring Cleaning</option>
             <option>Deep Cleaning</option>
             <option>Move-In / Move-Out Cleaning</option>
             <option>Commercial &amp; Office Cleaning</option>

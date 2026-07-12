@@ -182,6 +182,13 @@ export const Map = (p: IconProps) => (
   </Base>
 );
 
+export const Mail = (p: IconProps) => (
+  <Base sw={2} {...p}>
+    <rect x="2" y="4" width="20" height="16" rx="2" />
+    <path d="m2 7 10 6 10-6" />
+  </Base>
+);
+
 export const Heart = (p: IconProps) => (
   <Base sw={2} {...p}>
     <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />

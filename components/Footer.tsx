@@ -1,4 +1,4 @@
-import { Phone, Sms, FacebookIcon, InstagramIcon, Yelp, Nextdoor } from "./Icons";
+import { Phone, Sms, Mail, FacebookIcon, InstagramIcon, Yelp, Nextdoor } from "./Icons";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -35,7 +35,7 @@ export default function Footer() {
         <div>
           <h4>Services</h4>
           <ul>
-            <li><a href="#services">Residential Cleaning</a></li>
+            <li><a href="#services">Recurring Cleaning</a></li>
             <li><a href="#services">Deep Cleaning</a></li>
             <li><a href="#services">Move-In / Move-Out</a></li>
             <li><a href="#services">Commercial &amp; Office</a></li>
@@ -62,6 +62,15 @@ export default function Footer() {
             </li>
             <li>
               <a href="sms:2058880199"><Sms />Text us anytime</a>
+            </li>
+            <li>
+              <a href="mailto:hello@veritycleaning.co"><Mail />hello@veritycleaning.co</a>
+            </li>
+            <li style={{ color: "var(--muted)", marginTop: "8px" }}>
+              Open every day, 8 AM&ndash;6 PM
+            </li>
+            <li style={{ color: "var(--muted)" }}>
+              Request a quote any time by call, text, or online
             </li>
             <li style={{ color: "var(--muted)", marginTop: "8px" }}>
               Verity Cleaning, LLC &bull; Based in Pelham, AL

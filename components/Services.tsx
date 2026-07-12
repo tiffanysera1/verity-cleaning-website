@@ -5,7 +5,7 @@ import {
 const SERVICES = [
   {
     Icon: Home,
-    title: "Residential Cleaning",
+    title: "Recurring Cleaning",
     body: "Weekly, biweekly, or monthly visits built around your household's routine.",
   },
   {

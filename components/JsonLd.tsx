@@ -10,6 +10,7 @@ export default function JsonLd() {
       "Premium, licensed and insured residential and commercial cleaning service in Shelby County, AL. Offering house cleaning, deep cleaning, move-in/out cleanings, and office sanitization.",
     slogan: "A Clean Home. More Time Back.",
     telephone: "+12058880199",
+    email: "hello@veritycleaning.co",
     url: "https://veritycleaning.co",
     image: "https://veritycleaning.co/clean-home.png",
     priceRange: "$$",
@@ -24,7 +25,7 @@ export default function JsonLd() {
       "@type": "OfferCatalog",
       name: "Cleaning Services",
       itemListElement: [
-        "Residential House Cleaning",
+        "Recurring House Cleaning",
         "Deep Cleaning Services",
         "Move-In / Move-Out Cleaning",
         "Commercial & Office Cleaning",
@@ -45,7 +46,15 @@ export default function JsonLd() {
     ].map((name) => ({ "@type": "City", name })),
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
       opens: "08:00",
       closes: "18:00",
     },
@@ -55,7 +64,7 @@ export default function JsonLd() {
       longitude: -86.7883,
     },
     knowsAbout: [
-      "Residential cleaning",
+      "Recurring cleaning",
       "Deep cleaning",
       "Move-in cleaning",
       "Move-out cleaning",
