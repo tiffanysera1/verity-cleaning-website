@@ -5,9 +5,16 @@ import { Sms } from "./Icons";
 
 const PHONE = "2058880199";
 
-function buildSmsHref(name: string, phone: string, service: string, message: string) {
+function buildSmsHref(
+  name: string,
+  phone: string,
+  service: string,
+  bedrooms: string,
+  bathrooms: string,
+  message: string
+) {
   const details = message.trim() ? ` Details: ${message.trim()}.` : "";
-  const body = `Hi Verity Cleaning — I'd like a quote. My name is ${name || "(name)"}. Service needed: ${service}.${details} Best phone: ${phone || "(phone)"}.`;
+  const body = `Hi Verity Cleaning — I'd like a quote. My name is ${name || "(name)"}. Service needed: ${service}. Home size: ${bedrooms} bed / ${bathrooms} bath.${details} Best phone: ${phone || "(phone)"}.`;
   return `sms:+1${PHONE}?&body=${encodeURIComponent(body)}`;
 }
 
@@ -21,6 +28,8 @@ export default function QuoteForm() {
       ((f.get("name") as string) || "").trim(),
       ((f.get("phone") as string) || "").trim(),
       (f.get("service") as string) || "",
+      (f.get("bedrooms") as string) || "",
+      (f.get("bathrooms") as string) || "",
       (f.get("message") as string) || ""
     );
     setDraftHref(href);
@@ -30,14 +39,14 @@ export default function QuoteForm() {
   if (draftHref) {
     return (
       <div className="quote reveal" id="quote">
-        <h2>Your Text Is Ready</h2>
+        <h2>Your text is ready</h2>
         <p className="note">
           We just opened your messaging app with the details filled in &mdash; review
           it and hit send. Didn&rsquo;t open?
         </p>
-        <a className="btn btn--teal" href={draftHref} style={{ width: "100%" }}>
+        <a className="btn btn--primary" href={draftHref} style={{ width: "100%" }}>
           <Sms />
-          Open the Text Draft
+          Open the text draft
         </a>
         <p className="or" style={{ marginTop: "12px" }}>
           or call <a href={`tel:+1${PHONE}`}>(205) 888-0199</a>
@@ -51,7 +60,7 @@ export default function QuoteForm() {
 
   return (
     <div className="quote reveal" id="quote">
-      <h2>Get a Free Estimate</h2>
+      <h2>Tell us about your home</h2>
       <p className="note">Fill it out &mdash; we&rsquo;ll draft your text in one tap.</p>
       <form onSubmit={onSubmit}>
         <div>
@@ -61,6 +70,28 @@ export default function QuoteForm() {
         <div>
           <label htmlFor="qp">Phone</label>
           <input id="qp" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="(205) 555-0123" required />
+        </div>
+        <div className="quote-row">
+          <div>
+            <label htmlFor="qbed">Bedrooms</label>
+            <select id="qbed" name="bedrooms" defaultValue="3">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5+</option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="qbath">Bathrooms</label>
+            <select id="qbath" name="bathrooms" defaultValue="2">
+              <option>1</option>
+              <option>1.5</option>
+              <option>2</option>
+              <option>2.5</option>
+              <option>3+</option>
+            </select>
+          </div>
         </div>
         <div>
           <label htmlFor="qs">Service needed</label>
@@ -75,18 +106,18 @@ export default function QuoteForm() {
         </div>
         <div>
           <label htmlFor="qm">
-            Describe your space / needs <span className="label-opt">(optional)</span>
+            Anything else we should know <span className="label-opt">(optional)</span>
           </label>
           <textarea
             id="qm"
             name="message"
             rows={3}
-            placeholder="E.g., 3 bedrooms, 2 baths, weekly service."
+            placeholder="E.g., pets in the home, preferred schedule, specific areas to focus on."
           />
         </div>
-        <button className="btn btn--teal" type="submit">
+        <button className="btn btn--primary" type="submit">
           <Sms />
-          Draft My Text
+          Get my personalized quote
         </button>
 
         <p className="or">

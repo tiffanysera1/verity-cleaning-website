@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import StatBand from "@/components/StatBand";
 import WhyUs from "@/components/WhyUs";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import QuoteSection from "@/components/QuoteSection";
 import Services from "@/components/Services";
 import ProcessSection from "@/components/ProcessSection";
 import ServiceArea from "@/components/ServiceArea";
@@ -17,6 +18,7 @@ export default function Home() {
       <StatBand />
       <WhyUs />
       <BeforeAfterSlider />
+      <QuoteSection />
       <Services />
       <ProcessSection />
       <ServiceArea />
