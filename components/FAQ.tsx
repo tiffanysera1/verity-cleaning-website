@@ -41,13 +41,11 @@ export default function FAQ() {
   };
 
   return (
-    <section className="section faq" id="faq">
+    <section className="section faq tone-sky" id="faq">
       <div className="wrap">
         <div className="center reveal">
           <span className="eyebrow">Got Questions?</span>
-          <h2 style={{ fontSize: "clamp(2.1rem,4.4vw,3rem)", textTransform: "uppercase", marginTop: "12px", color: "var(--navy)" }}>
-            Frequently Asked Questions
-          </h2>
+          <h2 style={{ marginTop: "12px" }}>Frequently asked questions</h2>
           <p className="lead" style={{ marginTop: "12px" }}>
             Quick answers for Shelby County homeowners &amp; business owners &mdash; or call/text anytime.
           </p>
