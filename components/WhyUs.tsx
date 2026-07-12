@@ -2,9 +2,9 @@ import Image from "next/image";
 import { Check, Phone } from "./Icons";
 
 const REASONS = [
+  ["Quick estimates, no home visit", "send a few photos of your space and we'll get you pricing back — no need to schedule someone to walk through your home first."],
   ["No hidden fees", "the price we quote is the price you pay — no surprise add-ons."],
   ["A detailed checklist", "our cleaners follow the same thorough process every visit."],
-  ["Licensed &amp; insured", "every cleaner and every visit is fully covered for your peace of mind."],
   ["Background-checked staff", "trustworthy people you can feel comfortable welcoming into your home."],
 ];
 
@@ -25,10 +25,11 @@ export default function WhyUs() {
 
         <div className="reveal">
           <span className="eyebrow">Why Verity</span>
-          <h2 style={{ marginTop: "12px" }}>We do what we say we&rsquo;ll do</h2>
+          <h2 style={{ marginTop: "12px" }}>We know how full your plate already is</h2>
           <p className="lead" style={{ marginTop: "14px" }}>
-            &ldquo;Verity&rdquo; means truth. It&rsquo;s a simple idea we build everything
-            around: transparent pricing, careful work, and a team you can trust in your home.
+            Between work, kids, pets, and everything else, cleaning is just one more thing
+            competing for your time. Verity takes it off your plate &mdash; quietly,
+            reliably, and without adding more to your to-do list.
           </p>
           <ul className="checks">
             {REASONS.map(([title, rest]) => (

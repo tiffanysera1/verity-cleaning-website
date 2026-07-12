@@ -4,7 +4,7 @@ const STEPS = [
   {
     Icon: Home,
     title: "Tell Us About Your Home",
-    body: "Complete a simple questionnaire and optionally upload a few photos so we can understand your home's needs.",
+    body: "Complete a simple questionnaire and text us a few photos — no need to schedule an in-home visit just to get pricing.",
   },
   {
     Icon: CheckCircle,
