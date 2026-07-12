@@ -1,4 +1,4 @@
-import { Phone, Sms, Sparkles, FacebookIcon, InstagramIcon } from "./Icons";
+import { Phone, Sms, FacebookIcon, InstagramIcon, Yelp, Nextdoor } from "./Icons";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -7,22 +7,27 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="wrap fg">
         <div className="fb">
-          <a className="brand" href="/" aria-label="Verity Cleaning — home" style={{ color: "#fff", marginBottom: "16px", display: "flex" }}>
-            <Sparkles className="brand-mascot" style={{ height: "30px", color: "var(--teal-bright)" }} />
+          <a className="brand" href="/" aria-label="Verity Cleaning — home">
             <span className="brand-wordmark">
-              <b style={{ color: "#fff", fontSize: "1.25rem" }}>Verity Cleaning</b>
-              <small style={{ color: "var(--teal-bright)" }}>Pure Spaces &bull; Pure Peace of Mind</small>
+              <b>Verity Cleaning</b>
+              <small>More Time Back</small>
             </span>
           </a>
           <p>
-            Premium, trustworthy cleaning services for your home and office in Shelby County, Alabama. Fully licensed, bonded, insured, and committed to absolute integrity in every clean.
+            Licensed, bonded, and insured home and office cleaning for Shelby County, Alabama.
           </p>
           <div className="fsocials">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Facebook">
+            <a href="https://facebook.com/veritycleaning" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Facebook">
               <FacebookIcon style={{ width: "16px", height: "16px" }} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Instagram">
+            <a href="https://instagram.com/veritycleaning" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Instagram">
               <InstagramIcon style={{ width: "16px", height: "16px" }} />
+            </a>
+            <a href="https://nextdoor.com/pages/verity-cleaning" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Nextdoor">
+              <Nextdoor style={{ width: "16px", height: "16px" }} />
+            </a>
+            <a href="https://yelp.com/biz/verity-cleaning" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Yelp">
+              <Yelp style={{ width: "16px", height: "16px" }} />
             </a>
           </div>
         </div>
@@ -31,7 +36,7 @@ export default function Footer() {
           <h4>Services</h4>
           <ul>
             <li><a href="#services">Residential Cleaning</a></li>
-            <li><a href="#services">Deep Cleaning Services</a></li>
+            <li><a href="#services">Deep Cleaning</a></li>
             <li><a href="#services">Move-In / Move-Out</a></li>
             <li><a href="#services">Commercial &amp; Office</a></li>
             <li><a href="#services">Post-Construction</a></li>
@@ -58,11 +63,11 @@ export default function Footer() {
             <li>
               <a href="sms:2058880199"><Sms />Text us anytime</a>
             </li>
-            <li style={{ color: "#94a3b8", marginTop: "8px" }}>
+            <li style={{ color: "var(--muted)", marginTop: "8px" }}>
               Verity Cleaning, LLC &bull; Based in Pelham, AL
             </li>
-            <li style={{ color: "#94a3b8" }}>
-              Licensed, Bonded, &amp; Insured
+            <li style={{ color: "var(--muted)" }}>
+              Licensed, bonded, &amp; insured
             </li>
           </ul>
         </div>
@@ -70,7 +75,7 @@ export default function Footer() {
 
       <div className="wrap fbar">
         <span>&copy; {year} Verity Cleaning, LLC. All rights reserved.</span>
-        <span>Honesty in Every Clean &bull; Shelby County, AL</span>
+        <span>Shelby County, AL</span>
       </div>
     </footer>
   );
