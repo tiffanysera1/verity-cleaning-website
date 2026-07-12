@@ -1,11 +1,11 @@
 import Hero from "@/components/Hero";
 import StatBand from "@/components/StatBand";
+import ProcessSection from "@/components/ProcessSection";
 import WhyUs from "@/components/WhyUs";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import QuoteSection from "@/components/QuoteSection";
 import Services from "@/components/Services";
 import FollowUs from "@/components/FollowUs";
-import ProcessSection from "@/components/ProcessSection";
 import ServiceArea from "@/components/ServiceArea";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
@@ -17,12 +17,12 @@ export default function Home() {
       <span id="top" />
       <Hero />
       <StatBand />
+      <ProcessSection />
       <WhyUs />
       <BeforeAfterSlider />
       <QuoteSection />
       <Services />
       <FollowUs />
-      <ProcessSection />
       <ServiceArea />
       <FAQ />
       <FinalCTA />
