@@ -4,6 +4,7 @@ import WhyUs from "@/components/WhyUs";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import QuoteSection from "@/components/QuoteSection";
 import Services from "@/components/Services";
+import FollowUs from "@/components/FollowUs";
 import ProcessSection from "@/components/ProcessSection";
 import ServiceArea from "@/components/ServiceArea";
 import FAQ from "@/components/FAQ";
@@ -20,6 +21,7 @@ export default function Home() {
       <BeforeAfterSlider />
       <QuoteSection />
       <Services />
+      <FollowUs />
       <ProcessSection />
       <ServiceArea />
       <FAQ />

@@ -871,111 +871,32 @@ button { font-family: inherit; }
   position: relative;
 }
 
-/* Reviews / Testimonials */
-.reviews {
-  background: #ffffff;
-}
-.rslider {
-  position: relative;
-  max-width: 800px;
-  margin: 48px auto 0;
-}
-.rslide {
-  position: relative;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 40px 48px;
-  overflow: hidden;
-  animation: rFadeIn .4s ease;
-}
-@keyframes rFadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.rstars {
-  color: #F5A623;
-  font-size: 1.25rem;
-  letter-spacing: 3px;
-  margin-bottom: 20px;
-}
-.rtext {
-  font-size: 1.1rem;
-  line-height: 1.75;
-  color: var(--navy-muted);
-  font-style: italic;
-  margin: 0 0 24px;
-}
-.rwho {
+/* Follow Us */
+.follow-links {
   display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.rav {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--teal);
-  color: #fff;
-  display: grid;
-  place-items: center;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: .95rem;
-  flex-shrink: 0;
-}
-.rwho b {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1rem;
-  display: block;
-  color: var(--navy);
-}
-.rtime {
-  font-size: .82rem;
-  color: var(--muted);
-  margin-top: 1px;
-  display: block;
-}
-.rcontrols {
-  display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 16px;
-  margin-top: 24px;
+  gap: 12px;
+  margin-top: 32px;
 }
-.rarrow {
-  background: none;
-  border: 1.5px solid var(--border);
-  color: var(--navy-muted);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
+.follow-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 22px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: .95rem;
+  color: var(--navy);
   transition: all 0.2s;
 }
-.rarrow:hover {
-  background: var(--teal);
-  color: #fff;
-  border-color: var(--teal);
-}
-.rdots { display: flex; gap: 8px; align-items: center; }
-.rdot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--border);
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  transition: all 0.2s;
-}
-.rdot.active {
-  background: var(--teal);
-  transform: scale(1.3);
+.follow-chip svg { width: 18px; height: 18px; color: var(--sky-deep); }
+.follow-chip:hover {
+  background: var(--sky-tint);
+  transform: translateY(-2px);
 }
 
 /* FAQ Details */
