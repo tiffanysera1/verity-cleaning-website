@@ -1,17 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Outfit, Inter } from "next/font/google";
+import { Geist, Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
-import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBar from "@/components/MobileBar";
 import ScrollReveal from "@/components/ScrollReveal";
 
-const outfit = Outfit({
+const geist = Geist({
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
-  variable: "--font-outfit",
+  variable: "--font-geist",
   display: "swap",
 });
 
@@ -24,9 +22,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://veritycleaning.co"),
-  title: "Premium Cleaning Services in Shelby County, AL | Verity Cleaning",
+  title: "Verity Cleaning — A Clean Home, More Time Back",
   description:
-    "Licensed, bonded, and insured home & office cleaning service serving Pelham, Alabaster, Helena, & Hoover. Meticulous checksheets, background-checked staff. Call or text (205) 888-0199.",
+    "Licensed, bonded, and insured home & office cleaning in Shelby County, AL. Personalized quotes, background-checked cleaners, and a modern, effortless experience. Call or text (205) 888-0199.",
   alternates: { canonical: "/" },
   keywords: [
     "cleaning service Shelby County",
@@ -39,26 +37,26 @@ export const metadata: Metadata = {
   ],
   icons: { icon: "/clean-home.png" },
   openGraph: {
-    title: "Premium Cleaning Services in Shelby County, AL | Verity Cleaning",
+    title: "Verity Cleaning — A Clean Home, More Time Back",
     description:
-      "Licensed, bonded, and insured cleaning service with a 100% satisfaction guarantee. Serving Pelham, Alabaster, Hoover, and Helena. Call or text (205) 888-0199.",
+      "Licensed, bonded, and insured cleaning with a 100% satisfaction guarantee. Serving Pelham, Alabaster, Hoover, and Helena. Call or text (205) 888-0199.",
     type: "website",
     url: "https://veritycleaning.co",
     siteName: "Verity Cleaning, LLC",
     locale: "en_US",
-    images: [{ url: "/clean-home.png", width: 800, height: 600, alt: "Verity Cleaning Pristine Home" }],
+    images: [{ url: "/clean-home.png", width: 800, height: 600, alt: "A tidy, sunlit home" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Premium Cleaning Services in Shelby County, AL | Verity Cleaning",
+    title: "Verity Cleaning — A Clean Home, More Time Back",
     description:
-      "Licensed, bonded, and insured cleaning service with a 100% satisfaction guarantee. Call or text (205) 888-0199.",
+      "Licensed, bonded, and insured cleaning with a 100% satisfaction guarantee. Call or text (205) 888-0199.",
     images: ["/clean-home.png"],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0F172A",
+  themeColor: "#0B2A4A",
   width: "device-width",
   initialScale: 1,
 };
@@ -69,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${inter.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${geist.variable} ${inter.variable}`}>
       <body>
         {/* Mark JS active before paint so the reveal animation only hides
             content when it can actually un-hide it (no-JS users see everything). */}
@@ -81,7 +79,6 @@ export default function RootLayout({
         <a className="skip" href="#main">
           Skip to content
         </a>
-        <TopBar />
         <Header />
         {children}
         <Footer />

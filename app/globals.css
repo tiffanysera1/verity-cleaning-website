@@ -1,27 +1,26 @@
 /* ============================================================
-   Verity Cleaning — Premium & Trustworthy Brand Style
-   Design tokens & base. Fonts: Outfit (headings) + Inter (body).
+   Verity Cleaning — "A Clean Home. More Time Back."
+   Design tokens & base. Fonts: Geist (display) + Inter (body).
    ============================================================ */
 :root {
-  --navy: #0C4A6E;          /* Deep Sky Blue (trust, authority) */
-  --navy-muted: #0369A1;    /* Sky Blue secondary */
-  --teal: #0EA5E9;          /* Sky Blue primary (cleanliness, fresh) */
-  --teal-bright: #38BDF8;   /* Bright Sky accent */
-  --teal-dark: #0284C7;     /* Dark Sky for focus/hover states */
-  --teal-light: #F0F9FF;    /* Sky tint for section backgrounds */
-  
-  --ink: #0F172A;           /* Body text */
-  --muted: #64748B;         /* Secondary text */
-  
   --bg: #FFFFFF;
-  --surface: #F8FAFC;       /* Off-white background */
-  --border: #E2E8F0;        /* Clean light borders */
-  --line-dark: rgba(12, 74, 110, 0.08);
-  --shadow: 0 12px 40px rgba(12, 74, 110, 0.07);
-  --shadow-hover: 0 20px 50px rgba(12, 74, 110, 0.14);
+  --sky: #8ECFFB;
+  --sky-deep: #5FB4F0;
+  --sky-pale: #F7FBFF;
+  --sky-tint: #EEF8FF;
+  --warm-white: #FFFDF9;
+
+  --navy: #0B2A4A;
+  --navy-muted: #3D5A7A;
+  --ink: #14181F;
+  --muted: #6B7280;
+
+  --border: #E7EAEE;
+  --shadow: 0 4px 20px rgba(11, 42, 74, 0.05);
+  --shadow-hover: 0 12px 32px rgba(11, 42, 74, 0.10);
   --ease: cubic-bezier(.25, .8, .25, 1);
-  
-  --font-display: var(--font-outfit), system-ui, sans-serif;
+
+  --font-display: var(--font-geist), system-ui, sans-serif;
   --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
@@ -31,11 +30,63 @@ body {
   margin: 0;
   font-family: var(--font-body);
   color: var(--ink);
-  background: var(--bg);
+  /* Layer 1 — organic light-source mesh: several large, soft-edged
+     radial gradients (default background-attachment, NOT `fixed` —
+     unreliable on mobile Safari, and this needs to track document
+     position anyway). A brighter warm pool sits near the upper-left,
+     where the hero is, like morning sun through a window; pale-blue
+     and sky-tint pools scatter at non-aligned points further down so
+     the transition reads as organic, not a linear band. Every stop
+     fades to transparent — no visible edge or "blob" shape. */
+  background:
+    radial-gradient(1100px 900px at 8% 6%, var(--warm-white) 0%, rgba(255, 253, 249, 0.5) 30%, transparent 62%),
+    radial-gradient(1000px 800px at 88% 28%, var(--sky-pale) 0%, transparent 60%),
+    radial-gradient(1100px 900px at 15% 60%, var(--sky-tint) 0%, transparent 62%),
+    radial-gradient(1000px 800px at 82% 88%, var(--sky-tint) 0%, transparent 65%),
+    var(--bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  position: relative;
+}
+/* Layer 2 — grain texture: SVG feTurbulence noise, no image asset,
+   no dependency. Fixed so it reads as a uniform viewport texture
+   rather than scrolling with the document; pointer-events:none so it
+   never blocks interaction; opacity kept low enough to break up flat
+   digital color without being visible as texture in its own right. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+/* Layer 3 — soft alternating section tone: a very soft, edge-feathered
+   sky-tint wash applied to specific sections (Why Verity, Get Your
+   Quote, Follow Us, FAQ), never a hard-edged block. Fades to nothing
+   at both the section's top and bottom so no boundary line is ever
+   visible. */
+.tone-sky {
+  position: relative;
+}
+.tone-sky::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--sky-tint) 25%,
+    var(--sky-tint) 75%,
+    transparent 100%
+  );
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: -1;
 }
 
 h1, h2, h3, h4 {
@@ -51,30 +102,29 @@ ul { margin: 0; padding: 0; list-style: none; }
 button { font-family: inherit; }
 
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-.section { padding: 92px 0; }
+.section { padding: 96px 0; position: relative; }
 .eyebrow {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: .8rem;
-  letter-spacing: .12em;
+  font-size: .78rem;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--teal-dark);
+  color: var(--navy);
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--teal-light);
-  border-bottom: 2px solid var(--teal-bright);
-  padding: 6px 12px;
-  border-radius: 6px;
+  background: var(--sky-tint);
+  padding: 6px 14px;
+  border-radius: 20px;
 }
-.eyebrow svg { width: 14px; height: 14px; color: var(--teal); }
+.eyebrow svg { width: 14px; height: 14px; color: var(--sky-deep); }
 .lead { color: var(--muted); font-size: 1.12rem; max-width: 60ch; line-height: 1.7; }
 .center { text-align: center; }
 .center .lead { margin-inline: auto; }
 
 /* Focus outlines for accessibility */
 :focus-visible {
-  outline: 3px solid var(--teal-bright);
+  outline: 3px solid var(--sky-deep);
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -86,7 +136,7 @@ button { font-family: inherit; }
   padding: 12px 18px;
   z-index: 200;
   font-weight: 700;
-  color: var(--teal-dark);
+  color: var(--navy);
 }
 .skip:focus { left: 0; }
 .sr-only {
@@ -108,33 +158,33 @@ button { font-family: inherit; }
   justify-content: center;
   gap: .55rem;
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.95rem;
   padding: 14px 28px;
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1.5px solid transparent;
   cursor: pointer;
-  transition: transform .15s var(--ease), background .2s, box-shadow .2s, color .2s;
+  transition: transform .15s var(--ease), background .2s, box-shadow .2s, color .2s, border-color .2s;
   min-height: 52px;
   white-space: nowrap;
 }
 .btn svg { width: 18px; height: 18px; flex: none; }
-.btn--teal {
-  background: var(--teal);
-  color: #fff;
-  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.20);
-}
-.btn--teal:hover {
-  background: var(--teal-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(14, 165, 233, 0.35);
-}
-.btn--navy {
+.btn--primary {
   background: var(--navy);
   color: #fff;
+  box-shadow: 0 8px 20px rgba(11, 42, 74, 0.18);
 }
-.btn--navy:hover {
-  background: #1e293b;
+.btn--primary:hover {
+  background: #123457;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(11, 42, 74, 0.28);
+}
+.btn--secondary {
+  background: var(--sky-tint);
+  color: var(--navy);
+}
+.btn--secondary:hover {
+  background: var(--sky-pale);
   transform: translateY(-2px);
 }
 .btn--ghost {
@@ -143,16 +193,16 @@ button { font-family: inherit; }
   border-color: var(--border);
 }
 .btn--ghost:hover {
-  background: var(--surface);
+  background: var(--sky-tint);
   transform: translateY(-2px);
 }
 .btn--ghost-dark {
   background: transparent;
   color: #fff;
-  border-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 .btn--ghost-dark:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
   border-color: #fff;
   transform: translateY(-2px);
 }
@@ -237,33 +287,6 @@ button { font-family: inherit; }
   padding: 8px;
 }
 .nav-toggle svg { width: 28px; height: 28px; }
-
-/* Topbar */
-.topbar {
-  background: var(--navy);
-  color: #94a3b8;
-  font-size: .85rem;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-.topbar .wrap {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 8px 24px;
-}
-.topbar a {
-  color: #fff;
-  font-weight: 600;
-  transition: color 0.15s;
-}
-.topbar a:hover {
-  color: var(--teal-bright);
-}
-.topbar .r {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
 
 /* Hero Section */
 .hero {
