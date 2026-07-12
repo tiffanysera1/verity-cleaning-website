@@ -102,7 +102,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 button { font-family: inherit; }
 
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-.section { padding: 96px 0; position: relative; }
+.section { padding: 96px 0; position: relative; scroll-margin-top: 96px; }
+/* QuoteForm's root isn't a .section (it's a floating card), but is a
+   direct anchor-scroll target from nav/CTA links, so needs the same
+   offset to clear the sticky header. */
+#quote { scroll-margin-top: 96px; }
 .eyebrow {
   font-family: var(--font-display);
   font-weight: 700;
