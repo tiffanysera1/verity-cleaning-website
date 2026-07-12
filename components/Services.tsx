@@ -3,40 +3,30 @@ import {
 } from "./Icons";
 
 const SERVICES = [
-  { 
-    n: "01", 
-    Icon: Home, 
-    title: "Residential Cleaning", 
-    slug: "residential-cleaning", 
-    body: "Weekly, bi-weekly, or monthly cleaning custom-tailored to your household routine. Keep your home fresh and tidy." 
-  },
-  { 
-    n: "02", 
-    Icon: Sparkles, 
-    title: "Deep Cleaning Services", 
-    slug: "deep-cleaning", 
-    body: "A meticulous, top-to-bottom scrub of your home. We cover baseboards, vents, appliances, and all hard-to-reach areas." 
-  },
-  { 
-    n: "03", 
-    Icon: Clock, 
-    title: "Move-In / Move-Out Cleaning", 
-    slug: "move-in-move-out", 
-    body: "Detailed cleaning to prepare a home for new owners/tenants or to ensure you get your security deposit back." 
-  },
-  { 
-    n: "04", 
-    Icon: Building, 
-    title: "Commercial & Office Cleaning", 
-    slug: "commercial-cleaning", 
-    body: "Clean, sanitized, and healthy workspaces for retail shops, corporate offices, and local businesses." 
+  {
+    Icon: Home,
+    title: "Residential Cleaning",
+    body: "Weekly, biweekly, or monthly visits built around your household's routine.",
   },
   {
-    n: "05",
+    Icon: Sparkles,
+    title: "Deep Cleaning",
+    body: "A thorough, top-to-bottom clean that covers baseboards, vents, and every hard-to-reach corner.",
+  },
+  {
+    Icon: Clock,
+    title: "Move-In / Move-Out Cleaning",
+    body: "A detailed clean to help you settle into a new place or hand off your old one.",
+  },
+  {
+    Icon: Building,
+    title: "Commercial & Office Cleaning",
+    body: "Clean, welcoming workspaces for offices, shops, and local businesses.",
+  },
+  {
     Icon: SprayBottle,
-    title: "Post-Construction Clean",
-    slug: "post-construction",
-    body: "Remove heavy dust, paint splatters, and builder debris from your new home or renovation project."
+    title: "Post-Construction Cleaning",
+    body: "We clear away dust, debris, and residue after a renovation or new build.",
   },
 ];
 
@@ -45,40 +35,27 @@ export default function Services() {
     <section className="section" id="services">
       <div className="wrap">
         <div className="center reveal">
-          <span className="eyebrow">Our Cleaning Services</span>
-          <h2 style={{ fontSize: "clamp(2.1rem,4.4vw,3rem)", textTransform: "uppercase", marginTop: "12px" }}>
-            Verity Cleaning Services
-          </h2>
+          <span className="eyebrow">Services</span>
+          <h2 style={{ marginTop: "12px" }}>Cleaning for every kind of home</h2>
           <p className="lead" style={{ marginTop: "14px" }}>
-            From regular housekeeping to detailed deep cleans, we bring integrity, 
-            precision, and sparkles to every space.
+            From a regular weekly visit to a full deep clean, we tailor each service to your space.
           </p>
         </div>
 
         <div className="svc">
-          {SERVICES.map(({ n, Icon, title, slug, body }) => (
-            <article className="scard reveal" key={n}>
+          {SERVICES.map(({ Icon, title, body }) => (
+            <article className="scard reveal" key={title}>
               <div className="scard-body">
-                <div className="top">
-                  <span className="num">
-                    {n}
-                  </span>
-                  <span className="ic">
-                    <Icon />
-                  </span>
-                </div>
+                <span className="ic">
+                  <Icon />
+                </span>
                 <h3>
-                  <a href={`#quote`} className="scard-title-link">
-                    {title}
-                  </a>
+                  <a href="#quote" className="scard-title-link">{title}</a>
                 </h3>
                 <p>{body}</p>
                 <div className="scard-actions">
-                  <a href={`#quote`} className="more" aria-label={`Get an estimate for ${title.toLowerCase()}`}>
-                    Book Service <ArrowRight />
-                  </a>
-                  <a href="#quote" className="more more--secondary" aria-label={`Get an estimate for ${title.toLowerCase()}`}>
-                    Get Estimate
+                  <a href="#quote" className="more" aria-label={`Get a quote for ${title.toLowerCase()}`}>
+                    Get a quote <ArrowRight />
                   </a>
                 </div>
               </div>
@@ -87,11 +64,11 @@ export default function Services() {
         </div>
 
         <div className="section-cta-row reveal">
-          <a href="tel:+12058880199" className="btn btn--teal btn--lg">
+          <a href="tel:+12058880199" className="btn btn--primary btn--lg">
             <Phone />
-            Call or Text (205) 888-0199
+            Call or text (205) 888-0199
           </a>
-          <a href="#quote" className="btn btn--ghost btn--lg">Get a Free Estimate Online</a>
+          <a href="#quote" className="btn btn--ghost btn--lg">Get your quote online</a>
         </div>
       </div>
     </section>

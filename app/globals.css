@@ -481,63 +481,30 @@ button { font-family: inherit; }
 .scard {
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: 16px;
-  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+  border-radius: 20px;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
 }
 .scard:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
-  border-color: rgba(13, 148, 136, 0.2);
-}
-.scard-img {
-  position: relative;
-  aspect-ratio: 16/9;
-  overflow: hidden;
-  background: var(--surface);
-}
-.scard-img img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .5s var(--ease);
-}
-.scard:hover .scard-img img {
-  transform: scale(1.05);
 }
 .scard-body {
-  padding: 30px;
-}
-.scard .top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.scard .num {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--teal);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  padding: 32px;
 }
 .scard .ic {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  background: var(--teal-light);
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--sky-tint);
   display: grid;
   place-items: center;
-  color: var(--teal);
+  color: var(--sky-deep);
 }
 .scard .ic svg { width: 22px; height: 22px; }
 .scard h3 {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  margin-top: 16px;
+  margin-top: 18px;
   color: var(--navy);
 }
 .scard p {
@@ -547,23 +514,18 @@ button { font-family: inherit; }
   line-height: 1.6;
 }
 .scard-actions {
-  display: flex;
-  align-items: center;
-  gap: 24px;
   margin-top: 20px;
-  border-top: 1px solid var(--border);
   padding-top: 16px;
+  border-top: 1px solid var(--border);
 }
 .scard .more {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--teal);
+  color: var(--navy);
   font-weight: 700;
   font-family: var(--font-display);
-  text-transform: uppercase;
-  font-size: .8rem;
-  letter-spacing: .05em;
+  font-size: .85rem;
 }
 .scard .more svg {
   width: 14px;
@@ -572,16 +534,6 @@ button { font-family: inherit; }
 }
 .scard:hover .more svg {
   transform: translateX(4px);
-}
-.more--secondary {
-  color: var(--muted);
-  text-transform: none;
-  font-weight: 600;
-  letter-spacing: 0;
-  font-size: .85rem;
-}
-.more--secondary:hover {
-  color: var(--navy-muted);
 }
 .scard-title-link:hover {
   text-decoration: underline;
