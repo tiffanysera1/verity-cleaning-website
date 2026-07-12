@@ -8,11 +8,9 @@ export default function ServiceArea() {
       <div className="wrap area-grid">
         <div className="reveal">
           <span className="eyebrow">Where We Clean</span>
-          <h2 style={{ fontSize: "clamp(1.9rem,3.8vw,2.6rem)", textTransform: "uppercase", marginTop: "12px" }}>
-            Serving Shelby County
-          </h2>
+          <h2 style={{ marginTop: "12px" }}>Serving Shelby County</h2>
           <p className="lead" style={{ marginTop: "14px" }}>
-            We provide fast, reliable, and premium cleaning services across these communities &mdash; and everywhere in between.
+            We clean homes and offices across these communities &mdash; and everywhere in between.
           </p>
           <div className="chips">
             {TOWNS.map((t) => (
@@ -24,9 +22,9 @@ export default function ServiceArea() {
             <span className="chip2">+ Nearby</span>
           </div>
           <div className="section-cta-row reveal" style={{ justifyContent: "flex-start", marginTop: "28px" }}>
-            <a href="tel:+12058880199" className="btn btn--teal btn--lg">
+            <a href="tel:+12058880199" className="btn btn--primary btn--lg">
               <Phone />
-              Call or Text Now
+              Call or text now
             </a>
           </div>
         </div>
@@ -35,7 +33,7 @@ export default function ServiceArea() {
           <div className="ic">
             <Map />
           </div>
-          <h3>Pristine Spaces &bull; Trusted Service</h3>
+          <h3>Proudly serving</h3>
           <div className="county">Shelby County, AL</div>
         </div>
       </div>

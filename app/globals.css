@@ -796,10 +796,7 @@ button { font-family: inherit; }
 }
 .tstep-check svg { width: 15px; height: 15px; color: var(--sky-deep); flex: none; }
 
-/* Area Section */
-.area {
-  background: var(--surface);
-}
+/* Service Area Section */
 .area-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -818,57 +815,47 @@ button { font-family: inherit; }
   gap: 8px;
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 10px 16px;
-  font-weight: 700;
+  font-weight: 600;
   font-family: var(--font-display);
-  font-size: .9rem;
+  font-size: .88rem;
   color: var(--navy-muted);
 }
-.chip2 svg { width: 14px; height: 14px; color: var(--teal); }
+.chip2 svg { width: 14px; height: 14px; color: var(--sky-deep); }
 
 .areacard {
-  background: var(--navy);
-  border-radius: 20px;
+  background: var(--sky-tint);
+  border-radius: 24px;
   padding: 48px;
-  color: #fff;
+  color: var(--navy);
   text-align: center;
-  box-shadow: var(--shadow);
-  position: relative;
-  overflow: hidden;
-}
-.areacard::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(20, 184, 166, 0.15), transparent 70%);
+  border: 1px solid var(--border);
 }
 .areacard .ic {
-  width: 72px;
-  height: 72px;
+  width: 64px;
+  height: 64px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.08);
+  background: #fff;
   display: grid;
   place-items: center;
   margin: 0 auto 20px;
-  color: var(--teal-bright);
-  position: relative;
+  color: var(--sky-deep);
+  box-shadow: var(--shadow);
 }
-.areacard .ic svg { width: 36px; height: 36px; }
+.areacard .ic svg { width: 30px; height: 30px; }
 .areacard h3 {
-  font-size: 1.5rem;
-  text-transform: uppercase;
+  font-size: 1.1rem;
   letter-spacing: 0.02em;
-  position: relative;
-  color: #94a3b8;
+  color: var(--navy-muted);
+  font-weight: 600;
 }
 .areacard .county {
   font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 2.2rem;
-  color: #fff;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--navy);
   margin-top: 6px;
-  position: relative;
 }
 
 /* Follow Us */
