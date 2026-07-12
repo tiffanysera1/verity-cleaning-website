@@ -450,7 +450,6 @@ button { font-family: inherit; }
 
 /* Stat Band */
 .statband {
-  background: var(--surface);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -458,35 +457,35 @@ button { font-family: inherit; }
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  padding: 32px 0;
+  padding: 28px 0;
 }
 .stat {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   justify-content: center;
 }
 .stat .ic {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
-  background: rgba(13, 148, 136, 0.08);
+  background: var(--sky-tint);
   display: grid;
   place-items: center;
-  color: var(--teal);
+  color: var(--sky-deep);
   flex: none;
 }
-.stat .ic svg { width: 22px; height: 22px; }
+.stat .ic svg { width: 20px; height: 20px; }
 .stat b {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   display: block;
   line-height: 1.2;
   color: var(--navy);
 }
 .stat span {
-  font-size: .85rem;
+  font-size: .82rem;
   color: var(--muted);
 }
 

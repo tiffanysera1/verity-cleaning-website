@@ -2,9 +2,9 @@ import { Shield, Users, CheckCircle, Clock } from "./Icons";
 
 const STATS = [
   { icon: Shield, title: "Licensed & Bonded", sub: "Full peace of mind" },
-  { icon: Users, title: "Trained Cleaners", sub: "Background-checked staff" },
+  { icon: Users, title: "Background-Checked", sub: "Every cleaner vetted" },
   { icon: CheckCircle, title: "100% Guaranteed", sub: "We make it right, always" },
-  { icon: Clock, title: "On-Time Guarantee", sub: "We respect your schedule" },
+  { icon: Clock, title: "On Time", sub: "We respect your schedule" },
 ];
 
 export default function StatBand() {
