@@ -41,11 +41,16 @@ export default function ProcessSection() {
           </p>
         </div>
 
-        <ol className="timeline">
+        <div className="svc process-cards">
           {STEPS.map(({ Icon, title, body, checklist }, i) => (
-            <li className="tstep reveal" key={title}>
-              <div className="tstep-card">
-                <span className="sr-only">Step {i + 1}</span>
+            <article className="scard reveal" key={title}>
+              <div className="scard-body">
+                <div className="scard-top-row">
+                  <span className="ic">
+                    <Icon />
+                  </span>
+                  <span className="step-num">Step {i + 1}</span>
+                </div>
                 <h3>{title}</h3>
                 <p>{body}</p>
                 {checklist && (
@@ -59,13 +64,9 @@ export default function ProcessSection() {
                   </ul>
                 )}
               </div>
-              <span className="tstep-node" aria-hidden="true">
-                <Icon />
-              </span>
-              <span className="tstep-spacer" />
-            </li>
+            </article>
           ))}
-        </ol>
+        </div>
 
         <div className="section-cta-row reveal">
           <a href="#quote" className="btn btn--primary btn--lg">

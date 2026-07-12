@@ -4,7 +4,7 @@ import type { SVGProps } from "react";
    Size is controlled by the parent CSS context (e.g. `.btn svg{width:18px}`).
    stroke="currentColor" so icons inherit text color. */
 
-type IconProps = SVGProps<SVGSVGElement> & { sw?: number };
+export type IconProps = SVGProps<SVGSVGElement> & { sw?: number };
 
 function Base({ sw = 2, children, ...rest }: IconProps & { children: React.ReactNode }) {
   return (

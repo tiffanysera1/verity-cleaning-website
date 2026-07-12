@@ -1,34 +1,5 @@
-import {
-  Home, Sparkles, Clock, Building, SprayBottle, ArrowRight, Phone
-} from "./Icons";
-
-const SERVICES = [
-  {
-    Icon: Home,
-    title: "Recurring Cleaning",
-    body: "Weekly, biweekly, or monthly visits built around your household's routine.",
-  },
-  {
-    Icon: Sparkles,
-    title: "Deep Cleaning",
-    body: "A thorough, top-to-bottom clean that covers baseboards, vents, and every hard-to-reach corner.",
-  },
-  {
-    Icon: Clock,
-    title: "Move-In / Move-Out Cleaning",
-    body: "A detailed clean to help you settle into a new place or hand off your old one.",
-  },
-  {
-    Icon: Building,
-    title: "Commercial & Office Cleaning",
-    body: "Clean, welcoming workspaces for offices, shops, and local businesses.",
-  },
-  {
-    Icon: SprayBottle,
-    title: "Post-Construction Cleaning",
-    body: "We clear away dust, debris, and residue after a renovation or new build.",
-  },
-];
+import { ArrowRight, Phone } from "./Icons";
+import { SERVICES } from "./servicesData";
 
 export default function Services() {
   return (
@@ -43,19 +14,19 @@ export default function Services() {
         </div>
 
         <div className="svc">
-          {SERVICES.map(({ Icon, title, body }) => (
-            <article className="scard reveal" key={title}>
+          {SERVICES.map(({ slug, Icon, title, summary }) => (
+            <article className="scard reveal" key={slug}>
               <div className="scard-body">
                 <span className="ic">
                   <Icon />
                 </span>
                 <h3>
-                  <a href="#quote" className="scard-title-link">{title}</a>
+                  <a href={`/services/${slug}/`} className="scard-title-link">{title}</a>
                 </h3>
-                <p>{body}</p>
+                <p>{summary}</p>
                 <div className="scard-actions">
-                  <a href="#quote" className="more" aria-label={`Get a quote for ${title.toLowerCase()}`}>
-                    Get a quote <ArrowRight />
+                  <a href={`/services/${slug}/`} className="more" aria-label={`Learn more about ${title.toLowerCase()}`}>
+                    Learn more <ArrowRight />
                   </a>
                 </div>
               </div>
