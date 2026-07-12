@@ -103,8 +103,8 @@ clutter.
 | `--bg` | `#FFFFFF` | Base page white |
 | `--sky` | `#8ECFFB` | Primary accent — icon badges, highlights, secondary buttons |
 | `--sky-deep` | `#5FB4F0` | Hover/active state of sky accent |
-| `--sky-pale` | `#F4FAFF` | Very pale sky blue — ambient atmosphere layer, mid-page |
-| `--sky-tint` | `#EDF7FF` | Soft blue tint — ambient atmosphere layer (deeper reads) and card backgrounds (timeline, quote section) |
+| `--sky-pale` | `#F7FBFF` | Very pale sky blue — ambient atmosphere layer, mid-page |
+| `--sky-tint` | `#EEF8FF` | Soft blue tint — ambient atmosphere layer (deeper reads), card backgrounds (timeline, quote section), and the soft alternating-section tone wash |
 | `--warm-white` | `#FFFDF9` | Barely-warm off-white — tiny warm cast near the hero only |
 | `--navy` | `#0B2A4A` | Headline text, primary CTA background, footer text |
 | `--ink` | `#14181F` | Body text |
@@ -138,40 +138,64 @@ Flat gray section blocks read as template/SaaS, not sunlit room.
   class), add a subtle hover-lift (translateY + soft shadow) on cards. No
   parallax or scale gimmicks.
 
-### Atmosphere (added 2026-07-11)
+### Atmosphere (added 2026-07-11; refined into three layers 2026-07-12)
 
 The page must not feel like a flat white background — it should feel like
-standing in a bright room with soft natural light coming through large
-windows near the top (the hero). This is **one continuous ambient layer
-behind the entire page**, not per-section flat-color blocks, and it must
-be subtle enough that a visitor notices a *feeling*, not a visible
-gradient shape.
+standing in a bright, peaceful home on a Saturday morning, sunlight coming
+through large windows. This is layered, not decorative: three subtle
+layers plus a light touch of section-level tone variation, all engineered
+to be *felt* rather than *noticed*. "Nice background" is a failure state —
+the target reaction is "this feels incredibly pleasant," with the visitor
+unable to point at what's producing that feeling.
 
-- **Mechanism:** a single large, soft-edged background layer sitting
-  behind all page content (e.g. a fixed or absolutely-positioned layer
-  spanning the full document, `z-index` below content, `pointer-events:
-  none` — not `background-attachment: fixed`, which is unreliable on
-  mobile Safari). Implemented as one oversized, very-low-contrast gradient
-  composition, not multiple hard section backgrounds.
-- **Composition, top to bottom:** a barely-perceptible warm cast
-  (`--warm-white`, `#FFFDF9`) concentrated near the hero, easing into
-  `--sky-pale` (`#F4FAFF`) through the middle of the page, settling into
-  `--sky-tint` (`#EDF7FF`) further down — like light spreading from a
-  window and cooling as it fills the room. Color deltas between stops
-  stay tiny (a handful of RGB points) spread over a huge area — no
-  visible band, edge, or shape.
-- **Hard constraints:** no clouds, no illustrations, no obvious/visible
-  gradient shapes (no discernible radial "blob" or linear band), no
-  per-section flat-color blocking. If someone isn't looking for it, it
-  should almost disappear.
-- **What sits on top of it:** most sections render with a transparent
-  background so the ambient layer shows through continuously. Cards
-  (timeline steps, quote form, feature/service cards) keep their own
-  white or `--sky-tint` backgrounds for contrast against the ambient
-  layer — those are foreground surfaces, not the page atmosphere itself.
-  The Final CTA section remains the one deliberately opaque deep-navy
-  block (item 12) and sits visually "on top of" the atmosphere rather
-  than being part of it.
+**Layer 1 — organic light-source mesh (base).** Replaces the earlier
+single top-to-bottom linear gradient. Several large, soft-edged radial
+gradients composited into one `background` value on `<body>` (no fixed
+attachment, no extra DOM element needed):
+- A brighter, faintly warm pool anchored near the **upper-left** of the
+  document (roughly where the hero sits) — like morning sun through a
+  window — using `--warm-white` (`#FFFDF9`) easing to `--bg` (`#FFFFFF`).
+- Several further pools of `--sky-pale` (`#F7FBFF`) and `--sky-tint`
+  (`#EEF8FF`) scattered at different, non-aligned points further down the
+  document (not stacked directly under each other) so the transition
+  reads as organic/mesh-like rather than a linear band.
+- Color deltas between every stop stay tiny (a handful of RGB points);
+  every gradient has a long, slow falloff to `transparent` — no visible
+  edge, ring, or "blob" shape at any point.
+
+**Layer 2 — grain texture.** A tiny inline SVG noise texture
+(`feTurbulence`, encoded as a `background-image` data URI — no image
+asset, no new dependency) applied via a `position: fixed; inset: 0;
+pointer-events: none;` pseudo-element (`body::after`) at roughly 2–4%
+opacity, repeating across the full viewport. Purpose is to break up the
+"digital perfection" of flat computer-generated color, not to be visible
+as texture in its own right.
+
+**Layer 3 — soft alternating section tone.** Reconciles "the page feels
+too visually uniform" with the earlier decision to retire hard
+per-section flat-color blocks: sections do **not** get an opaque
+background color, but alternating sections get a very soft,
+edge-feathered `--sky-tint` wash (fades to nothing at the section's top
+and bottom edges — no hard boundary line is ever visible) layered on top
+of the Layer 1 mesh. Applied to: Why Verity, Get Your Quote, Follow Us,
+and FAQ. Left on the plain atmosphere (no extra tone): Hero, trust strip,
+What to Expect, See the Difference, Services, Service Area. Two of those
+already carry their own visual weight without needing a tone wash — What
+to Expect has its own alternating white/sky-tint timeline cards (adding a
+section-wide tint would muddy that internal contrast), and Get Your Quote
+pairs its tone wash with a floating white form card for a clear
+foreground/background split. Final CTA remains the one deliberately
+opaque solid-navy block, sitting visually on top of the atmosphere rather
+than being part of it — unchanged from the earlier decision.
+
+**Hard constraints (unchanged):** no clouds, no illustrations, no
+obvious/visible gradient shapes, no hard per-section color boundaries. If
+someone isn't looking for it, it should almost disappear.
+
+**What sits on top of all three layers:** cards (timeline steps, quote
+form, service cards, the before/after frame) keep their own white or
+`--sky-tint` backgrounds for contrast — those are foreground surfaces,
+not part of the page atmosphere.
 
 ### Iconography
 
@@ -336,11 +360,13 @@ quote form card, timeline step cards), not a section-wide block.
 - **`app/globals.css`**: near-complete rewrite of design tokens and
   section styles per the Visual System above. Existing utility classes
   (`.wrap`, `.section`, `.reveal`, `.btn`) are kept as the structural base
-  but restyled. Adds the ambient atmosphere layer per the Atmosphere
-  subsection: one absolutely-positioned full-document layer behind all
-  content (not `background-attachment: fixed`), removes per-section
-  background-color rules in favor of this shared layer, retires
-  `--surface`.
+  but restyled. Adds the three-layer atmosphere per the Atmosphere
+  subsection: the mesh/light-source gradient composited into `body`'s
+  `background` (no `background-attachment: fixed`), a `body::after` grain
+  texture (fixed, `pointer-events: none`, ~3% opacity), and a `.tone-sky`
+  section modifier class (soft edge-feathered tint, applied to Why
+  Verity, Get Your Quote, Follow Us, FAQ) — removes hard per-section
+  background-color rules in favor of these layers, retires `--surface`.
 - **Deleted** (already done): `components/TopBar.tsx` — no, TopBar is
   removed from render in `layout.tsx` per item 1 above but the file
   deletion happens in this redesign's implementation, not yet;
