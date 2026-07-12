@@ -1,26 +1,31 @@
-import { Clock, SprayBottle, Sparkles, Phone } from "./Icons";
+import { Home, CheckCircle, Clock, Sms, Heart } from "./Icons";
 
 const STEPS = [
   {
-    label: "Step 01",
+    Icon: Home,
+    title: "Tell Us About Your Home",
+    body: "Complete a simple questionnaire and optionally upload a few photos so we can understand your home's needs.",
+  },
+  {
+    Icon: CheckCircle,
+    title: "Receive Your Personalized Quote",
+    body: "Every home is different. We carefully review your information and send a customized quote — no one-size-fits-all pricing.",
+  },
+  {
     Icon: Clock,
-    title: "Book & Schedule",
-    body: "Choose a cleaning plan that matches your space and needs. Let us know your preferred schedule—whether weekly, deep clean, or move-out.",
-    active: true,
+    title: "Schedule Your Cleaning",
+    body: "Choose a date and time that works best for you.",
   },
   {
-    label: "Step 02",
-    Icon: SprayBottle,
-    title: "We Clean & Refine",
-    body: "Our background-checked, insured cleaners arrive on schedule. Armed with a comprehensive checklist, we clean every corner with detail.",
-    active: true,
+    Icon: Sms,
+    title: "Stay Informed",
+    body: "If you opt in, we'll keep you updated throughout the appointment.",
+    checklist: ["Cleaner is on the way", "Cleaning has started", "Cleaning is complete"],
   },
   {
-    label: "Step 03",
-    Icon: Sparkles,
-    title: "Enjoy the Freshness",
-    body: "Walk into a clean, sanitized space that feels and smells brand new. If anything isn't absolutely perfect, we'll return to fix it immediately.",
-    active: true,
+    Icon: Heart,
+    title: "Enjoy Your Time Back",
+    body: "Come home to a beautifully cleaned space and spend your time doing what matters most.",
   },
 ];
 
@@ -29,33 +34,42 @@ export default function ProcessSection() {
     <section className="section process" id="process">
       <div className="wrap">
         <div className="center reveal">
-          <span className="eyebrow">Our Method</span>
-          <h2 style={{ fontSize: "clamp(2.1rem,4.4vw,3rem)", textTransform: "uppercase", marginTop: "12px" }}>
-            Our 3-Step Cleaning Path
-          </h2>
-          <p className="lead" style={{ marginTop: "14px" }}>
-            We believe cleaning should be simple, predictable, and exceptionally high quality. 
-            Here is what you can expect from start to finish.
+          <span className="eyebrow">What to Expect</span>
+          <h2 style={{ marginTop: "12px" }}>Here&rsquo;s exactly what happens</h2>
+          <p className="lead" style={{ margin: "14px auto 0" }}>
+            No guesswork, no hidden steps. Here&rsquo;s the whole process, start to finish.
           </p>
         </div>
 
-        <ol className="steps">
-          {STEPS.map(({ label, Icon, title, body, active }) => (
-            <li className={active ? "step step--active reveal" : "step reveal"} key={label}>
-              <span className="step-node">
+        <ol className="timeline">
+          {STEPS.map(({ Icon, title, body, checklist }, i) => (
+            <li className="tstep reveal" key={title}>
+              <div className="tstep-card">
+                <span className="sr-only">Step {i + 1}</span>
+                <h3>{title}</h3>
+                <p>{body}</p>
+                {checklist && (
+                  <ul className="tstep-check">
+                    {checklist.map((c) => (
+                      <li key={c}>
+                        <CheckCircle />
+                        {c}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+              <span className="tstep-node" aria-hidden="true">
                 <Icon />
               </span>
-              <span className="step-label">{label}</span>
-              <h3>{title}</h3>
-              <p>{body}</p>
+              <span className="tstep-spacer" />
             </li>
           ))}
         </ol>
 
         <div className="section-cta-row reveal">
-          <a href="tel:+12058880199" className="btn btn--teal btn--lg">
-            <Phone />
-            Schedule Your Clean — Call or Text
+          <a href="#quote" className="btn btn--primary btn--lg">
+            Get my personalized quote
           </a>
         </div>
       </div>
