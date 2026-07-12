@@ -8,7 +8,7 @@ export default function JsonLd() {
     name: "Verity Cleaning, LLC",
     description:
       "Premium, licensed and insured residential and commercial cleaning service in Shelby County, AL. Offering house cleaning, deep cleaning, move-in/out cleanings, and office sanitization.",
-    slogan: "Pure Spaces &bull; Pure Peace of Mind",
+    slogan: "A Clean Home. More Time Back.",
     telephone: "+12058880199",
     url: "https://veritycleaning.co",
     image: "https://veritycleaning.co/clean-home.png",
