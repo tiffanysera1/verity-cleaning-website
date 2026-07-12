@@ -1,14 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Phone, Menu, Sparkles } from "./Icons";
+import { Menu } from "./Icons";
 
 const LINKS: [string, string][] = [
   ["/#services", "Services"],
-  ["/#why", "Why Us"],
-  ["/#process", "Our Process"],
+  ["/#why", "Why Verity"],
+  ["/#process", "How It Works"],
   ["/#area", "Service Area"],
-  ["/#quote", "Get an Estimate"],
 ];
 
 export default function Header() {
@@ -18,10 +17,9 @@ export default function Header() {
     <header className="site-header">
       <div className="wrap nav">
         <a className="brand" href="/" aria-label="Verity Cleaning — home">
-          <Sparkles className="brand-mascot" />
           <span className="brand-wordmark">
             <b>Verity Cleaning</b>
-            <small>Pure Spaces &bull; Pure Peace of Mind</small>
+            <small>More Time Back</small>
           </span>
         </a>
 
@@ -38,9 +36,8 @@ export default function Header() {
         </nav>
 
         <div className="nav-cta">
-          <a href="tel:+12058880199" className="btn btn--teal">
-            <Phone />
-            Call or Text
+          <a href="#quote" className="btn btn--primary">
+            Get my quote
           </a>
           <button
             className="nav-toggle"
