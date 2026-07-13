@@ -35,7 +35,10 @@ export const metadata: Metadata = {
     "office cleaning Chelsea AL",
     "licensed insured cleaning company",
   ],
-  icons: { icon: "/clean-home.png" },
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: "Verity Cleaning — A Clean Home, More Time Back",
     description:

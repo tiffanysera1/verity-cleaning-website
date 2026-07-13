@@ -238,6 +238,11 @@ button { font-family: inherit; }
   align-items: center;
   gap: 10px;
 }
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  flex: none;
+}
 .brand-wordmark {
   display: flex;
   flex-direction: column;

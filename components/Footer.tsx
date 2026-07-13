@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Phone, Sms, Mail, FacebookIcon, InstagramIcon, Yelp, Nextdoor } from "./Icons";
 
 export default function Footer() {
@@ -8,6 +9,7 @@ export default function Footer() {
       <div className="wrap fg">
         <div className="fb">
           <a className="brand" href="/" aria-label="Verity Cleaning — home">
+            <Image src="/logo.png" alt="" width={40} height={40} className="brand-mark" />
             <span className="brand-wordmark">
               <b>Verity Cleaning</b>
               <small>More Time Back</small>

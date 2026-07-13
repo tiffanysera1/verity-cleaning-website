@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Menu } from "./Icons";
 
 const LINKS: [string, string][] = [
@@ -17,6 +18,7 @@ export default function Header() {
     <header className="site-header">
       <div className="wrap nav">
         <a className="brand" href="/" aria-label="Verity Cleaning — home">
+          <Image src="/logo.png" alt="" width={40} height={40} className="brand-mark" priority />
           <span className="brand-wordmark">
             <b>Verity Cleaning</b>
             <small>More Time Back</small>
