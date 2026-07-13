@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { Check } from "./Icons";
+import { Check, Phone } from "./Icons";
+import QuoteForm from "./QuoteForm";
 
 const TRUST = [
   "Fully licensed, bonded & insured",
@@ -24,10 +24,11 @@ export default function Hero() {
           </p>
 
           <div className="hero-cta">
-            <a href="#quote" className="btn btn--primary btn--lg">
-              Get my personalized quote
+            <a href="tel:+12058880199" className="btn btn--secondary btn--lg">
+              <Phone />
+              Call or text (205) 888-0199
             </a>
-            <a href="#process" className="btn btn--secondary btn--lg">
+            <a href="#process" className="btn btn--ghost btn--lg">
               What to expect
             </a>
           </div>
@@ -42,15 +43,8 @@ export default function Hero() {
           </ul>
         </div>
 
-        <div className="hero-photo reveal">
-          <Image
-            src="/hero-home.jpg"
-            alt="A bright, sunlit modern living room"
-            fill
-            priority
-            sizes="(max-width: 960px) 100vw, 50vw"
-            style={{ objectFit: "cover" }}
-          />
+        <div className="hero-quote-wrap">
+          <QuoteForm />
         </div>
       </div>
     </section>

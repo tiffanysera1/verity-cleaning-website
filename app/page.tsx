@@ -3,7 +3,6 @@ import StatBand from "@/components/StatBand";
 import WhyUs from "@/components/WhyUs";
 import ProcessSection from "@/components/ProcessSection";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import QuoteSection from "@/components/QuoteSection";
 import Services from "@/components/Services";
 import FollowUs from "@/components/FollowUs";
 import ServiceArea from "@/components/ServiceArea";
@@ -16,12 +15,11 @@ export default function Home() {
     <main id="main">
       <span id="top" />
       <Hero />
+      <Services />
       <StatBand />
       <WhyUs />
       <ProcessSection />
       <BeforeAfterSlider />
-      <QuoteSection />
-      <Services />
       <FollowUs />
       <ServiceArea />
       <FAQ />

@@ -341,12 +341,10 @@ button { font-family: inherit; }
   flex: none;
 }
 .trust-ck svg { width: 11px; height: 11px; stroke-width: 3; }
-.hero-photo {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  border-radius: 28px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
+.hero-quote-wrap {
+  max-width: 460px;
+  width: 100%;
+  margin-left: auto;
 }
 
 /* Quote Section */
@@ -1085,7 +1083,7 @@ html:not(.js) .reveal {
 /* Responsive grid breaks */
 @media(max-width:960px) {
   .hero-grid, .why-grid, .area-grid { grid-template-columns: 1fr; gap: 40px; }
-  .hero-photo { aspect-ratio: 16/10; }
+  .hero-quote-wrap { max-width: none; margin-left: 0; }
   .service-detail-grid { grid-template-columns: 1fr; gap: 32px; }
   .service-hero-head { flex-direction: column; gap: 16px; }
   .why-art { max-width: 480px; margin: 0 auto; }
