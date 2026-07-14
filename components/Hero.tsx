@@ -11,8 +11,19 @@ const CHECKLIST = [
 export default function Hero() {
   return (
     <section className="hero">
-      <div className="wrap hero-grid">
-        <div>
+      <div className="hero-bg-photo" aria-hidden="true">
+        <Image
+          src="/hero-home.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          style={{ objectFit: "cover" }}
+        />
+      </div>
+
+      <div className="wrap">
+        <div className="hero-text-col">
           <h1>
             Get your
             <br />
@@ -46,23 +57,11 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="hero-photo-wrap reveal">
-          <div className="hero-photo">
-            <Image
-              src="/hero-home.jpg"
-              alt="A bright, tidy modern living room"
-              fill
-              priority
-              sizes="(max-width: 960px) 100vw, 50vw"
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-          <div className="hero-photo-card">
-            <span className="hero-photo-card-icon" aria-hidden="true"><Heart /></span>
-            <div>
-              <b>A clean home feels good.</b>
-              <p>Having your time back feels even better.</p>
-            </div>
+        <div className="hero-photo-card reveal">
+          <span className="hero-photo-card-icon" aria-hidden="true"><Heart /></span>
+          <div>
+            <b>A clean home feels good.</b>
+            <p>Having your time back feels even better.</p>
           </div>
         </div>
       </div>
