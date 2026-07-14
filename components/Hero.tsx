@@ -1,51 +1,69 @@
-import { Check, Phone } from "./Icons";
-import QuoteForm from "./QuoteForm";
+import Image from "next/image";
+import { Check, ArrowRight, Shield, Heart, Sparkle } from "./Icons";
 
-const TRUST = [
-  "No in-home quote (just send us pictures!)",
-  "Fully licensed, bonded & insured",
-  "100% satisfaction guarantee",
-  "Background-checked cleaners",
-  "Upfront pricing — no surprises",
+const CHECKLIST = [
+  "Requested times, not random arrival",
+  "Clear communication from start to finish",
+  "Pay only after your clean is complete",
+  "Trusted, detail-focused professionals",
 ];
 
 export default function Hero() {
   return (
     <section className="hero">
       <div className="wrap hero-grid">
-        <div className="hero-panel">
+        <div>
           <h1>
-            A Clean Home.
+            Get your
             <br />
-            More Time Back.
+            <span className="accent">
+              weekends back.
+              <Sparkle className="h1-sparkle" aria-hidden="true" />
+            </span>
           </h1>
           <p className="sub">
-            Life is busy enough. We&rsquo;ll take care of the cleaning so you can spend more
-            time with your family, your hobbies, your pets &mdash; or simply relax.
+            We clean with care so you can focus on what matters most.
           </p>
 
-          <div className="hero-cta">
-            <a href="tel:+12058880199" className="btn btn--secondary btn--lg">
-              <Phone />
-              Call or text (205) 888-0199
-            </a>
-            <a href="#process" className="btn btn--ghost btn--lg">
-              What to expect
-            </a>
-          </div>
-
-          <ul className="trust-list">
-            {TRUST.map((t) => (
-              <li key={t}>
-                <span className="trust-ck" aria-hidden="true"><Check /></span>
-                {t}
+          <ul className="checks hero-checks">
+            {CHECKLIST.map((item) => (
+              <li key={item}>
+                <span className="ck" aria-hidden="true"><Check /></span>
+                <span>{item}</span>
               </li>
             ))}
           </ul>
+
+          <div className="hero-cta">
+            <a href="#quote" className="btn btn--primary btn--lg">
+              Get My Personalized Quote
+              <ArrowRight />
+            </a>
+          </div>
+          <p className="hero-payment-note">
+            <Shield aria-hidden="true" />
+            No payment today. Pay after your service is complete.
+          </p>
         </div>
 
-        <div className="hero-quote-wrap">
-          <QuoteForm />
+        <div className="hero-photo-wrap reveal">
+          <div className="hero-photo">
+            <Image
+              src="/hero-home.jpg"
+              alt="A bright, tidy modern living room"
+              fill
+              priority
+              sizes="(max-width: 960px) 100vw, 50vw"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className="hero-photo-card">
+            <span className="hero-photo-card-icon" aria-hidden="true"><Heart /></span>
+            <div>
+              <b>A clean home feels good.</b>
+              <p>Having your time back feels even better.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

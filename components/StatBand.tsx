@@ -1,10 +1,10 @@
-import { Shield, Users, CheckCircle, Clock } from "./Icons";
+import { Users, CheckCircle, Shield, Heart } from "./Icons";
 
 const STATS = [
-  { icon: Shield, title: "Licensed & Bonded", sub: "Full peace of mind" },
-  { icon: Users, title: "Background-Checked", sub: "Every cleaner vetted" },
-  { icon: CheckCircle, title: "100% Guaranteed", sub: "We make it right, always" },
-  { icon: Clock, title: "On Time", sub: "We respect your schedule" },
+  { icon: Users, title: "Background Checked Cleaners", sub: "Every cleaner vetted" },
+  { icon: CheckCircle, title: "100% Satisfaction Guaranteed", sub: "We make it right, always" },
+  { icon: Shield, title: "Insured for Your Peace of Mind", sub: "Licensed, bonded & insured" },
+  { icon: Heart, title: "Locally Owned & Operated", sub: "Based in Pelham, AL" },
 ];
 
 export default function StatBand() {

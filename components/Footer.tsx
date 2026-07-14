@@ -9,11 +9,7 @@ export default function Footer() {
       <div className="wrap fg">
         <div className="fb">
           <a className="brand" href="/" aria-label="Verity Cleaning — home">
-            <Image src="/logo.png" alt="" width={40} height={40} className="brand-mark" />
-            <span className="brand-wordmark">
-              <b>Verity Cleaning</b>
-              <small>More Time Back</small>
-            </span>
+            <Image src="/logo.png" alt="Verity Cleaning" width={696} height={293} className="brand-mark" />
           </a>
           <p>
             Licensed, bonded, and insured home and office cleaning for Shelby County, Alabama.

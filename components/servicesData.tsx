@@ -5,6 +5,7 @@ import type { IconProps } from "./Icons";
 export type ServiceData = {
   slug: string;
   Icon: ComponentType<IconProps>;
+  photo: string;
   title: string;
   summary: string;
   goodFor: string;
@@ -15,6 +16,7 @@ export const SERVICES: ServiceData[] = [
   {
     slug: "recurring-cleaning",
     Icon: Home,
+    photo: "/hero-home.jpg",
     title: "Recurring Cleaning",
     summary: "Weekly, biweekly, or monthly visits built around your household's routine.",
     goodFor:
@@ -30,6 +32,7 @@ export const SERVICES: ServiceData[] = [
   {
     slug: "deep-cleaning",
     Icon: Sparkles,
+    photo: "/service-deep-cleaning.jpg",
     title: "Deep Cleaning",
     summary: "A thorough, top-to-bottom clean that covers baseboards, vents, and every hard-to-reach corner.",
     goodFor:
@@ -45,6 +48,7 @@ export const SERVICES: ServiceData[] = [
   {
     slug: "move-in-move-out",
     Icon: Clock,
+    photo: "/service-move.jpg",
     title: "Move-In / Move-Out Cleaning",
     summary: "A detailed clean to help you settle into a new place or hand off your old one.",
     goodFor:
@@ -60,6 +64,7 @@ export const SERVICES: ServiceData[] = [
   {
     slug: "commercial-office-cleaning",
     Icon: Building,
+    photo: "/service-commercial.jpg",
     title: "Commercial & Office Cleaning",
     summary: "Clean, welcoming workspaces for offices, shops, and local businesses.",
     goodFor:
@@ -75,6 +80,7 @@ export const SERVICES: ServiceData[] = [
   {
     slug: "post-construction-cleaning",
     Icon: SprayBottle,
+    photo: "/service-construction.jpg",
     title: "Post-Construction Cleaning",
     summary: "We clear away dust, debris, and residue after a renovation or new build.",
     goodFor:

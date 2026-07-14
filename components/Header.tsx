@@ -2,27 +2,71 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Menu } from "./Icons";
+import { Menu, ChevronDown } from "./Icons";
+import { SERVICES } from "./servicesData";
 
-const LINKS: [string, string][] = [
-  ["/#services", "Services"],
-  ["/#why", "Why Verity"],
-  ["/#process", "How It Works"],
+const RESOURCE_LINKS: [string, string][] = [
+  ["/#faq", "FAQ"],
   ["/#area", "Service Area"],
 ];
 
+function NavDropdown({
+  label,
+  links,
+  onNavigate,
+}: {
+  label: string;
+  links: [string, string][];
+  onNavigate: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div
+      className="nav-drop"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button
+        type="button"
+        className="nav-drop-trigger"
+        aria-expanded={open}
+        onClick={() => setOpen((o) => !o)}
+      >
+        {label}
+        <ChevronDown />
+      </button>
+      <div className={open ? "nav-drop-panel open" : "nav-drop-panel"}>
+        {links.map(([href, text]) => (
+          <a
+            key={href}
+            href={href}
+            onClick={() => {
+              setOpen(false);
+              onNavigate();
+            }}
+          >
+            {text}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Header() {
   const [open, setOpen] = useState(false);
+
+  const serviceLinks: [string, string][] = [
+    ...SERVICES.map((s): [string, string] => [`/services/${s.slug}/`, s.title]),
+    ["/#services", "View all services"],
+  ];
 
   return (
     <header className="site-header">
       <div className="wrap nav">
         <a className="brand" href="/" aria-label="Verity Cleaning — home">
-          <Image src="/logo.png" alt="" width={40} height={40} className="brand-mark" priority />
-          <span className="brand-wordmark">
-            <b>Verity Cleaning</b>
-            <small>More Time Back</small>
-          </span>
+          <Image src="/logo.png" alt="Verity Cleaning" width={696} height={293} className="brand-mark" priority />
         </a>
 
         <nav
@@ -30,11 +74,11 @@ export default function Header() {
           id="primary-nav"
           aria-label="Primary"
         >
-          {LINKS.map(([href, label]) => (
-            <a key={href} href={href} onClick={() => setOpen(false)}>
-              {label}
-            </a>
-          ))}
+          <NavDropdown label="Services" links={serviceLinks} onNavigate={() => setOpen(false)} />
+          <a href="/#process" onClick={() => setOpen(false)}>How It Works</a>
+          <a href="/#why" onClick={() => setOpen(false)}>Why Verity</a>
+          <a href="/#reviews" onClick={() => setOpen(false)}>Reviews</a>
+          <NavDropdown label="Resources" links={RESOURCE_LINKS} onNavigate={() => setOpen(false)} />
         </nav>
 
         <div className="nav-cta">

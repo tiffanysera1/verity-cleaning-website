@@ -1,13 +1,15 @@
 import Hero from "@/components/Hero";
-import StatBand from "@/components/StatBand";
-import WhyUs from "@/components/WhyUs";
+import OperationalStrip from "@/components/OperationalStrip";
 import ProcessSection from "@/components/ProcessSection";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import QuoteSection from "@/components/QuoteSection";
 import Services from "@/components/Services";
-import FollowUs from "@/components/FollowUs";
+import WhyUs from "@/components/WhyUs";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import ServiceArea from "@/components/ServiceArea";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
+import StatBand from "@/components/StatBand";
+import FollowUs from "@/components/FollowUs";
 import JsonLd from "@/components/JsonLd";
 
 export default function Home() {
@@ -15,15 +17,17 @@ export default function Home() {
     <main id="main">
       <span id="top" />
       <Hero />
-      <Services />
-      <StatBand />
-      <WhyUs />
+      <OperationalStrip />
       <ProcessSection />
+      <QuoteSection />
+      <Services />
+      <WhyUs />
       <BeforeAfterSlider />
       <FollowUs />
       <ServiceArea />
       <FAQ />
       <FinalCTA />
+      <StatBand />
       <JsonLd />
     </main>
   );
