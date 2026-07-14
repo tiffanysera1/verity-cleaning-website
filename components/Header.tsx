@@ -83,7 +83,7 @@ export default function Header() {
 
         <div className="nav-cta">
           <a href="#quote" className="btn btn--primary">
-            Get my quote
+            Get My Quote
           </a>
           <button
             className="nav-toggle"

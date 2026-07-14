@@ -33,7 +33,7 @@ export default function Services() {
                 <p>{summary}</p>
                 <div className="scard-actions">
                   <a href={`/services/${slug}/`} className="more" aria-label={`Learn more about ${title.toLowerCase()}`}>
-                    Learn more <ArrowRight />
+                    Learn More <ArrowRight />
                   </a>
                 </div>
               </div>

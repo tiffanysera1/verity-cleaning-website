@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Phone, Shield } from "./Icons";
+import { Phone, Shield, ArrowRight } from "./Icons";
 
 export default function FinalCTA() {
   return (
@@ -15,6 +15,7 @@ export default function FinalCTA() {
             <div className="acts reveal">
               <a href="#quote" className="btn btn--primary btn--lg">
                 Get My Personalized Quote
+                <ArrowRight />
               </a>
               <a href="tel:+12058880199" className="btn btn--secondary btn--lg">
                 <Phone />
@@ -24,6 +25,7 @@ export default function FinalCTA() {
             <p className="hero-payment-note reveal">
               <Shield aria-hidden="true" />
               No payment today. Pay after your service is complete.
+              <span className="cta-flourish">It&rsquo;s fast and easy!</span>
             </p>
           </div>
           <div className="cta-card-photo reveal">

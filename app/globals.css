@@ -10,6 +10,9 @@
   --sky-tint: #EEF8FF;
   --warm-white: #FFFDF9;
 
+  --blue: #3A63E8;
+  --blue-deep: #2E4FC4;
+
   --navy: #0B2A4A;
   --navy-muted: #3D5A7A;
   --ink: #14181F;
@@ -174,14 +177,14 @@ button { font-family: inherit; }
 }
 .btn svg { width: 18px; height: 18px; flex: none; }
 .btn--primary {
-  background: var(--navy);
+  background: var(--blue);
   color: #fff;
-  box-shadow: 0 8px 20px rgba(11, 42, 74, 0.18);
+  box-shadow: 0 8px 20px rgba(58, 99, 232, 0.25);
 }
 .btn--primary:hover {
-  background: #123457;
+  background: var(--blue-deep);
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(11, 42, 74, 0.28);
+  box-shadow: 0 12px 28px rgba(58, 99, 232, 0.35);
 }
 .btn--secondary {
   background: var(--sky-tint);
@@ -193,8 +196,8 @@ button { font-family: inherit; }
 }
 .btn--ghost {
   background: transparent;
-  color: var(--navy);
-  border-color: var(--border);
+  color: var(--blue);
+  border-color: var(--blue);
 }
 .btn--ghost:hover {
   background: var(--sky-tint);
@@ -338,9 +341,9 @@ button { font-family: inherit; }
 .hero h1 .accent {
   position: relative;
   display: inline-block;
-  font-family: var(--font-display);
+  font-family: Georgia, serif;
   font-style: italic;
-  color: var(--sky-deep);
+  color: var(--blue);
 }
 .h1-sparkle {
   position: absolute;
@@ -348,8 +351,8 @@ button { font-family: inherit; }
   right: -0.7em;
   width: 0.5em;
   height: 0.5em;
-  color: var(--sky-deep);
-  opacity: 0.7;
+  color: var(--blue);
+  opacity: 0.8;
 }
 .hero .sub {
   margin-top: 22px;
@@ -374,6 +377,12 @@ button { font-family: inherit; }
   color: var(--muted);
 }
 .hero-payment-note svg { width: 15px; height: 15px; color: var(--sky-deep); flex: none; }
+.cta-flourish {
+  font-family: Georgia, serif;
+  font-style: italic;
+  color: var(--blue);
+  margin-left: 4px;
+}
 .hero-photo-wrap {
   position: relative;
 }
@@ -386,8 +395,8 @@ button { font-family: inherit; }
 }
 .hero-photo-card {
   position: absolute;
-  left: -24px;
-  bottom: -28px;
+  right: 24px;
+  bottom: 24px;
   max-width: 300px;
   display: flex;
   align-items: flex-start;
@@ -612,7 +621,7 @@ button { font-family: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--navy);
+  color: var(--blue);
   font-weight: 700;
   font-family: var(--font-display);
   font-size: .85rem;
@@ -878,8 +887,8 @@ button { font-family: inherit; }
   width: 0.6em;
   height: 0.6em;
   margin-left: 6px;
-  color: var(--sky-deep);
-  opacity: 0.7;
+  color: var(--blue);
+  opacity: 0.8;
   vertical-align: super;
 }
 .process-flow {
@@ -1273,7 +1282,7 @@ html:not(.js) .reveal {
   .hero { padding-block: 40px 72px; }
   .hero-photo-wrap { margin-top: 40px; margin-bottom: 48px; }
   .hero-photo { aspect-ratio: 4 / 3; }
-  .hero-photo-card { left: 16px; right: 16px; bottom: -24px; max-width: none; }
+  .hero-photo-card { left: 16px; right: 16px; bottom: 16px; max-width: none; }
   .op-strip { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; padding: 24px; }
   .reviews-grid { grid-template-columns: 1fr; gap: 32px; }
   .cta-card { grid-template-columns: 1fr; }
