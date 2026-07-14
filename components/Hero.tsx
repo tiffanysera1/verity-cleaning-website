@@ -2,6 +2,7 @@ import { Check, Phone } from "./Icons";
 import QuoteForm from "./QuoteForm";
 
 const TRUST = [
+  "No in-home quote (just send us pictures!)",
   "Fully licensed, bonded & insured",
   "100% satisfaction guarantee",
   "Background-checked cleaners",
@@ -12,7 +13,7 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="wrap hero-grid">
-        <div>
+        <div className="hero-panel">
           <h1>
             A Clean Home.
             <br />

@@ -302,6 +302,14 @@ button { font-family: inherit; }
   gap: 56px;
   align-items: center;
 }
+.hero-panel {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.86)), url('/hero-home.jpg');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px;
+}
 .hero h1 {
   font-size: clamp(2.6rem, 5.2vw, 4.4rem);
   font-weight: 700;
@@ -1089,6 +1097,7 @@ html:not(.js) .reveal {
 @media(max-width:960px) {
   .hero-grid, .why-grid, .area-grid { grid-template-columns: 1fr; gap: 40px; }
   .hero-quote-wrap { max-width: none; margin-left: 0; }
+  .hero-panel { padding: 28px; }
   .service-detail-grid { grid-template-columns: 1fr; gap: 32px; }
   .service-hero-head { flex-direction: column; gap: 16px; }
   .why-art { max-width: 480px; margin: 0 auto; }
