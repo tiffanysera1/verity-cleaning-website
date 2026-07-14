@@ -338,8 +338,8 @@ button { font-family: inherit; }
   position: absolute;
   inset: 0;
   z-index: 0;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 20%, black 58%);
-  mask-image: linear-gradient(to right, transparent 0%, transparent 20%, black 58%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 55%);
+  mask-image: linear-gradient(to right, transparent 0%, black 55%);
 }
 .hero-text-col {
   max-width: 620px;
@@ -399,7 +399,7 @@ button { font-family: inherit; }
 .hero-photo-card {
   position: absolute;
   right: 0;
-  bottom: 70px;
+  bottom: -50px;
   max-width: 300px;
   display: flex;
   align-items: flex-start;
