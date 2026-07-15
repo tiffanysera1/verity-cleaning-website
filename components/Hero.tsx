@@ -1,29 +1,22 @@
 import Image from "next/image";
-import { Check, ArrowRight, Shield, Heart, Sparkle } from "./Icons";
-
-const CHECKLIST = [
-  "Requested times, not random arrival",
-  "Clear communication from start to finish",
-  "Pay only after your clean is complete",
-  "Trusted, detail-focused professionals",
-];
+import { Heart, Sparkle, Shield } from "./Icons";
+import QuoteForm from "./QuoteForm";
 
 export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-bg-photo" aria-hidden="true">
         <Image
-          src="/hero-home.jpg"
+          src="/clean-home.png"
           alt=""
           fill
           priority
           sizes="100vw"
-          style={{ objectFit: "cover" }}
         />
       </div>
 
-      <div className="wrap">
-        <div className="hero-text-col">
+      <div className="wrap hero-inner">
+        <div className="hero-text">
           <h1>
             Get your
             <br />
@@ -36,29 +29,17 @@ export default function Hero() {
             We clean with care so you can focus on what matters most.
           </p>
 
-          <ul className="checks hero-checks">
-            {CHECKLIST.map((item) => (
-              <li key={item}>
-                <span className="ck" aria-hidden="true"><Check /></span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-
-          <div className="hero-cta">
-            <a href="#quote" className="btn btn--primary btn--lg">
-              Get My Personalized Quote
-              <ArrowRight />
-            </a>
+          <div className="hero-quote-wrap reveal">
+            <QuoteForm />
+            <p className="payment-note hero-payment-note">
+              <Shield aria-hidden="true" />
+              <span><strong>No payment today.</strong> Pay after your service is complete.</span>
+            </p>
           </div>
-          <p className="hero-payment-note">
-            <Shield aria-hidden="true" />
-            No payment today. Pay after your service is complete.
-          </p>
         </div>
 
-        <div className="hero-photo-card reveal">
-          <span className="hero-photo-card-icon" aria-hidden="true"><Heart /></span>
+        <div className="hero-card reveal">
+          <span className="hero-card-icon" aria-hidden="true"><Heart /></span>
           <div>
             <b>A clean home feels good.</b>
             <p>Having your time back feels even better.</p>

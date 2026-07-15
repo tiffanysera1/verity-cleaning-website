@@ -4,7 +4,7 @@ const STEPS = [
   {
     Icon: Camera,
     title: "Request a Quote",
-    body: "Tell us about your home and text us a few photos.",
+    body: "Tell us about your home and upload photos.",
   },
   {
     Icon: FileText,
@@ -30,28 +30,27 @@ const STEPS = [
 
 export default function ProcessSection() {
   return (
-    <section className="section process" id="process">
+    <section className="section" id="how-it-works">
       <div className="wrap">
-        <div className="center reveal">
-          <span className="eyebrow">How It Works</span>
-          <h2 style={{ marginTop: "12px" }}>
+        <div className="center section-head reveal">
+          <h2 className="section-title">
             How Verity Works
-            <Sparkle className="h2-sparkle" aria-hidden="true" />
+            <Sparkle aria-hidden="true" />
           </h2>
         </div>
 
-        <div className="process-flow reveal">
+        <div className="how-flow reveal">
           {STEPS.map(({ Icon, title, body }, i) => (
-            <div className="process-step" key={title}>
-              <div className="process-step-node">
-                <span className="ic">
+            <div className="how-step" key={title}>
+              <div className="how-step-node">
+                <span className="ic" aria-hidden="true">
                   <Icon />
                 </span>
                 <b>{i + 1}. {title}</b>
                 <p>{body}</p>
               </div>
               {i < STEPS.length - 1 && (
-                <span className="process-arrow" aria-hidden="true">
+                <span className="how-arrow" aria-hidden="true">
                   <ArrowRight />
                 </span>
               )}

@@ -1,8 +1,12 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { Check, Phone } from "@/components/Icons";
 import { SERVICES, getService } from "@/components/servicesData";
-import QuoteSection from "@/components/QuoteSection";
+import { SERVICE_DETAILS } from "@/components/service/serviceDetailData";
+import ServiceHero from "@/components/service/ServiceHero";
+import ServiceIncluded from "@/components/service/ServiceIncluded";
+import ServiceExpect from "@/components/service/ServiceExpect";
+import ServiceResources from "@/components/service/ServiceResources";
+import ServiceCTA from "@/components/service/ServiceCTA";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -32,60 +36,36 @@ export default async function ServicePage(
 ) {
   const { slug } = await params;
   const service = getService(slug);
-  if (!service) notFound();
-
-  const { Icon, title, summary, goodFor, whatsIncluded } = service;
+  const detail = SERVICE_DETAILS[slug];
+  if (!service || !detail) notFound();
 
   return (
     <main id="main">
-      <section className="section service-hero">
+      <ServiceHero title={service.title} photo={service.photo} tagline={detail.tagline} description={detail.description} tips={detail.tips} />
+
+      <section className="section service-included-section">
         <div className="wrap">
-          <a href="/#services" className="back-link">&larr; All services</a>
-          <div className="service-hero-head reveal">
-            <span className="ic-lg" aria-hidden="true">
-              <Icon />
-            </span>
-            <div>
-              <span className="eyebrow">Service</span>
-              <h1>{title}</h1>
-              <p className="lead">{summary}</p>
-            </div>
-          </div>
-          <div className="section-cta-row reveal" style={{ justifyContent: "flex-start", marginTop: "28px" }}>
-            <a href="#quote" className="btn btn--primary btn--lg">
-              Get my personalized quote
-            </a>
-            <a href="tel:+12058880199" className="btn btn--ghost btn--lg">
-              <Phone />
-              Call or text (205) 888-0199
-            </a>
-          </div>
+          <ServiceIncluded tabs={detail.includedTabs} notIncluded={detail.notIncluded} addOns={detail.addOns} />
         </div>
       </section>
 
-      <section className="section tone-sky">
-        <div className="wrap service-detail-grid">
-          <div className="reveal">
-            <h2>What&rsquo;s included</h2>
-            <ul className="checks">
-              {whatsIncluded.map((item) => (
-                <li key={item}>
-                  <span className="ck">
-                    <Check />
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="good-for-card reveal">
-            <h3>Good for</h3>
-            <p>{goodFor}</p>
-          </div>
+      <section className="section service-expect-section">
+        <div className="wrap">
+          <ServiceExpect />
         </div>
       </section>
 
-      <QuoteSection />
+      <section className="section service-resources-section">
+        <div className="wrap">
+          <ServiceResources serviceTitle={service.title} blogLinks={detail.blogLinks} faq={detail.faq} />
+        </div>
+      </section>
+
+      <section className="section service-cta-section">
+        <div className="wrap">
+          <ServiceCTA />
+        </div>
+      </section>
     </main>
   );
 }

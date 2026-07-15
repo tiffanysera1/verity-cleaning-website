@@ -1,39 +1,44 @@
 import Image from "next/image";
-import { Phone, Shield, ArrowRight } from "./Icons";
+import { Shield, ArrowRight, CurvedArrow } from "./Icons";
 
 export default function FinalCTA() {
   return (
     <section className="section">
       <div className="wrap">
-        <div className="cta-card">
-          <div className="cta-card-body">
-            <h2 className="reveal">Ready for a clean home and more time for you?</h2>
-            <p className="reveal">
+        <div className="final-cta-card">
+          <div className="final-cta-body">
+            <h2 className="reveal">
+              Ready for a
+              <br />
+              clean home and
+              <br />
+              more time for you?
+            </h2>
+            <p className="lead reveal">
               Tell us about your home and we&rsquo;ll create a personalized quote based on the
               information and photos you provide.
             </p>
-            <div className="acts reveal">
+            <div className="final-cta-actions reveal">
               <a href="#quote" className="btn btn--primary btn--lg">
                 Get My Personalized Quote
                 <ArrowRight />
               </a>
-              <a href="tel:+12058880199" className="btn btn--secondary btn--lg">
-                <Phone />
-                Call or text (205) 888-0199
-              </a>
+              <div className="final-cta-note">
+                <p className="payment-note" style={{ margin: 0 }}>
+                  <Shield aria-hidden="true" />
+                  No payment today. Pay after your service.
+                </p>
+                <CurvedArrow aria-hidden="true" style={{ width: 20, height: 20, color: "var(--blue)", opacity: 0.6 }} />
+                <span className="hand-note">It&rsquo;s fast and easy!</span>
+              </div>
             </div>
-            <p className="hero-payment-note reveal">
-              <Shield aria-hidden="true" />
-              No payment today. Pay after your service is complete.
-              <span className="cta-flourish">It&rsquo;s fast and easy!</span>
-            </p>
           </div>
-          <div className="cta-card-photo reveal">
+          <div className="final-cta-photo reveal">
             <Image
-              src="/hero-home.jpg"
-              alt="A bright, tidy modern living room"
+              src="/final-cta.jpg"
+              alt="A glass vase of soft pink flowers beside a lit candle"
               fill
-              sizes="(max-width: 960px) 100vw, 45vw"
+              sizes="(max-width: 1080px) 100vw, 45vw"
               style={{ objectFit: "cover" }}
             />
           </div>

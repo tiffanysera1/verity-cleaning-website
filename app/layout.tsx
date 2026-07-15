@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Inter } from "next/font/google";
+import { Playfair_Display, Inter, Caveat } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/Header";
@@ -7,9 +7,11 @@ import Footer from "@/components/Footer";
 import MobileBar from "@/components/MobileBar";
 import ScrollReveal from "@/components/ScrollReveal";
 
-const geist = Geist({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-geist",
+  weight: ["600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
   display: "swap",
 });
 
@@ -17,6 +19,13 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  variable: "--font-script",
   display: "swap",
 });
 
@@ -70,7 +79,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${geist.variable} ${inter.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${inter.variable} ${caveat.variable}`}>
       <body>
         {/* Mark JS active before paint so the reveal animation only hides
             content when it can actually un-hide it (no-JS users see everything). */}

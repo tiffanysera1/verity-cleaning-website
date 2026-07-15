@@ -41,7 +41,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
+        <div id="footer-area" style={{ scrollMarginTop: "96px" }}>
           <h4>Service Area</h4>
           <ul>
             <li>Pelham &amp; Helena</li>
@@ -52,7 +52,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="fc">
+        <div className="fc" id="footer-contact" style={{ scrollMarginTop: "96px" }}>
           <h4>Contact Us</h4>
           <ul>
             <li>

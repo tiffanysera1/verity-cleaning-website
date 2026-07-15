@@ -16,7 +16,7 @@ export const SERVICES: ServiceData[] = [
   {
     slug: "recurring-cleaning",
     Icon: Home,
-    photo: "/hero-home.jpg",
+    photo: "/service-deep-cleaning.jpg",
     title: "Recurring Cleaning",
     summary: "Weekly, biweekly, or monthly visits built around your household's routine.",
     goodFor:
@@ -98,3 +98,57 @@ export const SERVICES: ServiceData[] = [
 export function getService(slug: string) {
   return SERVICES.find((s) => s.slug === slug);
 }
+
+export type HomepageServiceCard = {
+  key: string;
+  Icon: ComponentType<IconProps>;
+  photo: string;
+  title: string;
+  summary: string;
+  href: string;
+};
+
+/* The homepage services grid shows Verity's 5 real services — every card
+   links to its actual /services/ detail page. */
+export const HOMEPAGE_SERVICES: HomepageServiceCard[] = [
+  {
+    key: "recurring-cleaning",
+    Icon: Home,
+    photo: "/service-deep-cleaning.jpg",
+    title: "Recurring Cleaning",
+    summary: "Keep your home consistently clean.",
+    href: "/services/recurring-cleaning/",
+  },
+  {
+    key: "deep-cleaning",
+    Icon: Sparkles,
+    photo: "/clean-home.png",
+    title: "Deep Cleaning",
+    summary: "A detailed reset for homes that need extra attention.",
+    href: "/services/deep-cleaning/",
+  },
+  {
+    key: "move-in-move-out",
+    Icon: Clock,
+    photo: "/service-move.jpg",
+    title: "Move-In / Move-Out",
+    summary: "Perfect for new beginnings or transitions.",
+    href: "/services/move-in-move-out/",
+  },
+  {
+    key: "post-construction-cleaning",
+    Icon: SprayBottle,
+    photo: "/service-construction.jpg",
+    title: "Post-Construction Cleaning",
+    summary: "Dust, debris & detail before move-in.",
+    href: "/services/post-construction-cleaning/",
+  },
+  {
+    key: "commercial-office-cleaning",
+    Icon: Building,
+    photo: "/service-commercial.jpg",
+    title: "Commercial Cleaning",
+    summary: "Clean, welcoming workspaces for offices and local businesses.",
+    href: "/services/commercial-office-cleaning/",
+  },
+];

@@ -1,13 +1,6 @@
-"use client";
-
-import { useState } from "react";
-import { Star } from "./Icons";
-
-/* Placeholder before/after photos — swap public/before-placeholder.jpg
-   and public/after-placeholder.jpg for real job photos once available.
-   Plain <img> (not next/image) intentionally: this overlay technique
-   needs both images absolutely positioned at the same natural size,
-   which is simpler without next/image's wrapper/srcset behavior. */
+import { ArrowRight, Star, Pin, Sparkle } from "./Icons";
+import TransformSlider from "./TransformSlider";
+import { TRANSFORM_PAIRS } from "./transformPairs";
 
 /* PLACEHOLDER TESTIMONIAL — replace with a real customer quote/name
    before launch. Approved as a temporary placeholder while Verity is
@@ -19,60 +12,41 @@ const TESTIMONIAL = {
 };
 
 export default function BeforeAfterSlider() {
-  const [pos, setPos] = useState(50);
-
   return (
-    <section className="section reviews-section" id="reviews">
-      <div className="wrap">
-        <div className="reviews-grid">
-          <div className="reveal">
-            <span className="eyebrow">See the Difference</span>
-            <h2 style={{ marginTop: "12px" }}>Real Homes. Real Results.</h2>
-            <p className="lead" style={{ margin: "14px 0 0" }}>
-              Drag the slider to see the kind of difference a Verity clean makes.
-            </p>
+    <section className="section" id="reviews">
+      <div className="wrap homes-grid">
+        <div className="homes-panel reveal">
+          <h3>Real Homes. Real Results.</h3>
 
-            <div className="baslider">
-              <div className="baslider-frame">
-                <img src="/after-placeholder.jpg" alt="A bright, freshly cleaned home" className="ba-img" />
-                <img
-                  src="/before-placeholder.jpg"
-                  alt=""
-                  aria-hidden="true"
-                  className="ba-img ba-before"
-                  style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
-                />
-                <div className="ba-handle" style={{ left: `${pos}%` }} aria-hidden="true">
-                  <span className="ba-handle-grip" />
-                </div>
-                <input
-                  type="range"
-                  min={0}
-                  max={100}
-                  value={pos}
-                  onChange={(e) => setPos(Number(e.target.value))}
-                  className="ba-range"
-                  aria-label="Drag to compare before and after cleaning"
-                />
-                <span className="ba-label ba-label--before">Before</span>
-                <span className="ba-label ba-label--after">After</span>
-              </div>
-            </div>
-            <p className="reviews-service-area">
-              Proudly serving Pelham, Alabaster, Helena, Hoover, and surrounding Shelby County, AL.
-            </p>
+          <div className="transform-grid">
+            {TRANSFORM_PAIRS.map(({ key, before, after }) => (
+              <TransformSlider key={key} before={before} after={after} />
+            ))}
           </div>
 
-          <div className="testimonial-card reveal">
-            <span className="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
-            <p className="testimonial-text">{TESTIMONIAL.quote}</p>
-            <div className="testimonial-stars" aria-hidden="true">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} />
-              ))}
-            </div>
-            <p className="testimonial-author">&mdash; {TESTIMONIAL.author}</p>
+          <p className="homes-more">
+            <a href="/#services">See More Transformations <ArrowRight /></a>
+          </p>
+
+          <p className="homes-service-area">
+            <Sparkle aria-hidden="true" />
+            Proudly serving Pelham, Hoover, Helena, Alabaster, and surrounding areas.
+          </p>
+        </div>
+
+        <div className="review-panel reveal">
+          <h3>What Your Neighbors Say</h3>
+          <span className="review-quote-mark" aria-hidden="true">&ldquo;</span>
+          <p className="review-text">{TESTIMONIAL.quote}</p>
+          <div className="review-stars" aria-hidden="true">
+            {Array.from({ length: 5 }).map((_, i) => <Star key={i} />)}
           </div>
+          <p className="review-author">&mdash; {TESTIMONIAL.author}</p>
+          <a href="/#reviews" className="review-more">Read More Reviews <ArrowRight /></a>
+          <p className="review-placeholder-note">
+            <Pin aria-hidden="true" style={{ width: 12, height: 12, verticalAlign: "-1px", marginRight: 4 }} />
+            Sample review shown for layout purposes — real reviews coming soon.
+          </p>
         </div>
       </div>
     </section>

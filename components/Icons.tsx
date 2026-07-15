@@ -260,11 +260,46 @@ export const Yelp = (p: IconProps) => (
   </Base>
 );
 
+export const CurvedArrow = (p: IconProps) => (
+  <Base sw={2} {...p}>
+    <path d="M3 5c0 9 6 13 11 13" />
+    <path d="M9 22c2-2 4-3 5-4" />
+  </Base>
+);
+
 export const Nextdoor = (p: IconProps) => (
   <Base sw={2} {...p}>
     <path d="m3 11 9-8 9 8" />
     <path d="M5 10v10h14V10" />
     <path d="M9 20v-6h6v6" />
+  </Base>
+);
+
+export const X = (p: IconProps) => (
+  <Base sw={2.2} {...p}>
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </Base>
+);
+
+export const XCircle = (p: IconProps) => (
+  <Base sw={2} {...p}>
+    <circle cx="12" cy="12" r="10" />
+    <line x1="15" y1="9" x2="9" y2="15" />
+    <line x1="9" y1="9" x2="15" y2="15" />
+  </Base>
+);
+
+export const ChevronRight = (p: IconProps) => (
+  <Base sw={2.2} {...p}>
+    <polyline points="9 6 15 12 9 18" />
+  </Base>
+);
+
+export const Plus = (p: IconProps) => (
+  <Base sw={2.4} {...p}>
+    <line x1="12" y1="5" x2="12" y2="19" />
+    <line x1="5" y1="12" x2="19" y2="12" />
   </Base>
 );
 

@@ -8,7 +8,7 @@ export default function MobileBar() {
         <Phone />
         Call now
       </a>
-      <a href="#quote" className="btn btn--secondary">
+      <a href="/#quote" className="btn btn--secondary">
         <Sms />
         Get quote
       </a>

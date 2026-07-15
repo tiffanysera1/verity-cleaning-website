@@ -6,8 +6,8 @@ import { Menu, ChevronDown } from "./Icons";
 import { SERVICES } from "./servicesData";
 
 const RESOURCE_LINKS: [string, string][] = [
-  ["/#faq", "FAQ"],
-  ["/#area", "Service Area"],
+  ["/#footer-area", "Service Area"],
+  ["/#footer-contact", "Contact Us"],
 ];
 
 function NavDropdown({
@@ -74,15 +74,16 @@ export default function Header() {
           id="primary-nav"
           aria-label="Primary"
         >
+          <a href="/" onClick={() => setOpen(false)}>Home</a>
           <NavDropdown label="Services" links={serviceLinks} onNavigate={() => setOpen(false)} />
-          <a href="/#process" onClick={() => setOpen(false)}>How It Works</a>
-          <a href="/#why" onClick={() => setOpen(false)}>Why Verity</a>
+          <a href="/#how-it-works" onClick={() => setOpen(false)}>How It Works</a>
+          <a href="/#trust" onClick={() => setOpen(false)}>Why Verity</a>
           <a href="/#reviews" onClick={() => setOpen(false)}>Reviews</a>
           <NavDropdown label="Resources" links={RESOURCE_LINKS} onNavigate={() => setOpen(false)} />
         </nav>
 
         <div className="nav-cta">
-          <a href="#quote" className="btn btn--primary">
+          <a href="/#quote" className="btn btn--primary">
             Get My Quote
           </a>
           <button
