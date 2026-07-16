@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { Menu, ChevronDown } from "./Icons";
 import { SERVICES } from "./servicesData";
@@ -9,6 +9,12 @@ const RESOURCE_LINKS: [string, string][] = [
   ["/#footer-area", "Service Area"],
   ["/#footer-contact", "Contact Us"],
 ];
+
+/* Closing is delayed rather than instant on mouseleave: the panel sits a
+   few pixels below the trigger, and that gap isn't part of either
+   element's hoverable box, so an instant close fired while the cursor
+   was still crossing the gap (before it reached the panel). */
+const CLOSE_DELAY = 250;
 
 function NavDropdown({
   label,
@@ -20,18 +26,37 @@ function NavDropdown({
   onNavigate: () => void;
 }) {
   const [open, setOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function cancelClose() {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  }
+
+  function scheduleClose() {
+    cancelClose();
+    closeTimer.current = setTimeout(() => setOpen(false), CLOSE_DELAY);
+  }
 
   return (
     <div
       className="nav-drop"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={() => {
+        cancelClose();
+        setOpen(true);
+      }}
+      onMouseLeave={scheduleClose}
     >
       <button
         type="button"
         className="nav-drop-trigger"
         aria-expanded={open}
-        onClick={() => setOpen((o) => !o)}
+        onClick={() => {
+          cancelClose();
+          setOpen((o) => !o);
+        }}
       >
         {label}
         <ChevronDown />
@@ -42,6 +67,7 @@ function NavDropdown({
             key={href}
             href={href}
             onClick={() => {
+              cancelClose();
               setOpen(false);
               onNavigate();
             }}
