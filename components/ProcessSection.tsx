@@ -46,7 +46,7 @@ export default function ProcessSection() {
                 <span className="ic" aria-hidden="true">
                   <Icon />
                 </span>
-                <b>{i + 1}. {title}</b>
+                <b>{title}</b>
                 <p>{body}</p>
               </div>
               {i < STEPS.length - 1 && (
