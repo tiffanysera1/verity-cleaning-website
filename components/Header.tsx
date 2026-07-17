@@ -85,7 +85,7 @@ export default function Header() {
 
   const serviceLinks: [string, string][] = [
     ...SERVICES.map((s): [string, string] => [`/services/${s.slug}/`, s.title]),
-    ["/#services", "View all services"],
+    ["/services/", "View all services"],
   ];
 
   return (

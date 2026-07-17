@@ -303,3 +303,36 @@ export const Plus = (p: IconProps) => (
   </Base>
 );
 
+export const WindowIcon = (p: IconProps) => (
+  <Base sw={2} {...p}>
+    <rect x="3" y="3" width="18" height="18" rx="2" />
+    <line x1="12" y1="3" x2="12" y2="21" />
+    <line x1="3" y1="12" x2="21" y2="12" />
+  </Base>
+);
+
+export const Shirt = (p: IconProps) => (
+  <Base sw={2} {...p}>
+    <path d="M16 3l-4 2-4-2-5 4 3 3 2-1.5V21h8V8.5l2 1.5 3-3z" />
+  </Base>
+);
+
+export const Bed = (p: IconProps) => (
+  <Base sw={2} {...p}>
+    <path d="M2 18v-6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v6" />
+    <path d="M2 18v2" />
+    <path d="M22 18v2" />
+    <path d="M4 12V6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v4" />
+    <path d="M13 10V6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6" />
+  </Base>
+);
+
+export const Paw = (p: IconProps) => (
+  <Base sw={2} fill="currentColor" {...p}>
+    <circle cx="7.5" cy="9.5" r="1.8" />
+    <circle cx="12" cy="7" r="1.8" />
+    <circle cx="16.5" cy="9.5" r="1.8" />
+    <path d="M12 12c-3 0-5.5 2-5.5 4.5S8.5 20 12 20s5.5-1 5.5-3.5S15 12 12 12z" stroke="none" />
+  </Base>
+);
+

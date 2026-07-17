@@ -34,7 +34,7 @@ export default function Services() {
         </div>
 
         <div className="services-more reveal">
-          <a href="/#services" className="btn btn--outline">View All Services</a>
+          <a href="/services/" className="btn btn--outline">View All Services</a>
         </div>
       </div>
     </section>

@@ -87,7 +87,7 @@ export default function ServiceIncluded({
           </div>
         </div>
 
-        <a href="/#quote" className="included-more">See full checklist for all areas <ArrowRight /></a>
+        <a href="/services/#compare" className="included-more">See full checklist for all areas <ArrowRight /></a>
       </div>
 
       <div className="included-row">
@@ -97,7 +97,7 @@ export default function ServiceIncluded({
             <ul>{notIncluded.left.map((item) => <li key={item}>{item}</li>)}</ul>
             <ul>{notIncluded.right.map((item) => <li key={item}>{item}</li>)}</ul>
           </div>
-          <a href="/#quote" className="included-more">View all exclusions <ArrowRight /></a>
+          <a href="/services/#compare" className="included-more">View all exclusions <ArrowRight /></a>
         </div>
 
         <div className="addons-card reveal">
@@ -121,7 +121,7 @@ export default function ServiceIncluded({
             ))}
           </ul>
           <p className="addons-note">Sample pricing shown for layout purposes — confirmed at your personalized quote.</p>
-          <a href="/#quote" className="included-more">View all add-ons <ArrowRight /></a>
+          <a href="/services/#addons" className="included-more">View all add-ons <ArrowRight /></a>
         </div>
       </div>
     </>

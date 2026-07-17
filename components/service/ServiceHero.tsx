@@ -63,7 +63,7 @@ export default function ServiceHero({
         <nav className="breadcrumb reveal" aria-label="Breadcrumb">
           <a href="/">Home</a>
           <ChevronRight aria-hidden="true" />
-          <a href="/#services">Services</a>
+          <a href="/services/">Services</a>
           <ChevronRight aria-hidden="true" />
           <span aria-current="page">{title}</span>
         </nav>
