@@ -20,7 +20,7 @@ export async function generateMetadata(
   if (!service) return {};
 
   const title = `${service.title} in Shelby County, AL | Verity Cleaning`;
-  const description = `${service.summary} Serving Pelham, Alabaster, Helena, Hoover, and surrounding Shelby County, AL. Call or text (205) 888-0199.`;
+  const description = `${service.summary} Serving Pelham, Alabaster, Helena, Hoover, and surrounding Shelby County, AL. Call or text (205) 202-0506.`;
 
   return {
     title,

@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { Sms, Camera, X } from "./Icons";
 
-const PHONE = "2058880199";
+const PHONE = "2052020506";
 const MAX_PHOTOS = 8;
 
 type Photo = { file: File; url: string };
@@ -155,7 +155,7 @@ export default function QuoteForm() {
           Open the text draft
         </a>
         <p className="or" style={{ marginTop: "12px" }}>
-          or call <a href={`tel:+1${PHONE}`}>(205) 888-0199</a>
+          or call <a href={`tel:+1${PHONE}`}>(205) 202-0506</a>
         </p>
         <button type="button" className="quote-edit" onClick={() => setDraftHref(null)}>
           &larr; Edit details
@@ -245,7 +245,7 @@ export default function QuoteForm() {
         </button>
 
         <p className="or">
-          or just call/text <a href={`tel:+1${PHONE}`}>(205) 888-0199</a>
+          or just call/text <a href={`tel:+1${PHONE}`}>(205) 202-0506</a>
         </p>
       </form>
     </div>

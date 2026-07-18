@@ -9,7 +9,7 @@ export default function JsonLd() {
     description:
       "Premium, licensed and insured residential and commercial cleaning service in Shelby County, AL. Offering house cleaning, deep cleaning, move-in/out cleanings, and office sanitization.",
     slogan: "A Clean Home. More Time Back.",
-    telephone: "+12058880199",
+    telephone: "+12052020506",
     email: "hello@veritycleaning.co",
     url: "https://veritycleaning.co",
     image: "https://veritycleaning.co/clean-home.png",

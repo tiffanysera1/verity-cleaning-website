@@ -56,10 +56,10 @@ export default function Footer() {
           <h4>Contact Us</h4>
           <ul>
             <li>
-              <a href="tel:+12058880199"><Phone />(205) 888-0199</a>
+              <a href="tel:+12052020506"><Phone />(205) 202-0506</a>
             </li>
             <li>
-              <a href="sms:2058880199"><Sms />Text us anytime</a>
+              <a href="sms:2052020506"><Sms />Text us anytime</a>
             </li>
             <li>
               <a href="mailto:hello@veritycleaning.co"><Mail />hello@veritycleaning.co</a>

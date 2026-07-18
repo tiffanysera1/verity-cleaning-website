@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://veritycleaning.co"),
   title: "Verity Cleaning — A Clean Home, More Time Back",
   description:
-    "Licensed, bonded, and insured home & office cleaning in Shelby County, AL. Personalized quotes, background-checked cleaners, and a modern, effortless experience. Call or text (205) 888-0199.",
+    "Licensed, bonded, and insured home & office cleaning in Shelby County, AL. Personalized quotes, background-checked cleaners, and a modern, effortless experience. Call or text (205) 202-0506.",
   alternates: { canonical: "/" },
   keywords: [
     "cleaning service Shelby County",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Verity Cleaning — A Clean Home, More Time Back",
     description:
-      "Licensed, bonded, and insured cleaning with a 100% satisfaction guarantee. Serving Pelham, Alabaster, Hoover, and Helena. Call or text (205) 888-0199.",
+      "Licensed, bonded, and insured cleaning with a 100% satisfaction guarantee. Serving Pelham, Alabaster, Hoover, and Helena. Call or text (205) 202-0506.",
     type: "website",
     url: "https://veritycleaning.co",
     siteName: "Verity Cleaning, LLC",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Verity Cleaning — A Clean Home, More Time Back",
     description:
-      "Licensed, bonded, and insured cleaning with a 100% satisfaction guarantee. Call or text (205) 888-0199.",
+      "Licensed, bonded, and insured cleaning with a 100% satisfaction guarantee. Call or text (205) 202-0506.",
     images: ["/clean-home.png"],
   },
 };
