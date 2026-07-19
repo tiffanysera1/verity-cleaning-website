@@ -1,4 +1,4 @@
-import { Camera, FileText, CalendarCheck, HomeSparkle, CheckCircle, ArrowRight, Sparkle } from "./Icons";
+import { Camera, FileText, Sms, HomeSparkle, CheckCircle, ArrowRight, Sparkle, CalendarCheck, Clock, CreditCard, MessageCircle } from "./Icons";
 
 const STEPS = [
   {
@@ -12,9 +12,9 @@ const STEPS = [
     body: "We create a personalized quote just for you.",
   },
   {
-    Icon: CalendarCheck,
-    title: "Choose Your Time",
-    body: "Request your preferred time and alternate dates.",
+    Icon: Sms,
+    title: "Receive Updates",
+    body: "Get notified when your cleaner is on the way, when the job starts, and when it's complete.",
   },
   {
     Icon: HomeSparkle,
@@ -26,6 +26,13 @@ const STEPS = [
     title: "Pay After Completion",
     body: "You pay only after your service is complete.",
   },
+];
+
+const PORTAL_FEATURES = [
+  { Icon: CalendarCheck, label: "Book cleanings" },
+  { Icon: Clock, label: "Track your cleans" },
+  { Icon: CreditCard, label: "Update card info" },
+  { Icon: MessageCircle, label: "Reschedule or cancel" },
 ];
 
 export default function ProcessSection() {
@@ -56,6 +63,25 @@ export default function ProcessSection() {
               )}
             </div>
           ))}
+        </div>
+
+        <div className="portal-callout reveal">
+          <div className="portal-callout-text">
+            <b>Manage everything from your own portal</b>
+            <p>
+              Once you&rsquo;re a customer, we&rsquo;ll send you a link to create your free profile if
+              you&rsquo;d like one &mdash; book new cleanings, track upcoming appointments, update your
+              card on file, and reschedule or cancel anytime.
+            </p>
+          </div>
+          <div className="portal-callout-features">
+            {PORTAL_FEATURES.map(({ Icon, label }) => (
+              <span key={label}>
+                <Icon aria-hidden="true" />
+                {label}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
