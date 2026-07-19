@@ -37,8 +37,11 @@ function PhotoPicker({ photos, onAdd, onRemove }: { photos: Photo[]; onAdd: (fil
   return (
     <div>
       <label htmlFor="qphotos">
-        Photos of your home <span className="label-opt">(optional)</span>
+        Upload a few photos <span className="label-opt">(Recommended)</span>
       </label>
+      <p className="field-hint">
+        The more photos you provide, the more accurate your personalized quote will be.
+      </p>
       <div
         className={dragOver ? "photo-drop is-over" : "photo-drop"}
         onClick={() => inputRef.current?.click()}
@@ -166,7 +169,7 @@ export default function QuoteForm() {
 
   return (
     <div className="quote reveal" id="quote">
-      <h2>Tell us about your home</h2>
+      <h2>Tell us about your home and we&rsquo;ll prepare your personalized quote.</h2>
       <p className="note">Fill it out &mdash; we&rsquo;ll draft your text in one tap.</p>
       <form onSubmit={onSubmit}>
         <div>
@@ -178,10 +181,8 @@ export default function QuoteForm() {
           <input id="qp" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="(205) 555-0123" required />
         </div>
         <div>
-          <label htmlFor="qe">
-            Email <span className="label-opt">(optional)</span>
-          </label>
-          <input id="qe" name="email" type="email" autoComplete="email" placeholder="you@example.com" />
+          <label htmlFor="qe">Email</label>
+          <input id="qe" name="email" type="email" autoComplete="email" placeholder="you@example.com" required />
         </div>
         <div>
           <label htmlFor="qa">Home Address</label>
@@ -243,6 +244,7 @@ export default function QuoteForm() {
           <Sms />
           Get my personalized quote
         </button>
+        <p className="field-hint field-hint--center">Every quote is personally reviewed before being sent.</p>
 
         <p className="or">
           or just call/text <a href={`tel:+1${PHONE}`}>(205) 202-0506</a>

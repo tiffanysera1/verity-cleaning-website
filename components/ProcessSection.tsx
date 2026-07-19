@@ -8,7 +8,7 @@ const STEPS = [
   },
   {
     Icon: FileText,
-    title: "Receive Your Quote",
+    title: "Receive Your Personalized Cleaning Plan",
     body: "We create a personalized quote just for you.",
   },
   {

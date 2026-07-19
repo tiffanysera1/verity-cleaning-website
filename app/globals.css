@@ -744,6 +744,8 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 .quote .or { text-align: center; font-size: .88rem; color: var(--muted); }
 .quote .or a { color: var(--navy); font-weight: 600; }
 .label-opt { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--muted); }
+.field-hint { margin-top: -2px; font-size: .78rem; color: var(--muted); line-height: 1.4; }
+.field-hint--center { text-align: center; margin-top: 10px; }
 .quote-edit {
   display: block;
   margin: 16px auto 0;
