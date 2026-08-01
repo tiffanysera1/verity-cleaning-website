@@ -24,7 +24,7 @@ export type IncludedTab = {
   items: string[];
 };
 
-export type AddOn = { title: string; description: string; price: string };
+export type AddOn = { title: string; description: string };
 export type FaqItem = { q: string; a: string };
 export type BlogLink = { title: string; image: string };
 export type Tip = { title: string; body: string; image: string };
@@ -57,15 +57,12 @@ export const EXPECT_STEPS = [
   { Icon: CreditCard, title: "Pay After Completion", body: "You pay only after your service is completed." },
 ];
 
-/* PLACEHOLDER PRICING — sample amounts for layout purposes. Replace with
-   Verity's real add-on pricing before launch. Shown to visitors with a
-   "sample pricing" disclaimer in ServiceIncluded.tsx. */
 const COMMON_ADD_ONS: AddOn[] = [
-  { title: "Inside Oven", description: "Removes baked-on grease & buildup.", price: "+$55" },
-  { title: "Inside Refrigerator", description: "Deep clean shelves, drawers & compartments.", price: "+$55" },
-  { title: "Dishes", description: "Hand-wash and load/unload the dishwasher.", price: "+$20" },
-  { title: "Wet Wipe Blinds", description: "Removes dust & grime from blinds.", price: "+$25" },
-  { title: "Extra Pet Hair Removal", description: "Targeted removal from floors & upholstery.", price: "+$35" },
+  { title: "Inside Oven", description: "Removes baked-on grease & buildup." },
+  { title: "Inside Refrigerator", description: "Deep clean shelves, drawers & compartments." },
+  { title: "Dishes", description: "Hand-wash and load/unload the dishwasher." },
+  { title: "Wet Wipe Blinds", description: "Removes dust & grime from blinds." },
+  { title: "Extra Pet Hair Removal", description: "Targeted removal from floors & upholstery." },
 ];
 
 /* PLACEHOLDER — Verity has no blog yet. Sample links for layout purposes;
@@ -166,9 +163,9 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
       right: ["Trash haul-away", "Moving heavy furniture", "Yard work", "Hazardous materials"],
     },
     addOns: [
-      { title: "Inside Oven Deep Scrub", description: "Removes baked-on grease & buildup.", price: "+$55" },
-      { title: "Exterior Window Cleaning", description: "Streak-free glass, inside and out.", price: "+$65" },
-      { title: "Carpet Shampoo", description: "Per room — deep clean and revive carpets.", price: "+$45" },
+      { title: "Inside Oven Deep Scrub", description: "Removes baked-on grease & buildup." },
+      { title: "Exterior Window Cleaning", description: "Streak-free glass, inside and out." },
+      { title: "Carpet Shampoo", description: "Per room — deep clean and revive carpets." },
     ],
     tips: tipsFor("/service-move.jpg"),
     blogLinks: blogLinksFor("Move-Out Cleaning", "a Move-Out Clean"),
@@ -195,10 +192,10 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
       right: ["IT equipment cleaning", "Moving furniture", "Hazardous materials", "After-hours emergency cleanup"],
     },
     addOns: [
-      { title: "Interior Window Cleaning", description: "Streak-free glass throughout your space.", price: "+$75" },
-      { title: "Carpet Shampoo", description: "Per room — deep clean and revive carpets.", price: "+$45" },
-      { title: "Restocking Supplies Program", description: "We track and restock restroom & break room supplies.", price: "Custom" },
-      { title: "Deep Sanitizing Service", description: "High-touch surface sanitizing for shared spaces.", price: "+$95" },
+      { title: "Interior Window Cleaning", description: "Streak-free glass throughout your space." },
+      { title: "Carpet Shampoo", description: "Per room — deep clean and revive carpets." },
+      { title: "Restocking Supplies Program", description: "We track and restock restroom & break room supplies." },
+      { title: "Deep Sanitizing Service", description: "High-touch surface sanitizing for shared spaces." },
     ],
     tips: [
       { title: "Why a clean office boosts employee morale.", body: "A tidy, well-maintained workspace signals that a business cares about its people — and it shows in day-to-day focus.", image: "/service-commercial.jpg" },
@@ -229,10 +226,10 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
       right: ["Structural cleanup", "Hazardous materials", "Yard/exterior debris", "HVAC duct cleaning"],
     },
     addOns: [
-      { title: "Exterior Window Cleaning", description: "Streak-free glass, inside and out.", price: "+$65" },
-      { title: "Carpet Shampoo", description: "Per room — deep clean and revive carpets.", price: "+$45" },
-      { title: "Heavy Residue & Sticker Removal", description: "Paint splatter, labels, and stubborn residue.", price: "+$40" },
-      { title: "Debris Haul-Away", description: "Removal of leftover construction debris.", price: "Custom" },
+      { title: "Exterior Window Cleaning", description: "Streak-free glass, inside and out." },
+      { title: "Carpet Shampoo", description: "Per room — deep clean and revive carpets." },
+      { title: "Heavy Residue & Sticker Removal", description: "Paint splatter, labels, and stubborn residue." },
+      { title: "Debris Haul-Away", description: "Removal of leftover construction debris." },
     ],
     tips: [
       { title: "Why construction dust settles for weeks after the crew leaves.", body: "Fine dust from drywall and sanding can stay airborne and resettle for days — which is why a proper post-construction clean covers every surface, not just the visible ones.", image: "/service-construction.jpg" },

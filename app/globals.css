@@ -993,7 +993,6 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 .addons-list b { display: block; font-family: var(--font-display); font-weight: 700; color: var(--navy); font-size: .86rem; }
 .addons-list span { display: block; color: var(--muted); font-size: .78rem; margin-top: 2px; }
 .addons-list div { flex: 1; min-width: 0; }
-.addons-list em { font-style: normal; font-weight: 700; color: var(--navy); font-size: .84rem; flex: none; }
 .addons-note { margin-top: 12px; font-size: .72rem; color: var(--muted); }
 
 /* What to Expect */

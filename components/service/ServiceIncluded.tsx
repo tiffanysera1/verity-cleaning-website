@@ -108,11 +108,10 @@ export default function ServiceIncluded({
                   <b>{addOn.title}</b>
                   <span>{addOn.description}</span>
                 </div>
-                <em>{addOn.price}</em>
               </li>
             ))}
           </ul>
-          <p className="addons-note">Sample pricing shown for layout purposes — confirmed at your personalized quote.</p>
+          <p className="addons-note">Pricing for any add-ons is included in your personalized quote.</p>
           <a href="/services/#addons" className="included-more">View all add-ons <ArrowRight /></a>
         </div>
       </div>
