@@ -77,7 +77,7 @@ export const COMPARE_ROWS: CompareRow[] = [
   { label: "Window Sills", values: ["no", "yes", "yes", "yes"] },
   { label: "Ceiling Fans", values: ["addon", "addon", "addon", "addon"] },
   { label: "Inside Oven", values: ["addon", "addon", "addon", "no"] },
-  { label: "Inside Refrigerator", values: ["addon", "addon", "addon", "no"] },
+  { label: "Inside Refrigerator", values: ["addon", "addon", "yes", "no"] },
   { label: "Interior Windows", values: ["addon", "addon", "addon", "yes"] },
   { label: "Laundry", values: ["addon", "addon", "no", "no"] },
   { label: "Bed Making", values: ["yes", "yes", "no", "no"] },

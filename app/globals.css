@@ -982,16 +982,14 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 .not-included-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; margin-top: 18px; }
 .not-included-cols li { font-size: .85rem; color: var(--muted); padding: 4px 0; }
 .addons-list { margin-top: 16px; display: grid; gap: 4px; }
-.addons-list label {
+.addons-list li {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 10px 0;
   border-top: 1px solid var(--border);
-  cursor: pointer;
 }
-.addons-list li:first-child label { border-top: none; }
-.addons-list input[type="checkbox"] { width: 17px; height: 17px; accent-color: var(--blue); flex: none; }
+.addons-list li:first-child { border-top: none; }
 .addons-list b { display: block; font-family: var(--font-display); font-weight: 700; color: var(--navy); font-size: .86rem; }
 .addons-list span { display: block; color: var(--muted); font-size: .78rem; margin-top: 2px; }
 .addons-list div { flex: 1; min-width: 0; }

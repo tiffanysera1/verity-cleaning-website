@@ -44,7 +44,6 @@ export default function ServiceIncluded({
   addOns: AddOn[];
 }) {
   const [active, setActive] = useState(0);
-  const [checked, setChecked] = useState<Record<string, boolean>>({});
   const activeTab = tabs[active];
   const [colA, colB] = chunk(activeTab.items);
 
@@ -105,18 +104,11 @@ export default function ServiceIncluded({
           <ul className="addons-list">
             {addOns.map((addOn) => (
               <li key={addOn.title}>
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={!!checked[addOn.title]}
-                    onChange={() => setChecked((c) => ({ ...c, [addOn.title]: !c[addOn.title] }))}
-                  />
-                  <div>
-                    <b>{addOn.title}</b>
-                    <span>{addOn.description}</span>
-                  </div>
-                  <em>{addOn.price}</em>
-                </label>
+                <div>
+                  <b>{addOn.title}</b>
+                  <span>{addOn.description}</span>
+                </div>
+                <em>{addOn.price}</em>
               </li>
             ))}
           </ul>

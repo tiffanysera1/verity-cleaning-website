@@ -155,19 +155,18 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
     description:
       "Perfect for closing out a lease, prepping a home for new owners, or settling into a new place that needs a reset first.",
     includedTabs: [
-      { key: "kitchen", label: "Kitchen", icon: "home", items: ["Inside & outside cabinets", "Counters & backsplash", "Sink & fixtures", "Stovetop", "Appliance exteriors", "Floors"] },
+      { key: "kitchen", label: "Kitchen", icon: "home", items: ["Inside & outside cabinets", "Counters & backsplash", "Sink & fixtures", "Stovetop", "Inside refrigerator", "Appliance exteriors", "Floors"] },
       { key: "bathrooms", label: "Bathrooms", icon: "spray", items: ["Toilets", "Showers & tubs", "Sink & fixtures", "Mirrors", "Cabinets & drawers", "Floors"] },
       { key: "bedrooms", label: "Bedrooms & Closets", icon: "home-sparkle", items: ["Inside closets & shelving", "Baseboards", "Window sills", "Floors", "Light switches"] },
       { key: "living", label: "Living Areas", icon: "sparkles", items: ["Baseboards & trim", "Window sills", "Floors", "Light switches", "Cobwebs"] },
       { key: "garage", label: "Garage & Storage", icon: "bucket", items: ["Sweep floors", "Cobwebs", "Light fixtures", "Shelving wiped down"] },
     ],
     notIncluded: {
-      left: ["Inside oven deep-scrub (add-on)", "Inside refrigerator (add-on)", "Exterior windows (add-on)", "Carpet shampoo (add-on)"],
+      left: ["Inside oven deep-scrub (add-on)", "Exterior windows (add-on)", "Carpet shampoo (add-on)"],
       right: ["Trash haul-away", "Moving heavy furniture", "Yard work", "Hazardous materials"],
     },
     addOns: [
       { title: "Inside Oven Deep Scrub", description: "Removes baked-on grease & buildup.", price: "+$55" },
-      { title: "Inside Refrigerator", description: "Deep clean shelves, drawers & compartments.", price: "+$55" },
       { title: "Exterior Window Cleaning", description: "Streak-free glass, inside and out.", price: "+$65" },
       { title: "Carpet Shampoo", description: "Per room — deep clean and revive carpets.", price: "+$45" },
     ],
