@@ -16,13 +16,15 @@ function buildSmsHref(
   service: string,
   bedrooms: string,
   bathrooms: string,
+  preferredTime: string,
   message: string,
   photoCount: number
 ) {
   const details = message.trim() ? ` Details: ${message.trim()}.` : "";
   const emailPart = email.trim() ? ` Email: ${email.trim()}.` : "";
+  const preferredTimePart = preferredTime.trim() ? ` Preferred date/time: ${preferredTime.trim()}.` : "";
   const photoPart = photoCount > 0 ? ` I have ${photoCount} photo${photoCount === 1 ? "" : "s"} to attach.` : "";
-  const body = `Hi Verity Cleaning — I'd like a quote. My name is ${name || "(name)"}. Address: ${address || "(address)"}. Service needed: ${service}. Home size: ${bedrooms} bed / ${bathrooms} bath.${details} Best phone: ${phone || "(phone)"}.${emailPart}${photoPart}`;
+  const body = `Hi Verity Cleaning — I'd like a quote. My name is ${name || "(name)"}. Address: ${address || "(address)"}. Service needed: ${service}. Home size: ${bedrooms} bed / ${bathrooms} bath.${preferredTimePart}${details} Best phone: ${phone || "(phone)"}.${emailPart}${photoPart}`;
   return `sms:+1${PHONE}?&body=${encodeURIComponent(body)}`;
 }
 
@@ -131,6 +133,7 @@ export default function QuoteForm() {
       (f.get("service") as string) || "",
       (f.get("bedrooms") as string) || "",
       (f.get("bathrooms") as string) || "",
+      ((f.get("preferredTime") as string) || "").trim(),
       (f.get("message") as string) || "",
       photos.length
     );
@@ -227,6 +230,17 @@ export default function QuoteForm() {
             <option>Post-Construction Cleaning</option>
             <option>Something else</option>
           </select>
+        </div>
+        <div>
+          <label htmlFor="qt">
+            Preferred Date/Time <span className="label-opt">(optional)</span>
+          </label>
+          <input
+            id="qt"
+            name="preferredTime"
+            type="text"
+            placeholder="E.g., Tuesday mornings, or a specific date"
+          />
         </div>
         <PhotoPicker photos={photos} onAdd={addFiles} onRemove={removePhoto} />
         <div>
