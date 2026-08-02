@@ -30,6 +30,8 @@ timezone **America/Chicago**.
 - When home condition is unknown, photos are collected by text so quotes are accurate.
 - After a quote is sent (marked manually), a warm 3-touch / 7-day follow-up runs automatically
   and stops the moment the customer responds or books.
+- After a job is completed, prompt a review: 5★ → Google, ≤4★ → private follow-up (Google link
+  still offered to everyone).
 - Tiffany runs the whole thing from the pipeline board; Claude operates/monitors on demand.
 
 ## Prerequisite (parallel track — does not block building)
@@ -81,18 +83,34 @@ Tiffany drags card → "Quote Sent"  ── manual trigger ──►
    • Day 1 SMS nudge
    • Day 3 email check-in
    • Day 7 final SMS
-   • auto-stop on reply/booking → "Booked (Won)"; else → "Lost (Cold)"
+   • auto-stop on reply/booking → "Booked"; else → "Lost (Cold)"
+      │  (booking won)
+      ▼
+Job runs in ScheduleDrop → status updates sent to customer
+      │
+      ▼
+Opportunity → "Job Complete"  (Tiffany, or Claude bridges from ScheduleDrop)
+      │
+      ▼
+Review request (manual) → star survey
+   • 5★ → Google review link
+   • ≤4★ → thank + private feedback + follow-up task (Google link still offered)
 ```
 
 ## 1. Pipeline
 
-Reshape the existing pipeline into four stages (the board doubles as the to-do list):
+Reshape the existing pipeline into five stages (the board doubles as the to-do list):
 
-`New Lead → Quote Sent → Booked (Won) → Lost (Cold)`
+`New Lead → Quote Sent → Booked → Job Complete → Lost (Cold)`
 
-Two tags avoid extra stages while tracking photo state:
+- *New Lead → Quote Sent → Booked* is the sales path; *Job Complete* marks a finished job awaiting
+  a review request; *Lost (Cold)* is the drop-out for leads that don't convert.
+
+Tags avoid extra stages while tracking sub-states:
 - `awaiting-photos` — photo request sent, waiting on the customer.
 - `needs-more-photos` — Tiffany requested additional photos after the fact.
+- `review-5star` — customer rated 5★ and was sent to Google.
+- `review-needs-followup` — customer rated ≤4★; internal follow-up owed.
 
 ## 2. Workflow 1 — "New Lead Intake"
 
@@ -150,6 +168,30 @@ in ScheduleDrop).
 - Send **only during business hours** (America/Chicago).
 - Every SMS includes a **"Reply STOP"** opt-out.
 
+## Post-booking: job completion & review request
+
+After a job is booked, ScheduleDrop runs the job and sends the customer its own status updates
+(on the way / in progress / complete). GHL's role is to track completion and drive the review ask.
+
+**Marking a job complete** — the Opportunity moves to *Job Complete* either:
+- manually by Tiffany, or
+- via Claude bridging the two systems: Claude reads ScheduleDrop for completed bookings and moves
+  the matching GHL opportunity to *Job Complete*.
+
+**Review request (manual trigger)** — when ready, Tiffany (or Claude) sends a review request that
+links to a short GHL survey (*"How was your cleaning?"*, 1–5 stars). A routing workflow branches on
+the rating (**middle-ground policy — not gating**):
+- **5★** → thank-you + **Google review link**, tag `review-5star`.
+- **≤4★** → warm thank-you + private feedback capture (saved as an internal note), a **follow-up
+  task** for Tiffany to make it right, tag `review-needs-followup` — **and the Google link is still
+  offered**, so no customer is blocked from reviewing publicly.
+
+**Needed from Tiffany:** her Google Business Profile "leave a review" short link.
+
+**Build:** the star survey and the routing workflow are UI-built in GHL (Claude designs the
+questions + click steps); Claude drafts all review-request copy and operates the ScheduleDrop→GHL
+completion bridge + review sends on demand.
+
 ## 5. Message copy (drafts — warm & friendly, signed "Tiffany from Verity Cleaning")
 
 GHL merge fields shown as `{{contact.first_name}}` etc. Final wording tweakable after review.
@@ -203,11 +245,13 @@ GHL merge fields shown as `{{contact.first_name}}` etc. Final wording tweakable 
 - Verifies/creates the tag structure where the API allows; pre-stages what's possible.
 - Once the number is live: updates every phone-number reference on the website to the new number.
 - Embeds the GHL lead form on the website (replacing the current SMS-link QuoteForm).
+- Drafts the review-request messages + the star-survey questions.
 
 **Tiffany clicks once (with Claude's step-by-step guide):**
-- Reshape the four pipeline stages.
+- Reshape the five pipeline stages.
 - Build Workflow 1 and Workflow 2 in the GHL Workflow builder.
 - Build the website lead form in GHL.
+- Build the review star-survey + rating-routing workflow; provide the Google review link.
 - Point the AI voice agent at the new number and set its photo-consent question.
 - Set up the "Request more photos" quick-send.
 
@@ -218,6 +262,8 @@ GHL merge fields shown as `{{contact.first_name}}` etc. Final wording tweakable 
 **Claude operates ongoing (on demand):**
 - Move stalled leads, send/re-send photo requests, retrieve inbound photos, report on pipeline
   health, surface leads that need attention.
+- Bridge ScheduleDrop→GHL to mark jobs complete; send review requests; log ≤4★ feedback and open
+  follow-up tasks.
 
 ## 7. Compliance
 
@@ -225,10 +271,12 @@ GHL merge fields shown as `{{contact.first_name}}` etc. Final wording tweakable 
 - "Reply STOP" opt-out on every outbound text.
 - Business-hours-only sending (America/Chicago).
 - A2P 10DLC registered before the first SMS is sent.
+- Review flow is middle-ground (non-gating): the Google review link is offered to all customers
+  regardless of star rating.
 
 ## Platform constraints (why the work splits the way it does)
 
-- **GHL workflows, pipelines, and forms are built in the UI**, not via API/MCP — no
+- **GHL workflows, pipelines, forms, and surveys are built in the UI**, not via API/MCP — no
   create-workflow/create-form endpoint exists for anyone. Claude cannot build them directly; it
   designs, guides, and then operates.
 - **GHL MCP capabilities available to Claude:** read/create/update contacts, tags, tasks; read
@@ -252,3 +300,6 @@ GHL merge fields shown as `{{contact.first_name}}` etc. Final wording tweakable 
 - Confirm the new GHL number supports **MMS** for photo replies (local numbers generally do).
 - New number means updating the website + Google listing; old Google Voice number should forward
   or carry a "we've moved to a new number" note during the transition if it's anywhere public.
+- Need Tiffany's **Google Business review link** for the 5★ route.
+- Confirm **ScheduleDrop exposes booking completion status** to its MCP so Claude can bridge it
+  (verify with a read).
