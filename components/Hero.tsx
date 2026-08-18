@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { Heart, Sparkle, Shield, ArrowRight } from "./Icons";
+import { Heart, Sparkle, Shield, ArrowRight, Star } from "./Icons";
 import { QUOTE_FORM_URL } from "./quoteLink";
+import { GOOGLE_REVIEWS_URL, GOOGLE_RATING } from "./googleBusiness";
 
 export default function Hero() {
   return (
@@ -40,6 +41,25 @@ export default function Hero() {
               Get My Free Quote
               <ArrowRight aria-hidden="true" />
             </a>
+            {/* Links to the listing so the rating is checkable rather than
+                decorative. Five painted stars with nothing behind them is the
+                thing customers have learned to discount. */}
+            <a
+              className="hero-rating"
+              href={GOOGLE_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="hero-rating-stars" aria-hidden="true">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} />
+                ))}
+              </span>
+              <span className="hero-rating-text">
+                <strong>{GOOGLE_RATING}</strong> on Google
+              </span>
+            </a>
+
             <p className="hero-quote-sub">
               Takes about a minute &mdash; tell us about your home and we&rsquo;ll get
               back to you within 24 hours.

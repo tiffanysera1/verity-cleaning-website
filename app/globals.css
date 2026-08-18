@@ -637,8 +637,21 @@ button { font-family: inherit; }
 }
 .hero-quote-cta svg { width: 20px; height: 20px; flex: none; }
 .hero-quote-cta:hover { transform: translateY(-1px); }
+.hero-rating {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  transition: opacity .2s var(--ease);
+}
+.hero-rating:hover { opacity: .78; }
+.hero-rating-stars { display: inline-flex; gap: 3px; color: #f5b942; }
+.hero-rating-stars svg { width: 17px; height: 17px; }
+.hero-rating-text { font-size: .87rem; color: var(--navy-muted); }
+.hero-rating-text strong { color: var(--navy); font-weight: 700; }
 .hero-quote-sub {
-  margin-top: 12px;
+  margin-top: 10px;
   text-align: center;
   color: var(--navy-muted);
   font-size: .86rem;

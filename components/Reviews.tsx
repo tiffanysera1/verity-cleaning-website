@@ -1,8 +1,5 @@
 import { ArrowRight, Star, Sparkle } from "./Icons";
-
-/* Canonical link to the Google Business Profile listing (CID form — stable,
-   unlike the coordinate URLs Maps generates when you share from the map). */
-export const GOOGLE_REVIEWS_URL = "https://www.google.com/maps?cid=17576216227421438205";
+import { GOOGLE_REVIEWS_URL } from "./googleBusiness";
 
 /* Real 5-star Google reviews, verbatim as published. Never paraphrase, never
    stitch sentences together, and never add one that isn't on the listing —
