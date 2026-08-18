@@ -600,6 +600,23 @@ button { font-family: inherit; }
   padding-top: 10px;
 }
 
+/* ============================== Legal pages ============================= */
+.legal-page { max-width: 760px; }
+.legal-page h1 { font-size: 2rem; }
+.legal-page h2 {
+  margin-top: 32px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.legal-page p, .legal-page li { color: var(--navy-muted); font-size: .92rem; line-height: 1.75; }
+.legal-page p { margin-top: 12px; }
+.legal-page ul { margin-top: 12px; padding-left: 20px; list-style: disc; display: grid; gap: 8px; }
+.legal-page a { color: var(--blue); font-weight: 600; }
+.legal-effective { color: var(--muted); font-size: .82rem; margin-top: 6px; }
+.fbar-legal { display: inline-flex; gap: 18px; }
+
 /* ============================== Final CTA ============================== */
 .final-cta-card {
   background: var(--sky-tint);

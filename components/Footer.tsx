@@ -82,6 +82,10 @@ export default function Footer() {
 
       <div className="wrap fbar">
         <span>&copy; {year} Verity Cleaning, LLC. All rights reserved.</span>
+        <span className="fbar-legal">
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms/">Terms of Service</a>
+        </span>
         <span>Shelby County, AL</span>
       </div>
     </footer>

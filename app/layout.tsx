@@ -97,19 +97,6 @@ export default function RootLayout({
         <MobileBar />
         <ScrollReveal />
         <Analytics />
-
-        {/* GoHighLevel / LeadConnector chat widget.
-            Deliberately a plain server-rendered <script>, NOT next/script: A2P 10DLC
-            website compliance review can be done by an automated scanner that reads
-            the raw HTML, and next/script injects client-side, leaving no tag in the
-            markup. `defer` keeps it off the critical path without hiding it. */}
-        <script
-          src="https://widgets.leadconnectorhq.com/loader.js"
-          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-          data-widget-id="6a847f5543b7e145600ebff9"
-          data-source="WEB_USER"
-          defer
-        />
       </body>
     </html>
   );
