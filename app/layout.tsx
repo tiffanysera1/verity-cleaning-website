@@ -30,10 +30,10 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://veritycleaning.co"),
-  title: "Verity Cleaning — A Clean Home, More Time Back",
+  metadataBase: new URL("https://www.veritycleaning.co"),
+  title: "Pelham & Shelby County House Cleaning | Verity Cleaning",
   description:
-    "Licensed, bonded, and insured home & office cleaning in Shelby County, AL. Personalized quotes, background-checked cleaners, and a modern, effortless experience. Call or text (205) 202-0506.",
+    "House & office cleaning in Pelham, Alabaster, Helena, and Hoover, AL. Licensed, bonded, insured, 100% satisfaction guarantee. Call or text (205) 946-0304.",
   alternates: { canonical: "/" },
   keywords: [
     "cleaning service Shelby County",
@@ -51,9 +51,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Verity Cleaning — A Clean Home, More Time Back",
     description:
-      "Licensed, bonded, and insured cleaning with a 100% satisfaction guarantee. Serving Pelham, Alabaster, Hoover, and Helena. Call or text (205) 202-0506.",
+      "Licensed, bonded, and insured cleaning with a 100% satisfaction guarantee. Serving Pelham, Alabaster, Hoover, and Helena. Call or text (205) 946-0304.",
     type: "website",
-    url: "https://veritycleaning.co",
+    url: "https://www.veritycleaning.co",
     siteName: "Verity Cleaning, LLC",
     locale: "en_US",
     images: [{ url: "/clean-home.png", width: 800, height: 600, alt: "A tidy, sunlit home" }],
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Verity Cleaning — A Clean Home, More Time Back",
     description:
-      "Licensed, bonded, and insured cleaning with a 100% satisfaction guarantee. Call or text (205) 202-0506.",
+      "Licensed, bonded, and insured cleaning with a 100% satisfaction guarantee. Call or text (205) 946-0304.",
     images: ["/clean-home.png"],
   },
 };
@@ -97,6 +97,19 @@ export default function RootLayout({
         <MobileBar />
         <ScrollReveal />
         <Analytics />
+
+        {/* GoHighLevel / LeadConnector chat widget.
+            Deliberately a plain server-rendered <script>, NOT next/script: A2P 10DLC
+            website compliance review can be done by an automated scanner that reads
+            the raw HTML, and next/script injects client-side, leaving no tag in the
+            markup. `defer` keeps it off the critical path without hiding it. */}
+        <script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="6a847f5543b7e145600ebff9"
+          data-source="WEB_USER"
+          defer
+        />
       </body>
     </html>
   );

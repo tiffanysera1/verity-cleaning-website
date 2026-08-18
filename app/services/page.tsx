@@ -7,14 +7,15 @@ import EveryCleaningIncludes from "@/components/services-index/EveryCleaningIncl
 import ServicesCTA from "@/components/services-index/ServicesCTA";
 
 export const metadata: Metadata = {
-  title: "All Cleaning Services | Verity Cleaning",
+  title: "Cleaning Services in Shelby County, AL | Verity Cleaning",
   description:
-    "Compare Verity Cleaning's residential and commercial services — recurring cleaning, deep cleaning, move-in/move-out, commercial cleaning, and post-construction — plus optional add-ons. Serving Shelby County, AL.",
+    "Compare recurring, deep, move-in/move-out, commercial, and post-construction cleaning in Pelham & Shelby County, AL. Find the right fit in seconds.",
   alternates: { canonical: "/services/" },
   openGraph: {
     title: "All Cleaning Services | Verity Cleaning",
     description: "Compare Verity Cleaning's services and find the right fit for your home in seconds.",
     url: "/services/",
+    images: [{ url: "/clean-home.png", alt: "A tidy, sunlit home cleaned by Verity Cleaning" }],
   },
 };
 

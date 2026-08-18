@@ -7,6 +7,7 @@ import ServiceIncluded from "@/components/service/ServiceIncluded";
 import ServiceExpect from "@/components/service/ServiceExpect";
 import ServiceResources from "@/components/service/ServiceResources";
 import ServiceCTA from "@/components/service/ServiceCTA";
+import ServiceJsonLd from "@/components/ServiceJsonLd";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -19,14 +20,19 @@ export async function generateMetadata(
   const service = getService(slug);
   if (!service) return {};
 
-  const title = `${service.title} in Shelby County, AL | Verity Cleaning`;
-  const description = `${service.summary} Serving Pelham, Alabaster, Helena, Hoover, and surrounding Shelby County, AL. Call or text (205) 202-0506.`;
+  const title = `${service.title} in Pelham, AL | Verity Cleaning`;
+  const description = `${service.summary} Serving Pelham & Shelby County, AL. Call or text (205) 946-0304.`;
 
   return {
     title,
     description,
     alternates: { canonical: `/services/${service.slug}/` },
-    openGraph: { title, description, url: `/services/${service.slug}/` },
+    openGraph: {
+      title,
+      description,
+      url: `/services/${service.slug}/`,
+      images: [{ url: service.photo, alt: `${service.title} by Verity Cleaning` }],
+    },
     twitter: { card: "summary_large_image", title, description },
   };
 }
@@ -41,6 +47,13 @@ export default async function ServicePage(
 
   return (
     <main id="main">
+      <ServiceJsonLd
+        title={service.title}
+        summary={service.summary}
+        slug={service.slug}
+        faq={detail.faq}
+      />
+
       <ServiceHero title={service.title} photo={service.photo} tagline={detail.tagline} description={detail.description} tips={detail.tips} />
 
       <section className="section service-included-section">

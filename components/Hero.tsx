@@ -26,7 +26,8 @@ export default function Hero() {
             </span>
           </h1>
           <p className="sub">
-            We clean with care so you can focus on what matters most.
+            House cleaning in Pelham, Alabaster, Helena &amp; Hoover &mdash; we clean with
+            care so you can focus on what matters most.
           </p>
 
           <div className="hero-quote-wrap reveal">

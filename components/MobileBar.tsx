@@ -4,7 +4,7 @@ import { Phone, Sms } from "./Icons";
 export default function MobileBar() {
   return (
     <div className="mbar" aria-label="Quick contact">
-      <a href="tel:+12052020506" className="btn btn--primary">
+      <a href="tel:+12059460304" className="btn btn--primary">
         <Phone />
         Call now
       </a>

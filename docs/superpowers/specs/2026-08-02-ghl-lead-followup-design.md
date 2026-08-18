@@ -17,8 +17,8 @@ Current GHL state: a single default **"Marketing Pipeline"** (stages New Lead �
 Qualified → Proposal Sent → Negotiation → Closed), untouched since account creation. No
 customers or calls yet — greenfield.
 
-Business identity for messaging: **Verity Cleaning**, owner **Tiffany**, number **(new GHL number,
-local 205 — replaces the Google Voice line 205-202-0506)**, email **hello@veritycleaning.co**,
+Business identity for messaging: **Verity Cleaning**, owner **Tiffany**, number **205-946-0304**
+(GHL number, replaces the Google Voice line 205-202-0506), email **hello@veritycleaning.co**,
 timezone **America/Chicago**.
 
 ## Goals / success criteria
@@ -206,7 +206,7 @@ GHL merge fields shown as `{{contact.first_name}}` etc. Final wording tweakable 
 > personally get back to you within 24 hours with the next steps. If there's anything you'd like
 > me to know in the meantime, just reply to this email.
 > Talk soon,
-> Tiffany — Verity Cleaning · 205-202-0506
+> Tiffany — Verity Cleaning · 205-946-0304
 
 **Internal alert (to Tiffany):**
 > 🔔 New lead: {{contact.first_name}} {{contact.last_name}} · {{contact.phone}}
