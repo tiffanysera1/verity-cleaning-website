@@ -11,9 +11,15 @@ export const TRANSFORM_PAIRS = [
     },
   },
   {
-    key: "shower",
-    before: { src: "/transform-shower-after.jpg", alt: "Shower before cleaning" },
-    after: { src: "/transform-shower-after.jpg", alt: "Shower after cleaning, glass sparkling clean" },
+    key: "bedroom",
+    before: {
+      src: "/transform-bedroom-before.jpg",
+      alt: "Bedroom floor before cleaning, carpet heavily soiled and ground in",
+    },
+    after: {
+      src: "/transform-bedroom-after.jpg",
+      alt: "The same bedroom floor after cleaning, carpet restored and even in color",
+    },
   },
   {
     key: "sink",
