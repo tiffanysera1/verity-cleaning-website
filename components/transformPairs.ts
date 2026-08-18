@@ -1,3 +1,7 @@
+/* Only real Verity jobs belong here — the section is headed "Real Homes. Real
+   Results." Stock or repeated imagery has been removed rather than padding the
+   row out to three. The grids that render these adapt to the count, so adding
+   a pair needs no CSS change. */
 export const TRANSFORM_PAIRS = [
   {
     key: "carpet",
@@ -20,10 +24,5 @@ export const TRANSFORM_PAIRS = [
       src: "/transform-bedroom-after.jpg",
       alt: "The same bedroom floor after cleaning, carpet restored and even in color",
     },
-  },
-  {
-    key: "sink",
-    before: { src: "/transform-sink-before.jpg", alt: "Bathroom counter before cleaning" },
-    after: { src: "/transform-sink-after.jpg", alt: "Bathroom sink after cleaning, bright and spotless" },
   },
 ];

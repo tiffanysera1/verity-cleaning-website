@@ -16,13 +16,18 @@
   --blue-deep: #2C68C7;
   --blue-light: #66A0F5;
 
-  --sky-tint: #F1F7FF;
-  --sky-pale: #F6FAFF;
-  --sky-pale-2: #EDF5FF;
+  /* Tinted surfaces. These were within ~2% of the page background, so panels
+     and cards dissolved into the page and nothing read as a distinct block.
+     Deepened to give real separation while staying in the same soft blue
+     family. --sky-pale stays the lightest step, for full-section washes that
+     sit behind tinted cards without competing with them. */
+  --sky-tint: #E4EEFC;
+  --sky-pale: #F2F7FE;
+  --sky-pale-2: #D6E5FA;
 
-  --border: #DCE9F8;
-  --shadow: 0 3px 14px rgba(9, 39, 95, 0.05);
-  --shadow-hover: 0 10px 26px rgba(9, 39, 95, 0.10);
+  --border: #C9DCF4;
+  --shadow: 0 3px 14px rgba(9, 39, 95, 0.06);
+  --shadow-hover: 0 10px 26px rgba(9, 39, 95, 0.12);
   --ease: cubic-bezier(.25, .8, .25, 1);
 
   --r-lg: 26px;
@@ -472,12 +477,16 @@ button { font-family: inherit; }
    get roughly 60% more room than they had in the old narrow column. */
 .homes-panel {
   background: var(--sky-tint);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
   border-radius: var(--r-lg);
   padding: 34px;
 }
+/* auto-fit rather than a fixed column count, so the row stays full whether
+   there are two real before/after pairs or more added later. */
 .transform-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 22px;
 }
 .transform-slider {
@@ -565,10 +574,19 @@ button { font-family: inherit; }
   gap: 24px;
   align-items: start;
 }
+/* Cards sit on a tinted section, so they take the warm white to read as
+   raised surfaces rather than a slightly different shade of the same wash. */
 .review-card {
-  background: var(--sky-tint);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
   border-radius: var(--r-lg);
   padding: 32px;
+  transition: box-shadow .25s var(--ease), transform .25s var(--ease);
+}
+.review-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
 }
 .review-stars { display: flex; gap: 4px; color: #f5b942; }
 .review-stars svg { width: 16px; height: 16px; }
@@ -1075,7 +1093,7 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 .resources-homes h3, .resources-blog h3, .resources-faq h3 { font-size: 1.05rem; font-weight: 700; }
 .resources-homes .homes-more, .resources-blog .homes-more, .resources-faq .homes-more { margin-top: auto; padding-top: 18px; }
 .resources-blog .placeholder-note { margin-top: 12px; }
-.transform-grid--compact { grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+.transform-grid--compact { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; margin-top: 18px; }
 .blog-list { margin-top: 16px; display: grid; gap: 4px; }
 .blog-list a { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-top: 1px solid rgba(9,39,95,.08); font-size: .82rem; font-weight: 600; color: var(--navy); line-height: 1.4; }
 .blog-list li:first-child a { border-top: none; }
@@ -1486,7 +1504,7 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   .expect-step { flex-direction: column; align-items: center; }
   .expect-arrow { transform: rotate(90deg); margin: 4px 0; }
   .resources-grid { grid-template-columns: 1fr; }
-  .transform-grid--compact { grid-template-columns: repeat(3, 1fr); }
+  .transform-grid--compact { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }
   .service-cta { flex-direction: column; align-items: flex-start; }
 
   .svc-card-grid { grid-template-columns: repeat(3, 1fr); }

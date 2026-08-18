@@ -32,7 +32,7 @@ const REVIEWS = [
 
 export default function Reviews() {
   return (
-    <section className="section" id="reviews">
+    <section className="section tone-sky" id="reviews">
       <div className="wrap">
         <div className="center section-head reveal">
           <h2 className="section-title">
