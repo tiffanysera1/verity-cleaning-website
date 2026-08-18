@@ -15,10 +15,10 @@ export default function Footer() {
             Licensed, bonded, and insured home and office cleaning for Shelby County, Alabama.
           </p>
           <div className="fsocials">
-            <a href="https://facebook.com/veritycleaning" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Facebook">
+            <a href="https://www.facebook.com/profile.php?id=61588754895193" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Facebook">
               <FacebookIcon style={{ width: "16px", height: "16px" }} />
             </a>
-            <a href="https://instagram.com/veritycleaning" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Instagram">
+            <a href="https://www.instagram.com/veritycleaning/" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Instagram">
               <InstagramIcon style={{ width: "16px", height: "16px" }} />
             </a>
             <a href="https://nextdoor.com/pages/verity-cleaning" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Nextdoor">
