@@ -27,3 +27,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local verification screenshots
+.slide.png
+.hero-*.png
+.live.png
+.reviews.png
+.w*.png
