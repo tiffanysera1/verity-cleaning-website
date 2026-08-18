@@ -5,7 +5,7 @@ export default function JsonLd() {
     "@context": "https://schema.org",
     "@type": "HouseCleaningService",
     "@id": "https://www.veritycleaning.co/#business",
-    name: "Verity Cleaning, LLC",
+    name: "Verity Cleaning LLC",
     description:
       "Premium, licensed and insured residential and commercial cleaning service in Shelby County, AL. Offering house cleaning, deep cleaning, move-in/out cleanings, and office sanitization.",
     slogan: "A Clean Home. More Time Back.",
@@ -27,7 +27,7 @@ export default function JsonLd() {
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "103 Eagle Cove Dr",
+      streetAddress: "103 Eagle Cove Drive",
       addressLocality: "Pelham",
       addressRegion: "AL",
       postalCode: "35124",

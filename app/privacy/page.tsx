@@ -19,7 +19,7 @@ export default function PrivacyPage() {
           <p className="legal-effective">Effective {EFFECTIVE}</p>
 
           <p>
-            Verity Cleaning, LLC (&ldquo;Verity Cleaning,&rdquo; &ldquo;we,&rdquo; or
+            Verity Cleaning LLC (&ldquo;Verity Cleaning,&rdquo; &ldquo;we,&rdquo; or
             &ldquo;us&rdquo;) provides residential and commercial cleaning services in
             Shelby County, Alabama. This policy explains what information we collect,
             why, and what we do with it.
@@ -108,9 +108,9 @@ export default function PrivacyPage() {
 
           <h2>Contact us</h2>
           <p>
-            Verity Cleaning, LLC
+            Verity Cleaning LLC
             <br />
-            103 Eagle Cove Dr, Pelham, AL 35124
+            103 Eagle Cove Drive, Pelham, AL 35124
             <br />
             <a href="mailto:hello@veritycleaning.co">hello@veritycleaning.co</a>
             <br />

@@ -68,11 +68,11 @@ export default function Footer() {
               Request a quote any time by call, text, or online
             </li>
             <li style={{ color: "var(--muted)", marginTop: "8px" }}>
-              Verity Cleaning, LLC
+              Verity Cleaning LLC
             </li>
             <li style={{ color: "var(--muted)" }}>
               <address className="footer-address">
-                103 Eagle Cove Dr
+                103 Eagle Cove Drive
                 <br />
                 Pelham, AL 35124
               </address>
@@ -85,7 +85,7 @@ export default function Footer() {
       </div>
 
       <div className="wrap fbar">
-        <span>&copy; {year} Verity Cleaning, LLC. All rights reserved.</span>
+        <span>&copy; {year} Verity Cleaning LLC. All rights reserved.</span>
         <span className="fbar-legal">
           <a href="/privacy/">Privacy Policy</a>
           <a href="/terms/">Terms of Service</a>

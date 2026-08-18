@@ -20,7 +20,7 @@ export default function TermsPage() {
 
           <p>
             These terms apply when you request a quote from or book a cleaning with
-            Verity Cleaning, LLC in Shelby County, Alabama.
+            Verity Cleaning LLC in Shelby County, Alabama.
           </p>
 
           <h2>Quotes</h2>
@@ -82,9 +82,9 @@ export default function TermsPage() {
 
           <h2>Contact us</h2>
           <p>
-            Verity Cleaning, LLC
+            Verity Cleaning LLC
             <br />
-            103 Eagle Cove Dr, Pelham, AL 35124
+            103 Eagle Cove Drive, Pelham, AL 35124
             <br />
             <a href="mailto:hello@veritycleaning.co">hello@veritycleaning.co</a>
             <br />
