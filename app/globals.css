@@ -600,6 +600,30 @@ button { font-family: inherit; }
   padding-top: 10px;
 }
 
+/* Hero quote CTA — replaced the inline quote form, so it has to carry the
+   visual weight the form used to. */
+.hero-quote-cta {
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.05rem;
+  padding: 20px 28px;
+  border-radius: var(--r-md, 14px);
+  box-shadow: 0 10px 28px rgba(24, 79, 156, 0.28);
+}
+.hero-quote-cta svg { width: 20px; height: 20px; flex: none; }
+.hero-quote-cta:hover { transform: translateY(-1px); }
+.hero-quote-sub {
+  margin-top: 12px;
+  text-align: center;
+  color: var(--navy-muted);
+  font-size: .86rem;
+  line-height: 1.55;
+}
+@media (max-width: 760px) {
+  .hero-quote-cta { font-size: 1rem; padding: 18px 22px; }
+}
+
 /* ============================== Legal pages ============================= */
 .legal-page { max-width: 760px; }
 .legal-page h1 { font-size: 2rem; }

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowRight, Sparkle } from "../Icons";
 import { FEATURED_SERVICES } from "./servicesIndexData";
+import { QUOTE_FORM_URL } from "../quoteLink";
 
 export default function ServicesHero() {
   return (
@@ -32,7 +33,7 @@ export default function ServicesHero() {
                     <span className="svc-chip" key={chip}>{chip}</span>
                   ))}
                 </div>
-                <a href="/#quote" className="btn btn--primary svc-card-cta">
+                <a href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn--primary svc-card-cta">
                   Get a Quote
                   <ArrowRight />
                 </a>

@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { Menu, ChevronDown } from "./Icons";
 import { SERVICES } from "./servicesData";
+import { QUOTE_FORM_URL } from "./quoteLink";
 
 const RESOURCE_LINKS: [string, string][] = [
   ["/#footer-area", "Service Area"],
@@ -109,7 +110,7 @@ export default function Header() {
         </nav>
 
         <div className="nav-cta">
-          <a href="/#quote" className="btn btn--primary">
+          <a href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
             Get My Quote
           </a>
           <button
