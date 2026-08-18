@@ -62,7 +62,7 @@ export default function Footer() {
               <a href="mailto:hello@veritycleaning.co"><Mail />hello@veritycleaning.co</a>
             </li>
             <li style={{ color: "var(--muted)", marginTop: "8px" }}>
-              Open every day, 8 AM&ndash;6 PM
+              Open every day, 8 AM&ndash;7 PM
             </li>
             <li style={{ color: "var(--muted)" }}>
               Request a quote any time by call, text, or online

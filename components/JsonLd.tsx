@@ -68,7 +68,7 @@ export default function JsonLd() {
         "Sunday",
       ],
       opens: "08:00",
-      closes: "18:00",
+      closes: "19:00",
     },
     geo: {
       "@type": "GeoCoordinates",
