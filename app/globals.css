@@ -563,27 +563,36 @@ button { font-family: inherit; }
 .homes-service-area svg { width: 13px; height: 13px; color: var(--blue); }
 
 .review-panel { display: flex; flex-direction: column; }
-.review-quote-mark {
-  font-family: Georgia, serif;
-  font-size: 2.5rem;
-  line-height: 1;
-  color: rgba(57, 127, 230, 0.28);
-  font-weight: 700;
+/* The panel lists several attributed reviews rather than one pull-quote, so
+   the items divide the leftover height instead of one quote claiming it. */
+.review-item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+.review-item + .review-item {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
 }
 .review-text {
-  margin-top: 4px;
+  margin-top: 8px;
   color: var(--navy-muted);
   font-size: .84rem;
   line-height: 1.6;
   font-style: italic;
-  flex: 1;
 }
-.review-stars { display: flex; gap: 3px; margin-top: 14px; color: #f5b942; }
+.review-stars { display: flex; gap: 3px; color: #f5b942; }
 .review-stars svg { width: 13px; height: 13px; }
 .review-author { margin-top: 6px; font-family: var(--font-display); font-weight: 700; color: var(--navy); font-size: .82rem; }
-.review-more { margin-top: 12px; color: var(--blue); font-weight: 700; font-size: .78rem; display: inline-flex; align-items: center; gap: 6px; }
+.review-more { margin-top: 18px; color: var(--blue); font-weight: 700; font-size: .78rem; display: inline-flex; align-items: center; gap: 6px; }
 .review-more svg { width: 15px; height: 15px; flex: none; }
-.review-placeholder-note {
+
+/* Disclaimer for content that is still placeholder. The reviews panel no
+   longer needs one (those are real Google reviews now); the service-page
+   blog list still does. */
+.placeholder-note {
   margin-top: 14px;
   font-size: .72rem;
   color: var(--muted);
@@ -1021,7 +1030,7 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 }
 .resources-homes h3, .resources-blog h3, .resources-faq h3 { font-size: 1.05rem; font-weight: 700; }
 .resources-homes .homes-more, .resources-blog .homes-more, .resources-faq .homes-more { margin-top: auto; padding-top: 18px; }
-.resources-blog .review-placeholder-note { margin-top: 12px; }
+.resources-blog .placeholder-note { margin-top: 12px; }
 .transform-grid--compact { grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
 .blog-list { margin-top: 16px; display: grid; gap: 4px; }
 .blog-list a { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-top: 1px solid rgba(9,39,95,.08); font-size: .82rem; font-weight: 600; color: var(--navy); line-height: 1.4; }

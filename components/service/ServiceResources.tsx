@@ -44,7 +44,7 @@ export default function ServiceResources({
         <p className="homes-more">
           <a href="/#services">Visit our blog <ArrowRight /></a>
         </p>
-        <p className="review-placeholder-note">
+        <p className="placeholder-note">
           <Sparkle aria-hidden="true" style={{ width: 12, height: 12, verticalAlign: "-1px", marginRight: 4 }} />
           Sample articles shown for layout purposes — real posts coming soon.
         </p>
