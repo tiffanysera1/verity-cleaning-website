@@ -498,7 +498,11 @@ button { font-family: inherit; }
   box-shadow: var(--shadow);
 }
 .transform-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-.transform-img--before { will-change: clip-path; filter: grayscale(45%) brightness(.8) contrast(.94) saturate(.75); }
+/* No filter on the before image. It used to be greyed and darkened to
+   manufacture a difference back when both halves were the same stock photo.
+   These are real jobs now, so the difference is real — dulling the before
+   would both waste the photography and overstate the result. */
+.transform-img--before { will-change: clip-path; }
 .transform-handle {
   position: absolute;
   top: 0;
