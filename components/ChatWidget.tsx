@@ -1,16 +1,22 @@
-/* GoHighLevel / LeadConnector chat widget.
+/* GoHighLevel / LeadConnector chat widget, rendered on every page from the
+   root layout.
 
-   Scoped deliberately: this is rendered by app/services/layout.tsx, NOT the
-   root layout, so it appears on /services/ and the service pages but never on
-   the homepage. GHL's A2P 10DLC website compliance checklist requires that no
-   form collecting phone numbers or SMS opt-in consent — "contact forms, lead
-   forms, landing page forms, and appointment forms" — exists on any page where
-   the widget is embedded. The homepage carries the quote form, so keeping the
-   widget off it makes that statement literally true rather than arguable.
+   Two things here are deliberate and worth not "tidying up":
 
-   A plain <script defer>, not next/script: compliance review may be automated
-   against raw HTML, and next/script injects client-side, leaving no tag in the
-   served markup. */
+   1. A plain server-rendered <script>, not next/script. GHL's compliance
+      scanner reads the raw HTML; next/script injects client-side and leaves
+      no tag in the served markup, which reads as "widget not integrated".
+
+   2. The attributes match GHL's supplied snippet exactly, with nothing added
+      — an earlier version carried `defer`, and matching their snippet removes
+      any chance a strict checker fails on an unexpected attribute.
+
+   It also has to be on the homepage, not just the form-free pages: the
+   compliance check fetches the site's main URL. That reopens the checklist
+   item about forms sharing a page with the widget, which the homepage quote
+   form is only clear of because it no longer collects a phone number or any
+   SMS opt-in consent. If that form ever regains a phone field, this pairing
+   has to be revisited. */
 export default function ChatWidget() {
   return (
     <script
@@ -18,7 +24,6 @@ export default function ChatWidget() {
       data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
       data-widget-id="6a847f5543b7e145600ebff9"
       data-source="WEB_USER"
-      defer
     />
   );
 }

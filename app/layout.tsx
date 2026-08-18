@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Inter, Caveat } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import ChatWidget from "@/components/ChatWidget";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBar from "@/components/MobileBar";
@@ -97,6 +98,7 @@ export default function RootLayout({
         <MobileBar />
         <ScrollReveal />
         <Analytics />
+        <ChatWidget />
       </body>
     </html>
   );
