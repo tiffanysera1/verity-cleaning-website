@@ -10,7 +10,6 @@ type Photo = { file: File; url: string };
 
 function buildSmsHref(
   name: string,
-  phone: string,
   email: string,
   address: string,
   service: string,
@@ -24,7 +23,7 @@ function buildSmsHref(
   const emailPart = email.trim() ? ` Email: ${email.trim()}.` : "";
   const preferredTimePart = preferredTime.trim() ? ` Preferred date/time: ${preferredTime.trim()}.` : "";
   const photoPart = photoCount > 0 ? ` I have ${photoCount} photo${photoCount === 1 ? "" : "s"} to attach.` : "";
-  const body = `Hi Verity Cleaning — I'd like a quote. My name is ${name || "(name)"}. Address: ${address || "(address)"}. Service needed: ${service}. Home size: ${bedrooms} bed / ${bathrooms} bath.${preferredTimePart}${details} Best phone: ${phone || "(phone)"}.${emailPart}${photoPart}`;
+  const body = `Hi Verity Cleaning — I'd like a quote. My name is ${name || "(name)"}. Address: ${address || "(address)"}. Service needed: ${service}. Home size: ${bedrooms} bed / ${bathrooms} bath.${preferredTimePart}${details}${emailPart}${photoPart}`;
   return `sms:+1${PHONE}?&body=${encodeURIComponent(body)}`;
 }
 
@@ -127,7 +126,6 @@ export default function QuoteForm() {
     const f = new FormData(e.currentTarget);
     const href = buildSmsHref(
       ((f.get("name") as string) || "").trim(),
-      ((f.get("phone") as string) || "").trim(),
       ((f.get("email") as string) || "").trim(),
       ((f.get("address") as string) || "").trim(),
       (f.get("service") as string) || "",
@@ -178,10 +176,6 @@ export default function QuoteForm() {
         <div>
           <label htmlFor="qn">Name</label>
           <input id="qn" name="name" type="text" autoComplete="name" placeholder="Your name" required />
-        </div>
-        <div>
-          <label htmlFor="qp">Phone</label>
-          <input id="qp" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="(205) 555-0123" required />
         </div>
         <div>
           <label htmlFor="qe">Email</label>
