@@ -16,6 +16,7 @@ export default function JsonLd() {
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "103 Eagle Cove Dr",
       addressLocality: "Pelham",
       addressRegion: "AL",
       postalCode: "35124",

@@ -71,7 +71,14 @@ export default function Footer() {
               Request a quote any time by call, text, or online
             </li>
             <li style={{ color: "var(--muted)", marginTop: "8px" }}>
-              Verity Cleaning, LLC &bull; Based in Pelham, AL
+              Verity Cleaning, LLC
+            </li>
+            <li style={{ color: "var(--muted)" }}>
+              <address className="footer-address">
+                103 Eagle Cove Dr
+                <br />
+                Pelham, AL 35124
+              </address>
             </li>
             <li style={{ color: "var(--muted)" }}>
               Licensed, bonded, &amp; insured

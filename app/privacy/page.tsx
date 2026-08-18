@@ -103,7 +103,9 @@ export default function PrivacyPage() {
 
           <h2>Contact us</h2>
           <p>
-            Verity Cleaning, LLC &mdash; Pelham, Alabama
+            Verity Cleaning, LLC
+            <br />
+            103 Eagle Cove Dr, Pelham, AL 35124
             <br />
             <a href="mailto:hello@veritycleaning.co">hello@veritycleaning.co</a>
             <br />
