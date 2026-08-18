@@ -1,18 +1,20 @@
 import Image from "next/image";
-import { ArrowRight, Plus, Sparkle } from "../Icons";
+import { ArrowRight, Plus } from "../Icons";
 import TransformSlider from "../TransformSlider";
 import { TRANSFORM_PAIRS } from "../transformPairs";
-import type { BlogLink, FaqItem } from "./serviceDetailData";
+import { SERVICES } from "../servicesData";
+import type { FaqItem } from "./serviceDetailData";
 
 export default function ServiceResources({
   serviceTitle,
-  blogLinks,
+  currentSlug,
   faq,
 }: {
   serviceTitle: string;
-  blogLinks: BlogLink[];
+  currentSlug: string;
   faq: FaqItem[];
 }) {
+  const otherServices = SERVICES.filter((s) => s.slug !== currentSlug);
   return (
     <div className="resources-grid">
       <div className="resources-homes reveal">
@@ -27,26 +29,27 @@ export default function ServiceResources({
         </p>
       </div>
 
+      {/* Was a list of sample blog posts that linked nowhere, under a note saying
+          the articles were placeholders. Replaced with the other real services:
+          nothing on the page announces itself as unfinished, every link resolves,
+          and the service pages finally link to each other in-body rather than only
+          through the shared nav and footer. */}
       <div className="resources-blog reveal">
-        <h3>Continue Reading</h3>
+        <h3>Other Services</h3>
         <ul className="blog-list">
-          {blogLinks.map((post) => (
-            <li key={post.title}>
-              <a href="/#services">
+          {otherServices.map((service) => (
+            <li key={service.slug}>
+              <a href={`/services/${service.slug}/`}>
                 <span className="blog-thumb">
-                  <Image src={post.image} alt="" fill sizes="56px" style={{ objectFit: "cover" }} />
+                  <Image src={service.photo} alt="" fill sizes="56px" style={{ objectFit: "cover" }} />
                 </span>
-                <span>{post.title}</span>
+                <span>{service.title}</span>
               </a>
             </li>
           ))}
         </ul>
         <p className="homes-more">
-          <a href="/#services">Visit our blog <ArrowRight /></a>
-        </p>
-        <p className="placeholder-note">
-          <Sparkle aria-hidden="true" style={{ width: 12, height: 12, verticalAlign: "-1px", marginRight: 4 }} />
-          Sample articles shown for layout purposes — real posts coming soon.
+          <a href="/services/">Compare all services <ArrowRight /></a>
         </p>
       </div>
 

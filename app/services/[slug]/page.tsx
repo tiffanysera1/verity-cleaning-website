@@ -70,7 +70,7 @@ export default async function ServicePage(
 
       <section className="section service-resources-section">
         <div className="wrap">
-          <ServiceResources serviceTitle={service.title} blogLinks={detail.blogLinks} faq={detail.faq} />
+          <ServiceResources serviceTitle={service.title} currentSlug={service.slug} faq={detail.faq} />
         </div>
       </section>
 

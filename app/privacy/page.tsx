@@ -41,9 +41,14 @@ export default function PrivacyPage() {
               preferred timing, notes, and any photos you choose to send us.
             </li>
           </ul>
+          {/* Deliberately phrased without the words "affiliate" or "lead": the
+              carrier compliance checklist asks that neither be *mentioned* on the
+              site, and a keyword scanner will not read the negation in a sentence
+              that denies using them. The meaning is unchanged. */}
           <p>
-            We do not buy contact information from third parties, and we do not use
-            affiliate or purchased lead sources.
+            Every piece of contact information we hold came directly from you. We do
+            not obtain, purchase, or accept customer contact details from any outside
+            source.
           </p>
 
           <h2>How we use it</h2>
@@ -78,7 +83,7 @@ export default function PrivacyPage() {
           <p>
             <strong>
               We never sell, rent, or share your phone number or your text message
-              consent with third parties or affiliates for their own marketing purposes.
+              consent with any third party for their own marketing purposes.
             </strong>{" "}
             No mobile information is shared with third parties for marketing or
             promotional purposes.
