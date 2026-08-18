@@ -12,13 +12,16 @@ export default function JsonLd() {
     telephone: "+12059460304",
     email: "hello@veritycleaning.co",
     url: "https://www.veritycleaning.co",
-    /* Only profiles verified to exist. sameAs is how search engines tie this
-       business entity to its off-site profiles, so a dead URL here is worse
-       than an omission — Nextdoor and Yelp are deliberately absent. */
+    /* sameAs ties this business entity to its off-site profiles, so a dead URL
+       here is worse than an omission. Facebook, Instagram, and the Google
+       listing were each confirmed to load and show the business. Nextdoor is
+       owner-supplied and sits behind a login wall, so it could not be checked
+       the same way. Yelp is absent — no page exists yet. */
     sameAs: [
       "https://www.facebook.com/profile.php?id=61588754895193",
       "https://www.instagram.com/veritycleaning/",
       "https://www.google.com/maps?cid=17576216227421438205",
+      "https://nextdoor.com/profile/01RZrcssJXy3zcKc_",
     ],
     image: "https://www.veritycleaning.co/clean-home.png",
     priceRange: "$$",
