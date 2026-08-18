@@ -1,8 +1,14 @@
 export const TRANSFORM_PAIRS = [
   {
-    key: "kitchen",
-    before: { src: "/service-deep-cleaning.jpg", alt: "Kitchen counter before cleaning" },
-    after: { src: "/service-deep-cleaning.jpg", alt: "Kitchen counter after cleaning, bright and spotless" },
+    key: "carpet",
+    before: {
+      src: "/transform-carpet-before.jpg",
+      alt: "Bedroom carpet before cleaning, covered in food wrappers and stained",
+    },
+    after: {
+      src: "/transform-carpet-after.jpg",
+      alt: "The same bedroom carpet after cleaning, clear and evenly clean",
+    },
   },
   {
     key: "shower",
