@@ -98,6 +98,27 @@ export default function PrivacyPage() {
             own purposes.
           </p>
 
+          <h2>Website analytics</h2>
+          <p>
+            We use Google Analytics to understand how people find and use this website
+            &mdash; which pages get visited, roughly where visitors come from, and which
+            pages lead to a quote request. This helps us decide what to improve.
+          </p>
+          <p>
+            Google Analytics sets cookies and collects technical information such as
+            your approximate location, browser, and device type. It does not tell us who
+            you are, and we do not combine it with your contact details. If you would
+            rather not be included, you can install{" "}
+            <a
+              href="https://tools.google.com/dlpage/gaoptout"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Google&rsquo;s opt-out browser add-on
+            </a>{" "}
+            or block cookies in your browser settings &mdash; the site works either way.
+          </p>
+
           <h2>Keeping and deleting your information</h2>
           <p>
             We keep your information for as long as needed to serve you and to keep
