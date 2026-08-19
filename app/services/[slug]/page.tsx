@@ -7,6 +7,7 @@ import ServiceIncluded from "@/components/service/ServiceIncluded";
 import ServiceExpect from "@/components/service/ServiceExpect";
 import ServiceResources from "@/components/service/ServiceResources";
 import ServiceCTA from "@/components/service/ServiceCTA";
+import ServiceCrossLinks from "@/components/service/ServiceCrossLinks";
 import ServiceJsonLd from "@/components/ServiceJsonLd";
 
 export function generateStaticParams() {
@@ -68,6 +69,12 @@ export default async function ServicePage(
       <section className="section service-expect-section">
         <div className="wrap">
           <ServiceExpect />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="wrap">
+          <ServiceCrossLinks slug={service.slug} serviceTitle={service.title} />
         </div>
       </section>
 

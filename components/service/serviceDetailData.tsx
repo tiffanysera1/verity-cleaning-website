@@ -98,9 +98,9 @@ function tipsFor(image: string): Tip[] {
 
 export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
   "recurring-cleaning": {
-    tagline: "Keep your home consistently clean, week after week.",
+    tagline: "Keep it clean, so it never has to be reset.",
     description:
-      "Weekly, biweekly, or monthly visits built around your household's routine — so your home never has to catch up.",
+      "A standing visit on your schedule — weekly, biweekly or monthly. The point is maintenance: your home stays at a level you are happy with, so it never reaches the stage where it needs a full reset. Most households settle into a rhythm and stop thinking about cleaning altogether.",
     includedTabs: [
       { key: "kitchen", label: "Kitchen", icon: "home", items: ["Counters & backsplash wiped down", "Sink & fixtures", "Stovetop", "Appliance exteriors", "Floors", "Trash removal"] },
       { key: "bathrooms", label: "Bathrooms", icon: "spray", items: ["Toilets", "Showers & tubs", "Sink & fixtures", "Mirrors", "Floors", "Trash removal"] },
@@ -125,7 +125,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
   "deep-cleaning": {
     tagline: "A detailed reset for homes that need a little extra attention.",
     description:
-      "Perfect for first-time cleanings, seasonal refreshes, or homes that haven't been professionally cleaned in a while.",
+      "A one-time reset that goes after what routine cleaning never reaches — baseboards, ceiling fans, grout, vents, and the tops of things nobody looks at. Right for a first clean, a seasonal refresh, or a home that has not been done properly in a while.",
     includedTabs: [
       { key: "kitchen", label: "Kitchen", icon: "home", items: ["Countertops & backsplash", "Sink & fixtures", "Appliance exteriors", "Stovetop", "Cabinet fronts", "Inside microwave", "Floors"] },
       { key: "bathrooms", label: "Bathrooms", icon: "spray", items: ["Toilets & bases", "Showers & tubs", "Sink & fixtures", "Mirrors", "Cabinet fronts", "Floors", "Baseboards"] },

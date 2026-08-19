@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Heart, Sparkle, Shield, ArrowRight, Star } from "./Icons";
 import { QUOTE_FORM_URL } from "./quoteLink";
 import { GOOGLE_REVIEWS_URL, GOOGLE_RATING } from "./googleBusiness";
+import CallLine from "./CallLine";
 
 export default function Hero() {
   return (
@@ -59,6 +60,8 @@ export default function Hero() {
                 <strong>{GOOGLE_RATING}</strong> on Google
               </span>
             </a>
+
+            <CallLine />
 
             <p className="hero-quote-sub">
               Takes about a minute &mdash; tell us about your home and we&rsquo;ll get

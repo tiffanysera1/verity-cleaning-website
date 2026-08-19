@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Shield, ArrowRight, CurvedArrow } from "./Icons";
 import { QUOTE_FORM_URL } from "./quoteLink";
+import CallLine from "./CallLine";
 
 export default function FinalCTA() {
   return (
@@ -24,6 +25,7 @@ export default function FinalCTA() {
                 Get My Personalized Quote
                 <ArrowRight />
               </a>
+              <CallLine />
               <div className="final-cta-note">
                 <p className="payment-note" style={{ margin: 0 }}>
                   <Shield aria-hidden="true" />

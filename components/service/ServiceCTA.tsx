@@ -1,5 +1,6 @@
 import { ArrowRight, Shield, CurvedArrow } from "../Icons";
 import { QUOTE_FORM_URL } from "../quoteLink";
+import CallLine from "../CallLine";
 
 export default function ServiceCTA() {
   return (
@@ -16,6 +17,7 @@ export default function ServiceCTA() {
           Get My Personalized Quote
           <ArrowRight />
         </a>
+        <CallLine />
         <div className="final-cta-note">
           <p className="payment-note" style={{ margin: 0 }}>
             <Shield aria-hidden="true" />

@@ -7,6 +7,7 @@ import { QUOTE_FORM_URL } from "@/components/quoteLink";
 import { GOOGLE_REVIEWS_URL, GOOGLE_RATING } from "@/components/googleBusiness";
 import { ArrowRight, Star, Sparkle, Shield, Pin } from "@/components/Icons";
 import AreaJsonLd from "@/components/AreaJsonLd";
+import CallLine from "@/components/CallLine";
 
 export function generateStaticParams() {
   return AREAS.map((a) => ({ slug: a.slug }));
@@ -106,6 +107,14 @@ export default async function AreaPage(
               <p key={paragraph.slice(0, 40)}>{paragraph}</p>
             ))}
 
+            {lead && (
+              <p className="area-lead-line">
+                Most {area.name} bookings start with{" "}
+                <a href={`/services/${lead.slug}/`}>{area.leadService.title.toLowerCase()}</a>
+                , though we handle every service listed below across the whole town.
+              </p>
+            )}
+
             <h3>Where we clean in {area.name}</h3>
             <ul className="area-hoods">
               {area.neighborhoods.map((n) => (
@@ -177,6 +186,7 @@ export default async function AreaPage(
                 Get My Free Quote
                 <ArrowRight aria-hidden="true" />
               </a>
+              <CallLine />
               <p className="payment-note">
                 <Shield aria-hidden="true" />
                 <span>No payment today. Pay after your service is complete.</span>

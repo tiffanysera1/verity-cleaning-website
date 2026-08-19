@@ -1,5 +1,6 @@
 import { ArrowRight } from "../Icons";
 import { QUOTE_FORM_URL } from "../quoteLink";
+import CallLine from "../CallLine";
 
 export default function ServicesCTA() {
   return (
@@ -22,6 +23,7 @@ export default function ServicesCTA() {
                 Contact Us
               </a>
             </div>
+            <CallLine className="call-line--center" />
           </div>
         </div>
       </div>

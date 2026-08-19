@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ChevronRight, ArrowRight, Sparkle, X } from "../Icons";
 import { MINI_TRUST, type Tip } from "./serviceDetailData";
 import { QUOTE_FORM_URL } from "../quoteLink";
+import CallLine from "../CallLine";
 
 function VerityTip({ tips }: { tips: Tip[] }) {
   const [i, setI] = useState(0);
@@ -80,6 +81,8 @@ export default function ServiceHero({
               Get My Personalized Quote
               <ArrowRight />
             </a>
+
+            <CallLine />
 
             <div className="service-mini-trust">
               {MINI_TRUST.map(({ icon: Icon, title: itemTitle, sub }) => (

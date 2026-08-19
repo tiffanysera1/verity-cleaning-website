@@ -838,6 +838,62 @@ button { font-family: inherit; }
   .area-body { grid-template-columns: 1fr; }
 }
 
+/* In-body cross-links. Prose with inline links, not a card grid — the point
+   is that these read as sentences, because links inside sentences carry more
+   weight than links inside navigation furniture. */
+.service-crosslinks {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: grid;
+  gap: 16px;
+}
+.service-crosslinks-line {
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  background: var(--sky-tint);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 20px 22px;
+  color: var(--navy-muted);
+  font-size: .95rem;
+  line-height: 1.7;
+}
+.service-crosslinks-line > svg { width: 16px; height: 16px; color: var(--blue); flex: none; margin-top: 4px; }
+.service-crosslinks-line strong { color: var(--navy); }
+.service-crosslinks-line a { color: var(--blue); font-weight: 700; }
+.service-crosslinks-line a svg { width: 13px; height: 13px; vertical-align: -1px; }
+.area-lead-line {
+  margin-top: 18px;
+  color: var(--navy-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.area-lead-line a { color: var(--blue); font-weight: 700; }
+.homes-service-area a { color: var(--blue); font-weight: 700; }
+
+/* Call-to-dial line under every quote button. The number itself is the link
+   so it opens the dialer on a phone; wrapping text around a non-link number
+   defeats the purpose. */
+.call-line {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .88rem;
+  color: var(--navy-muted);
+}
+.call-line svg { width: 15px; height: 15px; color: var(--blue); flex: none; }
+.call-line a {
+  color: var(--blue);
+  font-weight: 700;
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s var(--ease);
+}
+.call-line a:hover { border-bottom-color: currentColor; }
+.call-line--center { justify-content: center; }
+.hero-quote-wrap .call-line { justify-content: center; }
+
 /* ============================== Legal pages ============================= */
 .legal-page { max-width: 760px; }
 .legal-page h1 { font-size: 2rem; }
