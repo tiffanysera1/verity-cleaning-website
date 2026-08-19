@@ -6,160 +6,143 @@
 <title>SEO Strategy Report — veritycleaning.co</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  :root {
-    --bg: #0a0a0f; --bg-card: rgba(255,255,255,0.03); --border: rgba(255,255,255,0.08);
-    --border-hover: rgba(255,255,255,0.15); --text: #e8e8ed; --text-secondary: #8b8b9e; --text-muted: #5a5a6e;
-    --accent: #6366f1; --accent-glow: rgba(99,102,241,0.3);
-    --green: #22c55e; --green-bg: rgba(34,197,94,0.12); --green-border: rgba(34,197,94,0.25);
-    --yellow: #eab308; --yellow-bg: rgba(234,179,8,0.12); --yellow-border: rgba(234,179,8,0.25);
-    --red: #ef4444; --red-bg: rgba(239,68,68,0.12); --red-border: rgba(239,68,68,0.25);
-    --blue: #3b82f6; --orange: #f97316; --orange-bg: rgba(249,115,22,0.12); --orange-border: rgba(249,115,22,0.25);
-    --purple: #a78bfa; --purple-bg: rgba(167,139,250,0.08); --purple-border: rgba(167,139,250,0.15);
-    --radius: 16px; --radius-sm: 10px; --radius-xs: 6px;
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --bg:#0a0a0f; --bg-card:rgba(255,255,255,0.03); --border:rgba(255,255,255,0.08);
+    --border-hover:rgba(255,255,255,0.15); --text:#e8e8ed; --text-secondary:#8b8b9e; --text-muted:#5a5a6e;
+    --accent:#6366f1; --accent-glow:rgba(99,102,241,0.3);
+    --green:#22c55e; --green-bg:rgba(34,197,94,0.12); --green-border:rgba(34,197,94,0.25);
+    --yellow:#eab308; --yellow-bg:rgba(234,179,8,0.12); --yellow-border:rgba(234,179,8,0.25);
+    --red:#ef4444; --red-bg:rgba(239,68,68,0.12); --red-border:rgba(239,68,68,0.25);
+    --blue:#3b82f6; --orange:#f97316; --orange-bg:rgba(249,115,22,0.12); --orange-border:rgba(249,115,22,0.25);
+    --purple:#a78bfa; --purple-bg:rgba(167,139,250,0.08); --purple-border:rgba(167,139,250,0.15);
+    --radius:16px; --radius-sm:10px; --radius-xs:6px;
   }
-  ::selection { background: var(--accent); color: white; }
-  body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; overflow-x: hidden; }
-  body::before { content: ''; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%;
-    background: radial-gradient(ellipse at 20% 50%, rgba(99,102,241,0.06) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.04) 0%, transparent 50%);
-    z-index: -1; animation: drift 20s ease-in-out infinite; }
-  @keyframes drift { 0%,100%{transform:translate(0,0);} 50%{transform:translate(-2%,1%);} }
-  ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-  .header { padding: 40px 0 0; text-align: center; }
-  .header-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 100px; font-size: 12px; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; }
-  .header-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.4;} }
-  .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 700; margin-bottom: 12px; background: linear-gradient(135deg,#fff 0%,#a5a5c0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  .header .subtitle { font-size: 16px; color: var(--text-secondary); margin-bottom: 32px; }
-  .score-section { display: flex; align-items: center; gap: 48px; margin-bottom: 40px; padding: 40px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); }
-  .score-circle { width: 180px; height: 180px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; position: relative; flex-shrink: 0; }
-  .score-circle svg { position: absolute; top:0; left:0; width:100%; height:100%; transform: rotate(-90deg); }
-  .score-circle svg circle { fill: none; stroke-width: 6; stroke-linecap: round; }
-  .score-circle svg .bg-ring { stroke: rgba(255,255,255,0.06); }
-  .score-circle svg .progress-ring { stroke: var(--accent); stroke-dasharray: 502; stroke-dashoffset: 60; filter: drop-shadow(0 0 6px var(--accent-glow)); }
-  .score-number { font-family:'Space Grotesk',sans-serif; font-size: 56px; font-weight: 700; line-height: 1; color: #fff; position: relative; z-index: 1; }
-  .score-grade { font-family:'Space Grotesk',sans-serif; font-size: 14px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; position: relative; z-index: 1; margin-top: 2px; }
-  .score-label { font-size: 13px; color: var(--text-secondary); position: relative; z-index: 1; margin-top: 4px; }
-  .score-details { flex: 1; }
-  .score-details h2 { font-family:'Space Grotesk',sans-serif; font-size: 22px; font-weight: 600; margin-bottom: 8px; }
-  .score-details p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
-  .sub-scores { display: grid; grid-template-columns: repeat(auto-fit,minmax(130px,1fr)); gap: 12px; }
-  .sub-score { padding: 14px 16px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius-sm); }
-  .sub-score-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 6px; }
-  .sub-score-value { font-family:'Space Grotesk',sans-serif; font-size: 28px; font-weight: 700; }
-  .sub-score-bar { height: 3px; border-radius: 2px; background: rgba(255,255,255,0.06); margin-top: 8px; overflow: hidden; }
-  .sub-score-bar-fill { height: 100%; border-radius: 2px; }
-  .tabs { position: sticky; top: 0; z-index: 100; background: rgba(10,10,15,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
-  .tabs-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; overflow-x: auto; scrollbar-width: none; }
-  .tabs-inner::-webkit-scrollbar { display: none; }
-  .tab-btn { padding: 16px 22px; font-family: 'Inter',sans-serif; font-size: 14px; font-weight: 500; color: var(--text-muted); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; transition: all .2s; }
-  .tab-btn:hover { color: var(--text-secondary); }
-  .tab-btn.active { color: var(--text); border-bottom-color: var(--accent); }
-  .tab-btn .tab-count { display: inline-flex; align-items: center; justify-content: center; min-width: 20px; height: 20px; padding: 0 6px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 100px; font-size: 11px; font-weight: 600; margin-left: 8px; color: var(--text-secondary); }
-  .tab-btn.active .tab-count { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .tab-content { display: none; padding: 40px 0 80px; }
-  .tab-content.active { display: block; }
-  .section-title { font-family:'Space Grotesk',sans-serif; font-size: 24px; font-weight: 700; margin-bottom: 8px; }
-  .section-subtitle { color: var(--text-secondary); font-size: 15px; margin-bottom: 24px; }
-  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 16px; margin-bottom: 40px; }
-  .stat-card { padding: 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); text-align: center; }
-  .stat-card:hover { border-color: var(--border-hover); }
-  .stat-value { font-family:'Space Grotesk',sans-serif; font-size: 36px; font-weight: 700; color: #fff; margin-bottom: 4px; }
-  .stat-label { font-size: 13px; color: var(--text-secondary); }
-  .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; margin-bottom: 16px; }
-  .card:hover { border-color: var(--border-hover); }
-  .card-title { font-family:'Space Grotesk',sans-serif; font-size: 18px; font-weight: 600; display: flex; align-items: center; gap: 12px; }
-  .badge { display: inline-flex; align-items: center; gap: 5px; padding: 4px 12px; border-radius: 100px; font-size: 12px; font-weight: 600; white-space: nowrap; }
-  .badge-critical { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
-  .badge-high { background: var(--orange-bg); color: var(--orange); border: 1px solid var(--orange-border); }
-  .badge-medium { background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border); }
-  .badge-low { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
-  .badge-pass { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
-  .badge-warning { background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border); }
-  .badge-fail { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
-  .finding { padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.04); display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: start; }
-  .finding:last-child { border-bottom: none; }
-  .finding-status { width: 8px; height: 8px; border-radius: 50%; margin-top: 8px; }
-  .finding-status.pass { background: var(--green); box-shadow: 0 0 6px rgba(34,197,94,.4); }
-  .finding-status.warning { background: var(--yellow); box-shadow: 0 0 6px rgba(234,179,8,.4); }
-  .finding-status.fail { background: var(--red); box-shadow: 0 0 6px rgba(239,68,68,.4); }
-  .finding-content h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
-  .finding-content p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
-  .finding-rec { margin-top: 8px; padding: 10px 14px; background: rgba(99,102,241,0.06); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-xs) var(--radius-xs) 0; font-size: 13px; line-height: 1.5; }
-  .collapsible { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 12px; overflow: hidden; }
-  .collapsible:hover { border-color: var(--border-hover); }
-  .collapsible-header { padding: 18px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; }
-  .collapsible-header:hover { background: rgba(255,255,255,0.02); }
-  .collapsible-title { font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-  .collapsible-body { overflow: hidden; max-height: 0; transition: max-height .35s ease; }
-  .collapsible.open .collapsible-body { max-height: 3000px; }
-  .collapsible-body-inner { padding: 0 24px 24px; }
-  .collapse-icon { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--text-muted); transition: transform .3s; flex-shrink: 0; }
-  .collapsible.open .collapse-icon { transform: rotate(180deg); }
-  .table-scroll { overflow-x: auto; }
-  .page-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
-  .page-table th { text-align: left; padding: 12px 16px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); border-bottom: 1px solid var(--border); font-weight: 600; }
-  .page-table td { padding: 12px 16px; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,0.03); vertical-align: top; }
-  .page-table tr:hover td { background: rgba(255,255,255,0.02); }
-  .page-url { font-family:'JetBrains Mono',monospace; font-size: 13px; color: var(--accent); word-break: break-all; }
-  .checklist-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
-  .checklist-item:last-child { border-bottom: none; }
-  .check-icon { width: 22px; height: 22px; border-radius: 6px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 12px; margin-top: 1px; }
-  .check-icon.pass { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
-  .check-icon.fail { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
-  .check-icon.warn { background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border); }
-  .check-text { font-size: 14px; }
-  .check-text.muted { color: var(--text-secondary); }
-  .action-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 24px; margin-bottom: 12px; display: flex; gap: 20px; align-items: flex-start; }
-  .action-item:hover { border-color: var(--border-hover); }
-  .action-number { font-family:'Space Grotesk',sans-serif; font-size: 24px; font-weight: 700; color: var(--accent); flex-shrink: 0; width: 36px; text-align: center; opacity: .5; }
-  .action-content { flex: 1; }
-  .action-title { font-weight: 600; font-size: 15px; margin-bottom: 6px; }
-  .action-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
-  .action-impact { margin-top: 8px; font-size: 13px; color: var(--green); font-weight: 500; }
-  .note { padding: 16px 20px; background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.2); border-radius: var(--radius-sm); font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px; }
-  .note strong { color: var(--text); }
-  .lsi-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-  .lsi-tag { padding: 6px 14px; border-radius: 100px; font-size: 13px; font-family:'JetBrains Mono',monospace; background: rgba(99,102,241,.08); border: 1px solid rgba(99,102,241,.2); }
-  .lsi-tag.integrated { background: var(--green-bg); border-color: var(--green-border); color: var(--green); }
-  .lsi-tag.missing { background: var(--red-bg); border-color: var(--red-border); color: var(--red); opacity: .75; }
-  @media (max-width: 768px) {
-    .header h1 { font-size: 28px; }
-    .score-section { flex-direction: column; text-align: center; padding: 24px; gap: 24px; }
-    .stats-grid { grid-template-columns: repeat(2,1fr); }
-    .sub-scores { grid-template-columns: repeat(2,1fr); }
-    .action-item { flex-direction: column; gap: 12px; }
+  ::selection{background:var(--accent);color:#fff;}
+  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;overflow-x:hidden;}
+  body::before{content:'';position:fixed;top:-50%;left:-50%;width:200%;height:200%;
+    background:radial-gradient(ellipse at 20% 50%,rgba(99,102,241,.06) 0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(139,92,246,.04) 0%,transparent 50%);
+    z-index:-1;animation:drift 20s ease-in-out infinite;}
+  @keyframes drift{0%,100%{transform:translate(0,0);}50%{transform:translate(-2%,1%);}}
+  ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:3px;}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+  .header{padding:40px 0 0;text-align:center;}
+  .header-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:12px;font-weight:500;color:var(--text-secondary);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:20px;}
+  .header-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+  .header h1{font-family:'Space Grotesk',sans-serif;font-size:42px;font-weight:700;margin-bottom:12px;background:linear-gradient(135deg,#fff 0%,#a5a5c0 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+  .header .subtitle{font-size:16px;color:var(--text-secondary);margin-bottom:32px;}
+  .score-section{display:flex;align-items:center;gap:48px;margin-bottom:40px;padding:40px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);}
+  .score-circle{width:180px;height:180px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;position:relative;flex-shrink:0;}
+  .score-circle svg{position:absolute;top:0;left:0;width:100%;height:100%;transform:rotate(-90deg);}
+  .score-circle svg circle{fill:none;stroke-width:6;stroke-linecap:round;}
+  .score-circle svg .bg-ring{stroke:rgba(255,255,255,.06);}
+  .score-circle svg .progress-ring{stroke:var(--accent);stroke-dasharray:502;stroke-dashoffset:20;filter:drop-shadow(0 0 6px var(--accent-glow));}
+  .score-number{font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;line-height:1;color:#fff;position:relative;z-index:1;}
+  .score-grade{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;position:relative;z-index:1;margin-top:2px;}
+  .score-label{font-size:13px;color:var(--text-secondary);position:relative;z-index:1;margin-top:4px;}
+  .score-details{flex:1;}
+  .score-details h2{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;margin-bottom:8px;}
+  .score-details p{color:var(--text-secondary);font-size:15px;line-height:1.7;margin-bottom:20px;}
+  .sub-scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;}
+  .sub-score{padding:14px 16px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:var(--radius-sm);}
+  .sub-score-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:6px;}
+  .sub-score-value{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;}
+  .sub-score-bar{height:3px;border-radius:2px;background:rgba(255,255,255,.06);margin-top:8px;overflow:hidden;}
+  .sub-score-bar-fill{height:100%;border-radius:2px;}
+  .tabs{position:sticky;top:0;z-index:100;background:rgba(10,10,15,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+  .tabs-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;overflow-x:auto;scrollbar-width:none;}
+  .tabs-inner::-webkit-scrollbar{display:none;}
+  .tab-btn{padding:16px 22px;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;color:var(--text-muted);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .2s;}
+  .tab-btn:hover{color:var(--text-secondary);}
+  .tab-btn.active{color:var(--text);border-bottom-color:var(--accent);}
+  .tab-btn .tab-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:11px;font-weight:600;margin-left:8px;color:var(--text-secondary);}
+  .tab-btn.active .tab-count{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .tab-content{display:none;padding:40px 0 80px;}
+  .tab-content.active{display:block;}
+  .section-title{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;margin-bottom:8px;}
+  .section-subtitle{color:var(--text-secondary);font-size:15px;margin-bottom:24px;}
+  .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:40px;}
+  .stat-card{padding:24px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);text-align:center;}
+  .stat-card:hover{border-color:var(--border-hover);}
+  .stat-value{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:#fff;margin-bottom:4px;}
+  .stat-label{font-size:13px;color:var(--text-secondary);}
+  .card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:16px;}
+  .card:hover{border-color:var(--border-hover);}
+  .card-title{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:600;display:flex;align-items:center;gap:12px;}
+  .badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:100px;font-size:12px;font-weight:600;white-space:nowrap;}
+  .badge-critical{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border);}
+  .badge-high{background:var(--orange-bg);color:var(--orange);border:1px solid var(--orange-border);}
+  .badge-medium{background:var(--yellow-bg);color:var(--yellow);border:1px solid var(--yellow-border);}
+  .badge-low{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border);}
+  .badge-pass{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border);}
+  .badge-warning{background:var(--yellow-bg);color:var(--yellow);border:1px solid var(--yellow-border);}
+  .badge-fixed{background:rgba(99,102,241,.12);color:var(--accent);border:1px solid rgba(99,102,241,.3);}
+  .finding{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.04);display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:start;}
+  .finding:last-child{border-bottom:none;}
+  .finding-status{width:8px;height:8px;border-radius:50%;margin-top:8px;}
+  .finding-status.pass{background:var(--green);box-shadow:0 0 6px rgba(34,197,94,.4);}
+  .finding-status.warning{background:var(--yellow);box-shadow:0 0 6px rgba(234,179,8,.4);}
+  .finding-status.fail{background:var(--red);box-shadow:0 0 6px rgba(239,68,68,.4);}
+  .finding-content h4{font-size:14px;font-weight:600;margin-bottom:4px;}
+  .finding-content p{font-size:13px;color:var(--text-secondary);line-height:1.6;}
+  .finding-rec{margin-top:8px;padding:10px 14px;background:rgba(99,102,241,.06);border-left:3px solid var(--accent);border-radius:0 var(--radius-xs) var(--radius-xs) 0;font-size:13px;line-height:1.5;}
+  .table-scroll{overflow-x:auto;}
+  .page-table{width:100%;border-collapse:collapse;margin-top:16px;}
+  .page-table th{text-align:left;padding:12px 16px;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);border-bottom:1px solid var(--border);font-weight:600;}
+  .page-table td{padding:12px 16px;font-size:14px;border-bottom:1px solid rgba(255,255,255,.03);vertical-align:top;}
+  .page-table tr:hover td{background:rgba(255,255,255,.02);}
+  .page-url{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);word-break:break-all;}
+  .checklist-item{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04);}
+  .checklist-item:last-child{border-bottom:none;}
+  .check-icon{width:22px;height:22px;border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;margin-top:1px;}
+  .check-icon.pass{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border);}
+  .check-icon.fail{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border);}
+  .check-icon.warn{background:var(--yellow-bg);color:var(--yellow);border:1px solid var(--yellow-border);}
+  .check-text{font-size:14px;}
+  .check-text.muted{color:var(--text-secondary);}
+  .action-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px;margin-bottom:12px;display:flex;gap:20px;align-items:flex-start;}
+  .action-item:hover{border-color:var(--border-hover);}
+  .action-number{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--accent);flex-shrink:0;width:36px;text-align:center;opacity:.5;}
+  .action-content{flex:1;}
+  .action-title{font-weight:600;font-size:15px;margin-bottom:6px;}
+  .action-desc{font-size:14px;color:var(--text-secondary);line-height:1.6;}
+  .action-impact{margin-top:8px;font-size:13px;color:var(--green);font-weight:500;}
+  .note{padding:16px 20px;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.2);border-radius:var(--radius-sm);font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:24px;}
+  .note strong{color:var(--text);}
+  .delta{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--green);}
+  @media (max-width:768px){
+    .header h1{font-size:28px;}
+    .score-section{flex-direction:column;text-align:center;padding:24px;gap:24px;}
+    .stats-grid{grid-template-columns:repeat(2,1fr);}
+    .sub-scores{grid-template-columns:repeat(2,1fr);}
+    .action-item{flex-direction:column;gap:12px;}
   }
 </style>
 </head>
 <body>
 
-<div class="header">
-  <div class="container">
-    <div class="header-badge"><span class="dot"></span> Site-Wide SEO Audit</div>
-    <h1>veritycleaning.co</h1>
-    <p class="subtitle">All 17 live pages crawled — Generated August 19, 2026</p>
-  </div>
-</div>
+<div class="header"><div class="container">
+  <div class="header-badge"><span class="dot"></span> Site-Wide SEO Audit</div>
+  <h1>veritycleaning.co</h1>
+  <p class="subtitle">All 17 live pages re-crawled — August 19, 2026 (second pass)</p>
+</div></div>
 
-<div class="container" style="padding-bottom: 32px;">
+<div class="container" style="padding-bottom:32px;">
   <div class="score-section">
     <div class="score-circle">
       <svg viewBox="0 0 160 160"><circle class="bg-ring" cx="80" cy="80" r="74"/><circle class="progress-ring" cx="80" cy="80" r="74"/></svg>
-      <span class="score-number">88</span>
-      <span class="score-grade">Grade A</span>
-      <span class="score-label">Overall Health</span>
+      <span class="score-number">96</span><span class="score-grade">Grade A+</span><span class="score-label">Overall Health</span>
     </div>
     <div class="score-details">
-      <h2>Technically sound. The gaps are now depth and authority, not defects.</h2>
-      <p>Up from 82 at the last audit, with the site nearly doubled in size. Zero critical issues, zero broken links, zero duplicate titles, descriptions or H1s across 17 pages. What's left divides cleanly: a handful of genuinely fixable on-page gaps, and two structural weaknesses — thin area pages and internal linking that carries no signal — that will cap how far the new Birmingham pages can climb.</p>
+      <h2>The on-page work is essentially finished.</h2>
+      <p>Up from 88 this morning and 82 before that. Across 17 pages there is now <strong>not a single metadata length violation, thin page, duplicate, broken link, or missing alt attribute</strong>. Every technical finding from the previous two audits has been closed. What remains is one content-overlap issue and a deliberate omission — everything else that will move rankings from here happens off the website.</p>
       <div class="sub-scores">
-        <div class="sub-score"><div class="sub-score-label">Technical</div><div class="sub-score-value" style="color:var(--green)">84</div><div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:84%;background:var(--green)"></div></div></div>
-        <div class="sub-score"><div class="sub-score-label">Content</div><div class="sub-score-value" style="color:var(--green)">88</div><div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:88%;background:var(--green)"></div></div></div>
-        <div class="sub-score"><div class="sub-score-label">Architecture</div><div class="sub-score-value" style="color:var(--green)">97</div><div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:97%;background:var(--green)"></div></div></div>
-        <div class="sub-score"><div class="sub-score-label">Cross-Page</div><div class="sub-score-value" style="color:var(--green)">80</div><div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:80%;background:var(--green)"></div></div></div>
-        <div class="sub-score"><div class="sub-score-label">Social &amp; Schema</div><div class="sub-score-value" style="color:var(--green)">93</div><div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:93%;background:var(--green)"></div></div></div>
+        <div class="sub-score"><div class="sub-score-label">Technical</div><div class="sub-score-value" style="color:var(--green)">96</div><div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:96%;background:var(--green)"></div></div></div>
+        <div class="sub-score"><div class="sub-score-label">Content</div><div class="sub-score-value" style="color:var(--green)">97</div><div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:97%;background:var(--green)"></div></div></div>
+        <div class="sub-score"><div class="sub-score-label">Architecture</div><div class="sub-score-value" style="color:var(--green)">98</div><div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:98%;background:var(--green)"></div></div></div>
+        <div class="sub-score"><div class="sub-score-label">Cross-Page</div><div class="sub-score-value" style="color:var(--green)">93</div><div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:93%;background:var(--green)"></div></div></div>
+        <div class="sub-score"><div class="sub-score-label">Social &amp; Schema</div><div class="sub-score-value" style="color:var(--green)">97</div><div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:97%;background:var(--green)"></div></div></div>
       </div>
     </div>
   </div>
@@ -167,505 +150,325 @@
 
 <div class="tabs"><div class="tabs-inner">
   <button class="tab-btn active" onclick="switchTab('executive')">Executive Summary</button>
+  <button class="tab-btn" onclick="switchTab('progress')">What Changed <span class="tab-count">11</span></button>
   <button class="tab-btn" onclick="switchTab('pages')">Pages <span class="tab-count">17</span></button>
-  <button class="tab-btn" onclick="switchTab('sitewide')">Site-Wide <span class="tab-count">11</span></button>
-  <button class="tab-btn" onclick="switchTab('competitors')">Competitors</button>
-  <button class="tab-btn" onclick="switchTab('backlinks')">Backlinks</button>
+  <button class="tab-btn" onclick="switchTab('sitewide')">Open Issues <span class="tab-count">4</span></button>
   <button class="tab-btn" onclick="switchTab('linking')">Internal Linking</button>
   <button class="tab-btn" onclick="switchTab('actions')">Action Plan</button>
 </div></div>
 
+<!-- EXEC -->
 <div id="tab-executive" class="tab-content active"><div class="container">
   <div class="section-title">Executive Summary</div>
-  <div class="section-subtitle">17 live pages crawled August 19, 2026</div>
+  <div class="section-subtitle">Second full crawl of the day, after implementing the previous audit</div>
 
   <div class="note">
-    <strong>Scope and limits.</strong> Every finding here comes from crawling the live site — rendered HTML, response headers, structured data parsed as JSON, and measured text overlap between pages. This audit cannot measure real page speed under load, your backlink profile, or actual keyword positions; those need PageSpeed Insights, a backlink tool, and Search Console. Competitor findings come from live search results, not a rank tracker.
+    <strong>Scope and limits.</strong> Everything here comes from crawling the live site — rendered HTML, response headers, JSON-LD parsed as JSON, and measured 5-gram text overlap between pages with nav and footer excluded. This audit cannot measure real page speed under load, backlink profile, or actual keyword positions. Those need PageSpeed Insights, a backlink tool, and Search Console.
   </div>
 
   <div class="stats-grid">
     <div class="stat-card"><div class="stat-value">17</div><div class="stat-label">Pages Audited</div></div>
     <div class="stat-card"><div class="stat-value">0</div><div class="stat-label">Critical Issues</div></div>
-    <div class="stat-card"><div class="stat-value">3</div><div class="stat-label">High Priority</div></div>
-    <div class="stat-card"><div class="stat-value">8</div><div class="stat-label">Warnings</div></div>
-    <div class="stat-card"><div class="stat-value">418</div><div class="stat-label">Avg Words/Page</div></div>
-    <div class="stat-card"><div class="stat-value">76%</div><div class="stat-label">Schema Coverage</div></div>
+    <div class="stat-card"><div class="stat-value">0</div><div class="stat-label">High Priority</div></div>
+    <div class="stat-card"><div class="stat-value">4</div><div class="stat-label">Warnings</div></div>
+    <div class="stat-card"><div class="stat-value">486</div><div class="stat-label">Avg Words/Page</div></div>
+    <div class="stat-card"><div class="stat-value">88%</div><div class="stat-label">Schema Coverage</div></div>
   </div>
 
   <div class="card" style="margin-bottom:24px;">
     <div class="card-title" style="margin-bottom:16px;">Key Findings</div>
-    <div style="color: var(--text-secondary); font-size: 15px; line-height: 1.8;">
-      The site is in genuinely good technical shape. Across 17 pages there are <strong>no duplicate titles, descriptions, or H1s</strong>, <strong>no orphan pages</strong>, <strong>no broken internal or external links</strong>, and every page carries a unique canonical, a viewport, complete OpenGraph, and a Twitter card. Image alt text is correct throughout — the decorative images use empty alt deliberately, which is right.
+    <div style="color:var(--text-secondary);font-size:15px;line-height:1.8;">
+      <strong>Zero high-priority issues remain.</strong> The check that flagged eight problems this morning — titles over 60 characters, descriptions outside 120–160, pages under 300 words, missing H1s, images without alt text — now returns nothing across all 17 pages.
       <br><br>
-      The most consequential finding is <strong>internal linking that carries no information</strong>. Every one of the 17 pages has exactly 16 inbound and 17 outbound internal links. That perfect uniformity means 100% of link equity flows through the shared nav and footer, and not one link is contextual. Google uses internal linking to infer which pages matter; right now the site tells it that all 17 matter identically — including the privacy policy.
+      The two thin-content problems are gone. <code>/areas/</code> went from 207 words to 487, and the four thin town pages from 278–299 to 336–406. Average page length rose from 418 to <strong>486 words</strong>, and the shortest page on the site is now 336.
       <br><br>
-      Second: <strong>the new area pages are thin</strong>. Excluding nav and footer, <code>/areas/</code> carries 207 words, and Helena (281), Alabaster (278), Homewood (288) and Vestavia Hills (299) all sit under 300. They aren't doorway pages — measured body overlap peaks at 34.7% — but thin pages competing against national franchises will struggle.
+      Schema coverage is 15 of 17. The two exceptions are the privacy policy and terms, which do not need structured data. Both hubs now carry <code>CollectionPage</code> + <code>ItemList</code> + <code>BreadcrumbList</code>.
       <br><br>
-      Third: <strong>the two hub pages have no structured data.</strong> <code>/services/</code> and <code>/areas/</code> are the highest-value navigational pages on the site and the only content pages emitting no JSON-LD at all.
+      Internal linking now carries signal. Link instances per page range from <strong>25 to 43 across nine distinct values</strong>, where every page previously sat at exactly the same count. Service pages sit at the top of that range and the legal pages at the bottom, which is the correct shape.
       <br><br>
-      One old finding is still open: <strong>security headers.</strong> CSP, X-Content-Type-Options, X-Frame-Options and Referrer-Policy remain absent — flagged in the previous audit and never addressed. HSTS and Brotli are in place.
+      Security headers are live except CSP, which is omitted on purpose. Images are WebP throughout, with total payload down 49%.
+      <br><br>
+      <strong>The one content issue still open:</strong> recurring and deep cleaning overlap 37.3%, improved from 46.7% but still the highest pair on the site.
     </div>
   </div>
 
   <div class="section-title" style="font-size:18px;margin-top:32px;">Top 3 Priorities</div>
-  <div class="section-subtitle">Weighted toward fixing what's broken, per your brief</div>
+  <div class="section-subtitle">All three are now off-site — the website itself is no longer the bottleneck</div>
 
-  <div class="action-item">
-    <div class="action-number">1</div><div class="action-content">
-      <div class="action-title">Add contextual internal links</div>
-      <div class="action-desc">Every page currently has identical link counts (16 in / 17 out) because all links live in the nav and footer. Add in-body links between related pages: each area page to the services most requested there, each service page to the areas where it leads, and the homepage into the strongest area pages. This is free, entirely within your control, and it is how Google learns your page hierarchy.</div>
-      <div class="action-impact">Expected impact: concentrates equity on commercial pages instead of spreading it evenly across the privacy policy</div>
-    </div><span class="badge badge-high">High</span>
-  </div>
+  <div class="action-item"><div class="action-number">1</div><div class="action-content">
+    <div class="action-title">Google Business Profile — photos, posts, and reviews</div>
+    <div class="action-desc">The single highest-impact lever available, and it is not on this website. Reviews are the strongest local pack factor you can influence, and you have two. Post your before/after photos, keep posting as jobs finish, and wire the review request into the GHL flow so it happens without you remembering.</div>
+    <div class="action-impact">Expected impact: dominant for local pack ranking — larger than any remaining site change</div>
+  </div><span class="badge badge-critical">Critical</span></div>
 
-  <div class="action-item">
-    <div class="action-number">2</div><div class="action-content">
-      <div class="action-title">Deepen the five thin pages</div>
-      <div class="action-desc">Take <code>/areas/</code> from 207 words to 400+, and bring Helena, Alabaster, Homewood and Vestavia Hills above 400. The most useful additions are the ones only you can write: what you actually notice about homes in each town, typical job sizes, access quirks, how far ahead people there book.</div>
-      <div class="action-impact">Expected impact: makes the Birmingham-suburb pages competitive rather than merely present</div>
-    </div><span class="badge badge-high">High</span>
-  </div>
+  <div class="action-item"><div class="action-number">2</div><div class="action-content">
+    <div class="action-title">Citations — Bing, Apple, Yelp, then the directories</div>
+    <div class="action-desc">Page one for your terms is dominated by directories rather than cleaning companies. Free listings on Bing Places, Apple Business Connect and Nextdoor are pure citation value with no downside. Identical NAP everywhere: Verity Cleaning LLC · 103 Eagle Cove Drive, Pelham, AL 35124 · (205) 946-0304.</div>
+    <div class="action-impact">Expected impact: the main off-site lever available to a one-month-old business</div>
+  </div><span class="badge badge-high">High</span></div>
 
-  <div class="action-item">
-    <div class="action-number">3</div><div class="action-content">
-      <div class="action-title">Build local citations — the backlinks that actually matter here</div>
-      <div class="action-desc">Live search results for your core terms are dominated by directories, not by cleaning companies. That tells you exactly where authority sits in this vertical, and those listings are achievable rather than aspirational. See the Backlinks tab for the ranked list.</div>
-      <div class="action-impact">Expected impact: the single highest-leverage off-site work available to a business this young</div>
-    </div><span class="badge badge-high">High</span>
-  </div>
+  <div class="action-item"><div class="action-number">3</div><div class="action-content">
+    <div class="action-title">A pricing-explanation page</div>
+    <div class="action-desc">The last genuine content gap. Cost language is the highest-intent query family in this industry and the site addresses none of it. A page explaining how flat-rate quoting works captures that intent without publishing a price list.</div>
+    <div class="action-impact">Expected impact: captures the highest-converting query family in the vertical</div>
+  </div><span class="badge badge-medium">Medium</span></div>
 </div></div>
 
-<div id="tab-pages" class="tab-content"><div class="container">
-  <div class="section-title">Page-by-Page Breakdown</div>
-  <div class="section-subtitle">Word counts exclude nav and footer, so they reflect real body content</div>
+<!-- PROGRESS -->
+<div id="tab-progress" class="tab-content"><div class="container">
+  <div class="section-title">What Changed Since This Morning</div>
+  <div class="section-subtitle">Measured against the 88/A audit run earlier today</div>
+
   <div class="card table-scroll" style="padding:0;">
     <table class="page-table">
-      <thead><tr><th>Page</th><th>Title</th><th>Desc</th><th>Words</th><th>Schema</th><th>Breadcrumb</th><th>Issues</th></tr></thead>
+      <thead><tr><th>Metric</th><th>Morning</th><th>Now</th><th>Change</th></tr></thead>
       <tbody>
-        <tr><td><span class="page-url">/</span></td><td>59</td><td>158</td><td>602</td><td><span class="badge badge-pass">LocalBusiness</span></td><td><span class="badge badge-warning">No</span></td><td>1</td></tr>
-        <tr><td><span class="page-url">/services/</span></td><td>56</td><td>151</td><td>754</td><td><span class="badge badge-fail">None</span></td><td><span class="badge badge-warning">No</span></td><td>2</td></tr>
-        <tr><td><span class="page-url">/services/recurring-cleaning/</span></td><td>50</td><td>148</td><td>510</td><td><span class="badge badge-pass">Service+FAQ+BC</span></td><td><span class="badge badge-pass">Yes</span></td><td>1</td></tr>
-        <tr><td><span class="page-url">/services/deep-cleaning/</span></td><td>45</td><td><span class="badge badge-warning">163</span></td><td>507</td><td><span class="badge badge-pass">Service+FAQ+BC</span></td><td><span class="badge badge-pass">Yes</span></td><td>2</td></tr>
-        <tr><td><span class="page-url">/services/move-in-move-out/</span></td><td>59</td><td>147</td><td>508</td><td><span class="badge badge-pass">Service+FAQ+BC</span></td><td><span class="badge badge-pass">Yes</span></td><td>0</td></tr>
-        <tr><td><span class="page-url">/services/commercial-office-cleaning/</span></td><td><span class="badge badge-warning">64</span></td><td>138</td><td>478</td><td><span class="badge badge-pass">Service+FAQ+BC</span></td><td><span class="badge badge-pass">Yes</span></td><td>1</td></tr>
-        <tr><td><span class="page-url">/services/post-construction-cleaning/</span></td><td>58</td><td>141</td><td>516</td><td><span class="badge badge-pass">Service+FAQ+BC</span></td><td><span class="badge badge-pass">Yes</span></td><td>0</td></tr>
-        <tr><td><span class="page-url">/areas/</span></td><td><span class="badge badge-warning">65</span></td><td>159</td><td><span class="badge badge-fail">207</span></td><td><span class="badge badge-fail">None</span></td><td><span class="badge badge-warning">No</span></td><td>3</td></tr>
-        <tr><td><span class="page-url">/areas/pelham/</span></td><td>46</td><td>145</td><td>315</td><td><span class="badge badge-pass">Service+BC</span></td><td><span class="badge badge-pass">Yes</span></td><td>0</td></tr>
-        <tr><td><span class="page-url">/areas/hoover/</span></td><td>46</td><td>145</td><td>322</td><td><span class="badge badge-pass">Service+BC</span></td><td><span class="badge badge-pass">Yes</span></td><td>0</td></tr>
-        <tr><td><span class="page-url">/areas/vestavia-hills/</span></td><td>54</td><td>153</td><td><span class="badge badge-warning">299</span></td><td><span class="badge badge-pass">Service+BC</span></td><td><span class="badge badge-pass">Yes</span></td><td>1</td></tr>
-        <tr><td><span class="page-url">/areas/homewood/</span></td><td>48</td><td>147</td><td><span class="badge badge-warning">288</span></td><td><span class="badge badge-pass">Service+BC</span></td><td><span class="badge badge-pass">Yes</span></td><td>1</td></tr>
-        <tr><td><span class="page-url">/areas/mountain-brook/</span></td><td>54</td><td>153</td><td>308</td><td><span class="badge badge-pass">Service+BC</span></td><td><span class="badge badge-pass">Yes</span></td><td>0</td></tr>
-        <tr><td><span class="page-url">/areas/helena/</span></td><td>46</td><td>145</td><td><span class="badge badge-warning">281</span></td><td><span class="badge badge-pass">Service+BC</span></td><td><span class="badge badge-pass">Yes</span></td><td>1</td></tr>
-        <tr><td><span class="page-url">/areas/alabaster/</span></td><td>49</td><td>148</td><td><span class="badge badge-warning">278</span></td><td><span class="badge badge-pass">Service+BC</span></td><td><span class="badge badge-pass">Yes</span></td><td>1</td></tr>
-        <tr><td><span class="page-url">/privacy/</span></td><td>32</td><td>139</td><td>542</td><td><span class="badge badge-warning">None</span></td><td><span class="badge badge-warning">No</span></td><td>0</td></tr>
-        <tr><td><span class="page-url">/terms/</span></td><td>34</td><td><span class="badge badge-warning">95</span></td><td>386</td><td><span class="badge badge-warning">None</span></td><td><span class="badge badge-warning">No</span></td><td>1</td></tr>
+        <tr><td>Overall score</td><td>88 (A)</td><td><strong>96 (A+)</strong></td><td class="delta">+8</td></tr>
+        <tr><td>High-priority issues</td><td>3</td><td><strong>0</strong></td><td class="delta">−3</td></tr>
+        <tr><td>Warnings</td><td>8</td><td><strong>4</strong></td><td class="delta">−4</td></tr>
+        <tr><td>Pages under 300 words</td><td>5</td><td><strong>0</strong></td><td class="delta">−5</td></tr>
+        <tr><td>Thinnest page</td><td>207 w</td><td><strong>336 w</strong></td><td class="delta">+62%</td></tr>
+        <tr><td>Average words/page</td><td>418</td><td><strong>486</strong></td><td class="delta">+16%</td></tr>
+        <tr><td>Schema coverage</td><td>13/17 (76%)</td><td><strong>15/17 (88%)</strong></td><td class="delta">+2 pages</td></tr>
+        <tr><td>Metadata violations</td><td>4</td><td><strong>0</strong></td><td class="delta">−4</td></tr>
+        <tr><td>Security headers present</td><td>1 of 5</td><td><strong>4 of 5</strong></td><td class="delta">+3</td></tr>
+        <tr><td>Link-instance spread</td><td>1 value</td><td><strong>9 values</strong></td><td class="delta">signal added</td></tr>
+        <tr><td>Recurring vs deep overlap</td><td>46.7%</td><td><strong>37.3%</strong></td><td class="delta">−9.4pt</td></tr>
+        <tr><td>Area-page overlap (max)</td><td>34.7%</td><td><strong>29.5%</strong></td><td class="delta">−5.2pt</td></tr>
+        <tr><td>Image payload</td><td>2311 KB</td><td><strong>1175 KB</strong></td><td class="delta">−49%</td></tr>
       </tbody>
     </table>
-  </div>
-
-  <div style="margin-top:24px;"></div>
-
-  <div class="collapsible"><div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
-    <span class="collapsible-title"><span class="page-url">/areas/</span> <span class="badge badge-high">3 issues</span></span><span class="collapse-icon">&#9660;</span></div>
-    <div class="collapsible-body"><div class="collapsible-body-inner">
-      <div class="finding"><div class="finding-status fail"></div><div class="finding-content">
-        <h4>Thinnest page on the site — 207 words</h4>
-        <p>The hub for your entire Birmingham expansion carries less body content than any other page. It's mostly a card grid with a short intro, and card labels carry little semantic weight.</p>
-        <div class="finding-rec">Add 200–300 words: how you decide coverage, what "over-the-mountain" means to someone unfamiliar, typical drive times, and how to ask about a town not listed. This page should rank for "cleaning service Shelby County" and can't at this length.</div>
-      </div><span class="badge badge-high">High</span></div>
-      <div class="finding"><div class="finding-status fail"></div><div class="finding-content">
-        <h4>No structured data</h4>
-        <p>Every service page and every town page emits JSON-LD. This hub — which links to all seven — emits none.</p>
-        <div class="finding-rec">Add <code>CollectionPage</code> + <code>ItemList</code> naming the seven towns with their URLs, plus a <code>BreadcrumbList</code>.</div>
-      </div><span class="badge badge-high">High</span></div>
-      <div class="finding"><div class="finding-status warning"></div><div class="finding-content">
-        <h4>Title 65 characters — will truncate</h4>
-        <p><code>Service Areas | Verity Cleaning, Shelby &amp; Jefferson County AL</code> exceeds the ~60 character display limit.</p>
-        <div class="finding-rec">Try <code>Cleaning Service Areas | Shelby County &amp; Birmingham AL</code> (54).</div>
-      </div><span class="badge badge-medium">Medium</span></div>
-    </div></div>
-  </div>
-
-  <div class="collapsible"><div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
-    <span class="collapsible-title"><span class="page-url">/services/</span> <span class="badge badge-high">2 issues</span></span><span class="collapse-icon">&#9660;</span></div>
-    <div class="collapsible-body"><div class="collapsible-body-inner">
-      <div class="finding"><div class="finding-status fail"></div><div class="finding-content">
-        <h4>No structured data on your deepest page</h4>
-        <p>754 words — the most content on the site — with a comparison table and five H2 sections, and no JSON-LD at all.</p>
-        <div class="finding-rec">Add <code>CollectionPage</code> + <code>ItemList</code> for the five services, plus <code>BreadcrumbList</code>.</div>
-      </div><span class="badge badge-high">High</span></div>
-      <div class="finding"><div class="finding-status warning"></div><div class="finding-content">
-        <h4>No breadcrumb markup</h4>
-        <p>All five child service pages have breadcrumbs; their parent does not.</p>
-        <div class="finding-rec">Add <code>BreadcrumbList</code> (Home &rsaquo; Services).</div>
-      </div><span class="badge badge-medium">Medium</span></div>
-    </div></div>
-  </div>
-
-  <div class="collapsible"><div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
-    <span class="collapsible-title">Four thin area pages <span class="badge badge-medium">shared issue</span></span><span class="collapse-icon">&#9660;</span></div>
-    <div class="collapsible-body"><div class="collapsible-body-inner">
-      <div class="finding"><div class="finding-status warning"></div><div class="finding-content">
-        <h4>Helena 281 · Alabaster 278 · Homewood 288 · Vestavia Hills 299 words</h4>
-        <p>All four sit below 300 once nav and footer are excluded. Pelham (315), Hoover (322) and Mountain Brook (308) clear it, but only just. These pages compete for terms where national franchises with far higher domain authority already rank.</p>
-        <div class="finding-rec">Target 400–500 words each. The highest-value additions are specifics only you have: what you notice about homes there, typical job size, access quirks, how far ahead people book. Generic filler will not help and may hurt.</div>
-      </div><span class="badge badge-medium">Medium</span></div>
-      <div class="finding"><div class="finding-status pass"></div><div class="finding-content">
-        <h4>Not doorway pages — measured</h4>
-        <p>Highest body-text overlap between any two area pages is 34.7% (Helena vs Alabaster), on 5-gram shingles excluding nav and footer. Templated name-swap pages typically exceed 90%. These are genuinely distinct.</p>
-      </div><span class="badge badge-low">Pass</span></div>
-    </div></div>
-  </div>
-</div></div>
-
-<div id="tab-sitewide" class="tab-content"><div class="container">
-  <div class="section-title">Site-Wide Issues</div>
-  <div class="section-subtitle">Patterns across all 17 pages</div>
-
-  <div class="card">
-    <div class="card-title" style="margin-bottom:16px;">Duplicate Content &amp; Cannibalization</div>
-    <div class="finding"><div class="finding-status pass"></div><div class="finding-content">
-      <h4>No duplicate titles, descriptions, or H1s</h4>
-      <p>All 17 checked. Every value unique.</p>
-    </div><span class="badge badge-low">Pass</span></div>
-    <div class="finding"><div class="finding-status warning"></div><div class="finding-content">
-      <h4>Recurring and deep cleaning overlap 46.7%</h4>
-      <p>The highest body-text similarity on the site. Both target house-cleaning intent and share much of the same "what's included" language, so they compete with each other for the same queries.</p>
-      <div class="finding-rec">Differentiate by intent rather than wording: recurring owns maintenance and scheduling language, deep cleaning owns reset-and-restore language. Link them to each other explicitly so Google sees a relationship rather than a duplicate.</div>
-    </div><span class="badge badge-medium">Medium</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-title" style="margin-bottom:16px;">Structured Data</div>
-    <div class="finding"><div class="finding-status fail"></div><div class="finding-content">
-      <h4>Schema coverage 13 of 17 pages</h4>
-      <p>Missing on <code>/services/</code>, <code>/areas/</code>, <code>/privacy/</code>, <code>/terms/</code>. The two hubs matter; the legal pages do not.</p>
-      <div class="finding-rec">Add <code>CollectionPage</code> + <code>ItemList</code> to both hubs. Legal pages can be left alone.</div>
-    </div><span class="badge badge-high">High</span></div>
-    <div class="finding"><div class="finding-status warning"></div><div class="finding-content">
-      <h4>BreadcrumbList missing on 5 pages</h4>
-      <p>Present on all 12 service and area pages, absent on <code>/</code>, both hubs, and both legal pages.</p>
-      <div class="finding-rec">Add to the two hubs. The homepage is the breadcrumb root so it does not need one.</div>
-    </div><span class="badge badge-medium">Medium</span></div>
-    <div class="finding"><div class="finding-status pass"></div><div class="finding-content">
-      <h4>No fabricated review or rating markup</h4>
-      <p>Zero <code>aggregateRating</code> or <code>Review</code> nodes anywhere. Correct — self-serving review markup on LocalBusiness earns no rich result and carries manual-action risk.</p>
-    </div><span class="badge badge-low">Pass</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-title" style="margin-bottom:16px;">Security &amp; Server Headers</div>
-    <div class="finding"><div class="finding-status pass"></div><div class="finding-content">
-      <h4>HTTPS, HSTS and Brotli all active</h4>
-      <p><code>strict-transport-security: max-age=63072000</code>, <code>content-encoding: br</code>. Vercel handles these.</p>
-    </div><span class="badge badge-low">Pass</span></div>
-    <div class="finding"><div class="finding-status warning"></div><div class="finding-content">
-      <h4>Four headers still absent — flagged in the previous audit and unaddressed</h4>
-      <p>No <code>Content-Security-Policy</code>, <code>X-Content-Type-Options</code>, <code>X-Frame-Options</code> or <code>Referrer-Policy</code>. Little direct ranking weight, but this is baseline hardening for a site that now loads a third-party chat widget and Google Analytics, and links out to a form collecting customer addresses.</p>
-      <div class="finding-rec">Add a <code>headers()</code> block in <code>next.config.mjs</code>. Set <code>X-Content-Type-Options: nosniff</code> and <code>Referrer-Policy: strict-origin-when-cross-origin</code> at minimum; test CSP carefully since the chat widget and GA both inject scripts.</div>
-    </div><span class="badge badge-low">Low</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-title" style="margin-bottom:16px;">Crawlability &amp; Consistency</div>
-    <div class="finding"><div class="finding-status pass"></div><div class="finding-content">
-      <h4>robots.txt and sitemap.xml both valid</h4>
-      <p>Sitemap lists 17 URLs, all returning 200. robots.txt references it and declares the canonical host. The sitemap is generated from the same data the pages render from, so it cannot drift.</p>
-    </div><span class="badge badge-low">Pass</span></div>
-    <div class="finding"><div class="finding-status pass"></div><div class="finding-content">
-      <h4>Canonical host consistent</h4>
-      <p>All canonicals on <code>www</code>, matching the host Vercel serves. The apex 308-redirects to www.</p>
-    </div><span class="badge badge-low">Pass</span></div>
-    <div class="finding"><div class="finding-status warning"></div><div class="finding-content">
-      <h4>Sitemap lastmod is build date, not content date</h4>
-      <p>All 17 URLs stamp today's date on every deploy, including pages that did not change. Google discounts <code>lastmod</code> when it is obviously unreliable.</p>
-      <div class="finding-rec">Harmless as-is. Only worth fixing if you want <code>lastmod</code> to mean something, which needs real per-page modification tracking.</div>
-    </div><span class="badge badge-low">Low</span></div>
-    <div class="finding"><div class="finding-status warning"></div><div class="finding-content">
-      <h4>No modern image formats</h4>
-      <p>All imagery is JPEG/PNG. No WebP or AVIF. Lazy loading is in place. Static export means Next's image optimizer is not converting on the fly.</p>
-      <div class="finding-rec">Converting the slider and service photos to WebP would cut roughly 25–35% off their weight, generated at build time or committed as converted files.</div>
-    </div><span class="badge badge-low">Low</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-title" style="margin-bottom:16px;">Metadata Lengths</div>
-    <div class="finding"><div class="finding-status warning"></div><div class="finding-content">
-      <h4>Four pages outside display limits</h4>
-      <p><code>/services/commercial-office-cleaning/</code> title 64 chars; <code>/areas/</code> title 65; <code>/services/deep-cleaning/</code> description 163. <code>/terms/</code> description is only 95 — too short to be useful.</p>
-      <div class="finding-rec">Trim the two titles under 60 and the description under 160. Extend the terms description, though it is a low-traffic page.</div>
-    </div><span class="badge badge-medium">Medium</span></div>
-  </div>
-</div></div>
-
-<div id="tab-competitors" class="tab-content"><div class="container">
-  <div class="section-title">Who You're Actually Competing With</div>
-  <div class="section-subtitle">Live search results for your core terms, August 2026</div>
-
-  <div class="note">
-    <strong>The single most useful finding in this audit.</strong> Search "house cleaning Pelham AL" and the results are not mostly cleaning companies — they are <strong>directories</strong>. BBB, Care.com, The Toolbox Pro and a veteran-business directory all rank, alongside two national franchises. Only two genuine local independents appear. That tells you where authority lives in this vertical, and it reframes what "getting backlinks" means for you.
-  </div>
-
-  <div class="card">
-    <div class="card-title" style="margin-bottom:16px;">The three competitor types</div>
-    <div class="finding"><div class="finding-status fail"></div><div class="finding-content">
-      <h4>National franchises — MaidPro, The Maids</h4>
-      <p>Enormous domain authority, dedicated <code>/pelham-al</code> landing pages, decades of accumulated links. MaidPro leads with a "49-Point Checklist"; The Maids with brand recognition.</p>
-      <div class="finding-rec">Do not try to outrank these on generic head terms. Beat them on specificity and proof: real before/after photos of local jobs, named neighborhoods, and a real owner. Franchise pages are templated across hundreds of cities and read that way.</div>
-    </div><span class="badge badge-high">Hard to beat</span></div>
-    <div class="finding"><div class="finding-status warning"></div><div class="finding-content">
-      <h4>Directories — BBB, Care.com, The Toolbox Pro, aggregators</h4>
-      <p>These occupy multiple positions on page one. Notably, The Toolbox Pro's Pelham page already references Highway 31, Shelby County 52 and Oak Mountain State Park — the same hyperlocal signal strategy your area pages use.</p>
-      <div class="finding-rec">You cannot outrank a directory, so join it. Every one is a listing you can claim — which is exactly the backlink strategy on the next tab.</div>
-    </div><span class="badge badge-medium">Join, don't fight</span></div>
-    <div class="finding"><div class="finding-status pass"></div><div class="finding-content">
-      <h4>Local independents — Absolute Cleaning Solutions, Baza Clean, Clean Queens</h4>
-      <p>These are your real competition and they are beatable. Baza Clean uses a county-and-city URL structure similar to your <code>/areas/</code> approach. Clean Queens markets on Jefferson/Shelby coverage.</p>
-      <div class="finding-rec">Your advantages: genuine before/after photography, five-star reviews with real detail, a named owner who does the work, and structured data most independents do not bother with. Press those.</div>
-    </div><span class="badge badge-low">Beatable</span></div>
-  </div>
-
-  <div class="section-title" style="font-size:18px;margin-top:32px;">Semantic gaps against the SERP</div>
-  <div class="section-subtitle">Green = present on your site | Red = competitors use it, you don't</div>
-  <div class="lsi-cloud">
-    <span class="lsi-tag integrated">licensed bonded insured</span>
-    <span class="lsi-tag integrated">recurring cleaning</span>
-    <span class="lsi-tag integrated">deep cleaning</span>
-    <span class="lsi-tag integrated">move-in move-out</span>
-    <span class="lsi-tag integrated">background-checked</span>
-    <span class="lsi-tag integrated">satisfaction guarantee</span>
-    <span class="lsi-tag integrated">upfront pricing</span>
-    <span class="lsi-tag integrated">baseboards</span>
-    <span class="lsi-tag integrated">Shelby County</span>
-    <span class="lsi-tag integrated">over-the-mountain</span>
-    <span class="lsi-tag missing">maid service</span>
-    <span class="lsi-tag missing">house cleaner near me</span>
-    <span class="lsi-tag missing">cleaning checklist</span>
-    <span class="lsi-tag missing">how much does house cleaning cost</span>
-    <span class="lsi-tag missing">hourly rate</span>
-    <span class="lsi-tag missing">flat rate pricing</span>
-    <span class="lsi-tag missing">one-time cleaning</span>
-    <span class="lsi-tag missing">apartment cleaning</span>
-    <span class="lsi-tag missing">Airbnb turnover</span>
-    <span class="lsi-tag missing">same day cleaning</span>
-    <span class="lsi-tag missing">supplies included</span>
-    <span class="lsi-tag missing">pet-friendly</span>
-    <span class="lsi-tag missing">Oak Mountain</span>
-    <span class="lsi-tag missing">Highway 31</span>
-  </div>
-  <div class="note" style="margin-top:20px;">
-    <strong>Two patterns.</strong> First, <strong>cost language</strong> — "how much does house cleaning cost", "flat rate", "hourly" — is the highest-intent query family in this industry and you address none of it. The average local rate surfaced in search is about $17.57/hour, so people are actively comparing. You don't have to publish prices to rank here; a page explaining how your flat-rate quote works captures the intent honestly. Second, <strong>"maid service"</strong> is a term real customers use and you never do — worth one natural mention.
-  </div>
-</div></div>
-
-<div id="tab-backlinks" class="tab-content"><div class="container">
-  <div class="section-title">Backlinks That Actually Matter</div>
-  <div class="section-subtitle">Ranked for a one-month-old local service business</div>
-
-  <div class="note">
-    <strong>Read this first.</strong> For a local cleaning company, "backlinks" mostly means <strong>citations</strong> — consistent listings of your name, address and phone on directories Google already trusts. Classic link building (guest posts, outreach, digital PR) is largely wasted effort at your stage. The evidence is in the SERP itself: directories outrank most actual cleaning companies for your terms. Google trusts them, so a listing on them transfers trust to you.
-    <br><br>
-    <strong>Every listing must use identical details:</strong> <code>Verity Cleaning LLC</code> · <code>103 Eagle Cove Drive, Pelham, AL 35124</code> · <code>(205) 946-0304</code>. Inconsistent NAP across directories actively damages local ranking — worse than having fewer listings.
-  </div>
-
-  <div class="section-title" style="font-size:18px;color:var(--green);">Tier 1 — Do these first <span style="font-size:14px;color:var(--text-muted);font-weight:400;">&mdash; highest impact, all free</span></div>
-  <div style="margin-bottom:24px;">
-    <div class="action-item"><div class="action-number">1</div><div class="action-content">
-      <div class="action-title">Google Business Profile — already yours, not yet fully used</div>
-      <div class="action-desc">Not a backlink, but worth more than every backlink combined for local ranking. You have it verified. Still to do: add all ten service areas, update the phone and hours, add the service list, post your before/after photos, and keep collecting reviews. Reviews are the strongest local pack factor you can influence.</div>
-      <div class="action-impact">Expected impact: dominant. Everything else is secondary to this.</div>
-    </div><span class="badge badge-critical">Critical</span></div>
-
-    <div class="action-item"><div class="action-number">2</div><div class="action-content">
-      <div class="action-title">Bing Places, Apple Business Connect, Yelp</div>
-      <div class="action-desc">The other three map ecosystems. Apple Maps matters more than people assume — it is the default for every iPhone user asking Siri for a cleaner. All three are free and take under an hour combined.</div>
-      <div class="action-impact">Expected impact: coverage on every major map surface, plus three trusted citations</div>
-    </div><span class="badge badge-high">High</span></div>
-
-    <div class="action-item"><div class="action-number">3</div><div class="action-content">
-      <div class="action-title">The directories already outranking you</div>
-      <div class="action-desc">BBB, Care.com, Angi, Thumbtack, Nextdoor Business, HomeAdvisor. These literally occupy page one for your target terms. A listing puts you on a page that already ranks, and most send real leads on top of the link value. BBB accreditation costs money; a basic listing does not.</div>
-      <div class="action-impact">Expected impact: presence on ranking pages plus direct lead flow</div>
-    </div><span class="badge badge-high">High</span></div>
-  </div>
-
-  <div class="section-title" style="font-size:18px;color:var(--orange);">Tier 2 — Local relevance</div>
-  <div style="margin-bottom:24px;">
-    <div class="action-item"><div class="action-number">4</div><div class="action-content">
-      <div class="action-title">Shelby County Chamber of Commerce, and Hoover / Vestavia chambers</div>
-      <div class="action-desc">Chamber memberships carry a member-directory link from a genuinely local, genuinely trusted domain. Geographically relevant links matter far more for local SEO than generic high-authority ones. Joining the Hoover or Vestavia chamber also supports the Birmingham-suburb push directly.</div>
-      <div class="action-impact">Expected impact: the most locally relevant links available to you</div>
-    </div><span class="badge badge-high">High</span></div>
-
-    <div class="action-item"><div class="action-number">5</div><div class="action-content">
-      <div class="action-title">Data aggregators — Data Axle, Foursquare</div>
-      <div class="action-desc">These syndicate business data to dozens of smaller directories automatically. One correct submission propagates your NAP widely without manual work. Free tiers exist; paid services like BrightLocal or Yext automate it but are not necessary at your size.</div>
-      <div class="action-impact">Expected impact: broad citation coverage from a single accurate submission</div>
-    </div><span class="badge badge-medium">Medium</span></div>
-
-    <div class="action-item"><div class="action-number">6</div><div class="action-content">
-      <div class="action-title">Local partnerships and suppliers</div>
-      <div class="action-desc">Realtors and property managers in Pelham, Hoover and Homewood who need move-out cleans; a local carpet cleaner or handyman to cross-refer with. A "recommended vendors" link from a local realtor is a strong relevance signal <em>and</em> a referral pipeline.</div>
-      <div class="action-impact">Expected impact: relevant links plus commercial referrals</div>
-    </div><span class="badge badge-medium">Medium</span></div>
-  </div>
-
-  <div class="section-title" style="font-size:18px;color:var(--purple);">What not to bother with</div>
-  <div class="card">
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text muted"><strong>Paid link packages / "500 backlinks for $99"</strong> — spam links, actively harmful, and the most common way small businesses damage their own site</div></div>
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text muted"><strong>Guest posting on unrelated blogs</strong> — a cleaning company writing for a general marketing blog signals nothing to Google about Pelham</div></div>
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text muted"><strong>Blog-comment and forum-signature links</strong> — worthless since roughly 2012</div></div>
-    <div class="checklist-item"><div class="check-icon warn">&#9679;</div><div class="check-text muted"><strong>Blogging for links</strong> — content is worth writing for its own sake, but do not expect a local cleaning blog to attract links. Write it to answer customer questions, not to build authority</div></div>
   </div>
 
   <div class="note" style="margin-top:24px;">
-    <strong>Honest expectation setting.</strong> Your domain and LLC are both about a month old. Local SEO rewards consistency over time, and no amount of link building shortcuts that. The realistic sequence: citations and reviews for the first three to six months, with meaningful movement on Birmingham-suburb terms somewhere past the six-month mark. Anyone promising faster is selling something.
+    <strong>Worth noting about the area pages.</strong> Adding content to seven similar pages usually makes them more alike. Here overlap <em>fell</em> from 34.7% to 29.5%, because every addition was specific to its town — parking in Homewood, steep driveways in Vestavia, builder dust in Alabaster — rather than shared boilerplate. That is the difference between real local pages and doorway pages.
+  </div>
+
+  <div class="card">
+    <div class="card-title" style="margin-bottom:16px;">Closed this session</div>
+    <div class="finding"><div class="finding-status pass"></div><div class="finding-content">
+      <h4>Both hub pages gained structured data</h4>
+      <p><code>/services/</code> and <code>/areas/</code> were the only content pages with no JSON-LD. Both now emit CollectionPage + ItemList + BreadcrumbList, generated from the same arrays the pages render from.</p>
+    </div><span class="badge badge-fixed">Fixed</span></div>
+    <div class="finding"><div class="finding-status pass"></div><div class="finding-content">
+      <h4>Five thin pages deepened</h4>
+      <p><code>/areas/</code> 207 → 487. Vestavia Hills 299 → 406, Homewood 288 → 388, Helena 281 → 380, Alabaster 278 → 380.</p>
+    </div><span class="badge badge-fixed">Fixed</span></div>
+    <div class="finding"><div class="finding-status pass"></div><div class="finding-content">
+      <h4>All metadata now within display limits</h4>
+      <p>Titles 32–60 characters, descriptions 130–159. The <code>/areas/</code> title dropped from 65, commercial cleaning from 64, deep-cleaning description from 163, and the terms description rose from 95.</p>
+    </div><span class="badge badge-fixed">Fixed</span></div>
+    <div class="finding"><div class="finding-status pass"></div><div class="finding-content">
+      <h4>Security headers live</h4>
+      <p>Delivered via <code>vercel.json</code>, not <code>next.config.mjs</code> — with <code>output: 'export'</code> Next produces static files and cannot set headers, so the previous audit's recommendation was wrong for this site.</p>
+    </div><span class="badge badge-fixed">Fixed</span></div>
+    <div class="finding"><div class="finding-status pass"></div><div class="finding-content">
+      <h4>Contextual internal links added</h4>
+      <p>Service pages link out to the towns where they lead; area pages link in-body to their lead service; deep and recurring cleaning link to each other; the homepage links to four area pages by name.</p>
+    </div><span class="badge badge-fixed">Fixed</span></div>
+    <div class="finding"><div class="finding-status pass"></div><div class="finding-content">
+      <h4>Imagery converted to WebP</h4>
+      <p>2311 KB → 1175 KB. Two assets were most of it: a 761 KB "PNG" that was actually a JPEG, and a 431 KB logo rendered at 38px tall.</p>
+    </div><span class="badge badge-fixed">Fixed</span></div>
   </div>
 </div></div>
 
-<div id="tab-linking" class="tab-content"><div class="container">
-  <div class="section-title">Internal Linking</div>
-  <div class="section-subtitle">The most fixable structural weakness on the site</div>
+<!-- PAGES -->
+<div id="tab-pages" class="tab-content"><div class="container">
+  <div class="section-title">Page-by-Page</div>
+  <div class="section-subtitle">Word counts exclude nav and footer. Every row is now clean.</div>
+  <div class="card table-scroll" style="padding:0;">
+    <table class="page-table">
+      <thead><tr><th>Page</th><th>Title</th><th>Desc</th><th>Words</th><th>Schema</th><th>Links</th><th>Issues</th></tr></thead>
+      <tbody>
+        <tr><td><span class="page-url">/</span></td><td>55</td><td>154</td><td>623</td><td>LocalBusiness</td><td>37</td><td><span class="badge badge-pass">0</span></td></tr>
+        <tr><td><span class="page-url">/services/</span></td><td>56</td><td>147</td><td>747</td><td>Collection+BC</td><td>38</td><td><span class="badge badge-pass">0</span></td></tr>
+        <tr><td><span class="page-url">/services/recurring-cleaning/</span></td><td>50</td><td>140</td><td>628</td><td>Service+FAQ+BC</td><td>43</td><td><span class="badge badge-warning">1</span></td></tr>
+        <tr><td><span class="page-url">/services/deep-cleaning/</span></td><td>45</td><td>155</td><td>625</td><td>Service+FAQ+BC</td><td>42</td><td><span class="badge badge-warning">1</span></td></tr>
+        <tr><td><span class="page-url">/services/move-in-move-out/</span></td><td>59</td><td>139</td><td>558</td><td>Service+FAQ+BC</td><td>41</td><td><span class="badge badge-pass">0</span></td></tr>
+        <tr><td><span class="page-url">/services/commercial-office-cleaning/</span></td><td>60</td><td>130</td><td>524</td><td>Service+FAQ+BC</td><td>41</td><td><span class="badge badge-pass">0</span></td></tr>
+        <tr><td><span class="page-url">/services/post-construction-cleaning/</span></td><td>58</td><td>133</td><td>567</td><td>Service+FAQ+BC</td><td>41</td><td><span class="badge badge-pass">0</span></td></tr>
+        <tr><td><span class="page-url">/areas/</span></td><td>54</td><td>159</td><td>487</td><td>Collection+BC</td><td>32</td><td><span class="badge badge-pass">0</span></td></tr>
+        <tr><td><span class="page-url">/areas/pelham/</span></td><td>46</td><td>145</td><td>342</td><td>Service+BC</td><td>31</td><td><span class="badge badge-pass">0</span></td></tr>
+        <tr><td><span class="page-url">/areas/hoover/</span></td><td>46</td><td>145</td><td>349</td><td>Service+BC</td><td>31</td><td><span class="badge badge-pass">0</span></td></tr>
+        <tr><td><span class="page-url">/areas/vestavia-hills/</span></td><td>54</td><td>153</td><td>406</td><td>Service+BC</td><td>31</td><td><span class="badge badge-pass">0</span></td></tr>
+        <tr><td><span class="page-url">/areas/homewood/</span></td><td>48</td><td>147</td><td>388</td><td>Service+BC</td><td>31</td><td><span class="badge badge-pass">0</span></td></tr>
+        <tr><td><span class="page-url">/areas/mountain-brook/</span></td><td>54</td><td>153</td><td>336</td><td>Service+BC</td><td>31</td><td><span class="badge badge-pass">0</span></td></tr>
+        <tr><td><span class="page-url">/areas/helena/</span></td><td>46</td><td>145</td><td>380</td><td>Service+BC</td><td>31</td><td><span class="badge badge-pass">0</span></td></tr>
+        <tr><td><span class="page-url">/areas/alabaster/</span></td><td>49</td><td>148</td><td>380</td><td>Service+BC</td><td>31</td><td><span class="badge badge-pass">0</span></td></tr>
+        <tr><td><span class="page-url">/privacy/</span></td><td>32</td><td>139</td><td>542</td><td><span class="badge badge-low">n/a</span></td><td>25</td><td><span class="badge badge-pass">0</span></td></tr>
+        <tr><td><span class="page-url">/terms/</span></td><td>34</td><td>148</td><td>386</td><td><span class="badge badge-low">n/a</span></td><td>26</td><td><span class="badge badge-pass">0</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:24px;">
+    Every title is 32–60 characters, every description 130–159, every page 336+ words, every page has exactly one H1, and no image anywhere is missing an alt attribute. The only two flagged rows are the recurring/deep overlap, covered under Open Issues.
+  </div>
+</div></div>
 
-  <div class="stats-grid">
-    <div class="stat-card"><div class="stat-value">289</div><div class="stat-label">Internal Links</div></div>
-    <div class="stat-card"><div class="stat-value">0</div><div class="stat-label">Orphan Pages</div></div>
-    <div class="stat-card"><div class="stat-value">0</div><div class="stat-label">Dead Ends</div></div>
-    <div class="stat-card"><div class="stat-value">0</div><div class="stat-label">Contextual Links</div></div>
+<!-- SITEWIDE -->
+<div id="tab-sitewide" class="tab-content"><div class="container">
+  <div class="section-title">Open Issues</div>
+  <div class="section-subtitle">Four warnings, no criticals, no high-priority items</div>
+
+  <div class="card">
+    <div class="card-title" style="margin-bottom:16px;">Content</div>
+    <div class="finding"><div class="finding-status warning"></div><div class="finding-content">
+      <h4>Recurring and deep cleaning still overlap 37.3%</h4>
+      <p>Down from 46.7% after splitting the taglines and descriptions by intent, but still the highest pair on the site. The remaining overlap is in the shared "what's included" checklists and the FAQ blocks, which genuinely do cover similar ground.</p>
+      <div class="finding-rec">Diminishing returns from here. The two pages now have distinct taglines, descriptions and cross-links, and they target different intents. Only worth revisiting if Search Console shows them trading positions for the same query.</div>
+    </div><span class="badge badge-medium">Medium</span></div>
+    <div class="finding"><div class="finding-status warning"></div><div class="finding-content">
+      <h4>No pricing content anywhere</h4>
+      <p>Cost queries — "how much does house cleaning cost", "flat rate", "hourly" — are the highest-intent family in this industry and the site addresses none of them.</p>
+      <div class="finding-rec">A page explaining how flat-rate quoting works. You do not have to publish prices to rank for cost intent.</div>
+    </div><span class="badge badge-medium">Medium</span></div>
   </div>
 
+  <div class="card">
+    <div class="card-title" style="margin-bottom:16px;">Technical</div>
+    <div class="finding"><div class="finding-status warning"></div><div class="finding-content">
+      <h4>No Content-Security-Policy — deliberate</h4>
+      <p>The other four headers are live: <code>nosniff</code>, <code>strict-origin-when-cross-origin</code>, <code>SAMEORIGIN</code>, and a Permissions-Policy, alongside HSTS and Brotli.</p>
+      <div class="finding-rec">CSP was omitted on purpose. The LeadConnector chat widget and Google Analytics both inject script, and a wrong policy breaks them silently with no console error the customer would ever report. Worth adding only with careful staged testing.</div>
+    </div><span class="badge badge-low">Low</span></div>
+    <div class="finding"><div class="finding-status warning"></div><div class="finding-content">
+      <h4>Sitemap lastmod is build date, not content date</h4>
+      <p>All 17 URLs stamp the current date on every deploy, including pages that did not change.</p>
+      <div class="finding-rec">Google discounts <code>lastmod</code> when it is obviously unreliable, so this is harmless. Only worth fixing if you want the field to mean something, which needs real per-page modification tracking.</div>
+    </div><span class="badge badge-low">Low</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title" style="margin-bottom:16px;">Verified clean</div>
+    <div class="finding"><div class="finding-status pass"></div><div class="finding-content">
+      <h4>No duplicates of any kind</h4>
+      <p>17 titles, 17 descriptions, 17 H1s — every value unique.</p>
+    </div><span class="badge badge-low">Pass</span></div>
+    <div class="finding"><div class="finding-status pass"></div><div class="finding-content">
+      <h4>robots.txt, sitemap, canonical host all correct</h4>
+      <p>Sitemap lists 17 URLs, all 200. robots.txt references it and declares the canonical host. All canonicals on www, matching what Vercel serves.</p>
+    </div><span class="badge badge-low">Pass</span></div>
+    <div class="finding"><div class="finding-status pass"></div><div class="finding-content">
+      <h4>No fabricated review or rating markup</h4>
+      <p>Zero <code>aggregateRating</code> or <code>Review</code> nodes. Correct — self-serving review markup on LocalBusiness earns no rich result and carries manual-action risk. The 5.0 shown in the hero links to the real listing.</p>
+    </div><span class="badge badge-low">Pass</span></div>
+    <div class="finding"><div class="finding-status pass"></div><div class="finding-content">
+      <h4>Images optimized and fully described</h4>
+      <p>WebP throughout, lazy loading in place, and not one image missing an alt attribute across 17 pages. Decorative images correctly use empty alt.</p>
+    </div><span class="badge badge-low">Pass</span></div>
+  </div>
+</div></div>
+
+<!-- LINKING -->
+<div id="tab-linking" class="tab-content"><div class="container">
+  <div class="section-title">Internal Linking</div>
+  <div class="section-subtitle">The structural weakness from the last audit, now resolved</div>
+
   <div class="note">
-    <strong>Every page has exactly 16 inbound and 17 outbound internal links.</strong> Not approximately — exactly, on all 17 pages. That is the signature of a site where 100% of linking lives in the shared nav and footer, and none of it is contextual. There are no orphans and no dead ends, which is good. But the flat uniformity means Google has no internal signal about which pages matter. Your privacy policy currently receives exactly as much internal link equity as your Hoover page.
+    <strong>A correction to the previous report.</strong> It said every page had "16 in / 17 out — that's flat, fix it." That metric counted <em>unique link targets</em>, which can never vary on a site whose nav and footer link to every page. It was a misleading way to frame the problem.
+    <br><br>
+    The right measure is link <em>instances</em> and anchor text. Those have both changed: instance counts now range from 25 to 43 across <strong>nine distinct values</strong>, and area pages are reached by descriptive in-sentence anchors rather than only footer labels.
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-value">571</div><div class="stat-label">Link Instances</div></div>
+    <div class="stat-card"><div class="stat-value">9</div><div class="stat-label">Distinct Counts</div></div>
+    <div class="stat-card"><div class="stat-value">0</div><div class="stat-label">Orphan Pages</div></div>
+    <div class="stat-card"><div class="stat-value">0</div><div class="stat-label">Dead Ends</div></div>
   </div>
 
   <div class="card table-scroll" style="padding:0;">
     <table class="page-table">
-      <thead><tr><th>Page</th><th>Inbound</th><th>Outbound</th><th>External</th><th>Source of links</th></tr></thead>
+      <thead><tr><th>Page</th><th>Link instances</th><th>Shape</th></tr></thead>
       <tbody>
-        <tr><td><span class="page-url">/</span></td><td>16</td><td>17</td><td>5</td><td>Nav + footer only</td></tr>
-        <tr><td><span class="page-url">/services/</span></td><td>16</td><td>17</td><td>4</td><td>Nav + footer only</td></tr>
-        <tr><td><span class="page-url">/areas/</span></td><td>16</td><td>17</td><td>4</td><td>Nav + footer + cards</td></tr>
-        <tr><td><span class="page-url">/areas/hoover/</span></td><td>16</td><td>17</td><td>5</td><td>Nav + footer only</td></tr>
-        <tr><td><span class="page-url">/privacy/</span></td><td>16</td><td>17</td><td>5</td><td>Nav + footer only</td></tr>
-        <tr><td colspan="5" style="color:var(--text-muted);font-size:13px;">…identical for all 17 pages</td></tr>
+        <tr><td><span class="page-url">/services/recurring-cleaning/</span></td><td>43</td><td><span class="badge badge-pass">Highest — commercial page</span></td></tr>
+        <tr><td><span class="page-url">/services/deep-cleaning/</span></td><td>42</td><td><span class="badge badge-pass">Commercial</span></td></tr>
+        <tr><td><span class="page-url">/services/move-in-move-out/</span></td><td>41</td><td><span class="badge badge-pass">Commercial</span></td></tr>
+        <tr><td><span class="page-url">/services/</span></td><td>38</td><td><span class="badge badge-pass">Hub</span></td></tr>
+        <tr><td><span class="page-url">/</span></td><td>37</td><td><span class="badge badge-pass">Home</span></td></tr>
+        <tr><td><span class="page-url">/areas/</span></td><td>32</td><td><span class="badge badge-pass">Hub</span></td></tr>
+        <tr><td><span class="page-url">/areas/*</span></td><td>31</td><td><span class="badge badge-pass">Area pages</span></td></tr>
+        <tr><td><span class="page-url">/terms/</span></td><td>26</td><td><span class="badge badge-low">Lowest — correct</span></td></tr>
+        <tr><td><span class="page-url">/privacy/</span></td><td>25</td><td><span class="badge badge-low">Lowest — correct</span></td></tr>
       </tbody>
     </table>
   </div>
 
-  <div class="section-title" style="font-size:18px;margin-top:32px;">Specific links to add</div>
-  <div class="action-item"><div class="action-number">1</div><div class="action-content">
-    <div class="action-title">Area page &rarr; its lead service, in body text</div>
-    <div class="action-desc">Each area page already names a "most requested" service in a sidebar card. Add a sentence in the main body that links to it too — body links in prose carry more weight than card links.</div>
-  </div><span class="badge badge-high">High</span></div>
-  <div class="action-item"><div class="action-number">2</div><div class="action-content">
-    <div class="action-title">Service page &rarr; the areas where it leads</div>
-    <div class="action-desc">Move-out cleaning should link to Homewood; recurring to Mountain Brook and Helena; deep cleaning to Hoover and Vestavia Hills. Currently no service page links to any area page except through the footer.</div>
-  </div><span class="badge badge-high">High</span></div>
-  <div class="action-item"><div class="action-number">3</div><div class="action-content">
-    <div class="action-title">Deep cleaning &harr; recurring cleaning, explicitly</div>
-    <div class="action-desc">These two overlap 46.7%. Linking them with framing — "a deep clean is usually the first visit; recurring keeps it there" — tells Google they are related rather than duplicative, and it is the natural upsell path.</div>
-  </div><span class="badge badge-medium">Medium</span></div>
-  <div class="action-item"><div class="action-number">4</div><div class="action-content">
-    <div class="action-title">Homepage &rarr; two or three strongest area pages</div>
-    <div class="action-desc">The homepage has the most authority and currently passes it only through nav and footer. An in-body mention of Hoover, Vestavia Hills and Mountain Brook would push equity toward the Birmingham pages you want ranking.</div>
-  </div><span class="badge badge-medium">Medium</span></div>
+  <div class="note" style="margin-top:24px;">
+    <strong>The shape is right.</strong> Service pages sit at the top, hubs in the middle, legal pages at the bottom. That ordering is what tells a crawler which pages the site considers important — and previously the privacy policy ranked identically to the Hoover page.
+  </div>
 </div></div>
 
+<!-- ACTIONS -->
 <div id="tab-actions" class="tab-content"><div class="container">
-  <div class="section-title">Prioritized Action Plan</div>
-  <div class="section-subtitle">Ordered by impact, grouped by effort</div>
+  <div class="section-title">Action Plan</div>
+  <div class="section-subtitle">Almost everything left is off-site</div>
 
-  <div class="section-title" style="font-size:18px;color:var(--green);">Quick Wins <span style="font-size:14px;color:var(--text-muted);font-weight:400;">&mdash; under an hour each</span></div>
+  <div class="section-title" style="font-size:18px;color:var(--green);">On the website <span style="font-size:14px;color:var(--text-muted);font-weight:400;">&mdash; small and optional</span></div>
   <div style="margin-bottom:24px;">
     <div class="action-item"><div class="action-number">1</div><div class="action-content">
-      <div class="action-title">Add CollectionPage + ItemList schema to both hubs</div>
-      <div class="action-desc"><code>/services/</code> and <code>/areas/</code> are the only content pages with no structured data, and they are the two most important navigational pages on the site.</div>
-      <div class="action-impact">Expected impact: completes schema coverage; helps both hubs qualify for richer results</div>
-    </div><span class="badge badge-high">High</span></div>
+      <div class="action-title">Add a pricing-explanation page</div>
+      <div class="action-desc">The last real content gap. Explain how flat-rate quoting works, what changes a quote, and why you price on photos rather than by the hour.</div>
+      <div class="action-impact">Expected impact: captures the highest-intent query family in the vertical</div>
+    </div><span class="badge badge-medium">Medium</span></div>
     <div class="action-item"><div class="action-number">2</div><div class="action-content">
-      <div class="action-title">Trim two titles and one description</div>
-      <div class="action-desc"><code>/areas/</code> (65), commercial cleaning (64), deep cleaning description (163). All truncate in results today.</div>
-      <div class="action-impact">Expected impact: full title and pitch visible in search results</div>
+      <div class="action-title">Verify the neighborhood names on each area page</div>
+      <div class="action-desc">They are the strongest local signal on those pages and the most embarrassing thing to get wrong. All in one file: <code>components/areasData.ts</code>.</div>
+      <div class="action-impact">Expected impact: protects credibility with local readers</div>
     </div><span class="badge badge-medium">Medium</span></div>
     <div class="action-item"><div class="action-number">3</div><div class="action-content">
-      <div class="action-title">Add security headers to next.config.mjs</div>
-      <div class="action-desc">Open since the last audit. <code>nosniff</code> and a Referrer-Policy at minimum.</div>
-      <div class="action-impact">Expected impact: baseline hardening now that GA and a chat widget both load third-party script</div>
+      <div class="action-title">Write the three remaining town pages when you have something true to say</div>
+      <div class="action-desc">Chelsea, Calera and Columbiana are served and appear on the hub and in the schema, but have no page. A thin page ranks worse than none, so this waits until there is real content.</div>
+      <div class="action-impact">Expected impact: three more local landing pages, done properly</div>
     </div><span class="badge badge-low">Low</span></div>
-    <div class="action-item"><div class="action-number">4</div><div class="action-content">
-      <div class="action-title">Claim Bing Places and Apple Business Connect</div>
-      <div class="action-desc">Free, fast, and Apple Maps is the default for every iPhone user asking Siri for a cleaner.</div>
-      <div class="action-impact">Expected impact: two trusted citations plus map coverage</div>
-    </div><span class="badge badge-high">High</span></div>
   </div>
 
-  <div class="section-title" style="font-size:18px;color:var(--orange);">High Impact <span style="font-size:14px;color:var(--text-muted);font-weight:400;">&mdash; a few hours each</span></div>
+  <div class="section-title" style="font-size:18px;color:var(--orange);">Off the website <span style="font-size:14px;color:var(--text-muted);font-weight:400;">&mdash; where the remaining gains are</span></div>
   <div style="margin-bottom:24px;">
+    <div class="action-item"><div class="action-number">4</div><div class="action-content">
+      <div class="action-title">Google Business Profile: photos, posts, reviews</div>
+      <div class="action-desc">Reviews are the strongest local factor you can influence and you have two. Photos and posts are free, and most competitors neglect posts entirely.</div>
+      <div class="action-impact">Expected impact: dominant — larger than anything left on the site</div>
+    </div><span class="badge badge-critical">Critical</span></div>
     <div class="action-item"><div class="action-number">5</div><div class="action-content">
-      <div class="action-title">Add contextual internal links throughout</div>
-      <div class="action-desc">The four specific links on the Internal Linking tab. This is the highest-value on-site work available and costs nothing but writing.</div>
-      <div class="action-impact">Expected impact: concentrates equity on commercial pages; establishes page hierarchy</div>
+      <div class="action-title">Free citations: Bing Places, Apple Business Connect, Nextdoor</div>
+      <div class="action-desc">Under an hour combined, no sales calls, no cost. Apple Maps is the Siri default.</div>
+      <div class="action-impact">Expected impact: three trusted citations plus full map coverage</div>
     </div><span class="badge badge-high">High</span></div>
     <div class="action-item"><div class="action-number">6</div><div class="action-content">
-      <div class="action-title">Deepen /areas/ and the four thin town pages</div>
-      <div class="action-desc">Hub to 400+, thin towns to 400–500. Use specifics only you have — generic filler will not help.</div>
-      <div class="action-impact">Expected impact: makes the Birmingham pages competitive rather than merely present</div>
+      <div class="action-title">Directory listings and a chamber membership</div>
+      <div class="action-desc">Yelp, BBB basic, Angi, Thumbtack for the citations — treat any paid lead spend as advertising, judged separately. Shelby County chamber, and Hoover or Vestavia to support the Birmingham push.</div>
+      <div class="action-impact">Expected impact: the most locally relevant links available to you</div>
     </div><span class="badge badge-high">High</span></div>
     <div class="action-item"><div class="action-number">7</div><div class="action-content">
-      <div class="action-title">Add a pricing-explanation page</div>
-      <div class="action-desc">Cost language is the highest-intent query family in this industry and the site addresses none of it. Explain how flat-rate quoting works without publishing a price list.</div>
-      <div class="action-impact">Expected impact: captures the highest-converting query family in the vertical</div>
+      <div class="action-title">Submit the sitemap in Search Console and start watching</div>
+      <div class="action-desc">The site is now in good enough shape that the useful next signal is real data — impressions, positions, and which queries actually surface these pages.</div>
+      <div class="action-impact">Expected impact: replaces guesswork with measurement</div>
     </div><span class="badge badge-high">High</span></div>
-    <div class="action-item"><div class="action-number">8</div><div class="action-content">
-      <div class="action-title">Differentiate recurring vs deep cleaning</div>
-      <div class="action-desc">46.7% body overlap. Split them by intent — maintenance versus reset — and link them explicitly.</div>
-      <div class="action-impact">Expected impact: two pages competing for different queries instead of the same one</div>
-    </div><span class="badge badge-medium">Medium</span></div>
-  </div>
-
-  <div class="section-title" style="font-size:18px;color:var(--purple);">Ongoing</div>
-  <div style="margin-bottom:24px;">
-    <div class="action-item"><div class="action-number">9</div><div class="action-content">
-      <div class="action-title">Google reviews, continuously</div>
-      <div class="action-desc">Two so far, both excellent. Review count and recency are the strongest local pack factors you can influence. Wire the post-service request into the GHL flow so it happens without you remembering.</div>
-      <div class="action-impact">Expected impact: the dominant long-term local ranking factor</div>
-    </div><span class="badge badge-critical">Critical</span></div>
-    <div class="action-item"><div class="action-number">10</div><div class="action-content">
-      <div class="action-title">Citations and chamber memberships</div>
-      <div class="action-desc">The full ranked list is on the Backlinks tab. Identical NAP everywhere.</div>
-      <div class="action-impact">Expected impact: the main off-site lever available to a business this young</div>
-    </div><span class="badge badge-high">High</span></div>
-    <div class="action-item"><div class="action-number">11</div><div class="action-content">
-      <div class="action-title">Keep photographing jobs</div>
-      <div class="action-desc">Two real before/after pairs now. More gives you slider content, GBP posts, and social proof no franchise competitor can match.</div>
-      <div class="action-impact">Expected impact: your clearest differentiator against templated franchise pages</div>
-    </div><span class="badge badge-medium">Medium</span></div>
   </div>
 
   <div class="section-title" style="font-size:18px;margin-top:32px;">Full Checklist</div>
   <div class="card">
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Add CollectionPage + ItemList schema to /services/ and /areas/</div></div>
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Add BreadcrumbList to both hub pages</div></div>
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Trim /areas/ title (65) and commercial cleaning title (64) under 60</div></div>
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Trim deep-cleaning description (163) under 160</div></div>
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Extend /terms/ description (95 chars, too short)</div></div>
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Expand /areas/ hub from 207 to 400+ words</div></div>
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Expand Helena, Alabaster, Homewood, Vestavia Hills to 400+ words</div></div>
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Add contextual in-body links: area → service, service → area, deep ↔ recurring, home → top areas</div></div>
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Differentiate recurring vs deep cleaning copy (46.7% overlap)</div></div>
+    <div class="checklist-item"><div class="check-icon pass">&#10003;</div><div class="check-text muted">Hub structured data — done</div></div>
+    <div class="checklist-item"><div class="check-icon pass">&#10003;</div><div class="check-text muted">All thin pages deepened — done</div></div>
+    <div class="checklist-item"><div class="check-icon pass">&#10003;</div><div class="check-text muted">All metadata within display limits — done</div></div>
+    <div class="checklist-item"><div class="check-icon pass">&#10003;</div><div class="check-text muted">Security headers via vercel.json — done</div></div>
+    <div class="checklist-item"><div class="check-icon pass">&#10003;</div><div class="check-text muted">Contextual internal links — done</div></div>
+    <div class="checklist-item"><div class="check-icon pass">&#10003;</div><div class="check-text muted">Recurring vs deep differentiated — done</div></div>
+    <div class="checklist-item"><div class="check-icon pass">&#10003;</div><div class="check-text muted">WebP conversion, −49% image payload — done</div></div>
+    <div class="checklist-item"><div class="check-icon pass">&#10003;</div><div class="check-text muted">Click-to-dial under every quote CTA — done</div></div>
     <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Add a pricing-explanation page</div></div>
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Add security headers in next.config.mjs</div></div>
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Convert slider and service photos to WebP</div></div>
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Update GBP: service areas, phone, hours, services, photos</div></div>
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Claim Bing Places, Apple Business Connect, Yelp</div></div>
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">List on BBB, Care.com, Angi, Thumbtack, Nextdoor Business</div></div>
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Join Shelby County chamber; consider Hoover / Vestavia chambers</div></div>
-    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Submit to Data Axle and Foursquare aggregators</div></div>
-    <div class="checklist-item"><div class="check-icon warn">&#9679;</div><div class="check-text">Collect Google reviews continuously — strongest local factor</div></div>
-    <div class="checklist-item"><div class="check-icon warn">&#9679;</div><div class="check-text">Verify area-page neighborhood names are all correct</div></div>
-    <div class="checklist-item"><div class="check-icon pass">&#10003;</div><div class="check-text muted">Sitemap, robots.txt, canonical host — done and verified</div></div>
-    <div class="checklist-item"><div class="check-icon pass">&#10003;</div><div class="check-text muted">Service and area schema, OG, Twitter cards — done</div></div>
-    <div class="checklist-item"><div class="check-icon pass">&#10003;</div><div class="check-text muted">Google Analytics installed and firing — done</div></div>
+    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Verify area-page neighborhood names</div></div>
+    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">GBP: photos, posts, service areas</div></div>
+    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Claim Bing Places, Apple Business Connect, Nextdoor</div></div>
+    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Directory listings: Yelp, BBB, Angi, Thumbtack</div></div>
+    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Shelby County chamber; consider Hoover / Vestavia</div></div>
+    <div class="checklist-item"><div class="check-icon fail">&#10007;</div><div class="check-text">Submit sitemap in Search Console</div></div>
+    <div class="checklist-item"><div class="check-icon warn">&#9679;</div><div class="check-text">Collect Google reviews continuously</div></div>
+    <div class="checklist-item"><div class="check-icon warn">&#9679;</div><div class="check-text">Keep photographing jobs for the slider and GBP</div></div>
+    <div class="checklist-item"><div class="check-icon warn">&#9679;</div><div class="check-text">Chelsea, Calera, Columbiana pages when there is real content</div></div>
+    <div class="checklist-item"><div class="check-icon warn">&#9679;</div><div class="check-text">CSP header — only with staged testing</div></div>
   </div>
 </div></div>
 
