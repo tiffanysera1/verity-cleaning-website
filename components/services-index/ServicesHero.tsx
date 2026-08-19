@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { ArrowRight, Sparkle } from "../Icons";
 import { FEATURED_SERVICES } from "./servicesIndexData";
-import { QUOTE_FORM_URL } from "../quoteLink";
 
 export default function ServicesHero() {
   return (
@@ -33,10 +32,10 @@ export default function ServicesHero() {
                     <span className="svc-chip" key={chip}>{chip}</span>
                   ))}
                 </div>
-                <a href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn--primary svc-card-cta">
-                  Get a Quote
-                  <ArrowRight />
-                </a>
+                {/* No per-card quote button. Five identical CTAs down one grid
+                    is repetitive and competes with the single large CTA at the
+                    foot of the page. These cards exist to compare services, so
+                    the card action is to read more about one. */}
                 <a href={`/services/${slug}/`} className="svc-card-more">Learn more <ArrowRight /></a>
               </div>
             </article>

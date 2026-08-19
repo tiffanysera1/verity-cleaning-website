@@ -1384,8 +1384,8 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   padding: 4px 10px;
   border-radius: 20px;
 }
-.svc-card-cta { margin-top: 18px; width: 100%; }
 .svc-card-more {
+  margin-top: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
