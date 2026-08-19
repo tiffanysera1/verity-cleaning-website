@@ -21,10 +21,13 @@ export async function generateMetadata(
   if (!service) return {};
 
   const title = `${service.title} in Pelham, AL | Verity Cleaning`;
-  const description = `${service.summary} Serving Pelham & Shelby County, AL. Call or text (205) 946-0304.`;
+  /* Commercial & Office Cleaning is the longest service name and pushed the
+     full title to 64 characters, so the brand suffix shortens for long names. */
+  const shortTitle = `${service.title} in Pelham, AL | Verity`;
+  const description = `${service.summary} Serving Pelham & Shelby County. Call or text (205) 946-0304.`;
 
   return {
-    title,
+    title: title.length > 60 ? shortTitle : title,
     description,
     alternates: { canonical: `/services/${service.slug}/` },
     openGraph: {

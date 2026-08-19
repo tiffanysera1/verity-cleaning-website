@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service | Verity Cleaning",
   description:
-    "The terms that apply when you book cleaning services with Verity Cleaning in Shelby County, AL.",
+    "The terms that apply when you book cleaning with Verity Cleaning in Shelby County, AL — quotes, scheduling, payment, and our satisfaction guarantee.",
   alternates: { canonical: "/terms/" },
   robots: { index: true, follow: true },
 };

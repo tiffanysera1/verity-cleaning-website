@@ -705,6 +705,18 @@ button { font-family: inherit; }
 .area-card-tagline { margin-top: 10px; color: var(--navy-muted); font-size: .92rem; line-height: 1.6; }
 .area-card-drive { margin-top: 10px; color: var(--muted); font-size: .84rem; font-weight: 600; }
 .area-card .review-more { margin-top: 16px; }
+.areas-copy {
+  max-width: 74ch;
+  margin: 40px auto 0;
+}
+.areas-copy h2 { font-size: 1.35rem; }
+.areas-copy p {
+  margin-top: 14px;
+  color: var(--navy-muted);
+  font-size: .97rem;
+  line-height: 1.75;
+}
+.areas-copy strong { color: var(--navy); }
 .areas-more {
   margin-top: 34px;
   text-align: center;

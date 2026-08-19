@@ -5,6 +5,8 @@ import ServicesDecision from "@/components/services-index/ServicesDecision";
 import ServicesAddOns from "@/components/services-index/ServicesAddOns";
 import EveryCleaningIncludes from "@/components/services-index/EveryCleaningIncludes";
 import ServicesCTA from "@/components/services-index/ServicesCTA";
+import HubJsonLd from "@/components/HubJsonLd";
+import { SERVICES } from "@/components/servicesData";
 
 export const metadata: Metadata = {
   title: "Cleaning Services in Shelby County, AL | Verity Cleaning",
@@ -22,6 +24,13 @@ export const metadata: Metadata = {
 export default function ServicesIndexPage() {
   return (
     <main id="main">
+      <HubJsonLd
+        path="/services/"
+        name="Cleaning Services in Shelby County, AL"
+        description="Compare recurring, deep, move-in/move-out, commercial, and post-construction cleaning from Verity Cleaning."
+        breadcrumbName="Services"
+        items={SERVICES.map((s) => ({ name: s.title, url: `/services/${s.slug}/` }))}
+      />
       <ServicesHero />
       <ServicesCompare />
       <ServicesDecision />
