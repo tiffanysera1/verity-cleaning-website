@@ -6,7 +6,7 @@ export const TRANSFORM_PAIRS = [
   {
     key: "carpet",
     before: {
-      src: "/transform-carpet-before.jpg",
+      src: "/transform-carpet-before.webp",
       alt: "Bedroom carpet before cleaning, covered in food wrappers and stained",
     },
     after: {
@@ -17,11 +17,11 @@ export const TRANSFORM_PAIRS = [
   {
     key: "bedroom",
     before: {
-      src: "/transform-bedroom-before.jpg",
+      src: "/transform-bedroom-before.webp",
       alt: "Bedroom floor before cleaning, carpet heavily soiled and ground in",
     },
     after: {
-      src: "/transform-bedroom-after.jpg",
+      src: "/transform-bedroom-after.webp",
       alt: "The same bedroom floor after cleaning, carpet restored and even in color",
     },
   },

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       "House cleaning across Shelby County and Birmingham's over-the-mountain suburbs.",
     url: "/areas/",
-    images: [{ url: "/clean-home.png", alt: "A tidy, sunlit home cleaned by Verity Cleaning" }],
+    images: [{ url: "/og-image.jpg", alt: "A tidy, sunlit home cleaned by Verity Cleaning" }],
   },
 };
 

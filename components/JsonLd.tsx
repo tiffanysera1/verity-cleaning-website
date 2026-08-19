@@ -23,7 +23,7 @@ export default function JsonLd() {
       "https://www.google.com/maps?cid=17576216227421438205",
       "https://nextdoor.com/profile/01RZrcssJXy3zcKc_",
     ],
-    image: "https://www.veritycleaning.co/clean-home.png",
+    image: "https://www.veritycleaning.co/og-image.jpg",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",

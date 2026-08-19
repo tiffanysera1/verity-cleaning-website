@@ -93,7 +93,7 @@ export default function Header() {
     <header className="site-header">
       <div className="wrap nav">
         <a className="brand" href="/" aria-label="Verity Cleaning — home">
-          <Image src="/logo.png" alt="Verity Cleaning" width={696} height={293} className="brand-mark" priority />
+          <Image src="/logo.webp" alt="Verity Cleaning" width={400} height={168} className="brand-mark" priority />
         </a>
 
         <nav

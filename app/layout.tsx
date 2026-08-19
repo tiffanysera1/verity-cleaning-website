@@ -58,14 +58,14 @@ export const metadata: Metadata = {
     url: "https://www.veritycleaning.co",
     siteName: "Verity Cleaning LLC",
     locale: "en_US",
-    images: [{ url: "/clean-home.png", width: 800, height: 600, alt: "A tidy, sunlit home" }],
+    images: [{ url: "/og-image.jpg", width: 800, height: 600, alt: "A tidy, sunlit home" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Verity Cleaning — A Clean Home, More Time Back",
     description:
       "Licensed, bonded, and insured cleaning with a 100% satisfaction guarantee. Call or text (205) 946-0304.",
-    images: ["/clean-home.png"],
+    images: ["/og-image.jpg"],
   },
 };
 

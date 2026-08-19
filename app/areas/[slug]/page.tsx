@@ -31,7 +31,7 @@ export async function generateMetadata(
       title,
       description,
       url: `/areas/${area.slug}/`,
-      images: [{ url: "/clean-home.png", alt: `House cleaning in ${area.name}, Alabama` }],
+      images: [{ url: "/og-image.jpg", alt: `House cleaning in ${area.name}, Alabama` }],
     },
     twitter: { card: "summary_large_image", title, description },
   };

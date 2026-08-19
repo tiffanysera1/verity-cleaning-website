@@ -19,7 +19,7 @@ export const FEATURED_SERVICES: FeaturedService[] = [
     title: "Recurring Cleaning",
     description: "Perfect for regularly maintained homes that need routine upkeep.",
     chips: ["Weekly", "Biweekly", "Monthly"],
-    photo: "/service-deep-cleaning.jpg",
+    photo: "/service-deep-cleaning.webp",
   },
   {
     slug: "deep-cleaning",
@@ -27,28 +27,28 @@ export const FEATURED_SERVICES: FeaturedService[] = [
     title: "Deep Cleaning",
     description: "Our most popular first-time service, for homes that need a little extra attention.",
     chips: ["First Visit", "Seasonal", "One-Time"],
-    photo: "/clean-home.png",
+    photo: "/og-image.jpg",
   },
   {
     slug: "move-in-move-out",
     title: "Move-In / Move-Out",
     description: "Ideal for empty homes before moving in or after moving out.",
     chips: ["Empty Home", "Real Estate", "Rental"],
-    photo: "/service-move.jpg",
+    photo: "/service-move.webp",
   },
   {
     slug: "commercial-office-cleaning",
     title: "Commercial Cleaning",
     description: "Clean, welcoming workspaces for offices, shops, and local businesses.",
     chips: ["Offices", "Retail", "Recurring"],
-    photo: "/service-commercial.jpg",
+    photo: "/service-commercial.webp",
   },
   {
     slug: "post-construction-cleaning",
     title: "Post-Construction",
     description: "Clears away dust, debris, and residue after a renovation or new build.",
     chips: ["New Build", "Renovation", "Contractor"],
-    photo: "/service-construction.jpg",
+    photo: "/service-construction.webp",
   },
 ];
 

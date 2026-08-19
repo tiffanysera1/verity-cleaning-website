@@ -38,7 +38,7 @@ export default function FinalCTA() {
           </div>
           <div className="final-cta-photo reveal">
             <Image
-              src="/final-cta.jpg"
+              src="/final-cta.webp"
               alt="A glass vase of soft pink flowers beside a lit candle"
               fill
               sizes="(max-width: 1080px) 100vw, 45vw"

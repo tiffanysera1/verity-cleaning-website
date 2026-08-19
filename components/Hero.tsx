@@ -9,7 +9,7 @@ export default function Hero() {
     <section className="hero">
       <div className="hero-bg-photo" aria-hidden="true">
         <Image
-          src="/clean-home.png"
+          src="/clean-home.webp"
           alt=""
           fill
           priority

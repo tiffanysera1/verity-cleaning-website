@@ -69,9 +69,9 @@ const COMMON_ADD_ONS: AddOn[] = [
    point these at real posts once the blog exists. */
 function blogLinksFor(compareTopic: string, timeTopic: string): BlogLink[] {
   return [
-    { title: `${compareTopic} vs. Recurring Cleaning: Which Do You Need?`, image: "/service-deep-cleaning.jpg" },
-    { title: `5 Signs It's Time for ${timeTopic}`, image: "/service-move.jpg" },
-    { title: "Why Soap Scum Keeps Coming Back", image: "/service-construction.jpg" },
+    { title: `${compareTopic} vs. Recurring Cleaning: Which Do You Need?`, image: "/service-deep-cleaning.webp" },
+    { title: `5 Signs It's Time for ${timeTopic}`, image: "/service-move.webp" },
+    { title: "Why Soap Scum Keeps Coming Back", image: "/service-construction.webp" },
   ];
 }
 
@@ -86,12 +86,12 @@ function tipsFor(image: string): Tip[] {
     {
       title: "Why baseboards are the most-missed spot.",
       body: "Dust settles low and stays put. A quick pass with a dry cloth once a week keeps baseboards from becoming a visible chore.",
-      image: "/clean-home.png",
+      image: "/og-image.jpg",
     },
     {
       title: "The truth about 'spring cleaning.'",
       body: "A seasonal deep clean isn't just tradition — it catches the buildup that regular tidying doesn't reach.",
-      image: "/service-deep-cleaning.jpg",
+      image: "/service-deep-cleaning.webp",
     },
   ];
 }
@@ -113,7 +113,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
       right: ["Dishes (add-on)", "Exterior cleaning", "Moving heavy furniture", "Hazardous materials"],
     },
     addOns: COMMON_ADD_ONS,
-    tips: tipsFor("/service-deep-cleaning.jpg"),
+    tips: tipsFor("/service-deep-cleaning.webp"),
     blogLinks: blogLinksFor("Deep Cleaning", "a Deep Clean"),
     faq: [
       { q: "How often should I schedule recurring cleaning?", a: "Most households choose weekly or biweekly visits. We'll help you pick a frequency that fits your home and routine when you request your quote." },
@@ -138,7 +138,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
       right: ["Dishes (add-on)", "Exterior cleaning", "Moving heavy furniture", "Hazardous materials"],
     },
     addOns: COMMON_ADD_ONS,
-    tips: tipsFor("/service-deep-cleaning.jpg"),
+    tips: tipsFor("/service-deep-cleaning.webp"),
     blogLinks: blogLinksFor("Deep Cleaning", "a Deep Clean"),
     faq: [
       { q: "How is a deep clean different from recurring cleaning?", a: "Deep cleaning covers everything in a standard visit plus detail work like baseboards, window sills, vents, and the inside of the microwave — areas a routine visit doesn't reach every time." },
@@ -167,7 +167,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
       { title: "Exterior Window Cleaning", description: "Streak-free glass, inside and out." },
       { title: "Carpet Shampoo", description: "Per room — deep clean and revive carpets." },
     ],
-    tips: tipsFor("/service-move.jpg"),
+    tips: tipsFor("/service-move.webp"),
     blogLinks: blogLinksFor("Move-Out Cleaning", "a Move-Out Clean"),
     faq: [
       { q: "When should I schedule a move-out cleaning?", a: "Ideally after your belongings are out, so we can access every surface — and before your final walkthrough or new tenants arrive." },
@@ -198,9 +198,9 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
       { title: "Deep Sanitizing Service", description: "High-touch surface sanitizing for shared spaces." },
     ],
     tips: [
-      { title: "Why a clean office boosts employee morale.", body: "A tidy, well-maintained workspace signals that a business cares about its people — and it shows in day-to-day focus.", image: "/service-commercial.jpg" },
-      { title: "How often should a small office be cleaned?", body: "Most small offices do well with 2-3 visits a week, with daily touch-ups in high-traffic areas like restrooms and break rooms.", image: "/service-deep-cleaning.jpg" },
-      { title: "The first thing customers notice when they walk in.", body: "Entryways and glass doors set the tone before a customer says a word — keeping them spotless is one of the highest-impact details.", image: "/clean-home.png" },
+      { title: "Why a clean office boosts employee morale.", body: "A tidy, well-maintained workspace signals that a business cares about its people — and it shows in day-to-day focus.", image: "/service-commercial.webp" },
+      { title: "How often should a small office be cleaned?", body: "Most small offices do well with 2-3 visits a week, with daily touch-ups in high-traffic areas like restrooms and break rooms.", image: "/service-deep-cleaning.webp" },
+      { title: "The first thing customers notice when they walk in.", body: "Entryways and glass doors set the tone before a customer says a word — keeping them spotless is one of the highest-impact details.", image: "/og-image.jpg" },
     ],
     blogLinks: blogLinksFor("Commercial Cleaning", "a Commercial Cleaning Service"),
     faq: [
@@ -232,9 +232,9 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
       { title: "Debris Haul-Away", description: "Removal of leftover construction debris." },
     ],
     tips: [
-      { title: "Why construction dust settles for weeks after the crew leaves.", body: "Fine dust from drywall and sanding can stay airborne and resettle for days — which is why a proper post-construction clean covers every surface, not just the visible ones.", image: "/service-construction.jpg" },
-      { title: "The difference between a rough clean and a final clean.", body: "A rough clean clears the worst of the debris so trades can keep working. A final clean is the move-in-ready pass — the one Verity specializes in.", image: "/service-deep-cleaning.jpg" },
-      { title: "When to schedule your post-construction clean.", body: "Book it for right after the last trade finishes, before furniture and belongings move back in.", image: "/clean-home.png" },
+      { title: "Why construction dust settles for weeks after the crew leaves.", body: "Fine dust from drywall and sanding can stay airborne and resettle for days — which is why a proper post-construction clean covers every surface, not just the visible ones.", image: "/service-construction.webp" },
+      { title: "The difference between a rough clean and a final clean.", body: "A rough clean clears the worst of the debris so trades can keep working. A final clean is the move-in-ready pass — the one Verity specializes in.", image: "/service-deep-cleaning.webp" },
+      { title: "When to schedule your post-construction clean.", body: "Book it for right after the last trade finishes, before furniture and belongings move back in.", image: "/og-image.jpg" },
     ],
     blogLinks: blogLinksFor("Post-Construction Cleaning", "a Post-Construction Clean"),
     faq: [

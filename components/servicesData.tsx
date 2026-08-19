@@ -16,7 +16,7 @@ export const SERVICES: ServiceData[] = [
   {
     slug: "recurring-cleaning",
     Icon: Home,
-    photo: "/service-deep-cleaning.jpg",
+    photo: "/service-deep-cleaning.webp",
     title: "Recurring Cleaning",
     summary: "Weekly, biweekly, or monthly visits built around your household's routine.",
     goodFor:
@@ -32,7 +32,7 @@ export const SERVICES: ServiceData[] = [
   {
     slug: "deep-cleaning",
     Icon: Sparkles,
-    photo: "/service-deep-cleaning.jpg",
+    photo: "/service-deep-cleaning.webp",
     title: "Deep Cleaning",
     summary: "A thorough, top-to-bottom clean that covers baseboards, vents, and every hard-to-reach corner.",
     goodFor:
@@ -48,7 +48,7 @@ export const SERVICES: ServiceData[] = [
   {
     slug: "move-in-move-out",
     Icon: Clock,
-    photo: "/service-move.jpg",
+    photo: "/service-move.webp",
     title: "Move-In / Move-Out Cleaning",
     summary: "A detailed clean to help you settle into a new place or hand off your old one.",
     goodFor:
@@ -64,7 +64,7 @@ export const SERVICES: ServiceData[] = [
   {
     slug: "commercial-office-cleaning",
     Icon: Building,
-    photo: "/service-commercial.jpg",
+    photo: "/service-commercial.webp",
     title: "Commercial & Office Cleaning",
     summary: "Clean, welcoming workspaces for offices, shops, and local businesses.",
     goodFor:
@@ -80,7 +80,7 @@ export const SERVICES: ServiceData[] = [
   {
     slug: "post-construction-cleaning",
     Icon: SprayBottle,
-    photo: "/service-construction.jpg",
+    photo: "/service-construction.webp",
     title: "Post-Construction Cleaning",
     summary: "We clear away dust, debris, and residue after a renovation or new build.",
     goodFor:
@@ -114,7 +114,7 @@ export const HOMEPAGE_SERVICES: HomepageServiceCard[] = [
   {
     key: "recurring-cleaning",
     Icon: Home,
-    photo: "/service-deep-cleaning.jpg",
+    photo: "/service-deep-cleaning.webp",
     title: "Recurring Cleaning",
     summary: "Keep your home consistently clean.",
     href: "/services/recurring-cleaning/",
@@ -122,7 +122,7 @@ export const HOMEPAGE_SERVICES: HomepageServiceCard[] = [
   {
     key: "deep-cleaning",
     Icon: Sparkles,
-    photo: "/clean-home.png",
+    photo: "/og-image.jpg",
     title: "Deep Cleaning",
     summary: "A detailed reset for homes that need extra attention.",
     href: "/services/deep-cleaning/",
@@ -130,7 +130,7 @@ export const HOMEPAGE_SERVICES: HomepageServiceCard[] = [
   {
     key: "move-in-move-out",
     Icon: Clock,
-    photo: "/service-move.jpg",
+    photo: "/service-move.webp",
     title: "Move-In / Move-Out",
     summary: "Perfect for new beginnings or transitions.",
     href: "/services/move-in-move-out/",
@@ -138,7 +138,7 @@ export const HOMEPAGE_SERVICES: HomepageServiceCard[] = [
   {
     key: "post-construction-cleaning",
     Icon: SprayBottle,
-    photo: "/service-construction.jpg",
+    photo: "/service-construction.webp",
     title: "Post-Construction Cleaning",
     summary: "Dust, debris & detail before move-in.",
     href: "/services/post-construction-cleaning/",
@@ -146,7 +146,7 @@ export const HOMEPAGE_SERVICES: HomepageServiceCard[] = [
   {
     key: "commercial-office-cleaning",
     Icon: Building,
-    photo: "/service-commercial.jpg",
+    photo: "/service-commercial.webp",
     title: "Commercial Cleaning",
     summary: "Clean, welcoming workspaces for offices and local businesses.",
     href: "/services/commercial-office-cleaning/",

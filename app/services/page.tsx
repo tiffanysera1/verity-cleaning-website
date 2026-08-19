@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "All Cleaning Services | Verity Cleaning",
     description: "Compare Verity Cleaning's services and find the right fit for your home in seconds.",
     url: "/services/",
-    images: [{ url: "/clean-home.png", alt: "A tidy, sunlit home cleaned by Verity Cleaning" }],
+    images: [{ url: "/og-image.jpg", alt: "A tidy, sunlit home cleaned by Verity Cleaning" }],
   },
 };
 
