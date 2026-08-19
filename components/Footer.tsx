@@ -12,7 +12,7 @@ export default function Footer() {
             <Image src="/logo.png" alt="Verity Cleaning" width={696} height={293} className="brand-mark" />
           </a>
           <p>
-            Licensed, bonded, and insured home and office cleaning for Shelby County, Alabama.
+            Licensed, bonded, and insured home and office cleaning for Shelby County and Birmingham's over-the-mountain suburbs.
           </p>
           <div className="fsocials">
             <a href="https://www.facebook.com/profile.php?id=61588754895193" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Facebook">
@@ -41,11 +41,14 @@ export default function Footer() {
         <div id="footer-area" style={{ scrollMarginTop: "96px" }}>
           <h4>Service Area</h4>
           <ul>
-            <li>Pelham &amp; Helena</li>
-            <li>Alabaster &amp; Hoover</li>
-            <li>Columbiana &amp; Chelsea</li>
-            <li>Calera</li>
-            <li>+ surrounding communities</li>
+            <li><a href="/areas/pelham/">Pelham</a></li>
+            <li><a href="/areas/hoover/">Hoover</a></li>
+            <li><a href="/areas/vestavia-hills/">Vestavia Hills</a></li>
+            <li><a href="/areas/homewood/">Homewood</a></li>
+            <li><a href="/areas/mountain-brook/">Mountain Brook</a></li>
+            <li><a href="/areas/helena/">Helena</a></li>
+            <li><a href="/areas/alabaster/">Alabaster</a></li>
+            <li><a href="/areas/">All service areas</a></li>
           </ul>
         </div>
 

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SERVICES } from "@/components/servicesData";
+import { AREAS } from "@/components/areasData";
 
 export const dynamic = "force-static";
 
@@ -13,6 +14,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/services/`, lastModified, changeFrequency: "monthly", priority: 0.9 },
     ...SERVICES.map((s) => ({
       url: `${BASE}/services/${s.slug}/`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+    { url: `${BASE}/areas/`, lastModified, changeFrequency: "monthly", priority: 0.9 },
+    ...AREAS.map((a) => ({
+      url: `${BASE}/areas/${a.slug}/`,
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.8,

@@ -44,14 +44,21 @@ export default function JsonLd() {
         "Post-Construction Cleaning",
       ].map((name) => ({
         "@type": "Offer",
-        itemOffered: { "@type": "Service", name, areaServed: "Shelby County, AL" },
+        itemOffered: { "@type": "Service", name, areaServed: "Shelby & Jefferson County, AL" },
       })),
     },
+    /* Every town here must be one Verity will actually drive to — areaServed
+       is a claim, and a lead from a town we decline wastes their time and
+       ours. Jefferson County entries are Birmingham's over-the-mountain
+       suburbs, all within about 25 minutes of Pelham. */
     areaServed: [
       "Pelham",
       "Helena",
       "Alabaster",
       "Hoover",
+      "Vestavia Hills",
+      "Homewood",
+      "Mountain Brook",
       "Columbiana",
       "Chelsea",
       "Calera",

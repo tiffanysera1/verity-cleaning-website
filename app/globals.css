@@ -608,6 +608,18 @@ button { font-family: inherit; }
   color: var(--navy);
   font-size: .92rem;
 }
+/* Small inline "read more" link with a trailing arrow. Used by the reviews
+   section and the service-area cards — without the svg sizing the icon
+   renders at its intrinsic size and swamps the card. */
+.review-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--blue);
+  font-weight: 700;
+  font-size: .85rem;
+}
+.review-more svg { width: 15px; height: 15px; flex: none; }
 @media (max-width: 860px) {
   .reviews-grid { grid-template-columns: 1fr; }
   .review-card { padding: 26px; }
@@ -659,6 +671,159 @@ button { font-family: inherit; }
 }
 @media (max-width: 760px) {
   .hero-quote-cta { font-size: 1rem; padding: 18px 22px; }
+}
+
+/* ============================== Service areas ============================ */
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.area-card {
+  display: block;
+  background: var(--sky-tint);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.area-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+.area-card h2 { font-size: 1.4rem; margin-top: 4px; }
+.area-card-county,
+.area-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--blue);
+}
+.area-card-county svg, .area-eyebrow svg { width: 13px; height: 13px; }
+.area-card-tagline { margin-top: 10px; color: var(--navy-muted); font-size: .92rem; line-height: 1.6; }
+.area-card-drive { margin-top: 10px; color: var(--muted); font-size: .84rem; font-weight: 600; }
+.area-card .review-more { margin-top: 16px; }
+.areas-more {
+  margin-top: 34px;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+}
+.areas-more p { color: var(--navy-muted); font-size: .95rem; max-width: 62ch; }
+.areas-more a[href^="tel"] { color: var(--blue); font-weight: 700; }
+
+.area-hero { padding-bottom: 24px; }
+.area-hero h1 { font-size: clamp(2rem, 3.4vw, 2.8rem); margin-top: 10px; }
+.area-hero .lead { margin-top: 12px; }
+.area-hero-actions { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 14px; }
+.area-hero-meta {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px;
+}
+.area-hero-meta .hero-rating { margin-top: 0; }
+
+.area-body {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.area-copy p { color: var(--navy-muted); font-size: 1rem; line-height: 1.75; margin-top: 14px; }
+.area-copy h3 { margin-top: 30px; font-size: 1.15rem; }
+.area-hoods {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.area-hoods li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--sky-tint);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 7px 15px;
+  font-size: .88rem;
+  color: var(--navy);
+  font-weight: 600;
+}
+.area-hoods svg { width: 12px; height: 12px; color: var(--blue); }
+.area-hoods-note { font-size: .86rem; color: var(--muted); }
+.area-lead-card {
+  background: var(--sky-tint);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+.area-lead-label {
+  font-size: .74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--blue);
+}
+.area-lead-card h3 { margin-top: 8px; font-size: 1.2rem; }
+.area-lead-card p { margin-top: 10px; color: var(--navy-muted); font-size: .93rem; line-height: 1.65; }
+
+.area-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.area-service-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 14px;
+  box-shadow: var(--shadow);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.area-service-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+.area-service-photo {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex: none;
+}
+.area-service-body { display: grid; gap: 4px; }
+.area-service-body strong { color: var(--navy); font-size: .95rem; }
+.area-service-body span { color: var(--navy-muted); font-size: .84rem; line-height: 1.5; }
+
+/* Its own card rather than reusing .final-cta-card, whose padding lives on a
+   child wrapper the homepage supplies and this page does not. */
+.area-cta {
+  background: var(--sky-tint);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  padding: 44px;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 30px;
+  align-items: center;
+}
+.area-cta h2 { font-size: clamp(1.45rem, 2.3vw, 1.85rem); font-weight: 700; letter-spacing: -.02em; }
+.area-cta > div > p { margin-top: 12px; color: var(--navy-muted); font-size: .95rem; line-height: 1.65; }
+.area-cta-actions { display: grid; gap: 12px; justify-items: start; }
+@media (max-width: 900px) {
+  .area-cta { grid-template-columns: 1fr; padding: 30px; }
+}
+
+@media (max-width: 900px) {
+  .area-body { grid-template-columns: 1fr; }
 }
 
 /* ============================== Legal pages ============================= */
