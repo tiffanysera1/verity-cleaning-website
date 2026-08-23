@@ -15,8 +15,9 @@ import {
   Sparkle,
   ArrowRight,
   Check,
+  CalendarCheck,
 } from "../Icons";
-import type { IncludedTab, IncludedTabIconKey, AddOn } from "./serviceDetailData";
+import type { IncludedTab, IncludedTabIconKey, AddOn, FrequencyTier } from "./serviceDetailData";
 
 const TAB_ICONS: Record<IncludedTabIconKey, typeof Home> = {
   home: Home,
@@ -38,14 +39,14 @@ export default function ServiceIncluded({
   tabs,
   notIncluded,
   addOns,
+  frequencyTiers,
 }: {
   tabs: IncludedTab[];
   notIncluded: { left: string[]; right: string[] };
   addOns: AddOn[];
+  frequencyTiers?: FrequencyTier[];
 }) {
   const [active, setActive] = useState(0);
-  const activeTab = tabs[active];
-  const [colA, colB] = chunk(activeTab.items);
 
   return (
     <>
@@ -64,6 +65,7 @@ export default function ServiceIncluded({
                 type="button"
                 role="tab"
                 aria-selected={i === active}
+                aria-controls={`included-panel-${key}`}
                 className={i === active ? "included-tab is-active" : "included-tab"}
                 onClick={() => setActive(i)}
               >
@@ -75,9 +77,22 @@ export default function ServiceIncluded({
         </div>
 
         <div className="included-body">
-          <div className="included-cols">
-            <ul>{colA.map((item) => <li key={item}><Check aria-hidden="true" /><span>{item}</span></li>)}</ul>
-            <ul>{colB.map((item) => <li key={item}><Check aria-hidden="true" /><span>{item}</span></li>)}</ul>
+          <div className="included-panels">
+            {tabs.map((tab, i) => {
+              const [colA, colB] = chunk(tab.items);
+              return (
+                <div
+                  key={tab.key}
+                  id={`included-panel-${tab.key}`}
+                  role="tabpanel"
+                  aria-label={tab.label}
+                  className={i === active ? "included-cols is-active" : "included-cols"}
+                >
+                  <ul>{colA.map((item) => <li key={item}><Check aria-hidden="true" /><span>{item}</span></li>)}</ul>
+                  <ul>{colB.map((item) => <li key={item}><Check aria-hidden="true" /><span>{item}</span></li>)}</ul>
+                </div>
+              );
+            })}
           </div>
           <div className="included-callout">
             <Sparkle aria-hidden="true" />
@@ -88,6 +103,25 @@ export default function ServiceIncluded({
 
         <a href="/services/#compare" className="included-more">See full checklist for all areas <ArrowRight /></a>
       </div>
+
+      {frequencyTiers && frequencyTiers.length > 0 && (
+        <div className="freq-card reveal">
+          <h3><CalendarCheck aria-hidden="true" />The more often we come, the less it costs</h3>
+          <ul className="freq-tiers">
+            {frequencyTiers.map((tier) => (
+              <li key={tier.label}>
+                <span className="freq-discount">{tier.discount}</span>
+                <b>{tier.label}</b>
+                <span className="freq-note">{tier.note}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="addons-note">
+            Discounts apply to every visit for as long as you stay on the schedule, and are
+            already worked into your quote.
+          </p>
+        </div>
+      )}
 
       <div className="included-row">
         <div className="not-included-card reveal">

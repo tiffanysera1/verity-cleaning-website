@@ -1284,7 +1284,9 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 .included-tab:hover { color: var(--navy); }
 .included-tab.is-active { color: var(--blue); border-bottom-color: var(--blue); }
 .included-body { display: grid; grid-template-columns: 1.6fr 1fr; gap: 28px; margin-top: 22px; }
-.included-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; align-content: start; }
+.included-panels { display: grid; align-content: start; }
+.included-cols { display: none; grid-template-columns: 1fr 1fr; gap: 10px 24px; align-content: start; }
+.included-cols.is-active { display: grid; }
 .included-cols ul { display: grid; gap: 10px; }
 .included-cols li { display: flex; align-items: flex-start; gap: 9px; font-size: .88rem; color: var(--ink); }
 .included-cols li svg { width: 15px; height: 15px; color: var(--blue); flex: none; margin-top: 2px; }
@@ -1315,6 +1317,17 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 .addons-list span { display: block; color: var(--muted); font-size: .78rem; margin-top: 2px; }
 .addons-list div { flex: 1; min-width: 0; }
 .addons-note { margin-top: 12px; font-size: .72rem; color: var(--muted); }
+
+/* Frequency discount tiers — recurring cleaning only. Sits between the
+   included card and the not-included/add-ons row. */
+.freq-card { margin-top: 20px; background: #fff; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 28px; }
+.freq-card h3 { display: flex; align-items: center; gap: 9px; font-size: 1.02rem; font-weight: 700; }
+.freq-card h3 svg { width: 18px; height: 18px; color: var(--blue); }
+.freq-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; list-style: none; padding: 0; }
+.freq-tiers li { display: flex; flex-direction: column; gap: 4px; padding: 18px; border: 1px solid var(--border); border-radius: var(--r-md); background: var(--sky-pale); }
+.freq-discount { font-size: 1.5rem; font-weight: 800; line-height: 1.1; color: var(--blue); }
+.freq-tiers b { font-size: .92rem; font-weight: 700; }
+.freq-note { font-size: .78rem; color: var(--muted); }
 
 /* What to Expect */
 .service-expect-section { padding-top: 8px; }
@@ -1747,8 +1760,9 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   .verity-tip { grid-column: 1; }
   .service-mini-trust { grid-template-columns: repeat(2, 1fr); }
   .included-body { grid-template-columns: 1fr; }
-  .included-cols { grid-template-columns: 1fr 1fr; }
+  .included-cols.is-active { grid-template-columns: 1fr 1fr; }
   .included-row { grid-template-columns: 1fr; }
+  .freq-tiers { grid-template-columns: 1fr; }
   .not-included-cols { grid-template-columns: 1fr 1fr; }
   .expect-flow { flex-direction: column; align-items: stretch; gap: 0; max-width: 360px; margin: 26px auto 0; }
   .expect-step { flex-direction: column; align-items: center; }
@@ -1796,11 +1810,11 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   .portal-callout-features { width: 100%; }
   .portal-callout-features span { flex: 1 1 auto; justify-content: center; }
 
-  .included-cols { grid-template-columns: 1fr; }
+  .included-cols.is-active { grid-template-columns: 1fr; }
   .not-included-cols { grid-template-columns: 1fr; }
   .transform-grid--compact { grid-template-columns: 1fr; }
   .service-mini-trust { grid-template-columns: 1fr; }
-  .included-card, .not-included-card, .addons-card, .expect-card, .resources-homes, .resources-blog, .resources-faq { padding: 22px; }
+  .included-card, .not-included-card, .addons-card, .freq-card, .expect-card, .resources-homes, .resources-blog, .resources-faq { padding: 22px; }
   .service-cta { padding: 28px; }
 
   .svc-card-grid { grid-template-columns: repeat(2, 1fr); }
