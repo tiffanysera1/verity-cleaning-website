@@ -8,14 +8,14 @@
    service leads there. If a town is ever added, write it properly or leave it
    off the list and let it sit on the hub page instead.
 
-   Verity is based in Pelham. Drive times are from there and are deliberately
-   given as ranges rather than false precision. */
+   Verity is based in Pelham, but distance is deliberately not surfaced
+   anywhere on these pages: pricing is identical across the whole service
+   area, and quoting drive times invites customers to assume otherwise. */
 
 export type Area = {
   slug: string;
   name: string;
   county: string;
-  driveTime: string;
   /* Short line for the hub page and cards. */
   tagline: string;
   /* Two or three paragraphs, genuinely specific to the town. */
@@ -33,10 +33,9 @@ export const AREAS: Area[] = [
     slug: "pelham",
     name: "Pelham",
     county: "Shelby County",
-    driveTime: "This is home",
-    tagline: "Where Verity is based — no travel time, no trip charge.",
+    tagline: "Where Verity is based, and where most of our work sits.",
     intro: [
-      "Verity Cleaning is based in Pelham, so this is the one town where we are never more than a few minutes away. That matters more than it sounds: it means we can offer tighter arrival windows here, and it makes short-notice bookings far easier to fit in than they are further out.",
+      "Verity Cleaning is based in Pelham, so this is the town we know best. We can offer tighter arrival windows here, and short-notice bookings are easier to fit in than almost anywhere else on our map.",
       "Pelham homes run the full range — established streets off Highway 31, newer construction closer to the interstate, and everything between. We clean all of it, and because we live and work here, we already know the neighborhoods.",
     ],
     leadService: {
@@ -51,8 +50,7 @@ export const AREAS: Area[] = [
     slug: "hoover",
     name: "Hoover",
     county: "Jefferson & Shelby Counties",
-    driveTime: "10–15 minutes from Pelham",
-    tagline: "Birmingham's largest suburb, and a short drive north of us.",
+    tagline: "Birmingham's largest suburb, north of Red Mountain.",
     intro: [
       "Hoover sits directly between us and Birmingham, which makes it one of the easiest places for us to serve. It is also one of the largest suburbs in the state, so the housing varies enormously — from the established streets around Riverchase to the newer subdivisions spreading south and west.",
       "Larger homes take longer to clean properly, and that is where people most often get disappointed by a cheap quote. We price on what the home actually needs after seeing photos, so the number you get is the number you pay.",
@@ -69,7 +67,6 @@ export const AREAS: Area[] = [
     slug: "vestavia-hills",
     name: "Vestavia Hills",
     county: "Jefferson County",
-    driveTime: "15–20 minutes from Pelham",
     tagline: "Over-the-mountain, established homes, mature streets.",
     intro: [
       "Vestavia Hills is an established over-the-mountain community, and the housing stock shows it — a lot of homes here have been lived in for decades, with the mature trees and settled landscaping that come with that.",
@@ -88,7 +85,6 @@ export const AREAS: Area[] = [
     slug: "homewood",
     name: "Homewood",
     county: "Jefferson County",
-    driveTime: "15–20 minutes from Pelham",
     tagline: "Walkable neighborhoods and older, character-filled homes.",
     intro: [
       "Homewood is one of the most walkable parts of the Birmingham area, and its housing reflects that — smaller lots, older bungalows and cottages, hardwood floors, and a lot of original detail worth looking after.",
@@ -107,7 +103,6 @@ export const AREAS: Area[] = [
     slug: "mountain-brook",
     name: "Mountain Brook",
     county: "Jefferson County",
-    driveTime: "20–25 minutes from Pelham",
     tagline: "Established homes where the detail work matters most.",
     intro: [
       "Mountain Brook has some of the oldest and most carefully kept homes in the Birmingham area. Cleaning them well is less about speed and more about knowing what to touch and what to leave alone.",
@@ -125,10 +120,9 @@ export const AREAS: Area[] = [
     slug: "helena",
     name: "Helena",
     county: "Shelby County",
-    driveTime: "10–15 minutes from Pelham",
-    tagline: "A family suburb right next door to us.",
+    tagline: "A family town of busy households and full schedules.",
     intro: [
-      "Helena is one of our closest neighbors, and it is overwhelmingly a family town — busy households, school schedules, and not a lot of spare weekend hours to spend cleaning.",
+      "Helena is overwhelmingly a family town — busy households, school schedules, and not a lot of spare weekend hours to spend cleaning.",
       "That shapes how we work here. Most Helena bookings are on a set schedule, so the same routine gets handled without anyone having to think about arranging it each time.",
       "Because so much of our Helena work is on a set schedule, most customers here end up with a standing arrangement: same day, same time, key or code on file, and no need to be home. If you would rather be there for every visit, that is fine too — we just want the arrangement to suit how your week actually runs rather than how a cleaning company would prefer it to.",
     ],
@@ -144,8 +138,7 @@ export const AREAS: Area[] = [
     slug: "alabaster",
     name: "Alabaster",
     county: "Shelby County",
-    driveTime: "10–15 minutes from Pelham",
-    tagline: "Growing neighborhoods just south of us.",
+    tagline: "Newer construction and fast-growing neighborhoods.",
     intro: [
       "Alabaster has grown quickly, and a lot of its housing is newer construction on larger lots — the kind of home that looks fine at a glance but collects dust in the places nobody gets to.",
       "Newer homes are usually quicker to clean than older ones, which tends to make a recurring schedule more affordable here than people expect before they ask.",

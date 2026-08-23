@@ -703,7 +703,6 @@ button { font-family: inherit; }
 }
 .area-card-county svg, .area-eyebrow svg { width: 13px; height: 13px; }
 .area-card-tagline { margin-top: 10px; color: var(--navy-muted); font-size: .92rem; line-height: 1.6; }
-.area-card-drive { margin-top: 10px; color: var(--muted); font-size: .84rem; font-weight: 600; }
 .area-card .review-more { margin-top: 16px; }
 .areas-copy {
   max-width: 74ch;

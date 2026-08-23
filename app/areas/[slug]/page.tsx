@@ -78,7 +78,7 @@ export default async function AreaPage(
           <div className="area-hero-meta">
             <span className="payment-note">
               <Shield aria-hidden="true" />
-              <span><strong>{area.driveTime}.</strong> Licensed, bonded &amp; insured.</span>
+              <span><strong>No trip charge.</strong> Licensed, bonded &amp; insured.</span>
             </span>
             <a
               className="hero-rating"

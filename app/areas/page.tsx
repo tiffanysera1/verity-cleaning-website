@@ -51,7 +51,6 @@ export default function AreasPage() {
                 </p>
                 <h2>{area.name}</h2>
                 <p className="area-card-tagline">{area.tagline}</p>
-                <p className="area-card-drive">{area.driveTime}</p>
                 <span className="review-more">
                   Cleaning in {area.name} <ArrowRight />
                 </span>
@@ -62,16 +61,15 @@ export default function AreasPage() {
           <div className="areas-copy">
             <h2>How our coverage works</h2>
             <p>
-              Verity Cleaning is based in Pelham, and everywhere we serve is within
-              roughly twenty-five minutes of home. That is a deliberate limit rather than
-              a lack of ambition. A cleaner who has driven an hour to reach you is a
-              cleaner watching the clock, and the quality of the work shows it. Staying
-              close means we arrive on time, we can offer tighter arrival windows, and
-              short-notice bookings are genuinely possible rather than theoretical.
+              Wherever you are on this list, the price is the same. There is no trip
+              charge, no zone pricing, and no travel time added to your bill. Your quote
+              reflects the size and condition of your home and the service you asked for
+              &mdash; nothing else. If a cleaner has further to drive to reach you, that
+              is our problem to solve, not a line on your invoice.
             </p>
             <p>
-              Our coverage splits into two halves. <strong>Shelby County</strong> is home
-              ground &mdash; Pelham, Helena, Alabaster and the communities around them,
+              Our coverage splits into two halves. <strong>Shelby County</strong>{" "}
+              is home ground &mdash; Pelham, Helena, Alabaster and the communities around them,
               where most of our recurring work sits. North of us are Birmingham&rsquo;s{" "}
               <strong>over-the-mountain suburbs</strong>: Hoover, Vestavia Hills,
               Homewood and Mountain Brook. If you are not from the area,
@@ -81,12 +79,11 @@ export default function AreasPage() {
               the kind of detail work a rushed clean skips.
             </p>
             <p>
-              What we charge does not change based on how far we drive within that range.
-              There is no trip charge and no zone pricing. Your quote reflects the size
-              and condition of your home and the service you have asked for &mdash;
-              nothing else. Every town listed above gets the same checklist, the same
-              background-checked cleaners, and the same guarantee: if something is missed,
-              tell us within 24 hours and we come back.
+              Our service area is deliberately focused rather than sprawling, which is
+              what lets us arrive when we said we would and keep short-notice bookings
+              genuinely possible. Every town listed above gets the same checklist, the
+              same background-checked cleaners, and the same guarantee: if something is
+              missed, tell us within 24 hours and we come back.
             </p>
             <p>
               <strong>We also serve</strong> {ADDITIONAL_AREAS.join(", ")}, and the
