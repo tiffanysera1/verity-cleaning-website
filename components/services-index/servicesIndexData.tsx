@@ -62,7 +62,7 @@ export const FEATURED_SERVICES: FeaturedService[] = [
    components/service/serviceDetailData.tsx. "addon" means the task is one
    of the eight extras and is NOT already in that service's checklist. */
 export type CompareState = "yes" | "addon" | "no";
-export type CompareRow = { label: string; values: [CompareState, CompareState, CompareState] };
+export type CompareRow = { label: string; note?: string; values: [CompareState, CompareState, CompareState] };
 
 export const COMPARE_SERVICES = ["Standard", "Deep Clean", "Move-In / Out"] as const;
 
@@ -71,12 +71,12 @@ export const COMPARE_ROWS: CompareRow[] = [
   { label: "Dusting & accessible surfaces", values: ["yes", "yes", "yes"] },
   { label: "Ceiling fans & light fixtures (within reach)", values: ["yes", "yes", "yes"] },
   { label: "Light switches & door frames", values: ["yes", "yes", "yes"] },
-  { label: "Windowsills & blinds dusted", values: ["yes", "yes", "yes"] },
+  { label: "Blinds & windowsills dusted", values: ["yes", "yes", "yes"] },
   { label: "Cabinet & drawer fronts", values: ["yes", "yes", "yes"] },
-  { label: "Inside the microwave", values: ["yes", "yes", "yes"] },
+  { label: "Inside microwave", values: ["yes", "yes", "yes"] },
   { label: "Stovetop & appliance exteriors", values: ["yes", "yes", "yes"] },
   { label: "Floors vacuumed & mopped", values: ["yes", "yes", "yes"] },
-  { label: "Trash removed, liners replaced", values: ["yes", "yes", "yes"] },
+  { label: "Trash removed, liners replaced", values: ["yes", "yes", "no"] },
   { label: "TVs, monitors & electronics dusted", values: ["yes", "yes", "no"] },
   { label: "Beds made & linens changed", values: ["yes", "yes", "no"] },
   { label: "Hand-detailed baseboards", values: ["no", "yes", "yes"] },
@@ -84,13 +84,17 @@ export const COMPARE_ROWS: CompareRow[] = [
   { label: "Tile & grout detailing", values: ["no", "yes", "yes"] },
   { label: "Kitchen hood vents", values: ["no", "yes", "yes"] },
   { label: "Kitchen walls spot-cleaned", values: ["no", "yes", "yes"] },
-  { label: "Laundry room, basement & garage floors", values: ["no", "yes", "yes"] },
+  {
+    label: "Extra room floors (when applicable)",
+    note: "Applicable laundry rooms, indoor patios, basements, and garages.",
+    values: ["no", "yes", "yes"],
+  },
   { label: "Inside empty cabinets & drawers", values: ["no", "no", "yes"] },
-  { label: "Inside the refrigerator & freezer", values: ["addon", "addon", "yes"] },
-  { label: "Inside the oven & stove", values: ["addon", "addon", "yes"] },
+  { label: "Inside refrigerator & freezer", values: ["addon", "addon", "yes"] },
+  { label: "Inside oven", values: ["addon", "addon", "yes"] },
   { label: "Inside empty closets vacuumed", values: ["no", "no", "yes"] },
-  { label: "Wet-wipe window blinds", values: ["addon", "addon", "addon"] },
-  { label: "Inside the dishwasher", values: ["addon", "addon", "addon"] },
+  { label: "Detailed wet-wipe of blinds", values: ["addon", "addon", "addon"] },
+  { label: "Inside dishwasher", values: ["addon", "addon", "addon"] },
   { label: "Wash & fold laundry", values: ["addon", "addon", "addon"] },
   { label: "Sink of dishes", values: ["addon", "addon", "addon"] },
   { label: "Extra pet hair shed", values: ["addon", "addon", "addon"] },

@@ -63,7 +63,10 @@ export default function ServicesCompare() {
             <tbody>
               {COMPARE_ROWS.map((row) => (
                 <tr key={row.label}>
-                  <th scope="row">{row.label}</th>
+                  <th scope="row">
+                    {row.label}
+                    {row.note && <span className="cmp-row-note">{row.note}</span>}
+                  </th>
                   {row.values.map((state, i) => (
                     <td key={COMPARE_SERVICES[i]}><Cell state={state} /></td>
                   ))}
@@ -86,7 +89,10 @@ export default function ServicesCompare() {
                 <ul>
                   {COMPARE_ROWS.map((row) => (
                     <li key={row.label}>
-                      <span>{row.label}</span>
+                      <span>
+                        {row.label}
+                        {row.note && <span className="cmp-row-note">{row.note}</span>}
+                      </span>
                       <Cell state={row.values[si]} />
                     </li>
                   ))}
