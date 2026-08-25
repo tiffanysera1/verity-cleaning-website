@@ -117,7 +117,7 @@ export const HOMEPAGE_SERVICES: HomepageServiceCard[] = [
     Icon: Home,
     photo: "/service-deep-cleaning.webp",
     title: "Recurring Cleaning",
-    summary: "Keep your home consistently clean.",
+    summary: "Routine upkeep for an already-maintained home.",
     href: "/services/recurring-cleaning/",
   },
   {
@@ -125,7 +125,7 @@ export const HOMEPAGE_SERVICES: HomepageServiceCard[] = [
     Icon: Sparkles,
     photo: "/og-image.jpg",
     title: "Deep Cleaning",
-    summary: "A detailed reset for homes that need extra attention.",
+    summary: "A detailed full-home reset for buildup and detail work.",
     href: "/services/deep-cleaning/",
   },
   {
@@ -133,7 +133,7 @@ export const HOMEPAGE_SERVICES: HomepageServiceCard[] = [
     Icon: Clock,
     photo: "/service-move.webp",
     title: "Move-In / Move-Out",
-    summary: "Perfect for new beginnings or transitions.",
+    summary: "A turnover clean for an empty home — cabinets and appliances included.",
     href: "/services/move-in-move-out/",
   },
   {
