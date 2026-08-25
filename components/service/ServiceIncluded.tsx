@@ -40,11 +40,13 @@ export default function ServiceIncluded({
   notIncluded,
   addOns,
   frequencyTiers,
+  scopeNote,
 }: {
   tabs: IncludedTab[];
   notIncluded: { left: string[]; right: string[] };
   addOns: AddOn[];
   frequencyTiers?: FrequencyTier[];
+  scopeNote?: string;
 }) {
   const [active, setActive] = useState(0);
 
@@ -100,6 +102,8 @@ export default function ServiceIncluded({
             <p>We go beyond the surface so your home actually feels clean.</p>
           </div>
         </div>
+
+        {scopeNote && <p className="included-scope-note">{scopeNote}</p>}
 
         <a href="/services/#compare" className="included-more">See full checklist for all areas <ArrowRight /></a>
       </div>

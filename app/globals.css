@@ -1316,6 +1316,7 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 .addons-list span { display: block; color: var(--muted); font-size: .78rem; margin-top: 2px; }
 .addons-list div { flex: 1; min-width: 0; }
 .addons-note { margin-top: 12px; font-size: .72rem; color: var(--muted); }
+.included-scope-note { margin-top: 18px; font-size: .74rem; color: var(--muted); }
 
 /* Frequency discount tiers — recurring cleaning only. Sits between the
    included card and the not-included/add-ons row. */

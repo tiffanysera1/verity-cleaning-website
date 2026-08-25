@@ -62,7 +62,7 @@ export default async function ServicePage(
 
       <section className="section service-included-section">
         <div className="wrap">
-          <ServiceIncluded tabs={detail.includedTabs} notIncluded={detail.notIncluded} addOns={detail.addOns} frequencyTiers={detail.frequencyTiers} />
+          <ServiceIncluded tabs={detail.includedTabs} notIncluded={detail.notIncluded} addOns={detail.addOns} frequencyTiers={detail.frequencyTiers} scopeNote={detail.scopeNote} />
         </div>
       </section>
 

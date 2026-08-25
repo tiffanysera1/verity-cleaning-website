@@ -22,11 +22,11 @@ export const SERVICES: ServiceData[] = [
     goodFor:
       "Busy households who want a consistently clean home without carving out their own weekend to do it.",
     whatsIncluded: [
-      "Kitchen — inside the microwave, stovetop, appliance exteriors, cabinet fronts, counters and sink",
-      "Bathrooms — shower or tub, toilet, sink, mirrors, counters and cabinet exteriors",
-      "Dusting throughout — reachable ceiling fans, light fixtures, blinds, windowsills, switches and door frames",
-      "Floors vacuumed and mopped, trash removed and liners replaced",
-      "Beds made and linens changed when clean linens are out",
+      "Living areas & bedrooms — dusting of surfaces, décor, electronics, fans and fixtures; mirrors and glass; blinds and windowsills; beds made when linens are out",
+      "Bathrooms — shower or tub, toilet, sink and faucets, mirrors, sanitized counters and cabinet exteriors",
+      "Kitchen — counters and sink, stovetop, inside the microwave, appliance exteriors and cabinet fronts",
+      "Throughout — light switches, reachable door frames, floors vacuumed and mopped, trash removed and liners replaced",
+      "Extra rooms — basic upkeep of applicable laundry and utility rooms, washer and dryer exteriors, trash pickup",
     ],
   },
   {

@@ -34,6 +34,9 @@ export type FrequencyTier = { label: string; discount: string; note: string };
 export type ServiceDetail = {
   tagline: string;
   description: string;
+  /* Optional line under the checklist, for services whose displayed list is a
+     grouped summary of a longer internal checklist. */
+  scopeNote?: string;
   frequencyTiers?: FrequencyTier[];
   includedTabs: IncludedTab[];
   notIncluded: { left: string[]; right: string[] };
@@ -65,7 +68,7 @@ export const EXPECT_STEPS = [
    must never offer "Clean Inside Fridge" as a paid extra, for instance. */
 const A_OVEN = { title: "Inside Oven", description: "Baked-on grease and buildup removed from the oven interior." };
 const A_PET = { title: "Extra Pet Hair Shed", description: "Targeted removal where shedding is heavier than a normal vacuum pass handles." };
-const A_BLINDS = { title: "Wet Wipe Window Blinds", description: "Blinds wet-wiped rather than dusted, for grime dusting will not lift." };
+const A_BLINDS = { title: "Detailed Wet-Wipe of Blinds", description: "Every base clean already dusts blinds. This is the slower wet-wipe, for grime dusting will not lift." };
 const A_FRIDGE = { title: "Clean Inside Fridge", description: "Shelves, drawers and compartments cleaned out." };
 const A_DISHWASHER = { title: "Inside Dishwasher", description: "The inside of the dishwasher cleaned." };
 const A_LAUNDRY = { title: "Wash & Fold Laundry", description: "A load washed, dried and folded while we work." };
@@ -116,7 +119,8 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
   "recurring-cleaning": {
     tagline: "Keep it clean, so it never has to be reset.",
     description:
-      "Routine maintenance for a home that is already in generally maintained condition. A standing visit — weekly, biweekly or every four weeks — keeps your home at a level you are happy with, so it never reaches the stage where it needs a full reset. The more often we come, the less each visit costs: 5% off monthly, 10% off biweekly, and 20% off weekly.",
+      "Our Standard Clean — routine maintenance for a home that is already in generally maintained condition, and the service behind every recurring visit. Booked weekly, biweekly or every four weeks, it covers the everyday cleaning your home needs without the intensive detail work of a deep clean, so your home never reaches the stage where it needs a full reset. The more often we come, the less each visit costs: 5% off monthly, 10% off biweekly, and 20% off weekly.",
+    scopeNote: "Exact scope follows Verity's Standard Clean checklist.",
     frequencyTiers: [
       { label: "Weekly", discount: "20% off", note: "Every visit. Our best rate." },
       { label: "Biweekly", discount: "10% off", note: "Every other week — the most popular choice." },
@@ -205,8 +209,8 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
       },
     ],
     notIncluded: {
-      left: ["Hand-detailed baseboards", "Interior windowpanes (add-on)", "Tile & grout detailing", "Inside cabinets & drawers"],
-      right: ["Inside refrigerator (add-on)", "Inside oven (add-on)", "Full wall washing", "Heavy buildup restoration"],
+      left: ["Hand-detailed baseboards", "Interior windowpanes (add-on)", "Tile & grout detailing", "Kitchen hood vent detailing", "Inside cabinets & drawers"],
+      right: ["Inside refrigerator (add-on)", "Inside oven (add-on)", "Inside dishwasher (add-on)", "Full wall washing", "Heavy buildup restoration"],
     },
     addOns: STANDARD_ADD_ONS,
     tips: tipsFor("/service-deep-cleaning.webp"),
