@@ -86,7 +86,7 @@ export const COMPARE_ROWS: CompareRow[] = [
   { label: "Kitchen walls spot-cleaned", values: ["no", "yes", "yes"] },
   {
     label: "Extra room floors (when applicable)",
-    note: "Applicable laundry rooms, indoor patios, basements, and garages.",
+    note: "Laundry rooms, indoor patios, basements & garages",
     values: ["no", "yes", "yes"],
   },
   { label: "Inside empty cabinets & drawers", values: ["no", "no", "yes"] },
