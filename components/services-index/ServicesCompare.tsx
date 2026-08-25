@@ -26,7 +26,7 @@ function Cell({ state }: { state: CompareState }) {
   );
 }
 
-const COMPARE_SLUGS = ["recurring-cleaning", "deep-cleaning", "move-in-move-out", "post-construction-cleaning"];
+const COMPARE_SLUGS = ["recurring-cleaning", "deep-cleaning", "move-in-move-out"];
 
 export default function ServicesCompare() {
   return (
@@ -37,7 +37,10 @@ export default function ServicesCompare() {
             Compare Our Cleaning Services
             <Sparkle aria-hidden="true" />
           </h2>
-          <p className="lead">See exactly what&rsquo;s included.</p>
+          <p className="lead">
+            Every row below comes straight from the checklist we clean to. Commercial and
+            post-construction work to their own checklists &mdash; see those pages for detail.
+          </p>
         </div>
 
         <div className="cmp-legend reveal">

@@ -3,11 +3,8 @@ import {
   Bucket,
   WindowIcon,
   Shirt,
-  Bed,
   Paw,
-  Building,
   Home,
-  Sparkles,
   Sparkle,
 } from "../Icons";
 import { ADD_ONS } from "./servicesIndexData";
@@ -16,12 +13,11 @@ const ADD_ON_ICONS: Record<string, typeof SprayBottle> = {
   oven: SprayBottle,
   fridge: Bucket,
   windows: WindowIcon,
+  blinds: WindowIcon,
+  dishwasher: Bucket,
   laundry: Shirt,
-  linens: Bed,
+  dishes: Home,
   pet: Paw,
-  garage: Building,
-  cabinets: Home,
-  dusting: Sparkles,
 };
 
 export default function ServicesAddOns() {
@@ -33,7 +29,10 @@ export default function ServicesAddOns() {
             Add-On Services
             <Sparkle aria-hidden="true" />
           </h2>
-          <p className="lead">Customize any cleaning with these popular extras.</p>
+          <p className="lead">
+            Add any of these to a booking. Where a service already covers the work, it is
+            part of that clean and never charged as an extra.
+          </p>
         </div>
 
         <div className="addon-grid">

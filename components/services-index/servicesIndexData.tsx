@@ -17,7 +17,7 @@ export const FEATURED_SERVICES: FeaturedService[] = [
   {
     slug: "recurring-cleaning",
     title: "Recurring Cleaning",
-    description: "Perfect for regularly maintained homes that need routine upkeep.",
+    description: "Routine upkeep for a home that is already in generally maintained condition.",
     chips: ["Weekly", "Biweekly", "Monthly"],
     photo: "/service-deep-cleaning.webp",
   },
@@ -25,14 +25,14 @@ export const FEATURED_SERVICES: FeaturedService[] = [
     slug: "deep-cleaning",
     badge: "Most Popular",
     title: "Deep Cleaning",
-    description: "Our most popular first-time service, for homes that need a little extra attention.",
+    description: "A detailed full-home reset for buildup and the detail areas routine cleaning skips.",
     chips: ["First Visit", "Seasonal", "One-Time"],
     photo: "/og-image.jpg",
   },
   {
     slug: "move-in-move-out",
     title: "Move-In / Move-Out",
-    description: "Ideal for empty homes before moving in or after moving out.",
+    description: "A turnover clean for an empty home, including cabinet interiors and appliances.",
     chips: ["Empty Home", "Real Estate", "Rental"],
     photo: "/service-move.webp",
   },
@@ -52,35 +52,48 @@ export const FEATURED_SERVICES: FeaturedService[] = [
   },
 ];
 
-/* The comparison table covers the four room-based/property services —
-   Commercial Cleaning uses a different checklist shape entirely (common
-   areas, restrooms, break rooms) and doesn't map onto residential rows
-   like "Bed Making" or "Ceiling Fans", so it's intentionally left out of
-   this specific grid rather than padded with inaccurate "—" guesses. */
-export type CompareState = "yes" | "addon" | "no";
-export type CompareRow = { label: string; values: [CompareState, CompareState, CompareState, CompareState] };
+/* Three columns, not five. Commercial uses a different checklist shape
+   entirely (common areas, restrooms, break rooms) and does not map onto
+   rows like "Beds made". Post-Construction is left out because we do not
+   hold its checklist — guessing at twenty rows would be worse than an
+   honest omission. Both remain fully described on their own pages.
 
-export const COMPARE_SERVICES = ["Recurring", "Deep Clean", "Move-In / Out", "Post-Construction"] as const;
+   Every value below is derived line-by-line from the checklists in
+   components/service/serviceDetailData.tsx. "addon" means the task is one
+   of the eight extras and is NOT already in that service's checklist. */
+export type CompareState = "yes" | "addon" | "no";
+export type CompareRow = { label: string; values: [CompareState, CompareState, CompareState] };
+
+export const COMPARE_SERVICES = ["Standard", "Deep Clean", "Move-In / Out"] as const;
 
 export const COMPARE_ROWS: CompareRow[] = [
-  { label: "Kitchen", values: ["yes", "yes", "yes", "yes"] },
-  { label: "Bathrooms", values: ["yes", "yes", "yes", "yes"] },
-  { label: "Dusting", values: ["yes", "yes", "yes", "yes"] },
-  { label: "Vacuuming", values: ["yes", "yes", "yes", "yes"] },
-  { label: "Mopping", values: ["yes", "yes", "yes", "yes"] },
-  { label: "Trash Removal", values: ["yes", "yes", "no", "addon"] },
-  { label: "Baseboards", values: ["no", "yes", "yes", "yes"] },
-  { label: "Doors", values: ["no", "yes", "no", "yes"] },
-  { label: "Door Frames", values: ["no", "yes", "no", "yes"] },
-  { label: "Light Switches", values: ["yes", "yes", "yes", "yes"] },
-  { label: "Cabinet Fronts", values: ["no", "yes", "yes", "yes"] },
-  { label: "Window Sills", values: ["no", "yes", "yes", "yes"] },
-  { label: "Ceiling Fans", values: ["addon", "addon", "addon", "addon"] },
-  { label: "Inside Oven", values: ["addon", "addon", "addon", "no"] },
-  { label: "Inside Refrigerator", values: ["addon", "addon", "yes", "no"] },
-  { label: "Interior Windows", values: ["addon", "addon", "addon", "yes"] },
-  { label: "Laundry", values: ["addon", "addon", "no", "no"] },
-  { label: "Bed Making", values: ["yes", "yes", "no", "no"] },
+  { label: "Kitchen, bathrooms & living areas", values: ["yes", "yes", "yes"] },
+  { label: "Dusting & accessible surfaces", values: ["yes", "yes", "yes"] },
+  { label: "Ceiling fans & light fixtures (within reach)", values: ["yes", "yes", "yes"] },
+  { label: "Light switches & door frames", values: ["yes", "yes", "yes"] },
+  { label: "Windowsills & blinds dusted", values: ["yes", "yes", "yes"] },
+  { label: "Cabinet & drawer fronts", values: ["yes", "yes", "yes"] },
+  { label: "Inside the microwave", values: ["yes", "yes", "yes"] },
+  { label: "Stovetop & appliance exteriors", values: ["yes", "yes", "yes"] },
+  { label: "Floors vacuumed & mopped", values: ["yes", "yes", "yes"] },
+  { label: "Trash removed, liners replaced", values: ["yes", "yes", "yes"] },
+  { label: "TVs, monitors & electronics dusted", values: ["yes", "yes", "no"] },
+  { label: "Beds made & linens changed", values: ["yes", "yes", "no"] },
+  { label: "Hand-detailed baseboards", values: ["no", "yes", "yes"] },
+  { label: "Interior windowpanes", values: ["addon", "yes", "yes"] },
+  { label: "Tile & grout detailing", values: ["no", "yes", "yes"] },
+  { label: "Kitchen hood vents", values: ["no", "yes", "yes"] },
+  { label: "Kitchen walls spot-cleaned", values: ["no", "yes", "yes"] },
+  { label: "Laundry room, basement & garage floors", values: ["no", "yes", "yes"] },
+  { label: "Inside empty cabinets & drawers", values: ["no", "no", "yes"] },
+  { label: "Inside the refrigerator & freezer", values: ["addon", "addon", "yes"] },
+  { label: "Inside the oven & stove", values: ["addon", "addon", "yes"] },
+  { label: "Inside empty closets vacuumed", values: ["no", "no", "yes"] },
+  { label: "Wet-wipe window blinds", values: ["addon", "addon", "addon"] },
+  { label: "Inside the dishwasher", values: ["addon", "addon", "addon"] },
+  { label: "Wash & fold laundry", values: ["addon", "addon", "addon"] },
+  { label: "Sink of dishes", values: ["addon", "addon", "addon"] },
+  { label: "Extra pet hair shed", values: ["addon", "addon", "addon"] },
 ];
 
 export type DecisionPath = {
@@ -113,20 +126,19 @@ export const DECISION_PATHS: DecisionPath[] = [
 
 export type AddOn = { key: string; icon: string; title: string; description: string };
 
-/* PLACEHOLDER PRICING — see components/service/serviceDetailData.tsx for
-   the "sample pricing, clearly marked" convention this follows. Real
-   add-on availability/pricing already lives per-service there; this grid
-   is a friendly overview, not a new source of truth. */
+/* The eight extras Verity actually sells, mirroring the per-service lists
+   in components/service/serviceDetailData.tsx. Anything a given service's
+   checklist already covers is dropped from that service's page, so nothing
+   is ever offered as a paid extra twice. */
 export const ADD_ONS: AddOn[] = [
-  { key: "oven", icon: "oven", title: "Inside Oven", description: "Removes baked-on grease & buildup." },
-  { key: "fridge", icon: "fridge", title: "Inside Refrigerator", description: "Shelves, drawers & compartments." },
-  { key: "windows", icon: "windows", title: "Interior Windows", description: "Streak-free glass throughout." },
-  { key: "laundry", icon: "laundry", title: "Laundry", description: "Wash, dry, and fold a load." },
-  { key: "linens", icon: "linens", title: "Linen Change", description: "Fresh sheets on every bed." },
-  { key: "pet", icon: "pet", title: "Pet Hair Removal", description: "Targeted removal from floors & upholstery." },
-  { key: "garage", icon: "garage", title: "Garage Sweep", description: "A quick sweep of floors and shelving." },
-  { key: "cabinets", icon: "cabinets", title: "Inside Cabinets", description: "Wiped down, inside and out." },
-  { key: "dusting", icon: "dusting", title: "High Dusting", description: "Ceiling fans, vents, and high shelves." },
+  { key: "oven", icon: "oven", title: "Inside Oven", description: "Baked-on grease and buildup removed. Already included in a move-out clean." },
+  { key: "fridge", icon: "fridge", title: "Clean Inside Fridge", description: "Shelves, drawers and compartments. Already included in a move-out clean." },
+  { key: "windows", icon: "windows", title: "Interior Windows", description: "Interior-facing panes. Already included in deep and move-out cleans." },
+  { key: "blinds", icon: "blinds", title: "Wet Wipe Window Blinds", description: "Wet-wiped rather than dusted, for grime dusting will not lift." },
+  { key: "dishwasher", icon: "dishwasher", title: "Inside Dishwasher", description: "The inside of the dishwasher cleaned." },
+  { key: "laundry", icon: "laundry", title: "Wash & Fold Laundry", description: "A load washed, dried and folded while we work." },
+  { key: "dishes", icon: "dishes", title: "Sink of Dishes", description: "Hand-washed or loaded into the dishwasher." },
+  { key: "pet", icon: "pet", title: "Extra Pet Hair Shed", description: "For shedding heavier than a normal vacuum pass handles." },
 ];
 
 export type IncludedItem = { icon: string; title: string };
