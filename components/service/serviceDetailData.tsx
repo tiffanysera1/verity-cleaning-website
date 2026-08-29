@@ -88,7 +88,7 @@ const MOVE_ADD_ONS: AddOn[] = [A_BLINDS, A_DISHWASHER, A_LAUNDRY, A_DISHES, A_PE
    point these at real posts once the blog exists. */
 function blogLinksFor(compareTopic: string, timeTopic: string): BlogLink[] {
   return [
-    { title: `${compareTopic} vs. Recurring Cleaning: Which Do You Need?`, image: "/service-deep-cleaning.webp" },
+    { title: `${compareTopic} vs. Standard Cleaning: Which Do You Need?`, image: "/service-deep-cleaning.webp" },
     { title: `5 Signs It's Time for ${timeTopic}`, image: "/service-move.webp" },
     { title: "Why Soap Scum Keeps Coming Back", image: "/service-construction.webp" },
   ];
@@ -116,10 +116,10 @@ function tipsFor(image: string): Tip[] {
 }
 
 export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
-  "recurring-cleaning": {
+  "standard-cleaning": {
     tagline: "Keep it clean, so it never has to be reset.",
     description:
-      "Our Standard Clean — routine maintenance for a home that is already in generally maintained condition, and the service behind every recurring visit. Booked weekly, biweekly or every four weeks, it covers the everyday cleaning your home needs without the intensive detail work of a deep clean, so your home never reaches the stage where it needs a full reset. The more often we come, the less each visit costs: 5% off monthly, 10% off biweekly, and 20% off weekly.",
+      "Routine maintenance for a home that is already in generally maintained condition, and the service behind every recurring visit. Booked one-off or on a weekly, biweekly or every-four-weeks schedule, it covers the everyday cleaning your home needs without the intensive detail work of a deep clean, so your home never reaches the stage where it needs a full reset. The more often we come, the less each visit costs: 5% off monthly, 10% off biweekly, and 20% off weekly.",
     scopeNote: "Exact scope follows Verity's Standard Clean checklist.",
     frequencyTiers: [
       { label: "Weekly", discount: "20% off", note: "Every visit. Our best rate." },
@@ -216,8 +216,8 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
     tips: tipsFor("/service-deep-cleaning.webp"),
     blogLinks: blogLinksFor("Deep Cleaning", "a Deep Clean"),
     faq: [
-      { q: "How often should I schedule recurring cleaning?", a: "Most households choose weekly or biweekly visits. We'll help you pick a frequency that fits your home and routine when you request your quote." },
-      { q: "Do I save money by cleaning more often?", a: "Yes. Recurring visits are discounted off the one-time rate — 5% off for monthly, 10% off for biweekly, and 20% off for weekly. The discount is applied to every visit for as long as you stay on the schedule, and it's already reflected in your quote." },
+      { q: "How often should I book a standard clean?", a: "Most households put it on a weekly or biweekly schedule. We'll help you pick a frequency that fits your home and routine when you request your quote, and you can also book a standard clean as a one-off." },
+      { q: "Do I save money by cleaning more often?", a: "Yes. Standard cleans booked on a recurring schedule are discounted off the one-time rate — 5% off for monthly, 10% off for biweekly, and 20% off for weekly. The discount is applied to every visit for as long as you stay on the schedule, and it's already reflected in your quote." },
       { q: "Does a standard clean include baseboards or interior windows?", a: "Not as standard. Hand-detailed baseboards, interior windowpanes and tile-and-grout detailing belong to our deep clean, and interior windows can also be added to any visit. A standard clean does dust reachable windowsills, blinds, door frames and ceiling fans." },
       { q: "Can I skip or reschedule a visit?", a: "Yes — just let us know as far ahead as you can by call or text, and we'll find a new time that works." },
       { q: "Do I need to be home during the cleaning?", a: "No. Many customers provide entry instructions and go about their day. We'll keep you updated along the way if you opt in." },

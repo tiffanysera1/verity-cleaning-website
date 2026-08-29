@@ -26,7 +26,7 @@ function Cell({ state }: { state: CompareState }) {
   );
 }
 
-const COMPARE_SLUGS = ["recurring-cleaning", "deep-cleaning", "move-in-move-out"];
+const COMPARE_SLUGS = ["standard-cleaning", "deep-cleaning", "move-in-move-out"];
 
 export default function ServicesCompare() {
   return (

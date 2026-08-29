@@ -15,8 +15,8 @@ export type FeaturedService = {
 
 export const FEATURED_SERVICES: FeaturedService[] = [
   {
-    slug: "recurring-cleaning",
-    title: "Recurring Cleaning",
+    slug: "standard-cleaning",
+    title: "Standard Cleaning",
     description: "Routine upkeep for a home that is already in generally maintained condition.",
     chips: ["Weekly", "Biweekly", "Monthly"],
     photo: "/service-deep-cleaning.webp",
@@ -111,8 +111,8 @@ export const DECISION_PATHS: DecisionPath[] = [
   {
     question: "Has your home been cleaned recently and just needs routine upkeep?",
     answer: "Yes, just keep it up",
-    resultSlug: "recurring-cleaning",
-    resultTitle: "Recurring Cleaning",
+    resultSlug: "standard-cleaning",
+    resultTitle: "Standard Cleaning",
   },
   {
     question: "Has it been a while, or is this your first professional cleaning?",
@@ -138,7 +138,7 @@ export const ADD_ONS: AddOn[] = [
   { key: "oven", icon: "oven", title: "Inside Oven", description: "Baked-on grease and buildup removed. Already included in a move-out clean." },
   { key: "fridge", icon: "fridge", title: "Clean Inside Fridge", description: "Shelves, drawers and compartments. Already included in a move-out clean." },
   { key: "windows", icon: "windows", title: "Interior Windows", description: "Interior-facing panes. Already included in deep and move-out cleans." },
-  { key: "blinds", icon: "blinds", title: "Wet Wipe Window Blinds", description: "Wet-wiped rather than dusted, for grime dusting will not lift." },
+  { key: "blinds", icon: "blinds", title: "Detailed Wet-Wipe of Blinds", description: "Every base clean already dusts blinds. This is the slower wet-wipe, for grime dusting will not lift." },
   { key: "dishwasher", icon: "dishwasher", title: "Inside Dishwasher", description: "The inside of the dishwasher cleaned." },
   { key: "laundry", icon: "laundry", title: "Wash & Fold Laundry", description: "A load washed, dried and folded while we work." },
   { key: "dishes", icon: "dishes", title: "Sink of Dishes", description: "Hand-washed or loaded into the dishwasher." },

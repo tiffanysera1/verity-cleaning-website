@@ -17,7 +17,7 @@ export type ServiceLinks = {
 };
 
 export const SERVICE_LINKS: Record<string, ServiceLinks> = {
-  "recurring-cleaning": {
+  "standard-cleaning": {
     areas: [
       { slug: "mountain-brook", name: "Mountain Brook" },
       { slug: "helena", name: "Helena" },
@@ -39,8 +39,8 @@ export const SERVICE_LINKS: Record<string, ServiceLinks> = {
     areaNote:
       "Larger Hoover homes and older Vestavia Hills properties are where deep cleans come up most — both accumulate in places routine cleaning never reaches.",
     related: {
-      slug: "recurring-cleaning",
-      title: "Recurring Cleaning",
+      slug: "standard-cleaning",
+      title: "Standard Cleaning",
       note: "A deep clean is a one-off reset. If you would rather it never gets back to that point, recurring visits are the follow-on.",
     },
   },

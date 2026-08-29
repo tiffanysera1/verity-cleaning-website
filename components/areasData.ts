@@ -39,8 +39,8 @@ export const AREAS: Area[] = [
       "Pelham homes run the full range — established streets off Highway 31, newer construction closer to the interstate, and everything between. We clean all of it, and because we live and work here, we already know the neighborhoods.",
     ],
     leadService: {
-      slug: "recurring-cleaning",
-      title: "Recurring Cleaning",
+      slug: "standard-cleaning",
+      title: "Standard Cleaning",
       reason:
         "Most of our Pelham work is recurring — weekly, biweekly, or monthly visits for households who would rather not think about it again.",
     },
@@ -109,8 +109,8 @@ export const AREAS: Area[] = [
       "We work to a checklist and walk you through what was done at the end, room by room. In homes with original finishes and pieces that matter, being told exactly what happened is worth as much as the clean itself.",
     ],
     leadService: {
-      slug: "recurring-cleaning",
-      title: "Recurring Cleaning",
+      slug: "standard-cleaning",
+      title: "Standard Cleaning",
       reason:
         "Homes here are usually maintained on a standing schedule rather than cleaned in bursts, which keeps the detail work manageable visit to visit.",
     },
@@ -127,8 +127,8 @@ export const AREAS: Area[] = [
       "Because so much of our Helena work is on a set schedule, most customers here end up with a standing arrangement: same day, same time, key or code on file, and no need to be home. If you would rather be there for every visit, that is fine too — we just want the arrangement to suit how your week actually runs rather than how a cleaning company would prefer it to.",
     ],
     leadService: {
-      slug: "recurring-cleaning",
-      title: "Recurring Cleaning",
+      slug: "standard-cleaning",
+      title: "Standard Cleaning",
       reason:
         "Weekly and biweekly visits are the norm here — the point is getting the weekend back, not deep-cleaning twice a year.",
     },
@@ -145,8 +145,8 @@ export const AREAS: Area[] = [
       "Newer construction has its own quirks. Builder dust keeps surfacing for a good while after a home is finished, settling into vents, window tracks and the tops of trim where nobody looks. If your house is relatively new and has never had a proper deep clean, that is usually where the difference shows most on a first visit — and it is why a first clean often takes longer than the recurring ones that follow.",
     ],
     leadService: {
-      slug: "recurring-cleaning",
-      title: "Recurring Cleaning",
+      slug: "standard-cleaning",
+      title: "Standard Cleaning",
       reason:
         "Newer homes hold a routine clean well, so most Alabaster households settle into a biweekly or monthly visit.",
     },

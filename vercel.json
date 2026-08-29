@@ -1,5 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/services/recurring-cleaning", "destination": "/services/standard-cleaning/", "permanent": true },
+    { "source": "/services/recurring-cleaning/", "destination": "/services/standard-cleaning/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",

@@ -83,7 +83,7 @@ export default function JsonLd() {
       longitude: -86.7883,
     },
     knowsAbout: [
-      "Recurring cleaning",
+      "Standard cleaning",
       "Deep cleaning",
       "Move-in cleaning",
       "Move-out cleaning",

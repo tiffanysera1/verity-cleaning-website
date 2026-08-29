@@ -14,10 +14,10 @@ export type ServiceData = {
 
 export const SERVICES: ServiceData[] = [
   {
-    slug: "recurring-cleaning",
+    slug: "standard-cleaning",
     Icon: Home,
     photo: "/service-deep-cleaning.webp",
-    title: "Recurring Cleaning",
+    title: "Standard Cleaning",
     summary: "Routine maintenance visits — weekly, biweekly, or every four weeks — for a home already in generally maintained condition.",
     goodFor:
       "Busy households who want a consistently clean home without carving out their own weekend to do it.",
@@ -113,12 +113,12 @@ export type HomepageServiceCard = {
    links to its actual /services/ detail page. */
 export const HOMEPAGE_SERVICES: HomepageServiceCard[] = [
   {
-    key: "recurring-cleaning",
+    key: "standard-cleaning",
     Icon: Home,
     photo: "/service-deep-cleaning.webp",
-    title: "Recurring Cleaning",
+    title: "Standard Cleaning",
     summary: "Routine upkeep for an already-maintained home.",
-    href: "/services/recurring-cleaning/",
+    href: "/services/standard-cleaning/",
   },
   {
     key: "deep-cleaning",

@@ -30,7 +30,7 @@ export default function Footer() {
         <div>
           <h4>Services</h4>
           <ul>
-            <li><a href="#services">Recurring Cleaning</a></li>
+            <li><a href="#services">Standard Cleaning</a></li>
             <li><a href="#services">Deep Cleaning</a></li>
             <li><a href="#services">Move-In / Move-Out</a></li>
             <li><a href="#services">Commercial &amp; Office</a></li>
