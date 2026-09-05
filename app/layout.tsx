@@ -67,6 +67,13 @@ export const metadata: Metadata = {
       "Licensed, bonded, and insured cleaning with a 100% satisfaction guarantee. Call or text (205) 946-0304.",
     images: ["/og-image.jpg"],
   },
+  /* Bing Webmaster Tools site ownership. Not a secret — it exists to be read
+     back off the public page. Leave it in place: removing it after
+     verification can un-verify the site on Bing's next re-check, which would
+     silently stop sitemap processing. */
+  verification: {
+    other: { "msvalidate.01": "0EDC619DB136F64B4425E055E69ECF21" },
+  },
 };
 
 export const viewport: Viewport = {
