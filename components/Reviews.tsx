@@ -1,63 +1,65 @@
-import { ArrowRight, Star, Sparkle } from "./Icons";
+import { ArrowRight, Sparkle } from "./Icons";
 import { GOOGLE_REVIEWS_URL } from "./googleBusiness";
 
-/* Real 5-star Google reviews, verbatim as published. Never paraphrase, never
-   stitch sentences together, and never add one that isn't on the listing —
-   anyone can check the wording via GOOGLE_REVIEWS_URL.
+/* Reviews come from the GoHighLevel reputation widget, which syncs the live
+   Google Business Profile listing. It replaced two hand-copied reviews once
+   the listing passed a dozen — at that point the count itself is the proof,
+   and keeping a hand-maintained copy current stopped being worth it.
 
-   No Review or aggregateRating structured data accompanies these: Google
-   discards self-serving review markup on LocalBusiness, so it earns no rich
-   result while carrying manual-action risk. The stars shown in search come
-   from the Business Profile, which Google reads directly. */
-const REVIEWS = [
-  {
-    author: "Zach Robertson",
-    body: [
-      "Called Verity Cleaning to get a deep clean done before some family came into town, and I'm glad I did. Booking was quick, price was upfront, no hidden fees or weird surprises.",
-      "Tiffany showed up on time and got straight to work. I added on the inside-fridge cleaning too, and honestly, worth every penny. She covered everything I wanted done, like baseboards, ceiling fans, and grout in the bathroom tile. Once she finished up, she walked me through everything she'd done, room by room, which I appreciated. Place looked completely different by the time she was done. My wife noticed it the second she walked in.",
-      "Professional, easy to talk to, didn't waste time. You can tell she actually knows what she's doing and isn't just going through the motions.",
-      "Already planning on having Verity back out for regular cleanings, and I'll be asking for Tiffany specifically. Solid company, would recommend to anyone on the fence.",
-    ],
-  },
-  {
-    author: "Chase G.",
-    body: [
-      "Trustworthy and reliable cleaners. Came out when they said and did a good job cleaning up our house! We have multiple pets so it wasn't easy, but they worked quickly and it looks great every time!",
-    ],
-  },
-];
+   Two consequences worth knowing before changing anything here:
+
+   1. The review text lives in a cross-origin iframe, so it is NOT in this
+      page's HTML and search engines and AI crawlers cannot read it. The
+      heading, intro line and Google link below are deliberately real markup
+      so the section still says something crawlable about what it contains.
+
+   2. Still no Review or aggregateRating structured data, and none should be
+      added. Google discards self-serving review markup on your own
+      LocalBusiness, so it earns no rich result while carrying manual-action
+      risk. The stars shown in search come from the Business Profile, which
+      Google reads directly.
+
+   The <script> is a plain server-rendered tag rather than next/script, for
+   the same reason as ChatWidget: it must be present in the static HTML so it
+   runs on load and sizes the iframe. GHL's loader handles the height via
+   postMessage, which is why the iframe carries scrolling="no". */
+const WIDGET_SRC = "https://link.veritycleaning.co/reputation/widgets/review_widget/JAv7zXgBbtrbB9rtMj4X";
+const WIDGET_LOADER = "https://link.veritycleaning.co/reputation/assets/review-widget.js";
 
 export default function Reviews() {
   return (
     <section className="section tone-sky" id="reviews">
       <div className="wrap">
         <div className="center section-head reveal">
+          {/* Deliberately not "What Your Neighbors Say" any more: the GHL
+              widget renders its own near-identical title, and two headings
+              saying the same thing stacked on top of each other ate most of
+              the first mobile screen. This wording stays distinct, keeps a
+              real crawlable h2 in a section whose review text now lives in a
+              cross-origin iframe, and carries the local terms naturally. If
+              the widget's own title is ever switched off in GHL, the original
+              heading can come back. */}
           <h2 className="section-title">
-            What Your Neighbors Say
+            Trusted by Homeowners Across Shelby County
             <Sparkle aria-hidden="true" />
           </h2>
           <p className="lead">
-            Real reviews from real Verity customers on Google.
+            Verified Google reviews from real Verity customers, synced live
+            from our Business Profile.
           </p>
         </div>
 
-        <div className="reviews-grid">
-          {REVIEWS.map((review) => (
-            <article className="review-card reveal" key={review.author}>
-              <div className="review-stars" aria-label="Rated 5 out of 5 stars">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} aria-hidden="true" />
-                ))}
-              </div>
-              <div className="review-body">
-                {review.body.map((paragraph) => (
-                  <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-                ))}
-              </div>
-              <p className="review-author">&mdash; {review.author}</p>
-            </article>
-          ))}
+        <div className="reviews-widget reveal">
+          <iframe
+            className="lc_reviews_widget"
+            src={WIDGET_SRC}
+            title="Verity Cleaning reviews on Google"
+            frameBorder="0"
+            scrolling="no"
+            style={{ minWidth: "100%", width: "100%" }}
+          />
         </div>
+        <script src={WIDGET_LOADER} type="text/javascript" />
 
         <p className="homes-more">
           <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">

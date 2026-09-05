@@ -553,6 +553,9 @@ button { font-family: inherit; }
 }
 .transform-tag--before { left: 10px; }
 .transform-tag--after { right: 10px; }
+.reviews-widget { margin-top: 8px; }
+.reviews-widget iframe { display: block; width: 100%; min-height: 420px; border: 0; }
+@media (max-width: 760px) { .reviews-widget iframe { min-height: 520px; } }
 .homes-more { text-align: center; margin-top: 24px; }
 .homes-more a { color: var(--blue); font-weight: 700; font-size: .92rem; display: inline-flex; align-items: center; gap: 6px; }
 .homes-more a svg { width: 15px; height: 15px; flex: none; }
