@@ -21,7 +21,7 @@ export default function Footer() {
             <a href="https://www.instagram.com/veritycleaning/" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Instagram">
               <InstagramIcon style={{ width: "16px", height: "16px" }} />
             </a>
-            <a href="https://nextdoor.com/profile/01RZrcssJXy3zcKc_" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Nextdoor">
+            <a href="https://nextdoor.com/page/verity-cleaning-pelham-al/" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Nextdoor">
               <Nextdoor style={{ width: "16px", height: "16px" }} />
             </a>
           </div>
