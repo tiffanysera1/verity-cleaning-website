@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { AREAS, getArea } from "@/components/areasData";
+import { AREAS, getArea, areaFaqs } from "@/components/areasData";
 import { SERVICES } from "@/components/servicesData";
 import { QUOTE_FORM_URL } from "@/components/quoteLink";
 import { GOOGLE_REVIEWS_URL, GOOGLE_RATING } from "@/components/googleBusiness";
-import { ArrowRight, Star, Sparkle, Shield, Pin } from "@/components/Icons";
+import { ArrowRight, Star, Sparkle, Shield, Pin, Plus } from "@/components/Icons";
 import AreaJsonLd from "@/components/AreaJsonLd";
 import CallLine from "@/components/CallLine";
 
@@ -161,6 +161,29 @@ export default async function AreaPage(
                   <span>{service.summary}</span>
                 </span>
               </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="wrap">
+          <div className="center section-head">
+            <h2 className="section-title">
+              Cleaning in {area.name}{" "}
+              &mdash; common questions
+              <Sparkle aria-hidden="true" />
+            </h2>
+          </div>
+          <div className="faq-list area-faq-list">
+            {areaFaqs(area).map(({ q, a }) => (
+              <details className="faq-item" key={q}>
+                <summary>
+                  <span>{q}</span>
+                  <span className="faq-ic" aria-hidden="true"><Plus /></span>
+                </summary>
+                <p>{a}</p>
+              </details>
             ))}
           </div>
         </div>

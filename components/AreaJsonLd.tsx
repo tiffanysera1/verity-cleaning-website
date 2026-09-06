@@ -1,4 +1,4 @@
-import type { Area } from "./areasData";
+import { areaFaqs, type Area } from "./areasData";
 
 const BASE = "https://www.veritycleaning.co";
 
@@ -30,6 +30,15 @@ export default function AreaJsonLd({ area }: { area: Area }) {
         serviceUrl: url,
         servicePhone: "+12059460304",
       },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: areaFaqs(area).map(({ q, a }) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: { "@type": "Answer", text: a },
+      })),
     },
     {
       "@type": "BreadcrumbList",

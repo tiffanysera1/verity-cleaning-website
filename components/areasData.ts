@@ -28,6 +28,54 @@ export type Area = {
   neighborhoods: string[];
 };
 
+export type AreaFaq = { q: string; a: string };
+
+/* Built from each town's own fields rather than hand-written seven times over.
+   County, neighborhoods and lead service genuinely differ per town, so the
+   answers differ too — seven pages carrying identical answers would read as
+   doorway pages, which is the pattern this site has deliberately avoided.
+
+   Every answer restates something already published elsewhere on the site:
+   the no-trip-charge pricing, the quote process, the entry policy. Nothing
+   here invents a price or a response time.
+
+   Four questions, not five: an earlier draft carried a fifth about being
+   home during the clean, whose question and answer were both identical on
+   all seven pages. It said nothing local and it already appears on every
+   service page, so it was pure duplicate text across the set. */
+const LEAD_PHRASE: Record<string, string> = {
+  "Standard Cleaning": "our standard clean, booked weekly, biweekly or every four weeks",
+  "Deep Cleaning": "a deep clean",
+  "Move-In / Move-Out Cleaning": "a move-in or move-out clean",
+};
+
+function joinList(items: string[]): string {
+  if (items.length <= 1) return items[0] ?? "";
+  return items.slice(0, -1).join(", ") + " and " + items[items.length - 1];
+}
+
+export function areaFaqs(area: Area): AreaFaq[] {
+  const lead = LEAD_PHRASE[area.leadService.title] ?? area.leadService.title.toLowerCase();
+  return [
+    {
+      q: `Do you clean homes in ${area.name}?`,
+      a: `Yes. We cover all of ${area.name} in ${area.county}, including ${joinList(area.neighborhoods)}. If your neighborhood is not listed, just ask — we serve the whole city.`,
+    },
+    {
+      q: `What do most ${area.name} customers book?`,
+      a: `Most bookings here start with ${lead}. ${area.leadService.reason}`,
+    },
+    {
+      q: `Does it cost more because I am in ${area.name}?`,
+      a: "No. There is no trip charge and no zone pricing anywhere in our service area. Your quote reflects the size and condition of your home and the service you booked — nothing else.",
+    },
+    {
+      q: `How do I get a price for my ${area.name} home?`,
+      a: "Request a free quote online, or call or text (205) 946-0304. Nobody needs to walk through your house first — tell us about the home and send photos if you would like, and we will send you a personalized quote.",
+    },
+  ];
+}
+
 export const AREAS: Area[] = [
   {
     slug: "pelham",
