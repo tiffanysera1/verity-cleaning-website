@@ -557,6 +557,43 @@ button { font-family: inherit; }
 .reviews-widget iframe { display: block; width: 100%; min-height: 420px; border: 0; }
 @media (max-width: 760px) { .reviews-widget iframe { min-height: 520px; } }
 .area-faq-list { max-width: 780px; margin: 0 auto; }
+
+/* Property management page. Card shapes and tokens are the site's existing
+   ones — only the grids are new. */
+/* Own grid rather than borrowing .always-grid: that one is a six-tile row
+   defined later in this file, so it won the cascade and rendered these four
+   cards as four narrow columns with two columns of dead space. */
+.pm-proof-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 26px; }
+.pm-proof-card, .pm-type-card, .pm-step {
+  background: #fff; border: 1px solid var(--border); border-radius: var(--r-lg);
+  padding: 26px; text-align: left;
+}
+.pm-proof-card b, .pm-type-card b, .pm-step b {
+  display: block; margin-top: 12px; font-family: var(--font-display);
+  font-size: 1.02rem; font-weight: 700; color: var(--navy);
+}
+.pm-proof-card p, .pm-type-card p, .pm-step p {
+  margin-top: 7px; color: var(--navy-muted); font-size: .9rem; line-height: 1.6;
+}
+.pm-types { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 26px; }
+/* .always-tile-ic is built for centred tiles on a tinted ground: it carries
+   margin: 0 auto and a white fill. Both are wrong on these left-aligned white
+   cards, where the white circle disappears into the card. */
+.pm-proof-card .always-tile-ic,
+.pm-type-card .always-tile-ic { margin: 0; background: var(--sky-pale); }
+.pm-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 26px; }
+.pm-step-n {
+  display: inline-block; font-family: var(--font-display); font-size: 1.5rem;
+  font-weight: 700; color: var(--blue); line-height: 1;
+}
+@media (max-width: 980px) {
+  .pm-steps { grid-template-columns: repeat(2, 1fr); }
+  .pm-types { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .pm-proof-grid, .pm-steps { grid-template-columns: 1fr; }
+  .pm-proof-card, .pm-type-card, .pm-step { padding: 22px; }
+}
 .homes-more { text-align: center; margin-top: 24px; }
 .homes-more a { color: var(--blue); font-weight: 700; font-size: .92rem; display: inline-flex; align-items: center; gap: 6px; }
 .homes-more a svg { width: 15px; height: 15px; flex: none; }
