@@ -558,6 +558,33 @@ button { font-family: inherit; }
 @media (max-width: 760px) { .reviews-widget iframe { min-height: 520px; } }
 .area-faq-list { max-width: 780px; margin: 0 auto; }
 
+/* Before & after gallery. Two columns, not three: the supplied graphics are
+   square compositions where the actual photos occupy roughly a third of the
+   canvas, so narrower tiles make the real content unreadable. */
+.ba-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.ba-card {
+  margin: 0; background: #fff; border: 1px solid var(--border);
+  border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow);
+}
+.ba-card img { display: block; width: 100%; height: auto; }
+.ba-card figcaption { padding: 20px 22px 24px; }
+.ba-tag {
+  display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .07em;
+  text-transform: uppercase; color: var(--blue-deep); background: var(--sky-tint);
+  padding: 3px 9px; border-radius: 5px;
+}
+.ba-card figcaption b {
+  display: block; margin-top: 10px; font-family: var(--font-display);
+  font-size: 1.04rem; font-weight: 700; color: var(--navy);
+}
+.ba-card figcaption p {
+  margin-top: 6px; color: var(--navy-muted); font-size: .89rem; line-height: 1.6;
+}
+@media (max-width: 760px) {
+  .ba-grid { grid-template-columns: 1fr; gap: 18px; }
+  .ba-card figcaption { padding: 17px 18px 20px; }
+}
+
 /* Property management page. Card shapes and tokens are the site's existing
    ones — only the grids are new. */
 /* Own grid rather than borrowing .always-grid: that one is a six-tile row

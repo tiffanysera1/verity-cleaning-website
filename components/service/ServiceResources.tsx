@@ -25,7 +25,7 @@ export default function ServiceResources({
           ))}
         </div>
         <p className="homes-more">
-          <a href="/#transformations">See more before &amp; after transformations <ArrowRight /></a>
+          <a href="/before-and-after/">See more before &amp; after transformations <ArrowRight /></a>
         </p>
       </div>
 

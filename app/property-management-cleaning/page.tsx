@@ -181,6 +181,11 @@ export default function PropertyManagementPage() {
               );
             })}
           </div>
+          <p className="homes-more">
+            <a href="/before-and-after/">
+              See the kind of photos you&rsquo;ll get <ArrowRight />
+            </a>
+          </p>
         </div>
       </section>
 

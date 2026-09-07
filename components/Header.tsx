@@ -7,6 +7,7 @@ import { SERVICES } from "./servicesData";
 import { QUOTE_FORM_URL } from "./quoteLink";
 
 const RESOURCE_LINKS: [string, string][] = [
+  ["/before-and-after", "Before & After"],
   ["/#footer-area", "Service Area"],
   ["/#footer-contact", "Contact Us"],
 ];

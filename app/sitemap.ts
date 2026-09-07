@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     })),
     { url: `${BASE}/property-management-cleaning/`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/before-and-after/`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/areas/`, lastModified, changeFrequency: "monthly", priority: 0.9 },
     ...AREAS.map((a) => ({
       url: `${BASE}/areas/${a.slug}/`,

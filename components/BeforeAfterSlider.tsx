@@ -24,7 +24,7 @@ export default function BeforeAfterSlider() {
           </div>
 
           <p className="homes-more">
-            <a href="/#services">See More Transformations <ArrowRight /></a>
+            <a href="/before-and-after/">See More Transformations <ArrowRight /></a>
           </p>
 
           <p className="homes-service-area">
