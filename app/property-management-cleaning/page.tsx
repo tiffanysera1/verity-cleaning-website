@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   ArrowRight,
   Sparkle,
@@ -20,6 +21,7 @@ import { GOOGLE_REVIEWS_URL, GOOGLE_RATING } from "@/components/googleBusiness";
 import CallLine from "@/components/CallLine";
 import { AREAS } from "@/components/areasData";
 import { PM_PROOF, PM_STEPS, PM_TYPES, PM_FAQ } from "@/components/propertyManagerData";
+import { pickTransformations } from "@/components/transformationsData";
 
 const PATH = "/property-management-cleaning/";
 const BASE = "https://www.veritycleaning.co";
@@ -102,6 +104,12 @@ function JsonLd() {
   );
 }
 
+const PREVIEW = pickTransformations([
+  "kitchen-declutter",
+  "refrigerator-emptied",
+  "toilet-stain-removal",
+]);
+
 export default function PropertyManagementPage() {
   return (
     <main id="main">
@@ -181,10 +189,40 @@ export default function PropertyManagementPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="wrap">
+          <div className="center section-head">
+            <h2 className="section-title">
+              The photos you&rsquo;ll get
+              <Sparkle aria-hidden="true" />
+            </h2>
+            <p className="lead">
+              Real units we have turned over. This is what lands with your receipt.
+            </p>
+          </div>
+          <div className="ba-grid ba-grid--three">
+            {PREVIEW.map((t) => (
+              <figure className="ba-card reveal" key={t.image}>
+                <Image
+                  src={t.image}
+                  alt={t.alt}
+                  width={1000}
+                  height={1000}
+                  sizes="(max-width: 760px) 100vw, 380px"
+                />
+                <figcaption>
+                  <span className="ba-tag">{t.tag}</span>
+                  <b>{t.title}</b>
+                  <p>{t.caption}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
           <p className="homes-more">
-            <a href="/before-and-after/">
-              See the kind of photos you&rsquo;ll get <ArrowRight />
-            </a>
+            <a href="/before-and-after/">See all before &amp; after photos <ArrowRight /></a>
           </p>
         </div>
       </section>

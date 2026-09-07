@@ -79,3 +79,13 @@ export const TRANSFORMATIONS: Transformation[] = [
     tag: "Every clean",
   },
 ];
+
+/* Pick a subset by image slug, preserving the order asked for. Throws on a
+   typo rather than silently rendering fewer cards than intended. */
+export function pickTransformations(slugs: string[]): Transformation[] {
+  return slugs.map((slug) => {
+    const found = TRANSFORMATIONS.find((t) => t.image.includes(`/${slug}.`));
+    if (!found) throw new Error(`Unknown transformation: ${slug}`);
+    return found;
+  });
+}
