@@ -14,15 +14,23 @@ export default function JsonLd() {
     url: "https://www.veritycleaning.co",
     /* sameAs ties this business entity to its off-site profiles, so a dead URL
        here is worse than an omission. Every entry below was confirmed to load
-       publicly and show the business. Nextdoor previously pointed at a personal
-       profile URL that resolved to a login wall — signed-out visitors and
-       crawlers saw nothing — and now points at the public business page.
+       publicly, signed out, and show the business.
+
+       Two of these were originally supplied as the owner's logged-in dashboard
+       URL, which resolves to a sign-in screen for everyone else — Nextdoor's
+       /profile/ link and Thumbtack's /profile/services/ link. Both now use the
+       public form. If another profile gets added, check it signed out first.
+
+       Thumbtack does not link back to this site, so it is a citation rather
+       than a backlink; it still belongs here as an entity signal.
+
        Yelp is absent: no page exists yet. */
     sameAs: [
       "https://www.facebook.com/profile.php?id=61588754895193",
       "https://www.instagram.com/veritycleaning/",
       "https://www.google.com/maps?cid=17576216227421438205",
       "https://nextdoor.com/page/verity-cleaning-pelham-al/",
+      "https://www.thumbtack.com/al/birmingham/pro/verity-cleaning/service/587960053621571584",
     ],
     image: "https://www.veritycleaning.co/og-image.jpg",
     priceRange: "$$",
