@@ -1,5 +1,5 @@
 import { Phone, Sms } from "./Icons";
-import { QUOTE_FORM_URL } from "./quoteLink";
+import { QUOTE_URL } from "./quoteLink";
 
 /* Thumb-friendly fixed call/quote bar shown on small screens (< 760px). */
 export default function MobileBar() {
@@ -9,7 +9,7 @@ export default function MobileBar() {
         <Phone />
         Call now
       </a>
-      <a href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn--secondary">
+      <a href={QUOTE_URL} className="btn btn--secondary">
         <Sms />
         Get quote
       </a>

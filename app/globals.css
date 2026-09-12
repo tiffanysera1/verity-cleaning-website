@@ -558,6 +558,41 @@ button { font-family: inherit; }
 @media (max-width: 760px) { .reviews-widget iframe { min-height: 520px; } }
 .area-faq-list { max-width: 780px; margin: 0 auto; }
 
+/* Quote page. GHL's form_embed.js sets the iframe height by postMessage as the
+   survey moves between steps — measured at 538px on step one and 614px on step
+   two. min-height only guards against the section collapsing before that
+   script runs, so keep it well under the shortest step: at 560px it overrode
+   the script's own 538px and left dead space under the form. */
+.quote-hero { padding-bottom: 0; }
+.quote-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px 22px; margin-top: 18px; }
+.quote-embed-section { padding-top: 26px; }
+/* No card of our own here. GHL renders the survey inside its own white card
+   with its own padding, and wrapping that in a second bordered card read as a
+   card inside a card with dead space between them. Cross-origin, so their
+   inner styling cannot be reached — the fix is to stop competing with it. */
+.quote-embed { max-width: 640px; margin: 0 auto; }
+.quote-embed iframe { display: block; width: 100%; min-height: 380px; border: 0; }
+.quote-fallback {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 8px; margin-top: 18px; font-size: .86rem; color: var(--muted);
+}
+.quote-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 26px; }
+.quote-step {
+  background: #fff; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 24px;
+}
+.quote-step .always-tile-ic { margin: 0; background: var(--sky-pale); }
+.quote-step b {
+  display: block; margin-top: 12px; font-family: var(--font-display);
+  font-size: 1.02rem; font-weight: 700; color: var(--navy);
+}
+.quote-step p { margin-top: 7px; color: var(--navy-muted); font-size: .9rem; line-height: 1.6; }
+.quote-note {
+  max-width: 720px; margin: 24px auto 0; text-align: center;
+  color: var(--navy-muted); font-size: .89rem; line-height: 1.65;
+}
+@media (max-width: 860px) { .quote-steps { grid-template-columns: 1fr; } }
+@media (max-width: 620px) { .quote-embed { padding: 6px; } }
+
 /* Before & after gallery. Two columns, not three: the supplied graphics are
    square compositions where the actual photos occupy roughly a third of the
    canvas, so narrower tiles make the real content unreadable. */

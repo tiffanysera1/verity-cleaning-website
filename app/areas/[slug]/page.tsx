@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { AREAS, getArea, areaFaqs } from "@/components/areasData";
 import { SERVICES } from "@/components/servicesData";
-import { QUOTE_FORM_URL } from "@/components/quoteLink";
+import { QUOTE_URL } from "@/components/quoteLink";
 import { GOOGLE_REVIEWS_URL, GOOGLE_RATING } from "@/components/googleBusiness";
 import { ArrowRight, Star, Sparkle, Shield, Pin, Plus } from "@/components/Icons";
 import AreaJsonLd from "@/components/AreaJsonLd";
@@ -63,9 +63,7 @@ export default async function AreaPage(
           <div className="area-hero-actions">
             <a
               className="btn btn--primary btn--lg"
-              href={QUOTE_FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={QUOTE_URL}
             >
               Get My Free Quote
               <ArrowRight aria-hidden="true" />
@@ -202,9 +200,7 @@ export default async function AreaPage(
             <div className="area-cta-actions">
               <a
                 className="btn btn--primary btn--lg"
-                href={QUOTE_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={QUOTE_URL}
               >
                 Get My Free Quote
                 <ArrowRight aria-hidden="true" />

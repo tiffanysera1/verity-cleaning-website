@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Heart, Sparkle, Shield, ArrowRight, Star } from "./Icons";
-import { QUOTE_FORM_URL } from "./quoteLink";
+import { QUOTE_URL } from "./quoteLink";
 import { GOOGLE_REVIEWS_URL, GOOGLE_RATING } from "./googleBusiness";
 import CallLine from "./CallLine";
 
@@ -34,10 +34,8 @@ export default function Hero() {
 
           <div className="hero-quote-wrap reveal" id="quote" style={{ scrollMarginTop: "96px" }}>
             <a
-              href={QUOTE_FORM_URL}
+              href={QUOTE_URL}
               className="btn btn--primary hero-quote-cta"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Get My Free Quote
               <ArrowRight aria-hidden="true" />

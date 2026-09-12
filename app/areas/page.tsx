@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { AREAS, ADDITIONAL_AREAS } from "@/components/areasData";
-import { QUOTE_FORM_URL } from "@/components/quoteLink";
+import { QUOTE_URL } from "@/components/quoteLink";
 import { ArrowRight, Sparkle, Pin } from "@/components/Icons";
 import HubJsonLd from "@/components/HubJsonLd";
 
@@ -102,9 +102,7 @@ export default function AreasPage() {
             </p>
             <a
               className="btn btn--primary btn--lg"
-              href={QUOTE_FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={QUOTE_URL}
             >
               Get My Free Quote
               <ArrowRight aria-hidden="true" />

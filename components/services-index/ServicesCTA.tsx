@@ -1,5 +1,5 @@
 import { ArrowRight } from "../Icons";
-import { QUOTE_FORM_URL } from "../quoteLink";
+import { QUOTE_URL } from "../quoteLink";
 import CallLine from "../CallLine";
 
 export default function ServicesCTA() {
@@ -15,7 +15,7 @@ export default function ServicesCTA() {
               Let Verity handle the cleaning while you focus on what matters most.
             </p>
             <div className="svc-cta-actions">
-              <a href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn--primary btn--lg">
+              <a href={QUOTE_URL} className="btn btn--primary btn--lg">
                 Get My Quote
                 <ArrowRight />
               </a>

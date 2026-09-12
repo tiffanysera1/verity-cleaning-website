@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { ChevronRight, ArrowRight, Sparkle, X } from "../Icons";
 import { MINI_TRUST, type Tip } from "./serviceDetailData";
-import { QUOTE_FORM_URL } from "../quoteLink";
+import { QUOTE_URL } from "../quoteLink";
 import CallLine from "../CallLine";
 
 function VerityTip({ tips }: { tips: Tip[] }) {
@@ -77,7 +77,7 @@ export default function ServiceHero({
             <p className="service-tagline">{tagline}</p>
             <p className="service-desc">{description}</p>
 
-            <a href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn--primary btn--lg">
+            <a href={QUOTE_URL} className="btn btn--primary btn--lg">
               Get My Personalized Quote
               <ArrowRight />
             </a>

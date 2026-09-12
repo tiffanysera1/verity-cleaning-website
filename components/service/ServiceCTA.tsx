@@ -1,5 +1,5 @@
 import { ArrowRight, Shield, CurvedArrow } from "../Icons";
-import { QUOTE_FORM_URL } from "../quoteLink";
+import { QUOTE_URL } from "../quoteLink";
 import CallLine from "../CallLine";
 
 export default function ServiceCTA() {
@@ -13,7 +13,7 @@ export default function ServiceCTA() {
         </p>
       </div>
       <div className="service-cta-actions">
-        <a href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn--primary btn--lg">
+        <a href={QUOTE_URL} className="btn btn--primary btn--lg">
           Get My Personalized Quote
           <ArrowRight />
         </a>

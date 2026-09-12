@@ -16,7 +16,7 @@ import {
   Plus,
   Check,
 } from "@/components/Icons";
-import { QUOTE_FORM_URL } from "@/components/quoteLink";
+import { QUOTE_URL } from "@/components/quoteLink";
 import { GOOGLE_REVIEWS_URL, GOOGLE_RATING } from "@/components/googleBusiness";
 import CallLine from "@/components/CallLine";
 import { AREAS } from "@/components/areasData";
@@ -131,9 +131,7 @@ export default function PropertyManagementPage() {
           <div className="area-hero-actions">
             <a
               className="btn btn--primary btn--lg"
-              href={QUOTE_FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={QUOTE_URL}
             >
               Request a Turnover Quote
               <ArrowRight aria-hidden="true" />
@@ -245,7 +243,7 @@ export default function PropertyManagementPage() {
             ))}
           </div>
           <p className="homes-more">
-            <a href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
+            <a href={QUOTE_URL}>
               Request a turnover quote <ArrowRight />
             </a>
           </p>
@@ -354,9 +352,7 @@ export default function PropertyManagementPage() {
             <div className="area-cta-actions">
               <a
                 className="btn btn--primary btn--lg"
-                href={QUOTE_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={QUOTE_URL}
               >
                 Request a Turnover Quote
                 <ArrowRight aria-hidden="true" />

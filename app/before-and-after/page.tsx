@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowRight, Sparkle, Shield, Star } from "@/components/Icons";
-import { QUOTE_FORM_URL } from "@/components/quoteLink";
+import { QUOTE_URL } from "@/components/quoteLink";
 import { GOOGLE_REVIEWS_URL, GOOGLE_RATING } from "@/components/googleBusiness";
 import CallLine from "@/components/CallLine";
 import { TRANSFORMATIONS } from "@/components/transformationsData";
@@ -80,9 +80,7 @@ export default function BeforeAfterPage() {
           <div className="area-hero-actions">
             <a
               className="btn btn--primary btn--lg"
-              href={QUOTE_FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={QUOTE_URL}
             >
               Get My Free Quote
               <ArrowRight aria-hidden="true" />
@@ -151,9 +149,7 @@ export default function BeforeAfterPage() {
             <div className="area-cta-actions">
               <a
                 className="btn btn--primary btn--lg"
-                href={QUOTE_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={QUOTE_URL}
               >
                 Get My Free Quote
                 <ArrowRight aria-hidden="true" />

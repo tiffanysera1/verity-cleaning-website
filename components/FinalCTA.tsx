@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Shield, ArrowRight, CurvedArrow } from "./Icons";
-import { QUOTE_FORM_URL } from "./quoteLink";
+import { QUOTE_URL } from "./quoteLink";
 import CallLine from "./CallLine";
 
 export default function FinalCTA() {
@@ -21,7 +21,7 @@ export default function FinalCTA() {
               information and photos you provide.
             </p>
             <div className="final-cta-actions reveal">
-              <a href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn--primary btn--lg">
+              <a href={QUOTE_URL} className="btn btn--primary btn--lg">
                 Get My Personalized Quote
                 <ArrowRight />
               </a>
