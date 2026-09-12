@@ -4,6 +4,15 @@ import type { IconProps } from "./Icons";
 
 export type ServiceData = {
   slug: string;
+  /* What this service is called inside the quote survey, when that differs
+     from the name we sell it under. Shown in brackets beside the heading and
+     in the comparison table so nobody picks "Deep Cleaning" here and then
+     hunts for it in a list that says "Deluxe".
+
+     Deliberately NOT folded into `title`: that feeds the <title> tag, the
+     Service schema and the breadcrumbs, and "Deluxe" is not a term anyone
+     searches for. Keep the alias cosmetic and keep the SEO name clean. */
+  aka?: string;
   Icon: ComponentType<IconProps>;
   photo: string;
   title: string;
@@ -31,6 +40,7 @@ export const SERVICES: ServiceData[] = [
   },
   {
     slug: "deep-cleaning",
+    aka: "Deluxe",
     Icon: Sparkles,
     photo: "/service-deep-cleaning.webp",
     title: "Deep Cleaning",

@@ -58,7 +58,8 @@ export default async function ServicePage(
         faq={detail.faq}
       />
 
-      <ServiceHero title={service.title} photo={service.photo} tagline={detail.tagline} description={detail.description} tips={detail.tips} />
+      <ServiceHero title={service.title}
+        aka={service.aka} photo={service.photo} tagline={detail.tagline} description={detail.description} tips={detail.tips} />
 
       <section className="section service-included-section">
         <div className="wrap">

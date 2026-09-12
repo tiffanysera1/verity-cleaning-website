@@ -64,7 +64,7 @@ export const FEATURED_SERVICES: FeaturedService[] = [
 export type CompareState = "yes" | "addon" | "no";
 export type CompareRow = { label: string; note?: string; values: [CompareState, CompareState, CompareState] };
 
-export const COMPARE_SERVICES = ["Standard", "Deep Clean", "Move-In / Out"] as const;
+export const COMPARE_SERVICES = ["Standard", "Deep Clean (Deluxe)", "Move-In / Out"] as const;
 
 export const COMPARE_ROWS: CompareRow[] = [
   { label: "Kitchen, bathrooms & living areas", values: ["yes", "yes", "yes"] },

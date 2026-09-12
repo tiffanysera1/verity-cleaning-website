@@ -48,12 +48,14 @@ function VerityTip({ tips }: { tips: Tip[] }) {
 
 export default function ServiceHero({
   title,
+  aka,
   photo,
   tagline,
   description,
   tips,
 }: {
   title: string;
+  aka?: string;
   photo: string;
   tagline: string;
   description: string;
@@ -73,7 +75,7 @@ export default function ServiceHero({
         <div className="service-hero-grid">
           <div className="service-hero-main reveal">
             <span className="service-badge">{title.toUpperCase()}</span>
-            <h1>{title}</h1>
+            <h1>{title}{aka ? ` (${aka})` : ""}</h1>
             <p className="service-tagline">{tagline}</p>
             <p className="service-desc">{description}</p>
 
