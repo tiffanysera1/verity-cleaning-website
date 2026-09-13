@@ -1504,6 +1504,10 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 .blog-thumb { position: relative; width: 48px; height: 48px; border-radius: 10px; overflow: hidden; flex: none; }
 .faq-list { max-width: 800px; margin: 16px auto 0; display: grid; gap: 10px; }
 .faq-item { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 0 20px; }
+/* Body font, not the display serif. That face has high stroke contrast and is
+   built for large headings — at the 14.7px these questions were set at, the
+   thin strokes broke up and it read as blurry. Serif stays on the section
+   headings above, where it has the size to work. */
 .faq-item summary {
   list-style: none;
   cursor: pointer;
@@ -1511,10 +1515,12 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   align-items: center;
   justify-content: space-between;
   gap: 14px;
-  padding: 16px 0;
-  font-family: var(--font-display);
+  padding: 17px 0;
+  font-family: var(--font-body);
   font-weight: 600;
-  font-size: .92rem;
+  font-size: 1rem;
+  line-height: 1.45;
+  letter-spacing: -.005em;
   color: var(--navy);
 }
 .faq-item summary::-webkit-details-marker { display: none; }
@@ -1531,12 +1537,12 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 }
 .faq-ic svg { width: 12px; height: 12px; }
 .faq-item[open] .faq-ic { transform: rotate(45deg); }
-.faq-item p { color: var(--muted); padding: 0 0 16px; margin: 0; font-size: .86rem; line-height: 1.6; }
+.faq-item p { color: var(--navy-muted); padding: 0 0 18px; margin: 0; font-size: .95rem; line-height: 1.68; }
 
 .resources-faq .faq-list { margin-top: 4px; max-width: none; }
 .resources-faq .faq-item { padding: 0 16px; }
-.resources-faq .faq-item summary { padding: 14px 0; font-size: .84rem; gap: 10px; }
-.resources-faq .faq-item p { font-size: .82rem; padding-bottom: 14px; }
+.resources-faq .faq-item summary { padding: 14px 0; font-size: .92rem; gap: 10px; }
+.resources-faq .faq-item p { font-size: .89rem; padding-bottom: 15px; }
 
 /* Service final CTA */
 .service-cta-section { padding-top: 8px; padding-bottom: 72px; }
