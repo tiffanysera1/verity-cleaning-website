@@ -17,9 +17,13 @@ const OWNER_WORDS = [
   "Verity is about more than a clean home. It's about giving you some of your time back and providing a service you can feel comfortable relying on so you can spend more time on what matters.",
 ];
 
+/* "Drug-free" was on the graphic these badges came from, but Verity does not
+   drug test, so it is not a claim we can stand behind. Replaced with
+   "Licensed", which is true and already stated in the footer. If the graphic
+   is ever reused elsewhere, it needs the same correction. */
 const OWNER_BADGES = [
   { Icon: Shield, label: "Background checked" },
-  { Icon: Medal, label: "Drug-free" },
+  { Icon: Medal, label: "Licensed" },
   { Icon: Users, label: "Professional" },
   { Icon: Sparkle, label: "The Verity standard" },
 ];
