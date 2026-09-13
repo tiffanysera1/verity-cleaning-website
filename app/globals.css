@@ -614,6 +614,9 @@ button { font-family: inherit; }
 .tier-card li { display: flex; align-items: flex-start; gap: 8px; font-size: .86rem; color: var(--ink); line-height: 1.5; }
 .tier-card li svg { width: 14px; height: 14px; color: var(--blue); flex: none; margin-top: 3px; }
 @media (max-width: 900px) { .tier-grid { grid-template-columns: 1fr; } }
+.faq-link { margin-top: 12px; }
+.faq-link a { display: inline-flex; align-items: center; gap: 6px; color: var(--blue); font-weight: 700; font-size: .86rem; }
+.faq-link a svg { width: 14px; height: 14px; flex: none; }
 .quote-back { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px 20px; margin-top: 30px; }
 #quote-form { scroll-margin-top: 90px; }
 .quote-note {

@@ -71,7 +71,11 @@ function JsonLd() {
    FAQs: this page answers what stops someone finishing the form, not what a
    given clean includes. Every answer restates something already true and
    published elsewhere on the site. */
-const QUOTE_FAQ = [
+const QUOTE_FAQ: {
+  q: string;
+  a: string;
+  link?: { href: string; text: string };
+}[] = [
   {
     q: "Am I committing to anything by requesting a quote?",
     a: "No. The quote is free and there is no obligation. You are telling us about your home so we can put a real number in front of you \u2014 nothing is booked and nothing is charged until you say yes.",
@@ -86,7 +90,8 @@ const QUOTE_FAQ = [
   },
   {
     q: "How do you work out the price?",
-    a: "Square footage, bedrooms and bathrooms, the service you picked, and the condition of the home. That is it. There is no trip charge and no zone pricing anywhere in our service area, so where you live does not change the number.",
+    a: "Square footage, bedrooms and bathrooms, the service you picked, and the condition of the home — plus whether there are pets, and anything extra you want done. Add-ons such as inside the oven, inside the refrigerator or wash-and-fold laundry are priced on top, and special requests are quoted with the job. There is no trip charge and no zone pricing anywhere in our service area, so where you live does not change the number.",
+    link: { href: "/services/#addons", text: "See everything each clean covers, and every add-on" },
   },
   {
     q: "Do I pay anything now?",
@@ -315,13 +320,18 @@ export default function QuotePage() {
             </h2>
           </div>
           <div className="faq-list area-faq-list">
-            {QUOTE_FAQ.map(({ q, a }) => (
+            {QUOTE_FAQ.map(({ q, a, link }) => (
               <details className="faq-item" key={q}>
                 <summary>
                   <span>{q}</span>
                   <span className="faq-ic" aria-hidden="true"><Plus /></span>
                 </summary>
                 <p>{a}</p>
+                {link && (
+                  <p className="faq-link">
+                    <a href={link.href}>{link.text} <ArrowRight /></a>
+                  </p>
+                )}
               </details>
             ))}
           </div>
