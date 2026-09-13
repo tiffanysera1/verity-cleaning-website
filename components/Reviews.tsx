@@ -23,8 +23,8 @@ import { GOOGLE_REVIEWS_URL } from "./googleBusiness";
    the same reason as ChatWidget: it must be present in the static HTML so it
    runs on load and sizes the iframe. GHL's loader handles the height via
    postMessage, which is why the iframe carries scrolling="no". */
-const WIDGET_SRC = "https://link.veritycleaning.co/reputation/widgets/review_widget/JAv7zXgBbtrbB9rtMj4X";
-const WIDGET_LOADER = "https://link.veritycleaning.co/reputation/assets/review-widget.js";
+export const WIDGET_SRC = "https://link.veritycleaning.co/reputation/widgets/review_widget/JAv7zXgBbtrbB9rtMj4X";
+export const WIDGET_LOADER = "https://link.veritycleaning.co/reputation/assets/review-widget.js";
 
 export default function Reviews() {
   return (

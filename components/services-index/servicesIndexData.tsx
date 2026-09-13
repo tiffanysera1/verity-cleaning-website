@@ -100,6 +100,44 @@ export const COMPARE_ROWS: CompareRow[] = [
   { label: "Extra pet hair shed", values: ["addon", "addon", "addon"] },
 ];
 
+/* The three-tier summary used on /quote/, computed from COMPARE_ROWS rather
+   than written out again. Standard is the shared base; each later tier lists
+   only what it adds over the one before it, which is exactly the
+   "everything in X, plus" structure — and it stays true automatically if a
+   row above ever changes.
+
+   Worth knowing if you are comparing this against a marketing graphic: the
+   site is the source of truth. A printed card that says a move-out clean
+   includes the dishwasher interior disagrees with this table, where it is a
+   paid add-on on all three services. */
+export type ServiceTier = { name: string; blurb: string; intro?: string; points: string[] };
+
+function includedOnly(i: number, notIn?: number): string[] {
+  return COMPARE_ROWS
+    .filter((r) => r.values[i] === "yes" && (notIn === undefined || r.values[notIn] !== "yes"))
+    .map((r) => r.label);
+}
+
+export const SERVICE_TIERS: ServiceTier[] = [
+  {
+    name: "Standard Clean",
+    blurb: "Routine upkeep for a home already in generally maintained condition.",
+    points: includedOnly(0).slice(0, 6),
+  },
+  {
+    name: "Deep Clean (Deluxe)",
+    blurb: "A full reset for buildup and the detail work routine cleaning skips.",
+    intro: "Everything in a standard clean, plus:",
+    points: includedOnly(1, 0),
+  },
+  {
+    name: "Move-In / Move-Out",
+    blurb: "A turnover clean for an empty home, inside the cabinets and appliances.",
+    intro: "Everything in a deep clean, plus:",
+    points: includedOnly(2, 1),
+  },
+];
+
 export type DecisionPath = {
   question: string;
   answer: string;
