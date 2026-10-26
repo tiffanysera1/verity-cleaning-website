@@ -109,6 +109,7 @@ export default function Header() {
           <a href="/#how-it-works" onClick={() => setOpen(false)}>How It Works</a>
           <a href="/#trust" onClick={() => setOpen(false)}>Why Verity</a>
           <a href="/#reviews" onClick={() => setOpen(false)}>Reviews</a>
+          <a href="/faq/" onClick={() => setOpen(false)}>FAQ</a>
           <NavDropdown label="Resources" links={RESOURCE_LINKS} onNavigate={() => setOpen(false)} />
         </nav>
 

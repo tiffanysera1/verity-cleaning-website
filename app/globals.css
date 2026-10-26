@@ -191,6 +191,7 @@ button { font-family: inherit; }
 .brand-mark { height: 38px; width: auto; flex: none; }
 .nav-links { display: flex; align-items: center; gap: 32px; }
 .nav-links a {
+  white-space: nowrap;
   font-weight: 500;
   color: var(--navy);
   font-size: .94rem;
@@ -1930,10 +1931,16 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   .decision-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; gap: 36px; }
   .always-grid { grid-template-columns: repeat(3, 1fr); }
 }
-@media (max-width: 760px) {
+/* The full menu needs about 1000px. Below that it wrapped labels onto two
+   lines and pushed the logo and quote button off the edge, so tablets get
+   the hamburger menu too. The quote button stays until the mobile bar takes
+   over at 760px. */
+@media (max-width: 1180px) {
+  .nav-links { gap: 20px; }
+}
+@media (max-width: 960px) {
   .nav-links { display: none; }
   .nav-toggle { display: block; }
-  .nav-cta .btn { display: none; }
   .nav-links.open {
     display: flex;
     position: absolute;
@@ -1952,6 +1959,9 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   .nav-drop-panel { display: none; position: static; transform: none; box-shadow: none; border: none; padding: 4px 0 4px 12px; min-width: 0; }
   .nav-drop-panel.open { display: flex; }
   .nav-drop-panel a { padding: 8px 0; }
+}
+@media (max-width: 760px) {
+  .nav-cta .btn { display: none; }
   .section { padding: 60px 0; }
   .trust-strip-section { padding: 24px 0 60px; }
   .fg { grid-template-columns: 1fr; }
