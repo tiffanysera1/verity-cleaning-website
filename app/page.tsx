@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import OperationalStrip from "@/components/OperationalStrip";
+import MeetTheOwner from "@/components/MeetTheOwner";
 import ProcessSection from "@/components/ProcessSection";
 import Services from "@/components/Services";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
@@ -13,6 +14,9 @@ export default function Home() {
       <span id="top" />
       <Hero />
       <OperationalStrip />
+      {/* Directly under the #trust strip, so the "Why Verity" menu link lands
+          on the badges and the owner's own words together. */}
+      <MeetTheOwner />
       <ProcessSection />
       <Services />
       <BeforeAfterSlider />
