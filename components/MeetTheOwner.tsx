@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Shield, Medal, Users, Sparkle } from "./Icons";
 
 /* Tiffany's own words, set as real text rather than left inside the graphic
    she wrote them on. The image version is fine for Instagram; here the words
@@ -15,17 +14,6 @@ const OWNER_WORDS = [
   "We're a locally owned cleaning company, and I started Verity because I know how quickly work, family, pets, and everyday life can take over your time.",
   "I also know how personal it is to let someone into your home. I care about who we send into yours because I'd only want people I trust in mine. That's why we put so much emphasis on having reliable, trustworthy cleaners and taking great care of the homes we're welcomed into.",
   "Verity is about more than a clean home. It's about giving you some of your time back and providing a service you can feel comfortable relying on so you can spend more time on what matters.",
-];
-
-/* "Drug-free" was on the graphic these badges came from, but Verity does not
-   drug test, so it is not a claim we can stand behind. Replaced with
-   "Licensed", which is true and already stated in the footer. If the graphic
-   is ever reused elsewhere, it needs the same correction. */
-const OWNER_BADGES = [
-  { Icon: Shield, label: "Background checked" },
-  { Icon: Medal, label: "Licensed" },
-  { Icon: Users, label: "Professional" },
-  { Icon: Sparkle, label: "The Verity standard" },
 ];
 
 export default function MeetTheOwner({ heading = "Meet the owner" }: { heading?: string }) {
@@ -51,15 +39,6 @@ export default function MeetTheOwner({ heading = "Meet the owner" }: { heading?:
               <p key={p.slice(0, 32)}>{p}</p>
             ))}
             <p className="owner-sign">Time well spent.</p>
-
-            <ul className="owner-badges">
-              {OWNER_BADGES.map(({ Icon, label }) => (
-                <li key={label}>
-                  <Icon aria-hidden="true" />
-                  {label}
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </div>

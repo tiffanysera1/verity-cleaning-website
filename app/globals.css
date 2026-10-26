@@ -606,9 +606,6 @@ button { font-family: inherit; }
    body size. p.owner-sign matches that specificity and sits later, so it
    wins without reaching for !important. */
 .owner-copy p.owner-sign { font-family: var(--font-hand); font-size: 1.55rem; line-height: 1.2; color: var(--blue); margin-top: 20px; }
-.owner-badges { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--border); }
-.owner-badges li { display: flex; align-items: center; gap: 7px; font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--navy-muted); }
-.owner-badges svg { width: 16px; height: 16px; color: var(--blue); flex: none; }
 @media (max-width: 860px) {
   .owner-grid { grid-template-columns: 1fr; gap: 26px; }
   .owner-photo { max-width: 320px; }
