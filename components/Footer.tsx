@@ -37,6 +37,7 @@ export default function Footer() {
             <li><a href="#services">Post-Construction</a></li>
             <li><a href="/property-management-cleaning/">Property Managers</a></li>
             <li><a href="/before-and-after/">Before &amp; After</a></li>
+            <li><a href="/faq/">FAQ</a></li>
           </ul>
         </div>
 

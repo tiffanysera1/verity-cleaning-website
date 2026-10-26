@@ -67,7 +67,7 @@ export default function ServiceResources({
           ))}
         </div>
         <p className="homes-more">
-          <a href="/#services">View all FAQ <ArrowRight /></a>
+          <a href={`/faq/#${currentSlug}`}>View all FAQ <ArrowRight /></a>
         </p>
       </div>
     </div>

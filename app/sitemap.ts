@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     { url: `${BASE}/property-management-cleaning/`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/quote/`, lastModified, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/faq/`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/before-and-after/`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/areas/`, lastModified, changeFrequency: "monthly", priority: 0.9 },
     ...AREAS.map((a) => ({

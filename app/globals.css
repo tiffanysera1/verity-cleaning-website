@@ -557,6 +557,13 @@ button { font-family: inherit; }
 .reviews-widget iframe { display: block; width: 100%; min-height: 420px; border: 0; }
 @media (max-width: 760px) { .reviews-widget iframe { min-height: 520px; } }
 .area-faq-list { max-width: 780px; margin: 0 auto; }
+/* FAQ page topic links. */
+.faq-jump { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px; }
+.faq-jump a {
+  padding: 7px 14px; border-radius: 999px; background: var(--sky-tint);
+  color: var(--blue-deep); font-weight: 700; font-size: .84rem;
+}
+.faq-jump a:hover { background: var(--blue); color: #fff; }
 
 /* Quote page. GHL's form_embed.js sets the iframe height by postMessage as the
    survey moves between steps — measured at 538px on step one and 614px on step
