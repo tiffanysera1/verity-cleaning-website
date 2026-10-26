@@ -635,6 +635,7 @@ button { font-family: inherit; }
   margin: 0; background: #fff; border: 1px solid var(--border);
   border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow);
 }
+.ba-card--wide { grid-column: 1 / -1; }
 .ba-card img { display: block; width: 100%; height: auto; }
 .ba-card figcaption { padding: 20px 22px 24px; }
 .ba-tag {

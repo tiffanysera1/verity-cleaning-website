@@ -11,7 +11,7 @@ const BASE = "https://www.veritycleaning.co";
 
 const TITLE = "Before & After Cleaning Photos | Verity Cleaning";
 const DESCRIPTION =
-  "Real before and after photos from Verity Cleaning jobs across Pelham, Shelby County and Birmingham — kitchens, bathrooms, refrigerators and appliances.";
+  "Real before and after photos from Verity Cleaning jobs across Pelham, Shelby County and Birmingham — move-out cleans, kitchens, bathrooms, refrigerators and appliances.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -116,13 +116,13 @@ export default function BeforeAfterPage() {
         <div className="wrap">
           <div className="ba-grid">
             {TRANSFORMATIONS.map((t, i) => (
-              <figure className="ba-card reveal" key={t.image}>
+              <figure className={`ba-card reveal${t.wide ? " ba-card--wide" : ""}`} key={t.image}>
                 <Image
                   src={t.image}
                   alt={t.alt}
-                  width={1000}
+                  width={t.wide ? 2000 : 1000}
                   height={1000}
-                  sizes="(max-width: 760px) 100vw, 560px"
+                  sizes={t.wide ? "(max-width: 760px) 100vw, 1140px" : "(max-width: 760px) 100vw, 560px"}
                   priority={i < 2}
                 />
                 <figcaption>
