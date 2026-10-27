@@ -8,6 +8,7 @@ import ServiceExpect from "@/components/service/ServiceExpect";
 import ServiceResources from "@/components/service/ServiceResources";
 import ServiceCTA from "@/components/service/ServiceCTA";
 import ServiceCrossLinks from "@/components/service/ServiceCrossLinks";
+import ServiceProof, { hasServiceProof } from "@/components/service/ServiceProof";
 import ServiceJsonLd from "@/components/ServiceJsonLd";
 
 export function generateStaticParams() {
@@ -66,6 +67,14 @@ export default async function ServicePage(
           <ServiceIncluded tabs={detail.includedTabs} notIncluded={detail.notIncluded} addOns={detail.addOns} frequencyTiers={detail.frequencyTiers} scopeNote={detail.scopeNote} />
         </div>
       </section>
+
+      {hasServiceProof(service.slug) && (
+        <section className="section tone-sky">
+          <div className="wrap">
+            <ServiceProof slug={service.slug} />
+          </div>
+        </section>
+      )}
 
       <section className="section service-expect-section">
         <div className="wrap">

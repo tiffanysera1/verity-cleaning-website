@@ -657,6 +657,9 @@ button { font-family: inherit; }
   border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow);
 }
 .ba-card--wide { grid-column: 1 / -1; }
+/* For filtered lists, where a wide card can't be hand-placed after an even
+   number of squares: later squares backfill the gap instead. */
+.ba-grid--dense { grid-auto-flow: row dense; }
 .ba-card img { display: block; width: 100%; height: auto; }
 .ba-card figcaption { padding: 20px 22px 24px; }
 .ba-tag {
