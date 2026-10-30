@@ -40,7 +40,7 @@ export default function Reviews() {
               the widget's own title is ever switched off in GHL, the original
               heading can come back. */}
           <h2 className="section-title">
-            Trusted by Homeowners Across Shelby County
+            Trusted by Your Neighbors Over the Mountain
             <Sparkle aria-hidden="true" />
           </h2>
           <p className="lead">
