@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Inter, Caveat } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import ChatWidget from "@/components/ChatWidget";
@@ -9,24 +9,30 @@ import Footer from "@/components/Footer";
 import MobileBar from "@/components/MobileBar";
 import ScrollReveal from "@/components/ScrollReveal";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["600", "700"],
-  style: ["normal", "italic"],
+/* Self-hosted copies of the Google Fonts latin variable files (app/fonts/).
+   next/font/google downloads them during every build, and that download
+   intermittently failed on Vercel and locally ("next/font/google queries have
+   exactly one entry"), failing the deploy. Same files, same weight ranges. */
+const playfair = localFont({
+  src: [
+    { path: "./fonts/playfair-display.woff2", weight: "600 700", style: "normal" },
+    { path: "./fonts/playfair-display-italic.woff2", weight: "600 700", style: "italic" },
+  ],
   variable: "--font-serif",
   display: "swap",
+  adjustFontFallback: "Times New Roman",
 });
 
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+const inter = localFont({
+  src: "./fonts/inter.woff2",
+  weight: "400 700",
   variable: "--font-inter",
   display: "swap",
 });
 
-const caveat = Caveat({
-  subsets: ["latin"],
-  weight: ["500", "600"],
+const caveat = localFont({
+  src: "./fonts/caveat.woff2",
+  weight: "500 600",
   variable: "--font-script",
   display: "swap",
 });
