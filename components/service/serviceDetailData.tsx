@@ -15,6 +15,8 @@ import {
    React can't serialize function references across that boundary. The key
    is resolved to an actual icon component inside ServiceIncluded.tsx,
    which is a client component. */
+import { CONDITION_FAQ } from "../conditionFaq";
+
 export type IncludedTabIconKey = "home" | "spray" | "sparkles" | "home-sparkle" | "check" | "building" | "file" | "bucket";
 
 export type IncludedTab = {
@@ -222,6 +224,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
       { q: "Can I skip or reschedule a visit?", a: "Yes — just let us know as far ahead as you can by call or text, and we'll find a new time that works. You can also sign in to your customer portal to reschedule or cancel a visit yourself, anytime." },
       { q: "Do I need to be home during the cleaning?", a: "No. Many customers provide entry instructions and go about their day. We'll keep you updated along the way if you opt in." },
       { q: "What if I'm not happy with a visit?", a: "Let us know within 24 hours and we'll make it right — that's part of our satisfaction guarantee." },
+      CONDITION_FAQ,
     ],
   },
   "deep-cleaning": {
@@ -337,6 +340,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
       { q: "Should my first cleaning be a deep clean?", a: "We recommend it. Starting with a deep clean gives every future recurring visit a consistent baseline to maintain." },
       { q: "How long does a deep clean take?", a: "It depends on your home's size and condition — we'll give you a time estimate along with your personalized quote." },
       { q: "Do I need to be home?", a: "No, as long as we have entry instructions. Many customers schedule their deep clean while they're out." },
+      CONDITION_FAQ,
     ],
   },
   "move-in-move-out": {
@@ -448,6 +452,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
       { q: "Do you clean empty homes only?", a: "We can clean occupied or empty homes, but move-in/move-out cleans are most thorough once the space is empty." },
       { q: "Will this help me get my deposit back?", a: "A thorough move-out clean addresses the areas most landlords check, though deposit decisions are ultimately up to your landlord or property manager." },
       { q: "Can you clean before the movers arrive?", a: "Yes — just let us know your timeline when you request a quote and we'll work around your move day." },
+      CONDITION_FAQ,
     ],
   },
   "commercial-office-cleaning": {
@@ -482,6 +487,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
       { q: "Do you bring your own supplies and equipment?", a: "Yes, our team arrives fully equipped unless we've agreed on a different arrangement." },
       { q: "Can we set up a recurring schedule?", a: "Absolutely — most of our commercial clients are on a set weekly or biweekly schedule." },
       { q: "Are your cleaners insured for commercial spaces?", a: "Yes, Verity Cleaning is licensed, bonded, and insured for both residential and commercial work." },
+      CONDITION_FAQ,
     ],
   },
   "post-construction-cleaning": {
@@ -516,6 +522,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
       { q: "Can you remove paint splatter and stickers?", a: "Light residue is included; heavier paint splatter or sticker removal is available as an add-on." },
       { q: "Do you haul away construction debris?", a: "We focus on fine dust and surface cleaning. Larger debris haul-away is available as an add-on — just ask when you request your quote." },
       { q: "Is it safe to clean right after construction?", a: "Yes, as long as any hazardous materials have already been handled by your contractor. Let us know the project scope so we can plan accordingly." },
+      CONDITION_FAQ,
     ],
   },
 };

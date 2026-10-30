@@ -6,6 +6,7 @@ import { SERVICES } from "@/components/servicesData";
 import { SERVICE_DETAILS } from "@/components/service/serviceDetailData";
 import { PM_FAQ } from "@/components/propertyManagerData";
 import { QUOTE_FAQ } from "@/components/quoteFaq";
+import { CONDITION_FAQ } from "@/components/conditionFaq";
 
 const PATH = "/faq/";
 const BASE = "https://www.veritycleaning.co";
@@ -41,7 +42,9 @@ const GROUPS: FaqGroup[] = [
     return [{
       id: s.slug,
       title: s.title,
-      items: detail.faq,
+      /* The condition question sits on every service page; here it is shown
+         once, under Quotes & payment, instead of five times. */
+      items: detail.faq.filter((item) => item !== CONDITION_FAQ),
       more: { href: `/services/${s.slug}/`, text: `What ${s.title.toLowerCase()} includes` },
     }];
   }),

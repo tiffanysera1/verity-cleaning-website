@@ -2,6 +2,8 @@
    FAQs: the quote page answers what stops someone finishing the form, not
    what a given clean includes. Every answer restates something already true
    and published elsewhere on the site. Also listed on /faq/. */
+import { CONDITION_FAQ } from "./conditionFaq";
+
 export type QuoteFaq = {
   q: string;
   a: string;
@@ -17,6 +19,7 @@ export const QUOTE_FAQ: QuoteFaq[] = [
     q: "Do you need to come to my house before quoting?",
     a: "No. That is what the questions in the form are for. Tell us the size and condition of the home and the service you want, add photos if you like, and we will send you prices for light, moderate and heavy condition. Your quote is based on the condition you describe, so if our cleaner arrives and finds the home in a different condition, we will adjust the price and document why. We always do our best to honor your original quote, but please keep in mind that organizing and heavy buildup take our cleaners more time and manpower.",
   },
+  CONDITION_FAQ,
   {
     q: "What if my home is in really bad shape?",
     a: "Then answer the condition question honestly \u2014 it helps us rather than putting us off. We would far rather know in advance than surprise a cleaner on the day, and an accurate answer is what makes the quote accurate. We have cleaned homes at every point on that scale.",
