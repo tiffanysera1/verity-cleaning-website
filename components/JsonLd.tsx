@@ -31,6 +31,10 @@ export default function JsonLd() {
       "https://www.google.com/maps?cid=17576216227421438205",
       "https://nextdoor.com/page/verity-cleaning-pelham-al/",
       "https://www.thumbtack.com/al/birmingham/pro/verity-cleaning/service/587960053621571584",
+      /* Supplied by the owner. Yelp blocks automated requests (403), so this
+         one could not be machine-checked signed out; it is the public /biz/
+         form, with the share-tracking parameter removed. */
+      "https://www.yelp.com/biz/verity-cleaning-pelham",
     ],
     image: "https://www.veritycleaning.co/og-image.jpg",
     priceRange: "$$",

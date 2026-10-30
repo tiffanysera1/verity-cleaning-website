@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Phone, Sms, Mail, FacebookIcon, InstagramIcon, Nextdoor } from "./Icons";
+import { Phone, Sms, Mail, FacebookIcon, InstagramIcon, Nextdoor, YelpIcon } from "./Icons";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -23,6 +23,9 @@ export default function Footer() {
             </a>
             <a href="https://nextdoor.com/page/verity-cleaning-pelham-al/" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Nextdoor">
               <Nextdoor style={{ width: "16px", height: "16px" }} />
+            </a>
+            <a href="https://www.yelp.com/biz/verity-cleaning-pelham" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Yelp">
+              <YelpIcon style={{ width: "16px", height: "16px" }} />
             </a>
           </div>
         </div>
