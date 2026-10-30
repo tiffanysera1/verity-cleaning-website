@@ -932,6 +932,8 @@ button { font-family: inherit; }
 }
 .area-hoods svg { width: 12px; height: 12px; color: var(--blue); }
 .area-hoods-note { font-size: .86rem; color: var(--muted); }
+.area-nearby { margin-top: 14px; font-size: .95rem; color: var(--navy-muted); }
+.hero .sub a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .area-lead-card {
   background: var(--sky-tint);
   border: 1px solid var(--border);
@@ -1033,7 +1035,7 @@ button { font-family: inherit; }
   font-size: 1rem;
   line-height: 1.75;
 }
-.area-lead-line a { color: var(--blue); font-weight: 700; }
+.area-lead-line a, .area-nearby a { color: var(--blue); font-weight: 700; }
 .homes-service-area a { color: var(--blue); font-weight: 700; }
 
 /* Call-to-dial line under every quote button. The number itself is the link

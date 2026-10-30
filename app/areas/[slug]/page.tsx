@@ -20,8 +20,13 @@ export async function generateMetadata(
   const area = getArea(slug);
   if (!area) return {};
 
-  const title = `House Cleaning in ${area.name}, AL | Verity Cleaning`;
-  const description = `House cleaning in ${area.name}, AL — recurring, deep, and move-out cleans. Licensed, bonded, insured, with upfront quotes. Call or text (205) 946-0304.`;
+  /* "Maid service" is the other common way people search for this, and the
+     site never said it anywhere. Brand suffix shortens to stay within 60. */
+  const longTitle = `House Cleaning & Maid Service in ${area.name}, AL | Verity Cleaning`;
+  const title = longTitle.length <= 60
+    ? longTitle
+    : `House Cleaning & Maid Service in ${area.name}, AL | Verity`;
+  const description = `House cleaning and maid service in ${area.name}, AL: recurring, deep and move-out cleans. Licensed, bonded & insured. Call or text (205) 946-0304.`;
 
   return {
     title,
@@ -46,6 +51,9 @@ export default async function AreaPage(
 
   const lead = SERVICES.find((s) => s.slug === area.leadService.slug);
   const others = SERVICES.filter((s) => s.slug !== area.leadService.slug);
+  const nearby = area.nearby
+    .map((s) => getArea(s))
+    .filter((a): a is NonNullable<typeof a> => Boolean(a));
 
   return (
     <main id="main">
@@ -125,6 +133,18 @@ export default async function AreaPage(
             <p className="area-hoods-note">
               Not listed? We serve all of {area.name}&nbsp;&mdash; just ask.
             </p>
+            {nearby.length > 0 && (
+              <p className="area-nearby">
+                Nearby, we also clean homes in{" "}
+                {nearby.map((n, i) => (
+                  <span key={n.slug}>
+                    {i > 0 && (i === nearby.length - 1 ? " and " : ", ")}
+                    <a href={`/areas/${n.slug}/`}>{n.name}</a>
+                  </span>
+                ))}
+                .
+              </p>
+            )}
           </div>
 
           {lead && (

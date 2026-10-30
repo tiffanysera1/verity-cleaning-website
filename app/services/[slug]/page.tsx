@@ -22,14 +22,24 @@ export async function generateMetadata(
   const service = getService(slug);
   if (!service) return {};
 
-  const title = `${service.title} in Pelham, AL | Verity Cleaning`;
-  /* Commercial & Office Cleaning is the longest service name and pushed the
-     full title to 64 characters, so the brand suffix shortens for long names. */
-  const shortTitle = `${service.title} in Pelham, AL | Verity`;
-  const description = `${service.summary} Serving Pelham & Shelby County. Call or text (205) 946-0304.`;
+  /* Hoover and Vestavia Hills are the towns we are working to rank in, so
+     they sit in every service title beside Pelham. Titles over 60 characters
+     get cut off in results, so the brand suffix shortens, then drops, and
+     the longest service names keep only the two target towns. */
+  const place = "in Pelham, Hoover & Vestavia Hills";
+  const title = [
+    `${service.title} ${place} | Verity Cleaning`,
+    `${service.title} ${place} | Verity`,
+    `${service.title} ${place}`,
+  ].find((t) => t.length <= 60) ?? `${service.title} in Hoover & Vestavia Hills`;
+  /* Kept under 160 characters so the town names are not cut off. */
+  const fullDescription = `${service.summary} Serving Hoover, Vestavia Hills & Pelham, AL.`;
+  const description = fullDescription.length <= 160
+    ? fullDescription
+    : `${service.summary} Serving Hoover & Vestavia Hills.`;
 
   return {
-    title: title.length > 60 ? shortTitle : title,
+    title,
     description,
     alternates: { canonical: `/services/${service.slug}/` },
     openGraph: {

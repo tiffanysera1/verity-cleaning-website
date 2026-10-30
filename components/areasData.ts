@@ -26,6 +26,9 @@ export type Area = {
      these are the strongest local signal on the page and the most
      embarrassing thing to get wrong. */
   neighborhoods: string[];
+  /* Bordering towns we also serve, linked from the page. Keep it to towns
+     that actually border this one, so the links read as real geography. */
+  nearby: string[];
 };
 
 export type AreaFaq = { q: string; a: string };
@@ -93,6 +96,7 @@ export const AREAS: Area[] = [
         "Most of our Pelham work is recurring — weekly, biweekly, or monthly visits for households who would rather not think about it again.",
     },
     neighborhoods: ["Ballantrae", "Chandalar", "Oak Mountain", "Indian Valley"],
+    nearby: ["hoover", "helena", "alabaster"],
   },
   {
     slug: "hoover",
@@ -110,6 +114,7 @@ export const AREAS: Area[] = [
         "Bigger Hoover homes tend to start with a deep clean — baseboards, ceiling fans, grout, and the corners that routine cleaning skips — before moving onto a recurring schedule.",
     },
     neighborhoods: ["Riverchase", "Bluff Park", "Trace Crossings", "Greystone"],
+    nearby: ["vestavia-hills", "pelham", "helena"],
   },
   {
     slug: "vestavia-hills",
@@ -128,6 +133,7 @@ export const AREAS: Area[] = [
         "Established homes usually need a thorough first clean to reset them, after which a recurring visit keeps them there.",
     },
     neighborhoods: ["Cahaba Heights", "Liberty Park", "Vestavia Hills East"],
+    nearby: ["hoover", "mountain-brook", "homewood"],
   },
   {
     slug: "homewood",
@@ -146,6 +152,7 @@ export const AREAS: Area[] = [
         "Homewood turns over more than most neighborhoods nearby, so move-out cleans — the kind that decide whether a deposit comes back — are a regular request here.",
     },
     neighborhoods: ["Edgewood", "Hollywood", "West Homewood", "Rosedale"],
+    nearby: ["mountain-brook", "vestavia-hills"],
   },
   {
     slug: "mountain-brook",
@@ -163,6 +170,7 @@ export const AREAS: Area[] = [
         "Homes here are usually maintained on a standing schedule rather than cleaned in bursts, which keeps the detail work manageable visit to visit.",
     },
     neighborhoods: ["Crestline Village", "English Village", "Mountain Brook Village", "Cherokee Bend"],
+    nearby: ["homewood", "vestavia-hills"],
   },
   {
     slug: "helena",
@@ -181,6 +189,7 @@ export const AREAS: Area[] = [
         "Weekly and biweekly visits are the norm here — the point is getting the weekend back, not deep-cleaning twice a year.",
     },
     neighborhoods: ["Old Town Helena", "Riverwoods", "Hillsboro", "Braeburn"],
+    nearby: ["pelham", "hoover", "alabaster"],
   },
   {
     slug: "alabaster",
@@ -199,6 +208,7 @@ export const AREAS: Area[] = [
         "Newer homes hold a routine clean well, so most Alabaster households settle into a biweekly or monthly visit.",
     },
     neighborhoods: ["Weatherly", "Silver Creek", "Meadow Brook", "Kentwood"],
+    nearby: ["pelham", "helena"],
   },
 ];
 

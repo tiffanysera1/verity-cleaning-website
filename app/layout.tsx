@@ -33,15 +33,17 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.veritycleaning.co"),
-  title: "Pelham & Shelby County House Cleaning | Verity Cleaning",
+  title: "Pelham, Hoover & Vestavia Hills House Cleaning | Verity",
   description:
-    "House & office cleaning in Pelham, Alabaster, Helena, and Hoover, AL. Licensed, bonded, insured, 100% satisfaction guarantee. Call or text (205) 946-0304.",
+    "House cleaning in Pelham, Hoover, Vestavia Hills, Alabaster and Helena, AL. Licensed, bonded, insured, 100% satisfaction guarantee. Call (205) 946-0304.",
   alternates: { canonical: "/" },
   keywords: [
     "cleaning service Shelby County",
     "home cleaning Pelham AL",
     "house cleaning Alabaster AL",
+    "house cleaning Hoover AL",
     "maid service Hoover AL",
+    "house cleaning Vestavia Hills AL",
     "deep cleaning Helena AL",
     "office cleaning Chelsea AL",
     "licensed insured cleaning company",
@@ -53,7 +55,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Verity Cleaning — A Clean Home, More Time Back",
     description:
-      "Licensed, bonded, and insured cleaning with a 100% satisfaction guarantee. Serving Pelham, Alabaster, Hoover, and Helena. Call or text (205) 946-0304.",
+      "Licensed, bonded, and insured cleaning with a 100% satisfaction guarantee. Serving Pelham, Hoover, Vestavia Hills, Alabaster, and Helena. Call or text (205) 946-0304.",
     type: "website",
     url: "https://www.veritycleaning.co",
     siteName: "Verity Cleaning LLC",
