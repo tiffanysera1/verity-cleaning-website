@@ -17,7 +17,7 @@ export const QUOTE_FAQ: QuoteFaq[] = [
   },
   {
     q: "Do you need to come to my house before quoting?",
-    a: "No. That is what the questions in the form are for. Tell us the size and condition of the home and the service you want, add photos if you like, and we will send you prices for light, moderate and heavy condition. Your quote is based on the condition you describe, so if our cleaner arrives and finds the home in a different condition, we will adjust the price and document why. We always do our best to honor your original quote, but please keep in mind that organizing and heavy buildup take our cleaners more time and manpower.",
+    a: "No. That is what the questions in the form are for. Tell us the size and condition of the home and the service you want, add photos if you like, and we will send you prices for light, moderate and heavy condition. Your quote is based on the condition you describe, so if our cleaner arrives and finds the home in a different condition, we will talk with you before doing any additional work, then adjust the price and document why. We always do our best to honor your original quote, but please keep in mind that organizing and heavy buildup take our cleaners more time and manpower.",
   },
   CONDITION_FAQ,
   {

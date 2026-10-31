@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.veritycleaning.co"),
   title: "Pelham, Hoover & Vestavia Hills House Cleaning | Verity",
   description:
-    "House cleaning in Pelham, Hoover, Vestavia Hills, Alabaster and Helena, AL. Licensed, bonded, insured, 100% satisfaction guarantee. Call (205) 946-0304.",
+    "House cleaning across Birmingham's over-the-mountain suburbs: Hoover, Vestavia Hills, Mountain Brook, Homewood and Pelham. Licensed, bonded & insured.",
   alternates: { canonical: "/" },
   keywords: [
     "cleaning service Shelby County",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Verity Cleaning — A Clean Home, More Time Back",
     description:
-      "Licensed, bonded, and insured cleaning with a 100% satisfaction guarantee. Serving Pelham, Hoover, Vestavia Hills, Alabaster, and Helena. Call or text (205) 946-0304.",
+      "Licensed, bonded, and insured cleaning with a 100% satisfaction guarantee. Serving Hoover, Vestavia Hills, Mountain Brook, Homewood and Pelham. Call or text (205) 946-0304.",
     type: "website",
     url: "https://www.veritycleaning.co",
     siteName: "Verity Cleaning LLC",

@@ -28,9 +28,11 @@ export default function Hero() {
             </span>
           </h1>
           <p className="sub">
-            House cleaning in Pelham, <a href="/areas/hoover/">Hoover</a>,{" "}
-            <a href="/areas/vestavia-hills/">Vestavia Hills</a>, Alabaster &amp; Helena &mdash; we
-            clean with care so you can focus on what matters most.
+            House cleaning in <a href="/areas/hoover/">Hoover</a>,{" "}
+            <a href="/areas/vestavia-hills/">Vestavia Hills</a>,{" "}
+            <a href="/areas/mountain-brook/">Mountain Brook</a>,{" "}
+            <a href="/areas/homewood/">Homewood</a> &amp; Pelham &mdash; we clean with care so
+            you can focus on what matters most.
           </p>
 
           <div className="hero-quote-wrap reveal" id="quote" style={{ scrollMarginTop: "96px" }}>
