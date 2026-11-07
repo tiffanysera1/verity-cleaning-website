@@ -182,18 +182,18 @@ export default async function AreaPage(
             </div>
 
             <aside className="area-lead-card area-focus-card">
-              <p className="area-lead-label">Moving in or out?</p>
+              <p className="area-lead-label">{focus.card.label}</p>
               <h3>{focusService.title}</h3>
-              <p>No trip charge anywhere in {area.name}, and you pay after the clean is complete.</p>
+              <p>{focus.card.note}</p>
               <a className="btn btn--primary" href={QUOTE_URL}>
-                Get a Move-Out Quote
+                {focus.card.cta}
                 <ArrowRight aria-hidden="true" />
               </a>
               <a className="review-more" href={`/services/${focusService.slug}/`}>
                 See the full checklist <ArrowRight />
               </a>
               <a className="review-more" href="/before-and-after/">
-                See real move-out before &amp; afters <ArrowRight />
+                {focus.card.proofText} <ArrowRight />
               </a>
             </aside>
           </div>

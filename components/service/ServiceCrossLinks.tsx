@@ -35,10 +35,10 @@ export default function ServiceCrossLinks({
         <p className="service-crosslinks-line">
           <Sparkle aria-hidden="true" />
           <span>
-            <strong>Often paired with {links.related.title}.</strong>{" "}
+            <strong>{links.related.lead ?? `Often paired with ${links.related.title}.`}</strong>{" "}
             {links.related.note}{" "}
-            <a href={`/services/${links.related.slug}/`}>
-              Compare the two <ArrowRight />
+            <a href={links.related.href ?? `/services/${links.related.slug}/`}>
+              {links.related.linkText ?? "Compare the two"} <ArrowRight />
             </a>
           </span>
         </p>

@@ -28,7 +28,7 @@ const BASE = "https://www.veritycleaning.co";
 
 const TITLE = "Property Management Cleaning | Birmingham & Shelby County";
 const DESCRIPTION =
-  "Turnover cleaning for property managers across Birmingham & Shelby County. Same or next-day turnover, photo record of every unit, standardized checklists. Call (205) 946-0304.";
+  "Turnover cleaning for property managers across Birmingham & Shelby County. Same or next-day turnover, a photo record of every unit and standardized checklists.";
 
 export const metadata: Metadata = {
   title: TITLE,

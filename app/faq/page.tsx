@@ -11,16 +11,21 @@ import { CONDITION_FAQ } from "@/components/conditionFaq";
 const PATH = "/faq/";
 const BASE = "https://www.veritycleaning.co";
 
-const TITLE = "Cleaning FAQ | Verity Cleaning";
+const TITLE = "House Cleaning FAQ | Hoover, Vestavia Hills & Pelham";
 const DESCRIPTION =
-  "Answers about quotes, payment, scheduling and what each Verity Cleaning service includes — standard, deep, move-in/move-out, commercial and post-construction cleaning.";
+  "Answers about quotes, pricing, condition levels, scheduling and what each Verity Cleaning service includes, from recurring and deep cleans to move-outs.";
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: PATH },
-  openGraph: { title: "Frequently Asked Questions — Verity Cleaning", description: DESCRIPTION, url: PATH },
-  twitter: { card: "summary", title: TITLE, description: DESCRIPTION },
+  openGraph: {
+    title: "Frequently Asked Questions — Verity Cleaning",
+    description: DESCRIPTION,
+    url: PATH,
+    images: [{ url: "/og-image.jpg", alt: "A tidy, sunlit home cleaned by Verity Cleaning" }],
+  },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
 
 type FaqGroup = {

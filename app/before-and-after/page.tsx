@@ -11,7 +11,7 @@ const BASE = "https://www.veritycleaning.co";
 
 const TITLE = "Before & After Cleaning Photos | Verity Cleaning";
 const DESCRIPTION =
-  "Real before and after photos from Verity Cleaning jobs across Pelham, Shelby County and Birmingham — move-out cleans, kitchens, bathrooms, refrigerators and appliances.";
+  "Real before and after photos from Verity Cleaning jobs over the mountain and in Pelham: move-out cleans, kitchens, bathrooms, refrigerators and appliances.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -133,6 +133,13 @@ export default function BeforeAfterPage() {
               </figure>
             ))}
           </div>
+
+          <p className="ba-service-links">
+            Every photo is tagged with the clean it came from. See what&rsquo;s included in a{" "}
+            <a href="/services/move-in-move-out/">move-out clean</a>, a{" "}
+            <a href="/services/deep-cleaning/">deep clean</a>, or the{" "}
+            <a href="/services/standard-cleaning/">standard clean</a> behind every recurring visit.
+          </p>
         </div>
       </section>
 

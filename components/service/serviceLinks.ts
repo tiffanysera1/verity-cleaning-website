@@ -13,7 +13,9 @@
 export type ServiceLinks = {
   areas: { slug: string; name: string }[];
   areaNote: string;
-  related?: { slug: string; title: string; note: string };
+  /* lead and linkText override the default "Often paired with" wording, for
+     a related page that is not itself a service. */
+  related?: { slug: string; title: string; note: string; href?: string; lead?: string; linkText?: string };
 };
 
 export const SERVICE_LINKS: Record<string, ServiceLinks> = {
@@ -52,6 +54,14 @@ export const SERVICE_LINKS: Record<string, ServiceLinks> = {
     ],
     areaNote:
       "Homewood turns over more than most neighborhoods nearby, so move-out cleans are a regular request there.",
+    related: {
+      slug: "property-management-cleaning",
+      href: "/property-management-cleaning/",
+      title: "Turnover cleaning for property managers",
+      lead: "Managing rentals?",
+      note: "Property managers get same or next-day unit turnover, with before, after and staging photos on every job.",
+      linkText: "Turnover cleaning for property managers",
+    },
   },
   "commercial-office-cleaning": {
     areas: [

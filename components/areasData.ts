@@ -42,6 +42,7 @@ export type AreaFocus = {
   includesHeading: string;
   paragraphs: string[];
   highlights: string[];
+  card: { label: string; note: string; cta: string; proofText: string };
   faq: AreaFaq;
 };
 
@@ -77,7 +78,7 @@ export function areaFaqs(area: Area): AreaFaq[] {
   return [
     {
       q: `Do you clean homes in ${area.name}?`,
-      a: `Yes. We cover all of ${area.name} in ${area.county}, including ${joinList(area.neighborhoods)}. If your neighborhood is not listed, just ask — we serve the whole city.`,
+      a: `Yes. Our house cleaners cover all of ${area.name} in ${area.county}, including ${joinList(area.neighborhoods)}. If your neighborhood is not listed, just ask — we serve the whole city.`,
     },
     {
       q: `What do most ${area.name} customers book?`,
@@ -148,6 +149,12 @@ export const AREAS: Area[] = [
         "Tile and grout detail-cleaned",
         "Inside empty closets vacuumed",
       ],
+      card: {
+        label: "Moving in or out?",
+        note: "No trip charge anywhere in Hoover, and you pay after the clean is complete.",
+        cta: "Get a Move-Out Quote",
+        proofText: "See real move-out before & afters",
+      },
       faq: {
         q: "Do you do move-out cleaning in Hoover?",
         a: "Yes, across all of Hoover. A move-out clean covers the inside of empty cabinets and drawers, the refrigerator, freezer, stove and oven, interior windowpanes and hand-detailed baseboards. Book it after your belongings are out and before your final walkthrough.",
@@ -172,6 +179,35 @@ export const AREAS: Area[] = [
     },
     neighborhoods: ["Cahaba Heights", "Liberty Park", "Vestavia Hills East"],
     nearby: ["hoover", "mountain-brook", "homewood"],
+    focus: {
+      serviceSlug: "deep-cleaning",
+      heading: "Deep cleaning in Vestavia Hills",
+      includesHeading: "What a Vestavia Hills deep clean includes",
+      paragraphs: [
+        "Homes that have been lived in for years collect buildup in the places a routine clean does not reach \u2014 trim, tile grout, window sills, vents and baseboards. A deep clean is our detailed full-home reset for exactly that: right for a first clean, a seasonal refresh, or a home that has not been done properly in a while.",
+        "Most Vestavia Hills homes start with one deep clean, then move onto a recurring schedule that keeps them there. Our house cleaners work across Vestavia Hills, including Cahaba Heights, Liberty Park and Vestavia Hills East.",
+      ],
+      highlights: [
+        "Baseboards hand-detailed",
+        "Tile and grout detail-cleaned",
+        "Interior windowpanes cleaned",
+        "Hood vents cleaned",
+        "Blinds and windowsills wiped",
+        "Doors, frames and fixtures detailed",
+        "Inside the microwave cleaned",
+        "Ceiling fans dusted (within reach)",
+      ],
+      card: {
+        label: "First clean or seasonal reset?",
+        note: "No trip charge anywhere in Vestavia Hills, and you pay after the clean is complete.",
+        cta: "Get a Deep Clean Quote",
+        proofText: "See real before & afters",
+      },
+      faq: {
+        q: "Do you do deep cleaning in Vestavia Hills?",
+        a: "Yes, across all of Vestavia Hills. A deep clean covers hand-detailed baseboards, tile and grout, interior windowpanes, hood vents, blinds and windowsills \u2014 the detail areas routine cleaning does not reach. Inside the oven and refrigerator are available as add-ons.",
+      },
+    },
   },
   {
     slug: "homewood",
@@ -191,6 +227,34 @@ export const AREAS: Area[] = [
     },
     neighborhoods: ["Edgewood", "Hollywood", "West Homewood", "Rosedale"],
     nearby: ["mountain-brook", "vestavia-hills"],
+    focus: {
+      serviceSlug: "move-in-move-out",
+      heading: "Move-out cleaning in Homewood",
+      includesHeading: "What a Homewood move-out clean includes",
+      paragraphs: [
+        "Homewood turns over more than most neighborhoods nearby, so move-out cleans \u2014 the kind that decide whether a deposit comes back \u2014 are a regular request here. A move-out clean is our detailed turnover clean for an empty or substantially empty home, from the inside of every cabinet and drawer to the appliance interiors.",
+        "Homewood's older homes need care as well as detail: hardwood, original trim and tile all want the right products and a bit of patience. Book after your belongings are out and before your final walkthrough, and tell us where to park \u2014 we clean move-outs across Edgewood, Hollywood, West Homewood and Rosedale.",
+      ],
+      highlights: [
+        "Inside empty cabinets and drawers",
+        "Inside the refrigerator, freezer, stove and oven",
+        "Inside the microwave, plus hood vents",
+        "Interior windowpanes",
+        "Baseboards hand-detailed",
+        "Tile and grout detail-cleaned",
+        "Inside empty closets vacuumed",
+      ],
+      card: {
+        label: "Moving in or out?",
+        note: "No trip charge anywhere in Homewood, and you pay after the clean is complete.",
+        cta: "Get a Move-Out Quote",
+        proofText: "See real move-out before & afters",
+      },
+      faq: {
+        q: "Do you do move-out cleaning in Homewood?",
+        a: "Yes \u2014 move-out cleans are a regular request in Homewood. Each one covers the inside of empty cabinets and drawers, the refrigerator, freezer, stove and oven, interior windowpanes and hand-detailed baseboards, and is best booked after your belongings are out.",
+      },
+    },
   },
   {
     slug: "mountain-brook",
@@ -209,6 +273,34 @@ export const AREAS: Area[] = [
     },
     neighborhoods: ["Crestline Village", "English Village", "Mountain Brook Village", "Cherokee Bend"],
     nearby: ["homewood", "vestavia-hills"],
+    focus: {
+      serviceSlug: "standard-cleaning",
+      heading: "Recurring house cleaning in Mountain Brook",
+      includesHeading: "What every Mountain Brook visit includes",
+      paragraphs: [
+        "Most Mountain Brook homes are kept on a standing schedule rather than cleaned in bursts, which keeps the detail work manageable from visit to visit. Our standard clean is the service behind every recurring visit \u2014 weekly, biweekly or every four weeks.",
+        "The more often we come, the less each visit costs: 20% off weekly, 10% off biweekly and 5% off monthly. We work to a checklist and walk you through what was done, room by room, in Crestline Village, English Village, Mountain Brook Village, Cherokee Bend and across the city.",
+      ],
+      highlights: [
+        "Countertops cleaned and sanitized",
+        "Stovetop and appliance exteriors cleaned",
+        "Inside the microwave cleaned",
+        "Showers, tubs, sinks and toilets cleaned",
+        "Floors vacuumed, swept and mopped",
+        "Beds made (when clean linens are out)",
+        "Ceiling fans and surfaces dusted",
+      ],
+      card: {
+        label: "Want it handled for good?",
+        note: "Up to 20% off with weekly visits, no trip charge, and you pay after each clean.",
+        cta: "Get a Recurring Quote",
+        proofText: "See real before & afters",
+      },
+      faq: {
+        q: "Do you offer recurring house cleaning in Mountain Brook?",
+        a: "Yes. Our standard clean can be booked weekly, biweekly or every four weeks anywhere in Mountain Brook, and the more often we come, the less each visit costs: 20% off weekly, 10% off biweekly and 5% off monthly.",
+      },
+    },
   },
   {
     slug: "helena",

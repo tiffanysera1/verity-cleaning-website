@@ -31,6 +31,11 @@ export default function ServicesDecision() {
             </div>
           ))}
         </div>
+
+        <p className="decision-more reveal">
+          Managing rentals? <a href="/property-management-cleaning/">Turnover cleaning for property managers</a>{" "}
+          gets same or next-day unit turnover, with before, after and staging photos on every job.
+        </p>
       </div>
     </section>
   );

@@ -9,9 +9,9 @@ import HubJsonLd from "@/components/HubJsonLd";
 import { SERVICES } from "@/components/servicesData";
 
 export const metadata: Metadata = {
-  title: "Cleaning Services in Shelby County, AL | Verity Cleaning",
+  title: "Cleaning Services in Hoover, Vestavia Hills & Pelham, AL",
   description:
-    "Compare recurring, deep, move-in/move-out, commercial, and post-construction cleaning in Pelham & Shelby County, AL. Find the right fit in seconds.",
+    "Compare recurring, deep, move-in/move-out, commercial and post-construction cleaning across Hoover, Vestavia Hills, Mountain Brook, Homewood and Pelham.",
   alternates: { canonical: "/services/" },
   openGraph: {
     title: "All Cleaning Services | Verity Cleaning",
@@ -26,7 +26,7 @@ export default function ServicesIndexPage() {
     <main id="main">
       <HubJsonLd
         path="/services/"
-        name="Cleaning Services in Shelby County, AL"
+        name="Cleaning Services in Hoover, Vestavia Hills & Pelham, AL"
         description="Compare recurring, deep, move-in/move-out, commercial, and post-construction cleaning from Verity Cleaning."
         breadcrumbName="Services"
         items={SERVICES.map((s) => ({ name: s.title, url: `/services/${s.slug}/` }))}
