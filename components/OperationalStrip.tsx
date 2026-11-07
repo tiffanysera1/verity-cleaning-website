@@ -1,6 +1,6 @@
 import { Users, CheckCircle, Shield, Heart } from "./Icons";
 
-const ITEMS = [
+export const TRUST_ITEMS = [
   { icon: Users, title: "Background Checked Cleaners", sub: "Every cleaner passes a background check before entering your home." },
   { icon: CheckCircle, title: "100% Satisfaction Guaranteed", sub: "We make it right, always." },
   { icon: Shield, title: "Insured for Your Peace of Mind", sub: "Licensed, bonded & insured." },
@@ -13,7 +13,7 @@ export default function OperationalStrip() {
       <div className="wrap">
         <div className="trust-strip-frame reveal">
           <div className="trust-strip">
-            {ITEMS.map(({ icon: Icon, title, sub }) => (
+            {TRUST_ITEMS.map(({ icon: Icon, title, sub }) => (
               <div className="trust-item" key={title}>
                 <span className="ic" aria-hidden="true">
                   <Icon />

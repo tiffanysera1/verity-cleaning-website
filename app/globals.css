@@ -951,6 +951,24 @@ button { font-family: inherit; }
 .area-focus-card .btn { margin-top: 6px; }
 @media (max-width: 560px) { .area-focus-list { grid-template-columns: 1fr; } }
 .svc-h1-place { display: block; margin-top: 10px; font-family: var(--font-inter), system-ui, sans-serif; font-size: .95rem; font-weight: 600; letter-spacing: 0; line-height: 1.4; color: var(--navy-muted); }
+.area-why-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.area-why-card { background: #fff; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 24px 22px; box-shadow: var(--shadow); }
+.area-why-card .ic { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: var(--sky-tint); color: var(--blue); }
+.area-why-card .ic svg { width: 20px; height: 20px; }
+.area-why-card b { display: block; margin-top: 14px; font-family: var(--font-display); font-size: 1.02rem; color: var(--navy); }
+.area-why-card p { margin-top: 6px; color: var(--navy-muted); font-size: .9rem; line-height: 1.55; }
+.area-why-note { margin-top: 26px; text-align: center; color: var(--navy-muted); font-size: .98rem; }
+.area-price-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; max-width: 980px; margin: 0 auto; }
+.area-price-card { background: #fff; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 24px 26px; }
+.area-price-card b { display: block; font-family: var(--font-display); font-size: 1.1rem; color: var(--navy); }
+.area-price-card p, .area-price-card li { margin-top: 8px; color: var(--navy-muted); font-size: .95rem; line-height: 1.6; }
+.area-price-card ul { list-style: none; padding: 0; margin-top: 4px; }
+.area-price-card li strong { color: var(--blue); }
+.area-price-card a { color: var(--blue); font-weight: 700; }
+.area-focus-photos { margin-top: 40px; }
+.area-focus-photos-label { margin-bottom: 14px; font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--navy-muted); }
+@media (max-width: 960px) { .area-why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .area-why-grid, .area-price-grid { grid-template-columns: 1fr; } }
 .decision-more { margin: 32px auto 0; max-width: 62ch; text-align: center; color: var(--navy-muted); font-size: .98rem; line-height: 1.6; }
 .decision-more a, .ba-service-links a { color: var(--blue); font-weight: 700; }
 .ba-service-links { margin: 36px auto 0; max-width: 64ch; text-align: center; color: var(--navy-muted); font-size: 1rem; line-height: 1.7; }

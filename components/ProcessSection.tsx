@@ -1,6 +1,6 @@
 import { Camera, FileText, Sms, HomeSparkle, CheckCircle, ArrowRight, Sparkle, CalendarCheck, Clock, CreditCard, MessageCircle } from "./Icons";
 
-const STEPS = [
+export const STEPS = [
   {
     Icon: Camera,
     title: "Request a Quote",

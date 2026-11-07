@@ -47,11 +47,11 @@ export default function Footer() {
         <div id="footer-area" style={{ scrollMarginTop: "96px" }}>
           <h4>Service Area</h4>
           <ul>
-            <li><a href="/areas/pelham/">Pelham</a></li>
             <li><a href="/areas/hoover/">Hoover</a></li>
             <li><a href="/areas/vestavia-hills/">Vestavia Hills</a></li>
             <li><a href="/areas/homewood/">Homewood</a></li>
             <li><a href="/areas/mountain-brook/">Mountain Brook</a></li>
+            <li><a href="/areas/pelham/">Pelham</a></li>
             <li><a href="/areas/helena/">Helena</a></li>
             <li><a href="/areas/alabaster/">Alabaster</a></li>
             <li><a href="/areas/">All service areas</a></li>

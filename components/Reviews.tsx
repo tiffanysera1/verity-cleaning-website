@@ -26,9 +26,9 @@ import { GOOGLE_REVIEWS_URL } from "./googleBusiness";
 export const WIDGET_SRC = "https://link.veritycleaning.co/reputation/widgets/review_widget/JAv7zXgBbtrbB9rtMj4X";
 export const WIDGET_LOADER = "https://link.veritycleaning.co/reputation/assets/review-widget.js";
 
-export default function Reviews() {
+export default function Reviews({ sky = true }: { sky?: boolean }) {
   return (
-    <section className="section tone-sky" id="reviews">
+    <section className={`section${sky ? " tone-sky" : ""}`} id="reviews">
       <div className="wrap">
         <div className="center section-head reveal">
           {/* Deliberately not "What Your Neighbors Say" any more: the GHL

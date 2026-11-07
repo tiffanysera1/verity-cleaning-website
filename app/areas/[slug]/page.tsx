@@ -8,6 +8,8 @@ import { GOOGLE_REVIEWS_URL, GOOGLE_RATING } from "@/components/googleBusiness";
 import { ArrowRight, Star, Sparkle, Shield, Pin, Plus, Check } from "@/components/Icons";
 import AreaJsonLd from "@/components/AreaJsonLd";
 import CallLine from "@/components/CallLine";
+import Reviews from "@/components/Reviews";
+import { AreaWhyVerity, AreaPricing, AreaHowItWorks, FocusPhotos } from "@/components/AreaSections";
 
 export function generateStaticParams() {
   return AREAS.map((a) => ({ slug: a.slug }));
@@ -56,6 +58,12 @@ export default async function AreaPage(
   const nearby = area.nearby
     .map((s) => getArea(s))
     .filter((a): a is NonNullable<typeof a> => Boolean(a));
+
+  /* Sections below the hero alternate plain and sky backgrounds. Pages with
+     a focus section have one more block than those without, so the tone is
+     handed out in render order rather than fixed per section. */
+  let sectionIndex = 0;
+  const nextSky = () => sectionIndex++ % 2 === 1;
 
   return (
     <main id="main">
@@ -107,7 +115,7 @@ export default async function AreaPage(
         </div>
       </section>
 
-      <section className="section">
+      <section className={`section${nextSky() ? " tone-sky" : ""}`}>
         <div className="wrap area-body">
           <div className="area-copy">
             <h2 className="section-title">Cleaning {area.name} homes</h2>
@@ -163,7 +171,7 @@ export default async function AreaPage(
       </section>
 
       {focus && focusService && (
-        <section className="section tone-sky" id={focus.serviceSlug}>
+        <section className={`section${nextSky() ? " tone-sky" : ""}`} id={focus.serviceSlug}>
           <div className="wrap area-body">
             <div className="area-copy">
               <h2 className="section-title">{focus.heading}</h2>
@@ -197,10 +205,17 @@ export default async function AreaPage(
               </a>
             </aside>
           </div>
+          <FocusPhotos
+            serviceSlug={focusService.slug}
+            label={`Real photos from our ${focusService.title.toLowerCase()} jobs`}
+            seed={AREAS.indexOf(area)}
+          />
         </section>
       )}
 
-      <section className={`section${focus ? "" : " tone-sky"}`}>
+      <AreaWhyVerity city={area.name} sky={nextSky()} />
+
+      <section className={`section${nextSky() ? " tone-sky" : ""}`}>
         <div className="wrap">
           <div className="center section-head">
             <h2 className="section-title">
@@ -224,7 +239,10 @@ export default async function AreaPage(
         </div>
       </section>
 
-      <section className="section">
+      <AreaPricing city={area.name} sky={nextSky()} />
+      <AreaHowItWorks city={area.name} sky={nextSky()} />
+
+      <section className={`section${nextSky() ? " tone-sky" : ""}`}>
         <div className="wrap">
           <div className="center section-head">
             <h2 className="section-title">
@@ -246,6 +264,8 @@ export default async function AreaPage(
           </div>
         </div>
       </section>
+
+      <Reviews sky={nextSky()} />
 
       <section className="section">
         <div className="wrap">
