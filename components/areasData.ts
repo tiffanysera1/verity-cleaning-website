@@ -29,6 +29,20 @@ export type Area = {
   /* Bordering towns we also serve, linked from the page. Keep it to towns
      that actually border this one, so the links read as real geography. */
   nearby: string[];
+  /* Optional section aimed at one high-intent search, such as "move out
+     cleaning Hoover". Every line has to restate what that service already
+     includes on its own page; nothing here may claim local job volume or
+     results we cannot show. */
+  focus?: AreaFocus;
+};
+
+export type AreaFocus = {
+  serviceSlug: string;
+  heading: string;
+  includesHeading: string;
+  paragraphs: string[];
+  highlights: string[];
+  faq: AreaFaq;
 };
 
 export type AreaFaq = { q: string; a: string };
@@ -59,6 +73,7 @@ function joinList(items: string[]): string {
 
 export function areaFaqs(area: Area): AreaFaq[] {
   const lead = LEAD_PHRASE[area.leadService.title] ?? area.leadService.title.toLowerCase();
+  const focus = area.focus ? [area.focus.faq] : [];
   return [
     {
       q: `Do you clean homes in ${area.name}?`,
@@ -68,6 +83,7 @@ export function areaFaqs(area: Area): AreaFaq[] {
       q: `What do most ${area.name} customers book?`,
       a: `Most bookings here start with ${lead}. ${area.leadService.reason}`,
     },
+    ...focus,
     {
       q: `Does it cost more because I am in ${area.name}?`,
       a: "No. There is no trip charge and no zone pricing anywhere in our service area. Your quote reflects the size and condition of your home and the service you booked — nothing else.",
@@ -115,6 +131,28 @@ export const AREAS: Area[] = [
     },
     neighborhoods: ["Riverchase", "Bluff Park", "Trace Crossings", "Greystone"],
     nearby: ["vestavia-hills", "pelham", "helena"],
+    focus: {
+      serviceSlug: "move-in-move-out",
+      heading: "Move-out cleaning in Hoover",
+      includesHeading: "What a Hoover move-out clean includes",
+      paragraphs: [
+        "Moving out of a Hoover home, or getting one ready for new owners or tenants? A move-out clean is our detailed turnover clean for an empty or substantially empty home \u2014 the inside of every cabinet and drawer, the appliance interiors and the baseboards, not just the surfaces you can see.",
+        "Book it for after your belongings are out and before your final walkthrough, so we can reach every surface. We work from a checklist, and we clean move-outs across Hoover \u2014 Riverchase, Bluff Park, Trace Crossings, Greystone and everywhere between.",
+      ],
+      highlights: [
+        "Inside empty cabinets and drawers",
+        "Inside the refrigerator, freezer, stove and oven",
+        "Inside the microwave, plus hood vents",
+        "Interior windowpanes",
+        "Baseboards hand-detailed",
+        "Tile and grout detail-cleaned",
+        "Inside empty closets vacuumed",
+      ],
+      faq: {
+        q: "Do you do move-out cleaning in Hoover?",
+        a: "Yes, across all of Hoover. A move-out clean covers the inside of empty cabinets and drawers, the refrigerator, freezer, stove and oven, interior windowpanes and hand-detailed baseboards. Book it after your belongings are out and before your final walkthrough.",
+      },
+    },
   },
   {
     slug: "vestavia-hills",

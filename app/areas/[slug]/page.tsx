@@ -5,7 +5,7 @@ import { AREAS, getArea, areaFaqs } from "@/components/areasData";
 import { SERVICES } from "@/components/servicesData";
 import { QUOTE_URL } from "@/components/quoteLink";
 import { GOOGLE_REVIEWS_URL, GOOGLE_RATING } from "@/components/googleBusiness";
-import { ArrowRight, Star, Sparkle, Shield, Pin, Plus } from "@/components/Icons";
+import { ArrowRight, Star, Sparkle, Shield, Pin, Plus, Check } from "@/components/Icons";
 import AreaJsonLd from "@/components/AreaJsonLd";
 import CallLine from "@/components/CallLine";
 
@@ -51,6 +51,8 @@ export default async function AreaPage(
 
   const lead = SERVICES.find((s) => s.slug === area.leadService.slug);
   const others = SERVICES.filter((s) => s.slug !== area.leadService.slug);
+  const focus = area.focus;
+  const focusService = focus && SERVICES.find((s) => s.slug === focus.serviceSlug);
   const nearby = area.nearby
     .map((s) => getArea(s))
     .filter((a): a is NonNullable<typeof a> => Boolean(a));
@@ -160,7 +162,45 @@ export default async function AreaPage(
         </div>
       </section>
 
-      <section className="section tone-sky">
+      {focus && focusService && (
+        <section className="section tone-sky" id={focus.serviceSlug}>
+          <div className="wrap area-body">
+            <div className="area-copy">
+              <h2 className="section-title">{focus.heading}</h2>
+              {focus.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+              ))}
+              <h3>{focus.includesHeading}</h3>
+              <ul className="area-focus-list">
+                {focus.highlights.map((item) => (
+                  <li key={item}>
+                    <Check aria-hidden="true" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <aside className="area-lead-card area-focus-card">
+              <p className="area-lead-label">Moving in or out?</p>
+              <h3>{focusService.title}</h3>
+              <p>No trip charge anywhere in {area.name}, and you pay after the clean is complete.</p>
+              <a className="btn btn--primary" href={QUOTE_URL}>
+                Get a Move-Out Quote
+                <ArrowRight aria-hidden="true" />
+              </a>
+              <a className="review-more" href={`/services/${focusService.slug}/`}>
+                See the full checklist <ArrowRight />
+              </a>
+              <a className="review-more" href="/before-and-after/">
+                See real move-out before &amp; afters <ArrowRight />
+              </a>
+            </aside>
+          </div>
+        </section>
+      )}
+
+      <section className={`section${focus ? "" : " tone-sky"}`}>
         <div className="wrap">
           <div className="center section-head">
             <h2 className="section-title">

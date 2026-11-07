@@ -6,7 +6,7 @@
    which — in-body links do. These are the relationships worth stating.
 
    `areas` should name towns where the service genuinely leads, matching the
-   leadService already declared in areasData.ts. Keep the two in agreement:
+   leadService (or the focus section) already declared in areasData.ts. Keep the two in agreement:
    a service page claiming Homewood while the Homewood page leads with
    something else is a contradictory signal. */
 
@@ -47,6 +47,7 @@ export const SERVICE_LINKS: Record<string, ServiceLinks> = {
   "move-in-move-out": {
     areas: [
       { slug: "homewood", name: "Homewood" },
+      { slug: "hoover", name: "Hoover" },
       { slug: "alabaster", name: "Alabaster" },
     ],
     areaNote:
