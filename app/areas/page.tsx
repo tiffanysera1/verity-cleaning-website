@@ -5,14 +5,14 @@ import { ArrowRight, Sparkle, Pin } from "@/components/Icons";
 import HubJsonLd from "@/components/HubJsonLd";
 
 export const metadata: Metadata = {
-  title: "Cleaning Service Areas | Shelby County & Birmingham AL",
+  title: "Cleaning Service Areas | Over the Mountain & Pelham, AL",
   description:
-    "Verity Cleaning serves Pelham, Hoover, Vestavia Hills, Homewood, Mountain Brook, Helena, and Alabaster. Licensed, bonded, insured. Call or text (205) 946-0304.",
+    "Verity Cleaning serves Hoover, Vestavia Hills, Mountain Brook, Homewood, Pelham, Helena and Alabaster. Licensed, bonded, insured. Call or text (205) 946-0304.",
   alternates: { canonical: "/areas/" },
   openGraph: {
     title: "Service Areas | Verity Cleaning",
     description:
-      "House cleaning across Shelby County and Birmingham's over-the-mountain suburbs.",
+      "House cleaning across Birmingham's over-the-mountain suburbs and Pelham.",
     url: "/areas/",
     images: [{ url: "/og-image.jpg", alt: "A tidy, sunlit home cleaned by Verity Cleaning" }],
   },
@@ -23,8 +23,8 @@ export default function AreasPage() {
     <main id="main">
       <HubJsonLd
         path="/areas/"
-        name="Cleaning Service Areas — Shelby County & Birmingham, AL"
-        description="Verity Cleaning serves Pelham, Hoover, Vestavia Hills, Homewood, Mountain Brook, Helena, and Alabaster."
+        name="Cleaning Service Areas — Birmingham Over the Mountain & Pelham, AL"
+        description="Verity Cleaning serves Hoover, Vestavia Hills, Mountain Brook, Homewood, Pelham, Helena and Alabaster."
         breadcrumbName="Service Areas"
         items={AREAS.map((a) => ({ name: a.name, url: `/areas/${a.slug}/` }))}
       />
@@ -32,13 +32,13 @@ export default function AreasPage() {
         <div className="wrap">
           <div className="center section-head">
             <h1 className="section-title">
-              Where We Clean
+              House Cleaning Over the Mountain
               <Sparkle aria-hidden="true" />
             </h1>
             <p className="lead">
-              Verity Cleaning is based in Pelham and serves Shelby County plus
-              Birmingham&rsquo;s over-the-mountain suburbs. Pick your town to see what
-              we do there.
+              Verity Cleaning serves Birmingham&rsquo;s over-the-mountain suburbs &mdash; Hoover, Vestavia Hills,
+              Mountain Brook and Homewood &mdash; from our base in Pelham. Pick your town to
+              see what we do there.
             </p>
           </div>
 
@@ -68,15 +68,15 @@ export default function AreasPage() {
               is our problem to solve, not a line on your invoice.
             </p>
             <p>
-              Our coverage splits into two halves. <strong>Shelby County</strong>{" "}
-              is home ground &mdash; Pelham, Helena, Alabaster and the communities around them,
-              where most of our recurring work sits. North of us are Birmingham&rsquo;s{" "}
+              Our coverage splits into two halves. North of us are Birmingham&rsquo;s{" "}
               <strong>over-the-mountain suburbs</strong>: Hoover, Vestavia Hills,
               Homewood and Mountain Brook. If you are not from the area,
               &ldquo;over-the-mountain&rdquo; is simply how locals describe the
               communities on the far side of Red Mountain from downtown Birmingham. They
               are older, established neighborhoods, and the homes there tend to reward
-              the kind of detail work a rushed clean skips.
+              the kind of detail work a rushed clean skips. Closer to home is{" "}
+              <strong>Shelby County</strong> &mdash; Pelham, where we are based, plus Helena,
+              Alabaster and the communities around them.
             </p>
             <p>
               Our service area is deliberately focused rather than sprawling, which is

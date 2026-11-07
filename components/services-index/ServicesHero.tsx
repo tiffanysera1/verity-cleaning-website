@@ -8,7 +8,7 @@ export default function ServicesHero() {
       <div className="wrap">
         <div className="center section-head reveal">
           <h1 className="section-title svc-hero-h1">
-            Cleaning Services in Shelby County, AL
+            Cleaning Services in Hoover, Vestavia Hills &amp; Mountain Brook
             <Sparkle aria-hidden="true" />
           </h1>
           <p className="lead">

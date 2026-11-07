@@ -39,12 +39,13 @@ const caveat = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.veritycleaning.co"),
-  title: "Pelham, Hoover & Vestavia Hills House Cleaning | Verity",
+  title: "Hoover, Vestavia, Mountain Brook & Homewood House Cleaning",
   description:
     "House cleaning across Birmingham's over-the-mountain suburbs: Hoover, Vestavia Hills, Mountain Brook, Homewood and Pelham. Licensed, bonded & insured.",
   alternates: { canonical: "/" },
   keywords: [
-    "cleaning service Shelby County",
+    "house cleaning Mountain Brook AL",
+    "house cleaning Homewood AL",
     "home cleaning Pelham AL",
     "house cleaning Alabaster AL",
     "house cleaning Hoover AL",

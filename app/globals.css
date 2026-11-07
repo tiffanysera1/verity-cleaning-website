@@ -950,6 +950,7 @@ button { font-family: inherit; }
 .area-lead-card.area-focus-card { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; background: #fff; }
 .area-focus-card .btn { margin-top: 6px; }
 @media (max-width: 560px) { .area-focus-list { grid-template-columns: 1fr; } }
+.svc-h1-place { display: block; margin-top: 10px; font-family: var(--font-inter), system-ui, sans-serif; font-size: .95rem; font-weight: 600; letter-spacing: 0; line-height: 1.4; color: var(--navy-muted); }
 .decision-more { margin: 32px auto 0; max-width: 62ch; text-align: center; color: var(--navy-muted); font-size: .98rem; line-height: 1.6; }
 .decision-more a, .ba-service-links a { color: var(--blue); font-weight: 700; }
 .ba-service-links { margin: 36px auto 0; max-width: 64ch; text-align: center; color: var(--navy-muted); font-size: 1rem; line-height: 1.7; }

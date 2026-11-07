@@ -12,7 +12,7 @@ export default function Footer() {
             <Image src="/logo.webp" alt="Verity Cleaning" width={400} height={168} className="brand-mark" />
           </a>
           <p>
-            Licensed, bonded, and insured home and office cleaning for Shelby County and Birmingham's over-the-mountain suburbs.
+            Licensed, bonded, and insured home and office cleaning for Birmingham's over-the-mountain suburbs and Pelham.
           </p>
           <div className="fsocials">
             <a href="https://www.facebook.com/profile.php?id=61588754895193" target="_blank" rel="noopener noreferrer" aria-label="Verity Cleaning on Facebook">
@@ -99,7 +99,7 @@ export default function Footer() {
           <a href="/privacy/">Privacy Policy</a>
           <a href="/terms/">Terms of Service</a>
         </span>
-        <span>Shelby County, AL</span>
+        <span>Hoover · Vestavia Hills · Mountain Brook · Homewood</span>
       </div>
     </footer>
   );

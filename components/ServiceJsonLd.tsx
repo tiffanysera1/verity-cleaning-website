@@ -2,15 +2,20 @@ import type { FaqItem } from "./service/serviceDetailData";
 
 const BASE = "https://www.veritycleaning.co";
 
+/* Over-the-mountain suburbs first: they are the market these pages target.
+   Every town must be one we actually serve (same list as JsonLd.tsx). */
 const AREA_SERVED = [
-  "Pelham",
-  "Helena",
-  "Alabaster",
-  "Hoover",
-  "Columbiana",
-  "Chelsea",
-  "Calera",
-].map((name) => ({ "@type": "City", name, containedInPlace: { "@type": "AdministrativeArea", name: "Shelby County, AL" } }));
+  ["Vestavia Hills", "Jefferson County, AL"],
+  ["Mountain Brook", "Jefferson County, AL"],
+  ["Homewood", "Jefferson County, AL"],
+  ["Hoover", "Jefferson & Shelby Counties, AL"],
+  ["Pelham", "Shelby County, AL"],
+  ["Helena", "Shelby County, AL"],
+  ["Alabaster", "Shelby County, AL"],
+  ["Columbiana", "Shelby County, AL"],
+  ["Chelsea", "Shelby County, AL"],
+  ["Calera", "Shelby County, AL"],
+].map(([name, county]) => ({ "@type": "City", name, containedInPlace: { "@type": "AdministrativeArea", name: county } }));
 
 /* Per-service structured data. Emits three linked graph nodes:
    - Service, pointing at the LocalBusiness @id declared in JsonLd.tsx
@@ -35,7 +40,7 @@ export default function ServiceJsonLd({
     {
       "@type": "Service",
       "@id": `${url}#service`,
-      name: `${title} in Shelby County, AL`,
+      name: `${title} in Hoover, Vestavia Hills, Mountain Brook & Homewood, AL`,
       description: summary,
       serviceType: title,
       url,

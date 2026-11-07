@@ -26,9 +26,9 @@ import { pickTransformations } from "@/components/transformationsData";
 const PATH = "/property-management-cleaning/";
 const BASE = "https://www.veritycleaning.co";
 
-const TITLE = "Property Management Cleaning | Birmingham & Shelby County";
+const TITLE = "Property Management Cleaning | Birmingham Over the Mountain";
 const DESCRIPTION =
-  "Turnover cleaning for property managers across Birmingham & Shelby County. Same or next-day turnover, a photo record of every unit and standardized checklists.";
+  "Turnover cleaning for property managers across Birmingham's over-the-mountain suburbs and Pelham. Same or next-day turnover and a photo record of every unit.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -119,7 +119,7 @@ export default function PropertyManagementPage() {
         <div className="wrap">
           <p className="area-eyebrow">
             <Pin aria-hidden="true" />
-            Birmingham &amp; Shelby County
+            Birmingham&rsquo;s over-the-mountain suburbs
           </p>
           <h1>Turnover Cleaning for Property Managers</h1>
           <p className="lead">
@@ -283,8 +283,8 @@ export default function PropertyManagementPage() {
           <div className="area-copy">
             <h2 className="section-title">Where we turn over units</h2>
             <p>
-              We cover Pelham and Shelby County plus Birmingham&rsquo;s over-the-mountain
-              suburbs, and the price does not change based on which of them a unit sits in.
+              We cover Birmingham&rsquo;s over-the-mountain suburbs plus Pelham and Shelby County, and
+              the price does not change based on which of them a unit sits in.
               There is no trip charge and no zone pricing &mdash; a quote reflects the size
               and condition of the unit and the service booked, nothing else.
             </p>

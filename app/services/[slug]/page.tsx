@@ -22,18 +22,18 @@ export async function generateMetadata(
   const service = getService(slug);
   if (!service) return {};
 
-  /* Hoover and Vestavia Hills are the towns we are working to rank in, so
-     they sit in every service title beside Pelham. Titles over 60 characters
-     get cut off in results, so the brand suffix shortens, then drops, and
-     the longest service names keep only the two target towns. */
-  const place = "in Pelham, Hoover & Vestavia Hills";
+  /* Birmingham's over-the-mountain suburbs are the market we are working to
+     rank in, so they lead every service title. Titles over 60 characters get
+     cut off in results, so the brand suffix shortens, then drops, and the
+     longest service names keep only Hoover and Vestavia Hills. */
+  const place = "in Hoover, Vestavia & Mountain Brook";
   const title = [
     `${service.title} ${place} | Verity Cleaning`,
     `${service.title} ${place} | Verity`,
     `${service.title} ${place}`,
   ].find((t) => t.length <= 60) ?? `${service.title} in Hoover & Vestavia Hills`;
   /* Kept under 160 characters so the town names are not cut off. */
-  const fullDescription = `${service.summary} Serving Hoover, Vestavia Hills & Pelham, AL.`;
+  const fullDescription = `${service.summary} Serving Hoover, Vestavia Hills, Mountain Brook & Homewood.`;
   const description = fullDescription.length <= 160
     ? fullDescription
     : `${service.summary} Serving Hoover & Vestavia Hills.`;

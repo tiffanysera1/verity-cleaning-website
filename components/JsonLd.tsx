@@ -7,7 +7,7 @@ export default function JsonLd() {
     "@id": "https://www.veritycleaning.co/#business",
     name: "Verity Cleaning LLC",
     description:
-      "Premium, licensed and insured residential and commercial cleaning service in Shelby County, AL. Offering house cleaning, deep cleaning, move-in/out cleanings, and office sanitization.",
+      "Licensed, bonded and insured house cleaning for Birmingham's over-the-mountain suburbs \u2014 Hoover, Vestavia Hills, Mountain Brook and Homewood \u2014 and Pelham, AL. Recurring, deep, move-in/move-out, commercial and post-construction cleaning.",
     slogan: "A Clean Home. More Time Back.",
     telephone: "+12059460304",
     email: "hello@veritycleaning.co",
@@ -57,7 +57,7 @@ export default function JsonLd() {
         "Post-Construction Cleaning",
       ].map((name) => ({
         "@type": "Offer",
-        itemOffered: { "@type": "Service", name, areaServed: "Shelby & Jefferson County, AL" },
+        itemOffered: { "@type": "Service", name, areaServed: "Hoover, Vestavia Hills, Mountain Brook, Homewood & Pelham, AL" },
       })),
     },
     /* Every town here must be one Verity will actually drive to — areaServed

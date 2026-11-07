@@ -69,7 +69,7 @@ export const SERVICE_LINKS: Record<string, ServiceLinks> = {
       { slug: "hoover", name: "Hoover" },
     ],
     areaNote:
-      "Offices, shops and small businesses across Shelby County and the Birmingham suburbs.",
+      "Offices, shops and small businesses across Birmingham's over-the-mountain suburbs and Pelham.",
   },
   "post-construction-cleaning": {
     areas: [

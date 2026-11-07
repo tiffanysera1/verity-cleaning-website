@@ -98,24 +98,6 @@ export function areaFaqs(area: Area): AreaFaq[] {
 
 export const AREAS: Area[] = [
   {
-    slug: "pelham",
-    name: "Pelham",
-    county: "Shelby County",
-    tagline: "Where Verity is based, and where most of our work sits.",
-    intro: [
-      "Verity Cleaning is based in Pelham, so this is the town we know best. We can offer tighter arrival windows here, and short-notice bookings are easier to fit in than almost anywhere else on our map.",
-      "Pelham homes run the full range — established streets off Highway 31, newer construction closer to the interstate, and everything between. We clean all of it, and because we live and work here, we already know the neighborhoods.",
-    ],
-    leadService: {
-      slug: "standard-cleaning",
-      title: "Standard Cleaning",
-      reason:
-        "Most of our Pelham work is recurring — weekly, biweekly, or monthly visits for households who would rather not think about it again.",
-    },
-    neighborhoods: ["Ballantrae", "Chandalar", "Oak Mountain", "Indian Valley"],
-    nearby: ["hoover", "helena", "alabaster"],
-  },
-  {
     slug: "hoover",
     name: "Hoover",
     county: "Jefferson & Shelby Counties",
@@ -301,6 +283,24 @@ export const AREAS: Area[] = [
         a: "Yes. Our standard clean can be booked weekly, biweekly or every four weeks anywhere in Mountain Brook, and the more often we come, the less each visit costs: 20% off weekly, 10% off biweekly and 5% off monthly.",
       },
     },
+  },
+  {
+    slug: "pelham",
+    name: "Pelham",
+    county: "Shelby County",
+    tagline: "Where Verity is based, and where most of our work sits.",
+    intro: [
+      "Verity Cleaning is based in Pelham, so this is the town we know best. We can offer tighter arrival windows here, and short-notice bookings are easier to fit in than almost anywhere else on our map.",
+      "Pelham homes run the full range — established streets off Highway 31, newer construction closer to the interstate, and everything between. We clean all of it, and because we live and work here, we already know the neighborhoods.",
+    ],
+    leadService: {
+      slug: "standard-cleaning",
+      title: "Standard Cleaning",
+      reason:
+        "Most of our Pelham work is recurring — weekly, biweekly, or monthly visits for households who would rather not think about it again.",
+    },
+    neighborhoods: ["Ballantrae", "Chandalar", "Oak Mountain", "Indian Valley"],
+    nearby: ["hoover", "helena", "alabaster"],
   },
   {
     slug: "helena",

@@ -72,8 +72,8 @@ export default function BeforeAfterPage() {
         <div className="wrap">
           <h1>Before &amp; After</h1>
           <p className="lead">
-            Real homes we have cleaned across Pelham, Shelby County and Birmingham&rsquo;s
-            over-the-mountain suburbs. Every photo below is our own work &mdash; no stock
+            Real homes we have cleaned across Birmingham&rsquo;s over-the-mountain suburbs and
+            Pelham. Every photo below is our own work &mdash; no stock
             images, nothing staged.
           </p>
 

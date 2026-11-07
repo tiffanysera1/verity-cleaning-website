@@ -9,7 +9,7 @@ import HubJsonLd from "@/components/HubJsonLd";
 import { SERVICES } from "@/components/servicesData";
 
 export const metadata: Metadata = {
-  title: "Cleaning Services in Hoover, Vestavia Hills & Pelham, AL",
+  title: "Cleaning Services in Hoover, Vestavia & Mountain Brook",
   description:
     "Compare recurring, deep, move-in/move-out, commercial and post-construction cleaning across Hoover, Vestavia Hills, Mountain Brook, Homewood and Pelham.",
   alternates: { canonical: "/services/" },
@@ -26,7 +26,7 @@ export default function ServicesIndexPage() {
     <main id="main">
       <HubJsonLd
         path="/services/"
-        name="Cleaning Services in Hoover, Vestavia Hills & Pelham, AL"
+        name="Cleaning Services in Hoover, Vestavia Hills & Mountain Brook, AL"
         description="Compare recurring, deep, move-in/move-out, commercial, and post-construction cleaning from Verity Cleaning."
         breadcrumbName="Services"
         items={SERVICES.map((s) => ({ name: s.title, url: `/services/${s.slug}/` }))}

@@ -75,7 +75,10 @@ export default function ServiceHero({
         <div className="service-hero-grid">
           <div className="service-hero-main reveal">
             <span className="service-badge">{title.toUpperCase()}</span>
-            <h1>{title}{aka ? ` (${aka})` : ""}</h1>
+            <h1>
+              {title}{aka ? ` (${aka})` : ""}
+              <span className="svc-h1-place">in Hoover, Vestavia Hills, Mountain Brook &amp; Homewood</span>
+            </h1>
             <p className="service-tagline">{tagline}</p>
             <p className="service-desc">{description}</p>
 
