@@ -29,10 +29,11 @@ export default function Hero() {
             </span>
           </h1>
           <p className="sub">
-            House cleaning and maid service in <a href="/areas/hoover/">Hoover</a>,{" "}
+            House cleaning and maid service across the Birmingham metro &mdash;{" "}
+            <a href="/areas/hoover/">Hoover</a>,{" "}
             <a href="/areas/vestavia-hills/">Vestavia Hills</a>,{" "}
-            <a href="/areas/mountain-brook/">Mountain Brook</a>,{" "}
-            <a href="/areas/homewood/">Homewood</a>{" "}&amp; Pelham &mdash; we clean with care so
+            <a href="/areas/mountain-brook/">Mountain Brook</a>{" "}&amp;{" "}
+            <a href="/areas/homewood/">Homewood</a>. We clean with care so
             you can focus on what matters most.
           </p>
 

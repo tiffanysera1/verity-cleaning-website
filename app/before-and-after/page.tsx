@@ -11,7 +11,7 @@ const BASE = "https://www.veritycleaning.co";
 
 const TITLE = "Before & After Cleaning Photos | Verity Cleaning";
 const DESCRIPTION =
-  "Real before and after photos from Verity Cleaning jobs over the mountain and in Pelham: move-out cleans, kitchens, bathrooms, refrigerators and appliances.";
+  "Real before and after photos from Verity Cleaning jobs across the Birmingham metro: move-out cleans, kitchens, bathrooms, refrigerators and appliances.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   alternates: { canonical: PATH },
   openGraph: {
     title: "Before & After — Real Verity Cleaning Jobs",
-    description: "Real before and after photos from cleans across Pelham and Birmingham.",
+    description: "Real before and after photos from cleans across the Birmingham metro.",
     url: PATH,
     images: [{ url: TRANSFORMATIONS[0].image, alt: TRANSFORMATIONS[0].alt }],
   },
@@ -72,8 +72,8 @@ export default function BeforeAfterPage() {
         <div className="wrap">
           <h1>Before &amp; After</h1>
           <p className="lead">
-            Real homes we have cleaned across Birmingham&rsquo;s over-the-mountain suburbs and
-            Pelham. Every photo below is our own work &mdash; no stock
+            Real homes we have cleaned across the Birmingham metro and its over-the-mountain
+            suburbs. Every photo below is our own work &mdash; no stock
             images, nothing staged.
           </p>
 

@@ -11,7 +11,7 @@ import { SERVICES } from "@/components/servicesData";
 export const metadata: Metadata = {
   title: "Cleaning Services in Hoover, Vestavia & Mountain Brook",
   description:
-    "Compare recurring, deep, move-in/move-out, commercial and post-construction cleaning across Hoover, Vestavia Hills, Mountain Brook, Homewood and Pelham.",
+    "Compare recurring, deep, move-in/move-out, commercial and post-construction cleaning in Hoover, Vestavia Hills, Mountain Brook, Homewood & the Birmingham metro.",
   alternates: { canonical: "/services/" },
   openGraph: {
     title: "All Cleaning Services | Verity Cleaning",

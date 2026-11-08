@@ -27,7 +27,7 @@ export function AreaWhyVerity({ city, sky }: SectionProps) {
             <Sparkle aria-hidden="true" />
           </h2>
           <p className="lead">
-            A locally owned and operated house cleaning company, based in Pelham.
+            A locally owned and operated house cleaning company serving the Birmingham metro.
           </p>
         </div>
         <div className="area-why-grid">

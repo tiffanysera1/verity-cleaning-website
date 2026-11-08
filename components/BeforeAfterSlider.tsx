@@ -29,9 +29,10 @@ export default function BeforeAfterSlider() {
 
           <p className="homes-service-area">
             <Sparkle aria-hidden="true" />
-            Proudly serving <a href="/areas/pelham/">Pelham</a>,{" "}
-            <a href="/areas/hoover/">Hoover</a>, <a href="/areas/helena/">Helena</a>,{" "}
-            <a href="/areas/alabaster/">Alabaster</a>, and{" "}
+            Proudly serving <a href="/areas/hoover/">Hoover</a>,{" "}
+            <a href="/areas/vestavia-hills/">Vestavia Hills</a>,{" "}
+            <a href="/areas/mountain-brook/">Mountain Brook</a>,{" "}
+            <a href="/areas/homewood/">Homewood</a>, and{" "}
             <a href="/areas/">surrounding areas</a>.
           </p>
         </div>

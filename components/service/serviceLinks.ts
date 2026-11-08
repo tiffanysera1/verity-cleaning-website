@@ -22,8 +22,8 @@ export const SERVICE_LINKS: Record<string, ServiceLinks> = {
   "standard-cleaning": {
     areas: [
       { slug: "mountain-brook", name: "Mountain Brook" },
-      { slug: "helena", name: "Helena" },
-      { slug: "pelham", name: "Pelham" },
+      { slug: "vestavia-hills", name: "Vestavia Hills" },
+      { slug: "homewood", name: "Homewood" },
     ],
     areaNote:
       "Recurring visits are what we do most of in these towns, where households would rather have it handled than think about it.",
@@ -65,11 +65,11 @@ export const SERVICE_LINKS: Record<string, ServiceLinks> = {
   },
   "commercial-office-cleaning": {
     areas: [
-      { slug: "pelham", name: "Pelham" },
       { slug: "hoover", name: "Hoover" },
+      { slug: "homewood", name: "Homewood" },
     ],
     areaNote:
-      "Offices, shops and small businesses across Birmingham's over-the-mountain suburbs and Pelham.",
+      "Offices, shops and small businesses across the Birmingham metro and its over-the-mountain suburbs.",
   },
   "post-construction-cleaning": {
     areas: [

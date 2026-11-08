@@ -11,7 +11,7 @@ import { CONDITION_FAQ } from "@/components/conditionFaq";
 const PATH = "/faq/";
 const BASE = "https://www.veritycleaning.co";
 
-const TITLE = "House Cleaning FAQ | Hoover, Vestavia Hills & Pelham";
+const TITLE = "House Cleaning FAQ | Hoover, Vestavia Hills & Birmingham";
 const DESCRIPTION =
   "Answers about quotes, pricing, condition levels, scheduling and what each Verity Cleaning service includes, from recurring and deep cleans to move-outs.";
 

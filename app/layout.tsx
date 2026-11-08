@@ -41,18 +41,17 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.veritycleaning.co"),
   title: "Hoover, Vestavia, Mountain Brook & Homewood House Cleaning",
   description:
-    "House cleaning across Birmingham's over-the-mountain suburbs: Hoover, Vestavia Hills, Mountain Brook, Homewood and Pelham. Licensed, bonded & insured.",
+    "House cleaning across the Birmingham metro and its over-the-mountain suburbs: Hoover, Vestavia Hills, Mountain Brook and Homewood. Licensed, bonded & insured.",
   alternates: { canonical: "/" },
   keywords: [
-    "house cleaning Mountain Brook AL",
-    "house cleaning Homewood AL",
-    "home cleaning Pelham AL",
-    "house cleaning Alabaster AL",
+    "house cleaning Birmingham AL",
     "house cleaning Hoover AL",
     "maid service Hoover AL",
     "house cleaning Vestavia Hills AL",
-    "deep cleaning Helena AL",
-    "office cleaning Chelsea AL",
+    "house cleaning Mountain Brook AL",
+    "house cleaning Homewood AL",
+    "move out cleaning Hoover AL",
+    "deep cleaning Vestavia Hills AL",
     "licensed insured cleaning company",
   ],
   icons: {
@@ -62,7 +61,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Verity Cleaning — A Clean Home, More Time Back",
     description:
-      "Licensed, bonded, and insured cleaning with a 100% satisfaction guarantee. Serving Hoover, Vestavia Hills, Mountain Brook, Homewood and Pelham. Call or text (205) 946-0304.",
+      "Licensed, bonded, and insured cleaning with a 100% satisfaction guarantee. Serving the Birmingham metro: Hoover, Vestavia Hills, Mountain Brook and Homewood. Call or text (205) 946-0304.",
     type: "website",
     url: "https://www.veritycleaning.co",
     siteName: "Verity Cleaning LLC",

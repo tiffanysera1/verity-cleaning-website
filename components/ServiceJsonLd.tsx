@@ -2,9 +2,11 @@ import type { FaqItem } from "./service/serviceDetailData";
 
 const BASE = "https://www.veritycleaning.co";
 
-/* Over-the-mountain suburbs first: they are the market these pages target.
+/* Birmingham and its over-the-mountain suburbs first: they are the market
+   these pages target. Pelham is home base, served but not the focus.
    Every town must be one we actually serve (same list as JsonLd.tsx). */
 const AREA_SERVED = [
+  ["Birmingham", "Jefferson County, AL"],
   ["Vestavia Hills", "Jefferson County, AL"],
   ["Mountain Brook", "Jefferson County, AL"],
   ["Homewood", "Jefferson County, AL"],

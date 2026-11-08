@@ -5,14 +5,14 @@ import { ArrowRight, Sparkle, Pin } from "@/components/Icons";
 import HubJsonLd from "@/components/HubJsonLd";
 
 export const metadata: Metadata = {
-  title: "Cleaning Service Areas | Over the Mountain & Pelham, AL",
+  title: "Service Areas | Birmingham Metro & Over the Mountain",
   description:
     "Verity Cleaning serves Hoover, Vestavia Hills, Mountain Brook, Homewood, Pelham, Helena and Alabaster. Licensed, bonded, insured. Call or text (205) 946-0304.",
   alternates: { canonical: "/areas/" },
   openGraph: {
     title: "Service Areas | Verity Cleaning",
     description:
-      "House cleaning across Birmingham's over-the-mountain suburbs and Pelham.",
+      "House cleaning across the Birmingham metro and its over-the-mountain suburbs.",
     url: "/areas/",
     images: [{ url: "/og-image.jpg", alt: "A tidy, sunlit home cleaned by Verity Cleaning" }],
   },
@@ -23,7 +23,7 @@ export default function AreasPage() {
     <main id="main">
       <HubJsonLd
         path="/areas/"
-        name="Cleaning Service Areas — Birmingham Over the Mountain & Pelham, AL"
+        name="Cleaning Service Areas — Birmingham Metro & Over the Mountain"
         description="Verity Cleaning serves Hoover, Vestavia Hills, Mountain Brook, Homewood, Pelham, Helena and Alabaster."
         breadcrumbName="Service Areas"
         items={AREAS.map((a) => ({ name: a.name, url: `/areas/${a.slug}/` }))}
@@ -36,8 +36,8 @@ export default function AreasPage() {
               <Sparkle aria-hidden="true" />
             </h1>
             <p className="lead">
-              Verity Cleaning serves Birmingham&rsquo;s over-the-mountain suburbs &mdash; Hoover, Vestavia Hills,
-              Mountain Brook and Homewood &mdash; from our base in Pelham. Pick your town to
+              Verity Cleaning serves the Birmingham metro, focused on its over-the-mountain suburbs &mdash;
+              Hoover, Vestavia Hills, Mountain Brook and Homewood. Pick your town to
               see what we do there.
             </p>
           </div>

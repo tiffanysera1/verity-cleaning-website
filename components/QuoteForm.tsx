@@ -188,7 +188,7 @@ export default function QuoteForm() {
             name="address"
             type="text"
             autoComplete="street-address"
-            placeholder="123 Main St, Pelham, AL"
+            placeholder="123 Main St, Hoover, AL"
             required
           />
         </div>

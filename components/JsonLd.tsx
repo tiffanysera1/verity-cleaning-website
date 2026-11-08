@@ -7,7 +7,7 @@ export default function JsonLd() {
     "@id": "https://www.veritycleaning.co/#business",
     name: "Verity Cleaning LLC",
     description:
-      "Licensed, bonded and insured house cleaning for Birmingham's over-the-mountain suburbs \u2014 Hoover, Vestavia Hills, Mountain Brook and Homewood \u2014 and Pelham, AL. Recurring, deep, move-in/move-out, commercial and post-construction cleaning.",
+      "Licensed, bonded and insured house cleaning across the Birmingham metro, focused on the over-the-mountain suburbs: Hoover, Vestavia Hills, Mountain Brook and Homewood, AL. Recurring, deep, move-in/move-out, commercial and post-construction cleaning.",
     slogan: "A Clean Home. More Time Back.",
     telephone: "+12059460304",
     email: "hello@veritycleaning.co",
@@ -57,21 +57,24 @@ export default function JsonLd() {
         "Post-Construction Cleaning",
       ].map((name) => ({
         "@type": "Offer",
-        itemOffered: { "@type": "Service", name, areaServed: "Hoover, Vestavia Hills, Mountain Brook, Homewood & Pelham, AL" },
+        itemOffered: { "@type": "Service", name, areaServed: "Birmingham metro: Hoover, Vestavia Hills, Mountain Brook & Homewood, AL" },
       })),
     },
     /* Every town here must be one Verity will actually drive to — areaServed
        is a claim, and a lead from a town we decline wastes their time and
        ours. Jefferson County entries are Birmingham's over-the-mountain
-       suburbs, all within about 25 minutes of Pelham. */
+       suburbs, all within about 25 minutes of Pelham. The Birmingham metro is
+       the target market, so it leads; Pelham is home base, served but not the
+       focus. */
     areaServed: [
+      "Birmingham",
+      "Hoover",
+      "Vestavia Hills",
+      "Mountain Brook",
+      "Homewood",
       "Pelham",
       "Helena",
       "Alabaster",
-      "Hoover",
-      "Vestavia Hills",
-      "Homewood",
-      "Mountain Brook",
       "Columbiana",
       "Chelsea",
       "Calera",

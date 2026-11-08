@@ -15,7 +15,7 @@ const BASE = "https://www.veritycleaning.co";
 
 const TITLE = "Get a Free Cleaning Quote | Verity Cleaning";
 const DESCRIPTION =
-  "Get a personalized cleaning quote for your Hoover, Vestavia Hills or Pelham home. No in-home estimate needed. Answer a few questions and we'll send your price.";
+  "Get a personalized cleaning quote for your Hoover, Vestavia Hills or Birmingham-area home. No in-home estimate needed. Answer a few questions for your price.";
 
 export const metadata: Metadata = {
   title: TITLE,

@@ -4,7 +4,7 @@ export const TRUST_ITEMS = [
   { icon: Users, title: "Background Checked Cleaners", sub: "Every cleaner passes a background check before entering your home." },
   { icon: CheckCircle, title: "100% Satisfaction Guaranteed", sub: "We make it right, always." },
   { icon: Shield, title: "Insured for Your Peace of Mind", sub: "Licensed, bonded & insured." },
-  { icon: Heart, title: "Locally Owned & Operated", sub: "Based right here in Pelham, AL." },
+  { icon: Heart, title: "Locally Owned & Operated", sub: "Based in Pelham, serving the Birmingham metro." },
 ];
 
 export default function OperationalStrip() {
