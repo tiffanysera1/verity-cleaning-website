@@ -34,6 +34,15 @@ export type Area = {
      includes on its own page; nothing here may claim local job volume or
      results we cannot show. */
   focus?: AreaFocus;
+  /* Metro page only (Birmingham). We serve the city's over-the-mountain
+     side, not all of it, so instead of claiming the whole city the page
+     lists these towns, by slug, with their own neighborhoods. `bookings`
+     replaces the single lead-service answer, since what people book
+     differs town to town. */
+  communities?: { slugs: string[]; bookings: string };
+  /* Replaces the generated meta description when the page needs to say
+     more than the town name, as the metro page does. */
+  metaDescription?: string;
 };
 
 export type AreaFocus = {
@@ -75,14 +84,22 @@ function joinList(items: string[]): string {
 export function areaFaqs(area: Area): AreaFaq[] {
   const lead = LEAD_PHRASE[area.leadService.title] ?? area.leadService.title.toLowerCase();
   const focus = area.focus ? [area.focus.faq] : [];
+  const towns = (area.communities?.slugs ?? [])
+    .map((s) => getArea(s))
+    .filter((a): a is Area => Boolean(a));
   return [
-    {
-      q: `Do you clean homes in ${area.name}?`,
-      a: `Yes. Our house cleaners cover all of ${area.name} in ${area.county}, including ${joinList(area.neighborhoods)}. If your neighborhood is not listed, just ask — we serve the whole city.`,
-    },
+    area.communities
+      ? {
+          q: `Do you clean homes in ${area.name}?`,
+          a: `Yes, over the mountain. Our house cleaners cover ${joinList(towns.map((t) => t.name))}, including ${joinList(towns.flatMap((t) => t.neighborhoods.slice(0, 2)))}. Elsewhere in the ${area.name} area, call or text (205) 946-0304 and we will tell you whether we can reach you.`,
+        }
+      : {
+          q: `Do you clean homes in ${area.name}?`,
+          a: `Yes. Our house cleaners cover all of ${area.name} in ${area.county}, including ${joinList(area.neighborhoods)}. If your neighborhood is not listed, just ask — we serve the whole city.`,
+        },
     {
       q: `What do most ${area.name} customers book?`,
-      a: `Most bookings here start with ${lead}. ${area.leadService.reason}`,
+      a: area.communities?.bookings ?? `Most bookings here start with ${lead}. ${area.leadService.reason}`,
     },
     ...focus,
     {
@@ -98,10 +115,63 @@ export function areaFaqs(area: Area): AreaFaq[] {
 
 export const AREAS: Area[] = [
   {
+    slug: "birmingham",
+    name: "Birmingham",
+    county: "Jefferson County",
+    tagline: "Over the mountain: Mountain Brook, Vestavia Hills, Homewood and Hoover.",
+    metaDescription:
+      "House cleaning and maid service in Birmingham, AL, over the mountain: Mountain Brook, Vestavia Hills, Homewood & Hoover. Licensed, bonded & insured.",
+    intro: [
+      "When people around Birmingham say “over the mountain,” they mean the suburbs on the far side of Red Mountain from downtown: Mountain Brook, Vestavia Hills, Homewood and Hoover. That is the part of the Birmingham area we focus on.",
+      "The homes range from Mountain Brook's older houses with original finishes to newer golf-community homes in Greystone and Ross Bridge. What they share is that they are carefully kept, and a carefully kept home is the one most let down by a rushed clean. We work to a checklist and walk you through what was done at the end, room by room.",
+    ],
+    leadService: {
+      slug: "standard-cleaning",
+      title: "Standard Cleaning",
+      reason:
+        "Over the mountain, most homes end up on a standing schedule — weekly, biweekly or every four weeks — often after one deep clean to reset them first.",
+    },
+    neighborhoods: [],
+    nearby: [],
+    communities: {
+      slugs: ["mountain-brook", "vestavia-hills", "homewood", "hoover"],
+      bookings:
+        "Most homes over the mountain end up on a standing schedule, but where they start differs by community. In Vestavia Hills, and in Hoover's larger homes, a deep clean usually comes first; Mountain Brook homes are mostly kept on a standing schedule; and Homewood turns over more than most neighborhoods nearby, so move-out cleans are a regular request there.",
+    },
+    focus: {
+      serviceSlug: "standard-cleaning",
+      heading: "Recurring maid service over the mountain",
+      includesHeading: "What every maid service visit includes",
+      paragraphs: [
+        "Looking for a regular maid service in Birmingham? Our standard clean is the service behind every recurring visit, booked weekly, biweekly or every four weeks. It covers the everyday cleaning your home needs, so it never reaches the point of needing a full reset.",
+        "The more often we come, the less each visit costs: 20% off weekly, 10% off biweekly and 5% off monthly. You do not need to be home — leave entry instructions and go about your day — and you can skip or reschedule a visit by call or text, or from your customer portal.",
+      ],
+      highlights: [
+        "Linens changed and beds made (when clean linens are out)",
+        "Living-room items set and staged neatly",
+        "Reasonable countertop items moved, surfaces cleaned underneath",
+        "Mirrors and glass cleaned",
+        "Windowsills and blinds dusted and wiped",
+        "Wall art and knickknacks feather-dusted (within reach)",
+        "Sinks and faucets cleaned and dried",
+      ],
+      card: {
+        label: "Want a standing schedule?",
+        note: "Weekly, biweekly or every four weeks: up to 20% off, no trip charge, and you pay after each clean.",
+        cta: "Get a Recurring Quote",
+        proofText: "See real before & afters",
+      },
+      faq: {
+        q: "Do you offer maid service in Birmingham?",
+        a: "Yes, across Birmingham's over-the-mountain communities: Mountain Brook, Vestavia Hills, Homewood and Hoover. Our standard clean can be booked weekly, biweekly or every four weeks, with 20% off weekly, 10% off biweekly and 5% off monthly visits, and you do not need to be home.",
+      },
+    },
+  },
+  {
     slug: "hoover",
     name: "Hoover",
     county: "Jefferson & Shelby Counties",
-    tagline: "Birmingham's largest suburb, north of Red Mountain.",
+    tagline: "Birmingham's largest suburb, over the mountain.",
     intro: [
       "Hoover sits directly between us and Birmingham, which makes it one of the easiest places for us to serve. It is also one of the largest suburbs in the state, so the housing varies enormously — from the established streets around Riverchase to the newer subdivisions spreading south and west.",
       "Larger homes take longer to clean properly, and that is where people most often get disappointed by a cheap quote. We price on what the home actually needs after seeing photos, so the number you get is the number you pay.",
@@ -112,7 +182,7 @@ export const AREAS: Area[] = [
       reason:
         "Bigger Hoover homes tend to start with a deep clean — baseboards, ceiling fans, grout, and the corners that routine cleaning skips — before moving onto a recurring schedule.",
     },
-    neighborhoods: ["Riverchase", "Bluff Park", "Trace Crossings", "Greystone"],
+    neighborhoods: ["Greystone", "Ross Bridge", "Riverchase", "Lake Cyrus", "Bluff Park", "Trace Crossings"],
     nearby: ["vestavia-hills", "pelham", "helena"],
     focus: {
       serviceSlug: "move-in-move-out",
@@ -159,7 +229,7 @@ export const AREAS: Area[] = [
       reason:
         "Established homes usually need a thorough first clean to reset them, after which a recurring visit keeps them there.",
     },
-    neighborhoods: ["Cahaba Heights", "Liberty Park", "Vestavia Hills East"],
+    neighborhoods: ["Cahaba Heights", "Liberty Park"],
     nearby: ["hoover", "mountain-brook", "homewood"],
     focus: {
       serviceSlug: "deep-cleaning",
@@ -167,7 +237,7 @@ export const AREAS: Area[] = [
       includesHeading: "What a Vestavia Hills deep clean includes",
       paragraphs: [
         "Homes that have been lived in for years collect buildup in the places a routine clean does not reach \u2014 trim, tile grout, window sills, vents and baseboards. A deep clean is our detailed full-home reset for exactly that: right for a first clean, a seasonal refresh, or a home that has not been done properly in a while.",
-        "Most Vestavia Hills homes start with one deep clean, then move onto a recurring schedule that keeps them there. Our house cleaners work across Vestavia Hills, including Cahaba Heights, Liberty Park and Vestavia Hills East.",
+        "Most Vestavia Hills homes start with one deep clean, then move onto a recurring schedule that keeps them there. Our house cleaners work across Vestavia Hills, including Cahaba Heights and Liberty Park.",
       ],
       highlights: [
         "Baseboards hand-detailed",
@@ -288,7 +358,7 @@ export const AREAS: Area[] = [
     slug: "pelham",
     name: "Pelham",
     county: "Shelby County",
-    tagline: "Where Verity is based, and where most of our work sits.",
+    tagline: "Where Verity is based, just south of Hoover.",
     intro: [
       "Verity Cleaning is based in Pelham, so this is the town we know best. We can offer tighter arrival windows here, and short-notice bookings are easier to fit in than almost anywhere else on our map.",
       "Pelham homes run the full range — established streets off Highway 31, newer construction closer to the interstate, and everything between. We clean all of it, and because we live and work here, we already know the neighborhoods.",

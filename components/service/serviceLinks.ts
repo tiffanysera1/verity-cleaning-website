@@ -21,12 +21,11 @@ export type ServiceLinks = {
 export const SERVICE_LINKS: Record<string, ServiceLinks> = {
   "standard-cleaning": {
     areas: [
+      { slug: "birmingham", name: "Birmingham" },
       { slug: "mountain-brook", name: "Mountain Brook" },
-      { slug: "vestavia-hills", name: "Vestavia Hills" },
-      { slug: "homewood", name: "Homewood" },
     ],
     areaNote:
-      "Recurring visits are what we do most of in these towns, where households would rather have it handled than think about it.",
+      "Over the mountain, most homes are kept on a standing schedule rather than cleaned in bursts.",
     related: {
       slug: "deep-cleaning",
       title: "Deep Cleaning",

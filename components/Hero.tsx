@@ -29,7 +29,8 @@ export default function Hero() {
             </span>
           </h1>
           <p className="sub">
-            House cleaning and maid service across the Birmingham metro &mdash;{" "}
+            House cleaning and maid service across{" "}
+            <a href="/areas/birmingham/">the Birmingham metro</a> &mdash;{" "}
             <a href="/areas/hoover/">Hoover</a>,{" "}
             <a href="/areas/vestavia-hills/">Vestavia Hills</a>,{" "}
             <a href="/areas/mountain-brook/">Mountain Brook</a>{" "}&amp;{" "}

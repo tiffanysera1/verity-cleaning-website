@@ -28,7 +28,8 @@ export async function generateMetadata(
   const title = longTitle.length <= 60
     ? longTitle
     : `House Cleaning & Maid Service in ${area.name}, AL | Verity`;
-  const description = `House cleaning and maid service in ${area.name}, AL: recurring, deep and move-out cleans. Licensed, bonded & insured. Call or text (205) 946-0304.`;
+  const description = area.metaDescription
+    ?? `House cleaning and maid service in ${area.name}, AL: recurring, deep and move-out cleans. Licensed, bonded & insured. Call or text (205) 946-0304.`;
 
   return {
     title,
@@ -56,6 +57,9 @@ export default async function AreaPage(
   const focus = area.focus;
   const focusService = focus && SERVICES.find((s) => s.slug === focus.serviceSlug);
   const nearby = area.nearby
+    .map((s) => getArea(s))
+    .filter((a): a is NonNullable<typeof a> => Boolean(a));
+  const communities = (area.communities?.slugs ?? [])
     .map((s) => getArea(s))
     .filter((a): a is NonNullable<typeof a> => Boolean(a));
 
@@ -123,7 +127,9 @@ export default async function AreaPage(
               <p key={paragraph.slice(0, 40)}>{paragraph}</p>
             ))}
 
-            {lead && (
+            {/* A metro page skips this line: where bookings start differs by
+                community, and its FAQ says how. */}
+            {lead && communities.length === 0 && (
               <p className="area-lead-line">
                 Most {area.name} bookings start with{" "}
                 <a href={`/services/${lead.slug}/`}>{area.leadService.title.toLowerCase()}</a>
@@ -132,17 +138,35 @@ export default async function AreaPage(
             )}
 
             <h3>Where we clean in {area.name}</h3>
-            <ul className="area-hoods">
-              {area.neighborhoods.map((n) => (
-                <li key={n}>
-                  <Sparkle aria-hidden="true" />
-                  {n}
-                </li>
-              ))}
-            </ul>
-            <p className="area-hoods-note">
-              Not listed? We serve all of {area.name}&nbsp;&mdash; just ask.
-            </p>
+            {communities.length > 0 ? (
+              <>
+                <ul className="area-communities">
+                  {communities.map((c) => (
+                    <li key={c.slug}>
+                      <a href={`/areas/${c.slug}/`}>{c.name}</a>
+                      <span>{c.neighborhoods.join(", ")}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="area-hoods-note">
+                  Elsewhere in the {area.name} area? <a href="tel:+12059460304">Call or text (205) 946-0304</a>{" "}and we&rsquo;ll tell you whether we can reach you.
+                </p>
+              </>
+            ) : (
+              <>
+                <ul className="area-hoods">
+                  {area.neighborhoods.map((n) => (
+                    <li key={n}>
+                      <Sparkle aria-hidden="true" />
+                      {n}
+                    </li>
+                  ))}
+                </ul>
+                <p className="area-hoods-note">
+                  Not listed? We serve all of {area.name}&nbsp;&mdash; just ask.
+                </p>
+              </>
+            )}
             {nearby.length > 0 && (
               <p className="area-nearby">
                 Nearby, we also clean homes in{" "}
@@ -208,7 +232,7 @@ export default async function AreaPage(
           <FocusPhotos
             serviceSlug={focusService.slug}
             label={`Real photos from our ${focusService.title.toLowerCase()} jobs`}
-            seed={AREAS.indexOf(area)}
+            seed={AREAS.filter((a) => a.focus?.serviceSlug === focusService.slug).indexOf(area)}
           />
         </section>
       )}

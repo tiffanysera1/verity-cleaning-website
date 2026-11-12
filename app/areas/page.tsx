@@ -7,7 +7,7 @@ import HubJsonLd from "@/components/HubJsonLd";
 export const metadata: Metadata = {
   title: "Service Areas | Birmingham Metro & Over the Mountain",
   description:
-    "Verity Cleaning serves Hoover, Vestavia Hills, Mountain Brook, Homewood, Pelham, Helena and Alabaster. Licensed, bonded, insured. Call or text (205) 946-0304.",
+    "Verity Cleaning serves Birmingham over the mountain: Hoover, Vestavia Hills, Mountain Brook and Homewood, plus Pelham, Helena and Alabaster. Licensed & insured.",
   alternates: { canonical: "/areas/" },
   openGraph: {
     title: "Service Areas | Verity Cleaning",
@@ -24,7 +24,7 @@ export default function AreasPage() {
       <HubJsonLd
         path="/areas/"
         name="Cleaning Service Areas — Birmingham Metro & Over the Mountain"
-        description="Verity Cleaning serves Hoover, Vestavia Hills, Mountain Brook, Homewood, Pelham, Helena and Alabaster."
+        description="Verity Cleaning serves Birmingham over the mountain — Hoover, Vestavia Hills, Mountain Brook and Homewood — plus Pelham, Helena and Alabaster."
         breadcrumbName="Service Areas"
         items={AREAS.map((a) => ({ name: a.name, url: `/areas/${a.slug}/` }))}
       />
@@ -68,8 +68,8 @@ export default function AreasPage() {
               is our problem to solve, not a line on your invoice.
             </p>
             <p>
-              Our coverage splits into two halves. North of us are Birmingham&rsquo;s{" "}
-              <strong>over-the-mountain suburbs</strong>: Hoover, Vestavia Hills,
+              Our coverage splits into two halves. North of us are{" "}
+              <a href="/areas/birmingham/">Birmingham&rsquo;s over-the-mountain suburbs</a>: Hoover, Vestavia Hills,
               Homewood and Mountain Brook. If you are not from the area,
               &ldquo;over-the-mountain&rdquo; is simply how locals describe the
               communities on the far side of Red Mountain from downtown Birmingham. They
